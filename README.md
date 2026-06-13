@@ -1,5 +1,11 @@
 # Geometry-MMALS G1
 
+<p align="center">
+  <a href="./paper/paper/Geometry_MMALS_G1_Article_v1_0_1.pdf">
+    <img src="https://img.shields.io/badge/Open-Article-0B5FFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Open PDF">
+  </a>
+</p>
+
 **From audit-space projections to grounded functional geometry in continual learning.**
 
 Geometry-MMALS G1 is a research specification and implementation scaffold for testing whether MMALS learns a meaningful internal geometry of representations, inferred contexts, routes, host transformations, synthesis states, and memory transport.
