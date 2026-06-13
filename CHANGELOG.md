@@ -1,5 +1,20 @@
 # Changelog
 
+
+## [1.0.5] - 2026-06-13
+
+### Added
+- Context mediation training and inference controls.
+- Ascending, descending, and fixed-permuted curricula.
+- Current-only optimizer-step-matched reference.
+- C1/C2 evidence partitioning and source-paired bootstrap deltas.
+- Signed causal orientation and monotonicity gates.
+- Clean archive and exact-location notebook PDF export.
+
+### Status
+- Protocol implementation only. C1-C6 remain unqualified.
+
+
 ## v1.0.3 - Cross-angle paired protocol correction
 
 - Replaced single-angle geometry batches with same-source multi-angle batches.

@@ -20,3 +20,8 @@ The primary notebook is:
 The archived change report is:
 
 `docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.pdf`
+
+
+## v1.0.5 protocol status
+
+The v1.0.5 notebook adds context mediation, curriculum-order controls, paired source-level delta confidence intervals, and signed causal-orientation gates. It remains a C0 protocol implementation; C1-C6 are not qualified.

@@ -1,32 +1,17 @@
-# Geometry-MMALS G1 v1.0.3 Artifact Manifest
+# Geometry-MMALS G1 v1.0.5 Artifact Manifest
 
-## Scientific status
+## Primary artifacts
 
-Accepted claim: C0 implementation and protocol correction only.
+- `notebooks/Geometry_MMALS_G1_ContextMediation_Curriculum_v1_0_5.ipynb` - Colab-ready context mediation and curriculum protocol.
+- `docs/reports/Geometry_MMALS_G1_v1_0_5_Context_Mediation_Curriculum_Report.pdf` - archival protocol report.
+- `docs/reports/Geometry_MMALS_G1_v1_0_5_Context_Mediation_Curriculum_Report.md` - editable report source.
+- `docs/changes/Geometry_MMALS_G1_v1_0_4_to_v1_0_5.md` - tracked change summary.
+- `configs/rotated_mnist_g1_v105.yaml` - v1.0.5 protocol supplement.
 
-C1-C6 remain unqualified until frozen-gate, multi-seed, controlled runs are
-archived.
+## Status
 
-## Main artifacts
+C0 protocol implementation only. No C1-C6 qualification claim.
 
-- `notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`
-- `docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.pdf`
-- `docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.md`
-- `src/geometry_mmalls/data.py` with `MultiAngleMNIST`
-- `src/geometry_mmalls/geometry.py` with `paired_route_geometry_loss`
-- `src/geometry_mmalls/metrics.py` with source-block and centroid metrics
-- `configs/rotated_mnist_g1.yaml` with paired-protocol settings
-- `docs/changes/Geometry_MMALS_G1_v1_0_2_to_v1_0_3.patch`
+## Exclusions from release archive
 
-## Core correction
-
-v1.0.2 used a single factor value inside each geometry batch. v1.0.3 uses
-same-source cross-angle views and evaluates geometry inside source blocks.
-
-## Validation performed during package generation
-
-- Notebook JSON and Python syntax validation.
-- Unit test suite: 16 tests passed.
-- Same-source multi-angle dataset smoke using locally available MNIST data.
-- Paired route-loss forward/backward smoke.
-- PDF render verification.
+The release intentionally excludes `.git`, datasets, runtime results, caches, bytecode, editable-install metadata, and local environments.

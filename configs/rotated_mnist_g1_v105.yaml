@@ -1,0 +1,17 @@
+version: 1.0.5
+status: protocol_implementation
+router_modes: [standard, context_only, direct_z0]
+curricula:
+  ascending: [-60, -30, 0, 30, 60]
+  descending: [60, 30, 0, -30, -60]
+  permuted: [0, -60, 60, -30, 30]
+controls:
+  current_only_step_matched: true
+  paired_compute_matched: true
+  context_interventions: true
+  paired_source_bootstrap: true
+  signed_causal_orientation: true
+qualification:
+  pilot_seeds: 5
+  final_seeds: 10
+  secondary_transformation_required: true

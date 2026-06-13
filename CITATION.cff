@@ -6,7 +6,7 @@ authors:
   - family-names: Harbonnier
     given-names: Guillaume
     orcid: ""
-version: 1.0.3
+version: 1.0.5
 date-released: 2026-06-13
 repository-code: "https://github.com/gharbonnier78/geometry-mmalls-g1"
 license: MIT
