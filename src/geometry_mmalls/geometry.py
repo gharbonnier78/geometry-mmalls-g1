@@ -101,6 +101,88 @@ def route_geodesic_loss(
     return smooth + float(far_weight) * far_penalty
 
 
+def paired_route_geometry_loss(
+    routes: torch.Tensor,
+    factors: torch.Tensor,
+    bandwidth: float = 20.0,
+    far_margin: float = 0.20,
+    far_weight: float = 0.25,
+    match_weight: float = 0.50,
+    eps: float = 1e-8,
+) -> torch.Tensor:
+    """Ground route geometry using same-source cross-angle views.
+
+    Parameters
+    ----------
+    routes:
+        Routing probabilities with shape ``[batch, angles, hosts]``.
+    factors:
+        Angle values with shape ``[angles]`` or ``[batch, angles]``.
+
+    Notes
+    -----
+    Optimization uses chordal distance in square-root simplex coordinates,
+    which is monotonic with Fisher-Rao distance and has a stable backward pass.
+    Fisher-Rao distance remains the evaluation metric. The loss combines:
+
+    - local continuity for nearby angles;
+    - a far-angle separation margin;
+    - normalized distance matching across all off-diagonal angle pairs.
+
+    A single-angle input returns a differentiable zero because no cross-angle
+    geometric statement can be made.
+    """
+
+    if routes.ndim != 3:
+        raise ValueError("routes must have shape [batch, angles, hosts]")
+    batch, n_angles, _ = routes.shape
+    if n_angles < 2:
+        return routes.sum() * 0.0
+
+    factors = factors.to(routes.device, routes.dtype)
+    if factors.ndim == 1:
+        if factors.shape[0] != n_angles:
+            raise ValueError("factors length must match the angle dimension")
+        factors = factors.unsqueeze(0).expand(batch, -1)
+    elif factors.ndim == 2:
+        if factors.shape != (batch, n_angles):
+            raise ValueError("factors must have shape [batch, angles]")
+    else:
+        raise ValueError("factors must be 1-D or 2-D")
+
+    p = routes.clamp_min(eps)
+    p = p / p.sum(dim=-1, keepdim=True)
+    roots = torch.sqrt(p)
+    affinity = torch.bmm(roots, roots.transpose(1, 2)).clamp(0.0, 1.0)
+
+    # Squared chordal distance in the square-root simplex embedding.
+    # This is 2(1-affinity), is monotonic with Fisher-Rao distance, and avoids
+    # the arccos derivative singularity during optimization.
+    chord_sq = 2.0 * (1.0 - affinity)
+
+    eye = torch.eye(n_angles, dtype=torch.bool, device=routes.device)
+    pair_mask = (~eye).unsqueeze(0).expand(batch, -1, -1)
+
+    d_factor = torch.abs(factors[:, :, None] - factors[:, None, :])
+    near_w = torch.exp(
+        -torch.square(d_factor / max(float(bandwidth), eps))
+    ).masked_fill(~pair_mask, 0.0)
+    local = (near_w * chord_sq).sum() / near_w.sum().clamp_min(eps)
+
+    far_mask = pair_mask & (d_factor >= float(bandwidth))
+    if torch.any(far_mask):
+        far = torch.relu(float(far_margin) - chord_sq[far_mask]).square().mean()
+    else:
+        far = routes.sum() * 0.0
+
+    max_gap = d_factor.amax(dim=(1, 2), keepdim=True).clamp_min(eps)
+    target = d_factor / max_gap
+    observed = torch.sqrt(chord_sq.clamp_min(eps) / 2.0)
+    match = torch.square(observed - target)[pair_mask].mean()
+
+    return local + float(far_weight) * far + float(match_weight) * match
+
+
 def normalized_stress(
     reference_distances: np.ndarray,
     representation_distances: np.ndarray,

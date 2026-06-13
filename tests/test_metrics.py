@@ -6,6 +6,9 @@ from geometry_mmalls.metrics import (
     neighborhood_preservation,
     pairwise_factor_distance,
     route_entropy,
+    bootstrap_mean_ci,
+    grouped_geometry_scores,
+    centroid_geometry_scores,
 )
 
 
@@ -33,3 +36,16 @@ def test_route_entropy_bounds():
     ent = route_entropy(routes)
     assert ent[0] < 1e-8
     assert np.isclose(ent[1], 1.0)
+
+
+
+def test_grouped_geometry_scores_preserve_exact_source_order():
+    factors = np.tile(np.array([-30.0, 0.0, 30.0]), 5)
+    groups = np.repeat(np.arange(5), 3)
+    representations = factors[:, None]
+    result = grouped_geometry_scores(factors, representations, groups)
+    assert np.nanmean(result["rho"]) > 0.999
+    mean, low, high = bootstrap_mean_ci(result["rho"], samples=100, seed=3)
+    assert low > 0.99 and high <= 1.000001
+    centroid = centroid_geometry_scores(factors, representations)
+    assert centroid["rho"] > 0.999

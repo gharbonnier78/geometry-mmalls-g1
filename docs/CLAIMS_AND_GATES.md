@@ -110,3 +110,18 @@ G1 does not establish:
 - universal intelligence;
 - consciousness;
 - domain-general manifold discovery from a single synthetic benchmark.
+
+
+## v1.0.3 measurement policy amendment
+
+For RotatedMNIST G1 qualification:
+
+- distance-order and stress statistics must be computed inside same-source
+  cross-angle blocks and summarized across source images;
+- factor-centroid geometry must be reported as a complementary tie-free view;
+- uncertainty must use source-block bootstrap or permutation;
+- ordinary pairwise p-values over all sample pairs are descriptive only;
+- ordinary sample-level kNN is not a primary gate when the reference factor has
+  large tied neighborhoods;
+- a geometry-trained model must be compared with the same architecture without
+  paired geometry regularization.

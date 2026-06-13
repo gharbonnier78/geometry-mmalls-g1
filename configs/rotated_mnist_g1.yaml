@@ -38,6 +38,10 @@ losses:
   memory_reconstruction: 0.05
   route_bandwidth_degrees: 20.0
   route_far_margin: 0.35
+  paired_route_far_margin: 0.20
+  paired_route_far_weight: 0.25
+  paired_route_match_weight: 0.50
+  classification_anchor_replay: 0.0
 
 memory:
   reconstructive_examples_per_context: 128
@@ -53,3 +57,15 @@ smoke:
   noise_std: 0.025
   drift_std: 0.04
   seed: 7
+
+paired_protocol:
+  primary_variant: paired_geometry
+  compared_variants: [no_geometry, paired_geometry]
+  development_source_limit: 512
+  development_test_source_limit: 256
+  full_source_limit: 6000
+  source_batch_size: 64
+  geometry_uses_seen_angles_only: true
+  classification_uses_current_angle_only: true
+  source_block_bootstrap: true
+  interpolation_angles_never_train: true

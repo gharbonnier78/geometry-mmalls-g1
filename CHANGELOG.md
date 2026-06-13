@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.3 - Cross-angle paired protocol correction
+
+- Replaced single-angle geometry batches with same-source multi-angle batches.
+- Added `MultiAngleMNIST` and a stable square-root-simplex paired geometry loss.
+- Preserved the continual sequence while using only previously seen angles as geometry anchors.
+- Added source identifiers to traces and source-block bootstrap metrics.
+- Replaced global pairwise significance and tie-fragile kNN evidence with paired-source and centroid geometry.
+- Added held-out interpolation accuracy, NLL, context interpolation and route interpolation controls.
+- Added staged accuracy matrices and trained-angle forgetting estimates.
+- Added signed causal route-direction probes with matched-norm orthogonal controls.
+- Added strict package version and git-SHA recording.
+- Kept C1-C6 explicitly unqualified pending multi-seed runs and hardened baselines.
+
 ## v1.0.2 - Numerical-stability and Colab execution patch
 
 - Fixed NaN gradients in `route_geodesic_loss` for identical or nearly identical routes.

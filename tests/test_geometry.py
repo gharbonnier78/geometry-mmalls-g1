@@ -7,6 +7,7 @@ from geometry_mmalls.geometry import (
     pairwise_fisher_rao,
     procrustes_aligned_drift,
     route_geodesic_loss,
+    paired_route_geometry_loss,
 )
 
 
@@ -57,3 +58,25 @@ def test_route_geodesic_loss_uniform_routes_has_finite_backward():
     loss.backward()
     assert logits.grad is not None
     assert torch.isfinite(logits.grad).all()
+
+
+
+def test_paired_route_geometry_loss_has_finite_backward():
+    logits = torch.randn(8, 5, 4, requires_grad=True)
+    routes = torch.softmax(logits, dim=-1)
+    factors = torch.tensor([-60.0, -30.0, 0.0, 30.0, 60.0])
+    loss = paired_route_geometry_loss(routes, factors)
+    assert torch.isfinite(loss)
+    loss.backward()
+    assert logits.grad is not None
+    assert torch.isfinite(logits.grad).all()
+
+
+def test_paired_route_geometry_single_angle_is_zero():
+    logits = torch.randn(3, 1, 4, requires_grad=True)
+    routes = torch.softmax(logits, dim=-1)
+    loss = paired_route_geometry_loss(routes, torch.tensor([0.0]))
+    assert torch.isfinite(loss)
+    assert float(loss.detach()) == 0.0
+    loss.backward()
+    assert logits.grad is not None

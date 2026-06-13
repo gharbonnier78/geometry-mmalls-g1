@@ -16,6 +16,25 @@ Recommended initial schedule:
 - continual stages: one declared sequence and its reversed control;
 - seeds: at least five for qualification, three only for development smoke runs.
 
+
+## 2.1 Cross-angle paired batch requirement (v1.0.3)
+
+A geometry loss is valid only when the optimization unit contains at least two
+distinct factor values. The primary G1-A protocol therefore groups several
+rotated views of the same MNIST source image in one batch item.
+
+At continual stage `t`, the paired geometry branch may use only angles already
+seen in stages `0..t`. Held-out interpolation and extrapolation angles remain
+excluded from training and model selection.
+
+Classification loss is applied to the current angle by default. Previous-angle
+views are geometry anchors, not automatically classification replay. Any
+classification replay must be declared as a separate ablation.
+
+Primary geometry statistics are computed inside source-image blocks and then
+bootstrapped across source images. Global all-pairs p-values and ordinary kNN
+over massively tied angle distances are not accepted as primary evidence.
+
 ## 3. Model boundary
 
 The primary experiment freezes a declared sensory encoder after a reference pretraining stage. This separates:

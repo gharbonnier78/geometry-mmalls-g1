@@ -124,3 +124,114 @@ def contribution_locality(
         mask = (u >= left) & (u < right)
         result[f"[{left:g},{right:g})"] = float(np.mean(c[mask])) if np.any(mask) else float("nan")
     return result
+
+
+def bootstrap_mean_ci(
+    values: np.ndarray,
+    samples: int = 1000,
+    confidence: float = 0.95,
+    seed: int = 0,
+) -> tuple[float, float, float]:
+    """Block-bootstrap confidence interval for a vector of group-level scores."""
+
+    x = np.asarray(values, dtype=np.float64).reshape(-1)
+    x = x[np.isfinite(x)]
+    if x.size == 0:
+        return float("nan"), float("nan"), float("nan")
+    if samples < 1:
+        raise ValueError("samples must be positive")
+    if not 0.0 < confidence < 1.0:
+        raise ValueError("confidence must lie in (0, 1)")
+
+    rng = np.random.default_rng(seed)
+    boot = np.empty(samples, dtype=np.float64)
+    for index in range(samples):
+        boot[index] = np.mean(rng.choice(x, size=x.size, replace=True))
+    alpha = 1.0 - confidence
+    return (
+        float(np.mean(x)),
+        float(np.quantile(boot, alpha / 2.0)),
+        float(np.quantile(boot, 1.0 - alpha / 2.0)),
+    )
+
+
+def grouped_geometry_scores(
+    factor_values: np.ndarray,
+    representations: np.ndarray,
+    group_ids: np.ndarray,
+    metric: str = "euclidean",
+) -> dict[str, np.ndarray]:
+    """Compute geometry scores independently inside each source block.
+
+    This avoids treating millions of dependent cross-sample pairs as
+    independent observations. ``group_ids`` should normally be the original
+    image identifier, so every group contains the same source image observed
+    under several angles.
+    """
+
+    from .geometry import normalized_stress, pairwise_fisher_rao
+
+    factors = np.asarray(factor_values, dtype=np.float64).reshape(-1)
+    reps = np.asarray(representations, dtype=np.float64)
+    groups = np.asarray(group_ids).reshape(-1)
+    if reps.ndim != 2 or len(factors) != len(reps) or len(groups) != len(reps):
+        raise ValueError("factors, representations and group_ids must align")
+
+    rhos: list[float] = []
+    stresses: list[float] = []
+    group_values: list[object] = []
+
+    for group in np.unique(groups):
+        mask = groups == group
+        if np.count_nonzero(mask) < 3:
+            continue
+        u = factors[mask]
+        x = reps[mask]
+        d_ref = pairwise_factor_distance(u)
+        if metric == "euclidean":
+            d_rep = euclidean_distance_matrix(x)
+        elif metric == "fisher_rao":
+            d_rep = pairwise_fisher_rao(x)
+        else:
+            raise ValueError("metric must be 'euclidean' or 'fisher_rao'")
+        rho, _ = distance_order_correlation(d_ref, d_rep)
+        rhos.append(rho)
+        stresses.append(normalized_stress(d_ref, d_rep))
+        group_values.append(group)
+
+    return {
+        "group_ids": np.asarray(group_values),
+        "rho": np.asarray(rhos, dtype=np.float64),
+        "stress": np.asarray(stresses, dtype=np.float64),
+    }
+
+
+def centroid_geometry_scores(
+    factor_values: np.ndarray,
+    representations: np.ndarray,
+    metric: str = "euclidean",
+) -> dict[str, float]:
+    """Geometry scores on factor-level centroids, avoiding nearest-neighbor ties."""
+
+    from .geometry import normalized_stress, pairwise_fisher_rao
+
+    factors = np.asarray(factor_values, dtype=np.float64).reshape(-1)
+    reps = np.asarray(representations, dtype=np.float64)
+    if reps.ndim != 2 or len(factors) != len(reps):
+        raise ValueError("factor_values and representations must align")
+
+    unique = np.sort(np.unique(factors))
+    centroids = np.stack([reps[factors == value].mean(axis=0) for value in unique])
+    d_ref = pairwise_factor_distance(unique)
+    if metric == "euclidean":
+        d_rep = euclidean_distance_matrix(centroids)
+    elif metric == "fisher_rao":
+        d_rep = pairwise_fisher_rao(centroids)
+    else:
+        raise ValueError("metric must be 'euclidean' or 'fisher_rao'")
+    rho, _ = distance_order_correlation(d_ref, d_rep)
+    return {
+        "rho": float(rho),
+        "stress": float(normalized_stress(d_ref, d_rep)),
+        "factor_count": int(len(unique)),
+    }

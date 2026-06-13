@@ -1,17 +1,22 @@
-# Current scientific status
+# Status
 
-Geometry-MMALS G1 v1.0.2 is a specification plus executable scaffold.
+## Current release: v1.0.3 protocol correction
 
-Accepted package claim: **C0 pipeline validity only**.
+The accepted claim remains **C0 pipeline and protocol implementation only**.
 
-Not yet claimed:
+v1.0.2 repaired numerical stability but its development run used one angle per
+geometry batch. Therefore the loss never observed cross-angle pairs and the run
+was non-diagnostic for grounded angular geometry.
 
-- C1 grounded descriptive geometry on real RotatedMNIST traces;
-- C2 predictive interpolation;
-- C3 reproducible host specialization;
-- C4 causal latent direction;
-- C5 continual geometric transport;
-- G2 energy-guided routing;
-- G3 phase-aware or quantum-inspired routing.
+v1.0.3 introduces a same-source cross-angle paired protocol. It is designed to
+make C1-C4 measurable, but no gate is considered passed until the notebook is
+run with frozen thresholds, multiple seeds, matched controls and archived
+results.
 
-A future experimental release must include real run manifests, per-seed CSVs, bootstrap confidence intervals, baseline sweeps, and a claim manifest tying every statement to artifacts.
+The primary notebook is:
+
+`notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`
+
+The archived change report is:
+
+`docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.pdf`

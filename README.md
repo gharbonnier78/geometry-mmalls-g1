@@ -1,16 +1,10 @@
 # Geometry-MMALS G1
 
-<p align="center">
-  <a href="./paper/Geometry_MMALS_G1_Article_v1_0_1.pdf">
-    <img src="https://img.shields.io/badge/Open-Article-0B5FFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Open PDF">
-  </a>
-</p>
-
 **From audit-space projections to grounded functional geometry in continual learning.**
 
 Geometry-MMALS G1 is a research specification and implementation scaffold for testing whether MMALS learns a meaningful internal geometry of representations, inferred contexts, routes, host transformations, synthesis states, and memory transport.
 
-> **Status:** research protocol and executable scaffold, patched as v1.0.2 after release audit and numerical-stability validation. The repository currently supports a **C0 pipeline-validity claim only**. It does **not** claim that the proposed G1 experiments have succeeded. Included smoke outputs are synthetic and validate only the software and metric flow. C2+ claims require real runs, fixed numeric gates, seed reports, and hardened baselines.
+> **Status:** v1.0.3 protocol-correction release. The repository currently supports a **C0 implementation and protocol-validity claim only**. It does **not** claim that the G1 geometry gates have succeeded. C1-C6 require frozen thresholds, multi-seed runs, matched controls, archived manifests and hardened baselines.
 
 ## Why this repository exists
 
@@ -46,6 +40,16 @@ G1 grounded functional geometry
 ```
 
 No quantum-computing or quantum-advantage claim is made here.
+
+## v1.0.3 primary notebook
+
+`notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`
+
+This protocol correction replaces the v1.0.2 single-angle geometry batch with
+same-source cross-angle views. It adds source-block metrics, held-out
+interpolation controls, staged forgetting evaluation and signed causal
+controls. The release remains a protocol implementation and does not claim that
+C1-C6 have passed.
 
 ## Repository map
 
@@ -105,7 +109,7 @@ The compiled article is available directly at:
 
 ### Run in Colab
 
-Open `notebooks/Geometry_MMALS_G1_Colab.ipynb` (v1.0.2). After publishing this folder, change the repository URL in the first setup cell if the GitHub location differs from:
+Open `notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`. The first setup cell verifies package version `1.0.3` and records the active git commit SHA. After publishing this folder, change the repository URL only if the GitHub location differs from:
 
 ```text
 https://github.com/gharbonnier78/geometry-mmalls-g1
