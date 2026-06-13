@@ -1,7 +1,7 @@
 # Geometry-MMALS G1
 
 <p align="center">
-  <a href="./paper/paper/Geometry_MMALS_G1_Article_v1_0_1.pdf">
+  <a href="./paper/Geometry_MMALS_G1_Article_v1_0_1.pdf">
     <img src="https://img.shields.io/badge/Open-Article-0B5FFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Open PDF">
   </a>
 </p>
