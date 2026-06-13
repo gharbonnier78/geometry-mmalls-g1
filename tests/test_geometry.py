@@ -46,3 +46,14 @@ def test_route_geodesic_loss_is_finite_and_differentiable():
     assert torch.isfinite(loss)
     loss.backward()
     assert logits.grad is not None
+
+
+def test_route_geodesic_loss_uniform_routes_has_finite_backward():
+    logits = torch.zeros(16, 4, requires_grad=True)
+    routes = torch.softmax(logits, dim=-1)
+    factor = torch.linspace(-60, 60, 16)
+    loss = route_geodesic_loss(routes, factor)
+    assert torch.isfinite(loss)
+    loss.backward()
+    assert logits.grad is not None
+    assert torch.isfinite(logits.grad).all()

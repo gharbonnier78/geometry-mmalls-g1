@@ -1,5 +1,14 @@
 # Changelog
 
+## v1.0.2 - Numerical-stability and Colab execution patch
+
+- Fixed NaN gradients in `route_geodesic_loss` for identical or nearly identical routes.
+- Added a dtype-aware interior clamp and diagonal masking before `arccos`.
+- Added a regression test for uniform-route backward stability.
+- Consolidated the Colab setup around the active kernel interpreter and `src/` layout.
+- Added finite-value guards, stage diagnostics, and a ridge-stabilized causal tangent probe.
+- Replaced brittle hard-coded PDF export paths with notebook discovery and explicit nbconvert arguments.
+
 ## v1.0.1 - Release-audit patch
 
 - Clarified C0-only package status and C1-C5 non-claims.

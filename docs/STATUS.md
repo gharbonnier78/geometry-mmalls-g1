@@ -1,6 +1,6 @@
 # Current scientific status
 
-Geometry-MMALS G1 v1.0.1 is a specification plus executable scaffold.
+Geometry-MMALS G1 v1.0.2 is a specification plus executable scaffold.
 
 Accepted package claim: **C0 pipeline validity only**.
 

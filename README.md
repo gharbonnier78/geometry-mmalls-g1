@@ -1,16 +1,10 @@
 # Geometry-MMALS G1
 
-<p align="center">
-  <a href="./paper/Geometry_MMALS_G1_Article_v1_0_1.pdf">
-    <img src="https://img.shields.io/badge/Open-Article-0B5FFF?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Open PDF">
-  </a>
-</p>
-
 **From audit-space projections to grounded functional geometry in continual learning.**
 
 Geometry-MMALS G1 is a research specification and implementation scaffold for testing whether MMALS learns a meaningful internal geometry of representations, inferred contexts, routes, host transformations, synthesis states, and memory transport.
 
-> **Status:** research protocol and executable scaffold, patched as v1.0.1 after release audit. The repository currently supports a **C0 pipeline-validity claim only**. It does **not** claim that the proposed G1 experiments have succeeded. Included smoke outputs are synthetic and validate only the software and metric flow. C2+ claims require real runs, fixed numeric gates, seed reports, and hardened baselines.
+> **Status:** research protocol and executable scaffold, patched as v1.0.2 after release audit and numerical-stability validation. The repository currently supports a **C0 pipeline-validity claim only**. It does **not** claim that the proposed G1 experiments have succeeded. Included smoke outputs are synthetic and validate only the software and metric flow. C2+ claims require real runs, fixed numeric gates, seed reports, and hardened baselines.
 
 ## Why this repository exists
 
@@ -62,7 +56,9 @@ tests/                      Unit tests for geometric primitives
 ```
 
 
-## Release-audit patch v1.0.1
+## Numerical-stability patch v1.0.2
+
+The v1.0.2 patch fixes the uniform-route NaN gradient in the Fisher-Rao geodesic loss, adds a regression gate, finite-value checks, and a stabilized causal tangent probe.
 
 This patch addresses the main methodological risks identified during package review:
 
@@ -103,7 +99,7 @@ The compiled article is available directly at:
 
 ### Run in Colab
 
-Open `notebooks/Geometry_MMALS_G1_Colab.ipynb`. After publishing this folder, change the repository URL in the first setup cell if the GitHub location differs from:
+Open `notebooks/Geometry_MMALS_G1_Colab.ipynb` (v1.0.2). After publishing this folder, change the repository URL in the first setup cell if the GitHub location differs from:
 
 ```text
 https://github.com/gharbonnier78/geometry-mmalls-g1

@@ -71,12 +71,22 @@ def route_geodesic_loss(
     p = routes.clamp_min(eps)
     p = p / p.sum(dim=-1, keepdim=True)
     roots = torch.sqrt(p)
-    affinity = torch.clamp(roots @ roots.T, eps, 1.0 - eps)
+
+    # arccos has an infinite derivative at affinity == 1. In float32,
+    # ``1 - 1e-8`` rounds back to exactly 1, so the previous clamp could
+    # produce finite forward values but NaN gradients for identical or nearly
+    # identical routes. Mask the diagonal before arccos and use a dtype-aware
+    # interior clamp for all off-diagonal pairs.
+    affinity = roots @ roots.T
+    eye = torch.eye(routes.shape[0], dtype=torch.bool, device=routes.device)
+    safe_eps = max(float(eps), 32.0 * torch.finfo(routes.dtype).eps)
+    affinity = affinity.masked_fill(eye, 0.0)
+    affinity = torch.clamp(affinity, safe_eps, 1.0 - safe_eps)
     d_route = 2.0 * torch.arccos(affinity)
+    d_route = d_route.masked_fill(eye, 0.0)
 
     d_factor = torch.abs(factor[:, None] - factor[None, :])
     near_w = torch.exp(-torch.square(d_factor / max(float(bandwidth), eps)))
-    eye = torch.eye(routes.shape[0], dtype=torch.bool, device=routes.device)
     near_w = near_w.masked_fill(eye, 0.0)
 
     smooth = (near_w * torch.square(d_route)).sum() / near_w.sum().clamp_min(eps)
