@@ -1,0 +1,1 @@
+run_id,seed,sample_id,true_angle,intervention_type,intervention_scale,context_shift,route_shift,predicted_angle_shift,identity_preserved,loss_delta,status

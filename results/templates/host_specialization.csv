@@ -1,0 +1,1 @@
+run_id,seed,stage,host_role,host_index,peak_context,route_mass,route_entropy,contribution_gain,ablation_impact_local,ablation_impact_global,mean_cka_to_peers,route_function_stability,cross_seed_match_cost,status

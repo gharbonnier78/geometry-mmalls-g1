@@ -1,0 +1,1 @@
+run_id,seed,model,dataset,stage,final_avg_accuracy,forgetting,nll,ece,active_flops,memory_mb,angle_distance_rho,normalized_stress,knn_preservation,interpolation_error,causal_specificity_ratio,geometric_drift,status

@@ -1,0 +1,55 @@
+experiment:
+  name: geometry_mmalls_g1_rotated_mnist
+  status: protocol
+  seeds: [0, 1, 2, 3, 4]
+  device: auto
+
+data:
+  dataset: MNIST
+  root: data
+  train_angles: [-60, -30, 0, 30, 60]
+  interpolation_angles: [-45, -15, 15, 45]
+  extrapolation_angles: [-75, 75]
+  class_count: 10
+  batch_size: 256
+  num_workers: 2
+
+model:
+  latent_dim: 128
+  context_dim: 2
+  num_hosts: 4
+  host_hidden_dim: 128
+  freeze_encoder: true
+  router_temperature: 1.0
+
+training:
+  sensory_pretrain_epochs: 5
+  stage_epochs: 10
+  optimizer: adamw
+  learning_rate: 0.001
+  weight_decay: 0.0001
+  early_stopping_patience: 3
+
+losses:
+  classification: 1.0
+  route_geometry: 0.1
+  host_functional_diversity: 0.05
+  continual_transport: 0.1
+  memory_reconstruction: 0.05
+  route_bandwidth_degrees: 20.0
+  route_far_margin: 0.35
+
+memory:
+  reconstructive_examples_per_context: 128
+  synthetic_prototypes_per_context: 16
+
+metrics:
+  neighborhood_k: 5
+  bootstrap_samples: 2000
+  causal_intervention_steps: [-2, -1, -0.5, 0, 0.5, 1, 2]
+
+smoke:
+  samples_per_angle: 40
+  noise_std: 0.025
+  drift_std: 0.04
+  seed: 7

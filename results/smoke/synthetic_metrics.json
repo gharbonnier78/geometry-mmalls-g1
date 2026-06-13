@@ -1,0 +1,10 @@
+{
+  "status": "synthetic_smoke_only",
+  "distance_order_spearman_rho": 0.9734527703129812,
+  "distance_order_p_value": 0.0,
+  "normalized_stress": 0.204508267556702,
+  "knn_preservation_k5": 0.34900000000000003,
+  "procrustes_drift": 0.0871634274788167,
+  "nearest_context_interpolation_error": 0.28618737274003503,
+  "sample_count": 200
+}

@@ -1,0 +1,13 @@
+{
+  "run_id": "replace_me",
+  "status": "proposed",
+  "git_commit": "replace_me",
+  "config_sha256": "replace_me",
+  "dataset_fingerprint": "replace_me",
+  "seed": 0,
+  "python_version": "replace_me",
+  "torch_version": "replace_me",
+  "cuda_version": "replace_me",
+  "device": "replace_me",
+  "notes": "No final claim may reference a run without a completed manifest."
+}
