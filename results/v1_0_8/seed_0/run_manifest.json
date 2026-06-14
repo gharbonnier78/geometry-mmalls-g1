@@ -1,0 +1,131 @@
+{
+  "status": "development_not_qualified",
+  "notebook_version": "1.0.8",
+  "build_revision": "reviewer-loss-design-r2",
+  "package_version": "1.0.8",
+  "git_sha": "2ac22a07590681ef0204476caacd568a9f0674b0",
+  "run_mode": "development",
+  "seed": 0,
+  "method_specs": {
+    "cb_d2_no_geo": {
+      "context_dim": 2,
+      "route_w": 0.0,
+      "context_w": 0.0,
+      "spread_w": 0.0,
+      "fiber_w": 0.0,
+      "centroid_w": 0.0
+    },
+    "cb_d2_route_geo": {
+      "context_dim": 2,
+      "route_w": 0.1,
+      "context_w": 0.0,
+      "spread_w": 0.0,
+      "fiber_w": 0.0,
+      "centroid_w": 0.0
+    },
+    "cb_d2_context_geo": {
+      "context_dim": 2,
+      "route_w": 0.0,
+      "context_w": 0.1,
+      "spread_w": 0.05,
+      "fiber_w": 0.0,
+      "centroid_w": 0.0
+    },
+    "cb_d2_route_context_geo": {
+      "context_dim": 2,
+      "route_w": 0.1,
+      "context_w": 0.1,
+      "spread_w": 0.05,
+      "fiber_w": 0.0,
+      "centroid_w": 0.0
+    },
+    "cb_d2_full_alignment": {
+      "context_dim": 2,
+      "route_w": 0.1,
+      "context_w": 0.1,
+      "spread_w": 0.05,
+      "fiber_w": 0.05,
+      "centroid_w": 0.05
+    },
+    "cb_d4_no_geo": {
+      "context_dim": 4,
+      "route_w": 0.0,
+      "context_w": 0.0,
+      "spread_w": 0.0,
+      "fiber_w": 0.0,
+      "centroid_w": 0.0
+    },
+    "cb_d4_full_alignment": {
+      "context_dim": 4,
+      "route_w": 0.1,
+      "context_w": 0.1,
+      "spread_w": 0.05,
+      "fiber_w": 0.05,
+      "centroid_w": 0.05
+    }
+  },
+  "initial_state_hashes": {
+    "2": "a79c3d262a851c6304d151e7e61f0a63eda92a609ba9da3f564a1a4b6f3fa17c",
+    "4": "87097ef27f8ed6afb50612b20777d3d74ea996281471cc2f9234248d0c4d2499"
+  },
+  "mediation_path_parameter_counts": {
+    "2": {
+      "context_net": 8386,
+      "context_router": 4612,
+      "total_mediation_path": 12998
+    },
+    "4": {
+      "context_net": 8516,
+      "context_router": 4740,
+      "total_mediation_path": 13256
+    }
+  },
+  "split_manifest": {
+    "train_sha256": "0a841b138937f6f83ec3549d225da11eb256f9baea412aaf7d4165de22482ada",
+    "test_sha256": "856564b9eb131c38a73b6c7ce366d3964c7c0a2da6d26076762659e4687f8fda",
+    "tangent_fit_sha256": "8b2891e9ee786ba6e74872f7f1e30975d1bd3ab351b149d6d92ebf19330dd6ee",
+    "tangent_eval_sha256": "f5fe0ca9479578f4682f158246b2777fb43bf010300573d903028cec6b22aefc"
+  },
+  "functional_context_geometry": {
+    "normalize_for_router": true,
+    "normalize_for_loss": true,
+    "normalize_for_metrics": true,
+    "geometry": "unit_sphere_half_chord"
+  },
+  "context_geometry": {
+    "max_factor_span_degrees": 120.0,
+    "far_threshold_degrees": 60.0,
+    "far_context_margin": 0.5,
+    "far_weight": 0.25,
+    "spread_floor": 0.05
+  },
+  "loss_weights": {
+    "route_geometry": 0.1,
+    "context_geometry": 0.1,
+    "context_spread": 0.05,
+    "fiber_alignment": 0.05,
+    "centroid_alignment": 0.05,
+    "retention_anchor": 0.1
+  },
+  "tracked_changes": [
+    "CHG-108-01",
+    "CHG-108-02",
+    "CHG-108-03",
+    "CHG-108-04",
+    "CHG-108-05",
+    "CHG-108-06",
+    "CHG-108-07",
+    "CHG-108-08",
+    "CHG-108-09",
+    "CHG-108-10",
+    "CHG-108-11",
+    "CHG-108-12",
+    "CHG-108-13",
+    "CHG-108-14",
+    "CHG-108-15"
+  ],
+  "archived_v107_results": "results/v1_0_7/seed_0",
+  "reviewer_report": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_1.pdf",
+  "warning": "C0 protocol implementation only; C1-C6 remain unqualified.",
+  "timestamp": 1781411169.7515674
+}

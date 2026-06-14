@@ -1,0 +1,12 @@
+{
+  "report_title": "Geometry-MMALS G1: Status, Evidence, Limitations, and Research Perspective after the v1.0.7 Context-Bottleneck Study",
+  "report_version": "1.1",
+  "evidence_package_version": "1.0.7",
+  "evidence_run_mode": "development",
+  "evidence_seed": 0,
+  "evidence_git_sha": "b06a303c36dbbf7db4419af81c81f5b8dd9e3f90",
+  "pdf_pages": 22,
+  "status": "reviewer_status_perspective_not_qualification",
+  "key_conclusion": "Architectural context mediation succeeds, but direct context geometry and global fiber alignment remain unresolved.",
+  "generated": "2026-06-14"
+}

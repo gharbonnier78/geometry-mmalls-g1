@@ -1,0 +1,8 @@
+method,total_forward_images,total_optimizer_steps,wall_seconds
+cb_d2_context_geo,15360,80,12.152498309999828
+cb_d2_full_alignment,15360,80,14.456648341999994
+cb_d2_no_geo,15360,80,12.945021270000098
+cb_d2_route_context_geo,15360,80,17.3141210550001
+cb_d2_route_geo,15360,80,13.025364190000005
+cb_d4_full_alignment,15360,80,14.532113690000074
+cb_d4_no_geo,15360,80,13.236485074999905
