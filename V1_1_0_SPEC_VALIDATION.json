@@ -1,0 +1,22 @@
+{
+  "scientific_version": "1.1.0",
+  "report_release": "v1.1.0-results-r1",
+  "reviewer_report": "v1.3",
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "context_frozen": true,
+  "matched_compute": true,
+  "forward_images_per_method_seed": 15360,
+  "optimizer_steps_per_method_seed": 80,
+  "article_pdf_pages": 16,
+  "reviewer_pdf_pages": 8,
+  "execution_archive_pages": 67,
+  "package_tests": "40 passed in 13.39s",
+  "claim_status": "PARTIAL",
+  "next_protocol": "v1.1.1 local stability and bridge isolation"
+}

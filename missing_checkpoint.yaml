@@ -1,0 +1,9 @@
+schema_version: 0.2.0
+experiment_id: geometry_mmalls_g1_v1_1_0
+expected_result_version: 1.1.0
+minimum_model_seeds: 5
+execution_markers:
+- 'Completed seeds: [0, 1, 2, 3, 4]'
+- Exported v1.1.0 evidence
+gate_aliases:
+  C3_mature_host_specialization: C3_host_ecology

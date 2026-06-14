@@ -1,0 +1,4 @@
+case: route_change_without_gain
+mutation: claim operational superiority from route change only
+expected_failures:
+- OPERATIONAL_SUPERIORITY

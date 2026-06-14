@@ -1,0 +1,12 @@
+schema_version: 0.2.0
+experiment_id: geometry_mmalls_g1_v1_1_1
+expected_result_version: 1.1.1
+minimum_model_seeds: 5
+execution_markers:
+- 'Completed seeds: [0, 1, 2, 3, 4]'
+- Exported v1.1.1 evidence
+primary_claims:
+- HELDOUT_NOMINAL_ROUTE_MEDIATION
+- HELDOUT_FUNCTIONAL_ROUTE_MEDIATION
+- LOCAL_STABILITY
+gate_aliases: {}
