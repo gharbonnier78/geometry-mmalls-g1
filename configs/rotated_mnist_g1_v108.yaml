@@ -1,0 +1,62 @@
+protocol_version: "1.0.8"
+build_revision: "reviewer-loss-design-r2"
+status: "C0 protocol implementation only"
+experiment:
+  name: "direct_context_geometry_global_fiber_alignment"
+  hypothesis: >
+    If the v1.0.7 geometry-objective mismatch arose because supervision acted
+    on routes instead of functional context coordinates, then a normalized
+    context loss with chord-compatible targets, explicit path-spread control,
+    and interval-wise cross-source alignment should improve local context
+    order and global fiber consistency without relying on direct z0 access.
+  falsification_condition: >
+    If context-only geometry does not improve source-level context rho and
+    stress, or if full alignment does not improve factor-centroid order,
+    fiber resultant length, and held-out factor decoding, then the current
+    context representation or assumed factor topology is inadequate.
+primary_curriculum_name: "cb_a"
+primary_curriculum: [-60.0, -30.0, 0.0, 60.0, 30.0]
+context_dimensions: [2, 4]
+primary_context_dimension: 2
+functional_context:
+  normalize_for_router: true
+  normalize_for_loss: true
+  normalize_for_metrics: true
+  geometry: "unit_sphere_half_chord"
+context_geometry:
+  max_factor_span_degrees: 120.0
+  far_threshold_degrees: 60.0
+  far_context_margin: 0.50
+  far_weight: 0.25
+  spread_floor: 0.05
+fiber_alignment:
+  direction_weight: 1.0
+  length_weight: 0.10
+loss_weights:
+  route_geometry: 0.10
+  context_geometry: 0.10
+  context_spread: 0.05
+  fiber_alignment: 0.05
+  centroid_alignment: 0.05
+  retention_anchor: 0.10
+causal_protocol:
+  primary_dimension: 4
+  tangent_fit_fraction: 0.5
+  probe_angle: 15.0
+  scales: [-0.50, -0.25, 0.0, 0.25, 0.50]
+  orthogonal_controls: 8
+primary_contrasts:
+  - route_geometry_effect_d2
+  - direct_context_geometry_effect_d2
+  - combined_geometry_effect_d2
+  - global_alignment_effect_d2
+  - full_geometry_effect_d4
+  - capacity_d4_vs_d2
+non_claims:
+  - C1-C6 qualification
+  - globally aligned context geometry
+  - causal geometry
+  - predictive advantage
+  - backward transfer
+  - replay-free continual learning
+  - quantum advantage

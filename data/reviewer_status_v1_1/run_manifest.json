@@ -1,0 +1,130 @@
+{
+  "status": "development_not_qualified",
+  "notebook_version": "1.0.7",
+  "package_version": "1.0.7",
+  "release_integrity_passed": true,
+  "git_sha": "b06a303c36dbbf7db4419af81c81f5b8dd9e3f90",
+  "source_hashes": {
+    "pyproject.toml": "a75b453ea6a44ee2b93586b54430034327cf0906e4a4dda9c567c11282d1729f",
+    "src/geometry_mmalls/__init__.py": "efe1f43a6808ba736c958f5a8fcdb4bd996382bf2cf053a936bab425062b9b4f",
+    "src/geometry_mmalls/model.py": "60743e10a5a8ac99bcae6c4d49928cf0a20432552cf08435a5df3b490fae966a",
+    "src/geometry_mmalls/geometry.py": "4b439ebca1ef1bfeab38754fcbf8da6ed0ea01a281a5e7176a64a3b43345d931",
+    "src/geometry_mmalls/metrics.py": "581d21fab5e2c95d6252a15a59b6a004f85dd52a201331e162f0ee3986b906f4",
+    "configs/rotated_mnist_g1_v107.yaml": "d1ad365e75bf1c7bc0bc3906691469f9606dd16e13668488d07d330920495913"
+  },
+  "initial_mmalls_sha256": "3b5db34eea53f00ff5b91666130e094d5be160ca6a9b4d65e4f8d565768ec01b",
+  "router_parameter_counts": {
+    "standard": 8644,
+    "context_bottleneck": 4612,
+    "sensory_bottleneck": 12676,
+    "uniform_static": 0
+  },
+  "run_mode": "development",
+  "seed": 0,
+  "device": "cpu",
+  "method_specs": {
+    "standard_anchor_no_geo": {
+      "paired": true,
+      "geometry_weight": 0.0,
+      "anchor_weight": 0.1,
+      "router_mode": "standard"
+    },
+    "uniform_static_anchor": {
+      "paired": true,
+      "geometry_weight": 0.0,
+      "anchor_weight": 0.1,
+      "router_mode": "uniform_static"
+    },
+    "context_bottleneck_no_geo": {
+      "paired": true,
+      "geometry_weight": 0.0,
+      "anchor_weight": 0.1,
+      "router_mode": "context_bottleneck"
+    },
+    "context_bottleneck_geo": {
+      "paired": true,
+      "geometry_weight": 0.1,
+      "anchor_weight": 0.1,
+      "router_mode": "context_bottleneck"
+    },
+    "sensory_bottleneck_no_geo": {
+      "paired": true,
+      "geometry_weight": 0.0,
+      "anchor_weight": 0.1,
+      "router_mode": "sensory_bottleneck"
+    },
+    "sensory_bottleneck_geo": {
+      "paired": true,
+      "geometry_weight": 0.1,
+      "anchor_weight": 0.1,
+      "router_mode": "sensory_bottleneck"
+    }
+  },
+  "primary_curriculum_name": "cb_a",
+  "counterbalanced_curricula": {
+    "cb_a": [
+      -60.0,
+      -30.0,
+      0.0,
+      60.0,
+      30.0
+    ],
+    "cb_b": [
+      -30.0,
+      0.0,
+      60.0,
+      -60.0,
+      30.0
+    ],
+    "cb_c": [
+      0.0,
+      60.0,
+      -60.0,
+      -30.0,
+      30.0
+    ],
+    "cb_d": [
+      60.0,
+      -60.0,
+      -30.0,
+      0.0,
+      30.0
+    ]
+  },
+  "split_manifest": {
+    "seed": 0,
+    "sensory_source_count": 2000,
+    "train_source_count": 512,
+    "test_source_count": 256,
+    "sensory_index_sha256": "df0bd263ced3e17e6e40977dff7b353b42e9816a7ea1fd2ffc8207246a179dac",
+    "train_index_sha256": "0a841b138937f6f83ec3549d225da11eb256f9baea412aaf7d4165de22482ada",
+    "test_index_sha256": "856564b9eb131c38a73b6c7ce366d3964c7c0a2da6d26076762659e4687f8fda"
+  },
+  "sensory_gate": {
+    "threshold": 0.85,
+    "result": {
+      "angle": 0.0,
+      "accuracy": 0.935,
+      "nll": 0.4286487579345703
+    },
+    "passed": true
+  },
+  "tracked_changes": [
+    "CHG-107-01",
+    "CHG-107-02",
+    "CHG-107-03",
+    "CHG-107-04",
+    "CHG-107-05",
+    "CHG-107-06",
+    "CHG-107-07",
+    "CHG-107-08",
+    "CHG-107-09",
+    "CHG-107-10",
+    "CHG-107-11",
+    "CHG-107-12"
+  ],
+  "reviewer_status_report": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_0.pdf",
+  "reviewer_latex_source": "paper/reviewer_status_v1_0/",
+  "warning": "Context-bottleneck protocol only. C1-C6 remain unqualified.",
+  "timestamp": 1781406418.3265822
+}

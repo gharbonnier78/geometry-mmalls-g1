@@ -164,3 +164,17 @@ G1 is considered unsupported if one or more core findings persist after correcti
 - apparent host roles permute or disappear across seeds without role-level matching;
 - operational gains vanish against tuned baselines;
 - geometry improves plots but worsens retention, cost or calibration.
+
+## v1.0.8 reviewer-loss-design revision
+
+The direct-context experiment uses a functional normalized context on the unit sphere. Local geometry is measured with half-chord distance and a semicircle-compatible target over the declared rotation span. Far separation, per-source path spread, interval-wise fiber alignment and factor-centroid grounding are separate terms and are logged separately.
+
+Primary dimension-2 variants:
+
+1. no geometry;
+2. route geometry only;
+3. context geometry plus path spread;
+4. route plus context geometry;
+5. full alignment including fiber and centroid terms.
+
+Dimension 4 is a separate capacity probe. All same-dimension variants use identical initialization, data order, image-forward count and optimizer-step count.

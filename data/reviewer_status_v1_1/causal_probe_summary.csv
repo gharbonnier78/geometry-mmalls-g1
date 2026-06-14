@@ -1,0 +1,6 @@
+method,mean_csr_nonzero,orientation_pass,monotonic_magnitude_pass,max_abs_class_log_prob_drop,candidate_causal_gate,status
+standard_anchor_no_geo,0.1647341083222953,False,True,0.001739197876304388,False,development_not_qualified
+context_bottleneck_no_geo,5.402841180669807,True,True,0.020345160737633705,True,development_not_qualified
+context_bottleneck_geo,4.002009637894738,True,True,0.038439761847257614,True,development_not_qualified
+sensory_bottleneck_no_geo,0.0,False,False,0.0,False,development_not_qualified
+sensory_bottleneck_geo,0.0,False,False,0.0,False,development_not_qualified

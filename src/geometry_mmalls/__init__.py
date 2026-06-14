@@ -5,6 +5,12 @@ from .geometry import (
     pairwise_fisher_rao,
     route_geodesic_loss,
     paired_route_geometry_loss,
+    normalize_functional_context,
+    context_chord_target,
+    paired_context_geometry_loss,
+    context_path_spread_loss,
+    factor_centroid_geometry_loss,
+    cross_source_fiber_alignment_loss,
     normalized_stress,
 )
 from .metrics import (
@@ -15,6 +21,10 @@ from .metrics import (
     bootstrap_mean_ci,
     grouped_geometry_scores,
     centroid_geometry_scores,
+    fiber_alignment_scores,
+    ridge_factor_probe,
+    effective_rank,
+    context_collapse_diagnostics,
 )
 from .model import ContextBottleneckRouter, SensoryBottleneckRouter
 from .memory import ReconstructiveAuditMemory, SyntheticFunctionalMemory, TraceRecord
@@ -24,6 +34,12 @@ __all__ = [
     "pairwise_fisher_rao",
     "route_geodesic_loss",
     "paired_route_geometry_loss",
+    "normalize_functional_context",
+    "context_chord_target",
+    "paired_context_geometry_loss",
+    "context_path_spread_loss",
+    "factor_centroid_geometry_loss",
+    "cross_source_fiber_alignment_loss",
     "normalized_stress",
     "distance_order_correlation",
     "neighborhood_preservation",
@@ -32,6 +48,10 @@ __all__ = [
     "bootstrap_mean_ci",
     "grouped_geometry_scores",
     "centroid_geometry_scores",
+    "fiber_alignment_scores",
+    "ridge_factor_probe",
+    "effective_rank",
+    "context_collapse_diagnostics",
     "ContextBottleneckRouter",
     "SensoryBottleneckRouter",
     "ReconstructiveAuditMemory",
@@ -39,4 +59,4 @@ __all__ = [
     "TraceRecord",
 ]
 
-__version__ = "1.0.7"
+__version__ = "1.0.8"

@@ -1,0 +1,5 @@
+curriculum,order,mean_forgetting,final_trained_accuracy,mean_interpolation_accuracy,status
+cb_a,"[-60.0, -30.0, 0.0, 60.0, 30.0]",0.115625,0.59296875,0.6552734375,development_not_qualified
+cb_b,"[-30.0, 0.0, 60.0, -60.0, 30.0]",0.04765625,0.63984375,0.7177734375,development_not_qualified
+cb_c,"[0.0, 60.0, -60.0, -30.0, 30.0]",0.06015625,0.625,0.71484375,development_not_qualified
+cb_d,"[60.0, -60.0, -30.0, 0.0, 30.0]",0.11328125,0.5984375,0.6689453125,development_not_qualified

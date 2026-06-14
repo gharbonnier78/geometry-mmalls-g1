@@ -10,6 +10,13 @@ def test_model_trace_shapes():
     trace = model(x)
     assert trace.z0.shape == (5, 16)
     assert trace.context.shape == (5, 2)
+    assert trace.context_raw is not None
+    assert trace.context_raw.shape == (5, 2)
+    assert torch.allclose(
+        torch.linalg.vector_norm(trace.context, dim=-1),
+        torch.ones(5),
+        atol=1e-6,
+    )
     assert trace.route.shape == (5, 3)
     assert trace.host_outputs.shape == (5, 3, 16)
     assert trace.z_mm.shape == (5, 16)

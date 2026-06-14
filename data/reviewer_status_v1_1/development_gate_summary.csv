@@ -1,0 +1,9 @@
+gate,status,requirement
+C0_protocol_integrity,candidate_pass_after_successful_execution,"all finite-value, compute, package, split and export assertions pass"
+context_mediation_architectural,not_qualified,context_bottleneck_geo context_is_primary and ratio > 1 across seeds
+C1_context_geometry,not_qualified,bottleneck_geo_effect context rho CI lower > 0 across seeds
+C2_interpolation,not_qualified,paired prediction and geometry gains across seeds
+C3_host_specialization,not_qualified,"locality, ablation and cross-seed role matching"
+C4_causal_geometry,not_qualified,"CSR > 1.5, orientation, monotonicity and identity preservation"
+C5_memory_transport,not_implemented,reconstructive and synthetic memory transport
+C6_operational_utility,not_qualified,accuracy-retention-cost advantage over sensory and static controls

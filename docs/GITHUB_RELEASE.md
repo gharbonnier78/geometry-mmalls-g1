@@ -1,23 +1,27 @@
 # Suggested GitHub release
 
-## Repository name
+## Repository
 
 `geometry-mmalls-g1`
 
 ## Short description
 
-Grounded functional geometry for MMALS continual learning: manifolds, route-simplex dynamics, host specialization, causal interventions and memory transport.
+Grounded functional geometry for MMALS continual learning: normalized context geometry, route-simplex dynamics, global fiber alignment, causal controls and memory transport.
 
-## Version 1.0.0 release title
+## Release title
 
-`Geometry-MMALS G1 - Research specification and executable scaffold`
+`Geometry-MMALS G1 v1.0.8 - Revised direct-context geometry protocol`
 
 ## Release note
 
-This release formalizes the first Geometry-MMALS experimental stage. It separates external audit/control geometry from internal functional geometry and defines a falsifiable RotatedMNIST protocol with four evidence levels: descriptive, predictive, causal and operational. The package contains the full LaTeX article and PDF, a Colab-ready scaffold, PyTorch modules, geometric metrics, trace schemas, synthetic smoke tests, claim gates and reproducibility documentation.
+This release incorporates reviewer feedback on the direct context-geometry objective. The functional context is L2-normalized and the same representation is used for context-bottleneck routing, geometry losses, metrics and causal interventions. The protocol uses chord-compatible factor targets and separates local context matching, far-pair separation, path-spread anti-collapse, interval-wise fiber alignment and factor-centroid grounding.
 
-No completed G1 benchmark result or quantum advantage is claimed in this release.
+The primary ablations compare no geometry, route geometry only, context geometry only, route plus context geometry, and full local/global alignment at context dimension two. Dimension four is retained as a separate capacity probe.
 
-## v1.0.7 context-bottleneck release
+The archive also includes the complete executed v1.0.7 seed-0 evidence, the 22-page reviewer Status and Perspective report v1.1, its complete LaTeX source, and the revised v1.0.8 protocol report.
 
-The release archive must include the v1.0.7 notebook and protocol report, the 18-page reviewer status report, the complete reviewer LaTeX source tree, and the original LaTeX source ZIP. Do not include `.git`, downloaded datasets, runtime results, cache directories, bytecode, editable-install metadata or local environments.
+Scientific status remains C0 protocol implementation only. No C1-C6 qualification, predictive advantage, globally aligned manifold, causal qualification, memory transport, backward transfer or quantum advantage is claimed.
+
+## Archive hygiene
+
+Do not include `.git`, downloaded datasets, runtime caches, bytecode, editable-install metadata or local environments. The clean GitHub package may include historical result CSVs deliberately archived under `results/v1_0_7/seed_0/`.

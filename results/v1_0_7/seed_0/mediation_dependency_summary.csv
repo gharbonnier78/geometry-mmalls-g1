@@ -1,0 +1,7 @@
+method,router_mode,context_route_shift_mean,z0_route_shift_mean,context_to_z0_shift_ratio,context_accuracy_drop,z0_accuracy_drop,context_is_primary,status
+standard_anchor_no_geo,standard,0.016721359381904617,0.5195275292256459,0.032185704204794975,-0.002170138888888889,0.04296875,False,development_not_qualified
+uniform_static_anchor,uniform_static,0.0,0.0,0.0,-0.0,-0.0,False,development_not_qualified
+context_bottleneck_no_geo,context_bottleneck,0.3096789183662926,0.0,309678918366.2926,0.03125,-0.0,True,development_not_qualified
+context_bottleneck_geo,context_bottleneck,0.2970603452789268,0.0,297060345278.92676,0.029513888888888888,-0.0,True,development_not_qualified
+sensory_bottleneck_no_geo,sensory_bottleneck,0.0,0.44064146571791857,0.0,-0.0,0.0959201388888889,False,development_not_qualified
+sensory_bottleneck_geo,sensory_bottleneck,0.0,0.40627377206813736,0.0,-0.0,0.08463541666666667,False,development_not_qualified

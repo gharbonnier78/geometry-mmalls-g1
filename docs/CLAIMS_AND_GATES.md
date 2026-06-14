@@ -125,3 +125,17 @@ For RotatedMNIST G1 qualification:
   large tied neighborhoods;
 - a geometry-trained model must be compared with the same architecture without
   paired geometry regularization.
+
+## v1.0.8 direct-context geometry amendment
+
+For the revised direct-context protocol:
+
+- the functional context used by the context-bottleneck router, losses, metrics and causal interventions must be the same L2-normalized vector;
+- raw context may be logged only for audit and scale diagnostics;
+- local context geometry must report both source-level distance-order correlation and normalized stress;
+- a local candidate requires a positive paired-bootstrap rho delta and a negative stress delta;
+- anti-collapse evidence must include per-source path variance, effective rank, raw norm statistics and near/far half-chord separation;
+- global alignment requires factor-centroid order, interval-wise fiber resultant length and held-out-source factor decoding to improve together;
+- dimension 4 is a capacity probe and must not be interpreted as a parameter-matched treatment against dimension 2;
+- source-disjoint causal interventions must remain on the normalized context sphere;
+- geometry without predictive or retention benefit remains C1 representational evidence only and cannot promote C6.

@@ -1,0 +1,7 @@
+method,total_forward_images,total_optimizer_steps,total_source_examples,total_wall_seconds
+context_bottleneck_geo,15360,80,5120,14.117268457999785
+context_bottleneck_no_geo,15360,80,5120,13.55755944100008
+sensory_bottleneck_geo,15360,80,5120,14.946663256000079
+sensory_bottleneck_no_geo,15360,80,5120,15.014047406999907
+standard_anchor_no_geo,15360,80,5120,14.723820710999917
+uniform_static_anchor,15360,80,5120,15.295808218999923

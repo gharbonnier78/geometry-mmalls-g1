@@ -9,6 +9,7 @@ from dataclasses import dataclass
 
 import torch
 from torch import nn
+import torch.nn.functional as F
 
 
 class SmallConvEncoder(nn.Module):
@@ -97,6 +98,7 @@ class MMALSTrace:
     host_outputs: torch.Tensor
     z_mm: torch.Tensor
     logits: torch.Tensor
+    context_raw: torch.Tensor | None = None
 
 
 class GeometryMMALS(nn.Module):
@@ -161,11 +163,27 @@ class GeometryMMALS(nn.Module):
                 return self.encoder(x)
         return self.encoder(x)
 
+    @staticmethod
+    def normalize_context(context_raw: torch.Tensor, eps: float = 1e-8) -> torch.Tensor:
+        """Return the functional unit-sphere context used by G1 v1.0.8.
+
+        Keeping this operation inside the model makes it harder for training,
+        metrics and causal probes to accidentally use incompatible context
+        representations. The raw context can still be retained in the trace.
+        """
+        return F.normalize(context_raw, p=2, dim=-1, eps=eps)
+
+    def infer_context(self, z0: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        """Return ``(raw_context, functional_normalized_context)``."""
+        raw = self.context_net(z0)
+        return raw, self.normalize_context(raw)
+
     def synthesize(
         self,
         z0: torch.Tensor,
         context: torch.Tensor,
         route: torch.Tensor,
+        context_raw: torch.Tensor | None = None,
     ) -> MMALSTrace:
         """Run hosts, synthesis and classifier for a declared route."""
         host_outputs = torch.stack([host(z0) for host in self.hosts], dim=1)
@@ -179,13 +197,14 @@ class GeometryMMALS(nn.Module):
             host_outputs=host_outputs,
             z_mm=z_mm,
             logits=logits,
+            context_raw=context_raw,
         )
 
     def forward(self, x: torch.Tensor, temperature: float = 1.0) -> MMALSTrace:
         if temperature <= 0:
             raise ValueError("temperature must be positive")
         z0 = self.encode(x)
-        context = self.context_net(z0)
+        context_raw, context = self.infer_context(z0)
         route_logits = self.router(torch.cat([z0, context], dim=-1))
         route = torch.softmax(route_logits / temperature, dim=-1)
-        return self.synthesize(z0, context, route)
+        return self.synthesize(z0, context, route, context_raw=context_raw)
