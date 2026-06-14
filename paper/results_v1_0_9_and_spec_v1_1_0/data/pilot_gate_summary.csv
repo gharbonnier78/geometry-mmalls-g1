@@ -1,0 +1,11 @@
+gate,passed,status
+C0_equal_compute_all_seeds,True,pilot_protocol
+C1_stationary_route_rho_seed_ci,False,candidate_only
+C1_stationary_context_rho_seed_ci,True,candidate_only
+stationary_beats_legacy_route_target,False,diagnostic
+C4_source_bootstrap_csr,False,candidate_only
+C4_identity_preservation,True,candidate_only
+C2_predictive_superiority,False,requires_seed_and_source_intervals
+C3_host_specialization,False,not_evaluated
+C5_memory_transport,False,not_implemented
+C6_operational_utility,False,not_qualified

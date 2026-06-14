@@ -1,0 +1,36 @@
+{
+  "report_version": "1.2",
+  "evidence_version": "Geometry-MMALS G1 v1.0.9",
+  "evidence_scope": "five model seeds; matched compute; controlled RotatedMNIST",
+  "scientific_status": "replicated candidate C1 context geometry; C2-C6 unqualified",
+  "pdf_pages": 18,
+  "pdf_sha256": "106307e2d91b03181a884e9ff1fab7b41b8d683720d522ffbb68443b682465ca",
+  "primary_positive_results": {
+    "context_rho_effect": 0.10705597134873165,
+    "context_rho_seed_ci": [
+      0.02890569769569508,
+      0.18520624500176824
+    ],
+    "context_stress_effect": -0.04233203320017599,
+    "context_stress_seed_ci": [
+      -0.08365397737539446,
+      -0.0010100890249575348
+    ],
+    "heldout_context_r2_effect": 0.13229151208307724,
+    "heldout_context_mae_effect_degrees": -4.98887037710399
+  },
+  "negative_or_null_results": [
+    "stationary route target does not outperform legacy target",
+    "route geometry effect does not replicate",
+    "synthesis geometry does not improve",
+    "predictive accuracy and forgetting remain neutral",
+    "causal specificity does not replicate"
+  ],
+  "validation": {
+    "latex_compile": "pass",
+    "bibliography": "resolved with biber",
+    "pdf_openable": true,
+    "pdf_encrypted": false,
+    "visual_render_review": "pass, 18 pages"
+  }
+}

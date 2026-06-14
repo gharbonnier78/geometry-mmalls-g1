@@ -1,0 +1,169 @@
+{
+  "title": "Geometry-MMALS G1 v1.0.9 Results and v1.1.0 Specification",
+  "language": "English",
+  "article_pages": 21,
+  "v1_0_9_status": "executed five-seed pilot",
+  "v1_1_0_status": "specification only",
+  "files": [
+    {
+      "path": "Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf",
+      "bytes": 527839,
+      "sha256": "937b517eb6933d8eb2712f76e8807841e28c62b405d5732858f31380d9cef572"
+    },
+    {
+      "path": "README.md",
+      "bytes": 1170,
+      "sha256": "47691fb42dd905f64a2aa03e339bf541871a7e140eda361494c2967006202bb4"
+    },
+    {
+      "path": "data/aggregate_method_summary.csv",
+      "bytes": 3508,
+      "sha256": "f4d169c94d0088db563830f20cd70c8e51b3372c640b2a82e2a30df448494165"
+    },
+    {
+      "path": "data/aggregate_seed_effects.csv",
+      "bytes": 3543,
+      "sha256": "37900931e614536e505e4f9afa1d20f46a56fc8c6fdce6f421346812a11abbaa"
+    },
+    {
+      "path": "data/causal_aggregate_summary.csv",
+      "bytes": 1876,
+      "sha256": "911272ff1091216e59fc1d59480e879fde864593238178389fc1001d53a11177"
+    },
+    {
+      "path": "data/causal_probe_source_summary.csv",
+      "bytes": 11884,
+      "sha256": "079d5634b2c98d214e983bce81a501a50816ce521cf880ac935f27736a94f97e"
+    },
+    {
+      "path": "data/causal_seed_summary.csv",
+      "bytes": 1664,
+      "sha256": "1426e693fce4e225fbfd41b4c1450e5c6587c87932458408a424c5cf42158705"
+    },
+    {
+      "path": "data/compute_summary.csv",
+      "bytes": 808,
+      "sha256": "71bdd92bfd33d5f1cae6888b1104140f74a938a453825e93606af8cd1c464d10"
+    },
+    {
+      "path": "data/per_seed_method_summary.csv",
+      "bytes": 3059,
+      "sha256": "4197e4a8118a44d169fe6e84cbee25961ebe36ff3b1ee7ed01f7a8078a4b8c9a"
+    },
+    {
+      "path": "data/per_seed_prediction_effects.csv",
+      "bytes": 11757,
+      "sha256": "92bed56048e4a997a5fd9b55d6aa300070b8b5c95a4696187bfd72a06b741b8e"
+    },
+    {
+      "path": "data/per_seed_source_effects.csv",
+      "bytes": 14794,
+      "sha256": "5c1904aee5cae0765d4f33be665cb9df1a9677d1779db69aa60dca1d44049abf"
+    },
+    {
+      "path": "data/pilot_gate_summary.csv",
+      "bytes": 512,
+      "sha256": "c61848e779b9bed93c36752f6b7d2ea690244a4fbcc589501d8893da2c3901f0"
+    },
+    {
+      "path": "data/run_manifest.json",
+      "bytes": 2559,
+      "sha256": "410ab0ba121a8f1df805cbc88991057908fccfbe67ff10ce321a566b8bed8864"
+    },
+    {
+      "path": "data/sensory_history.csv",
+      "bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "path": "figures/causal_summary_v109.pdf",
+      "bytes": 15116,
+      "sha256": "49b2726df4d16965be85ed118834a41fc8be5e2a911c09ea4c51e10c37dd693c"
+    },
+    {
+      "path": "figures/causal_summary_v109.png",
+      "bytes": 91968,
+      "sha256": "c13a86e15a6dcbc390cbed4ab0c688517f841deebfb86833718f1e7c2ac8714e"
+    },
+    {
+      "path": "figures/context_fibers_pca_seed0.pdf",
+      "bytes": 33891,
+      "sha256": "7117d7d05a919313304ddd49f2375548394c6505a0d7683822f27659fd5749a8"
+    },
+    {
+      "path": "figures/context_fibers_pca_seed0.png",
+      "bytes": 649308,
+      "sha256": "2c44d34aabcecff3a55a3a471406d738d96b163ff3091cd2471fc01ee0901947"
+    },
+    {
+      "path": "figures/geometry_summary_v109.pdf",
+      "bytes": 15423,
+      "sha256": "a48aa4b63fad0b510aacf066f83e9a9f0f4db29ac819bab699ba003df1406b9a"
+    },
+    {
+      "path": "figures/geometry_summary_v109.png",
+      "bytes": 73093,
+      "sha256": "4494b1d9259ef095668e3c9aa9a51debde7091be4d36ba85abdc39d039a7fb3d"
+    },
+    {
+      "path": "figures/heldout_decoding_v109.pdf",
+      "bytes": 15915,
+      "sha256": "08c37f04c3ed318925ab5dbd815d1baecce8adc3be3d8fd4485804478e968bec"
+    },
+    {
+      "path": "figures/heldout_decoding_v109.png",
+      "bytes": 106152,
+      "sha256": "98f4bcddfec916b76465732a3be47cdd0354af0b242d17026ccdb7845cb3e619"
+    },
+    {
+      "path": "figures/operational_metrics_v109.pdf",
+      "bytes": 13406,
+      "sha256": "c1521ce79321347609c5b96e1659ba019b56950ab6edf9f1a2311b3941d92a83"
+    },
+    {
+      "path": "figures/operational_metrics_v109.png",
+      "bytes": 68768,
+      "sha256": "e9ce70e2d0170ef8630919c3945be6b49e92298dfbea166a4dfd4ed807e588c3"
+    },
+    {
+      "path": "figures/per_seed_context_v109.pdf",
+      "bytes": 14265,
+      "sha256": "900ac9fcebbd9d094809de74b90210225e0b25ebdd680f0447e1b27a718f4d46"
+    },
+    {
+      "path": "figures/per_seed_context_v109.png",
+      "bytes": 131726,
+      "sha256": "4b85d9696cdf229376e12970ef292a1ffb3b06971553e8f75ce50c2467e5ebd1"
+    },
+    {
+      "path": "figures/seed_effects_v109.pdf",
+      "bytes": 13213,
+      "sha256": "0e54e7c94bd34cf1c2352b2b8d2ec4b297102f2dea17655983f5863e625bc923"
+    },
+    {
+      "path": "figures/seed_effects_v109.png",
+      "bytes": 53814,
+      "sha256": "abc674314c4010dfa1cb0f94c1bd8f61d81ff7d2b3328e60df86c268225b8bea"
+    },
+    {
+      "path": "main.tex",
+      "bytes": 50210,
+      "sha256": "f5b070c37c4c97b267369d241c8db7875281fd83d54bc0ce0d8161a78220f364"
+    },
+    {
+      "path": "references.bib",
+      "bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "path": "specification/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md",
+      "bytes": 12399,
+      "sha256": "28c5a525bedc7c28ae879a754f90acc505ec802886a33a3fd1ebfcd5057b5977"
+    },
+    {
+      "path": "specification/rotated_mnist_g1_v110_spec.yaml",
+      "bytes": 4334,
+      "sha256": "00ce3ee20707de3c86095b123a32583063737e74ec3bae9b0f151eb2ef82eb5e"
+    }
+  ]
+}
