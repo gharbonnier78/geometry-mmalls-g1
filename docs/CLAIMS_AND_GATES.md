@@ -139,3 +139,17 @@ For the revised direct-context protocol:
 - dimension 4 is a capacity probe and must not be interpreted as a parameter-matched treatment against dimension 2;
 - source-disjoint causal interventions must remain on the normalized context sphere;
 - geometry without predictive or retention benefit remains C1 representational evidence only and cannot promote C6.
+
+## v1.0.9 stationary-geometry pilot amendment
+
+For the v1.0.9 pilot:
+
+- route-factor targets must be independent of current continual-stage span;
+- the primary comparison is `d4_full_stationary_route` versus `d4_no_geo`;
+- `d4_full_legacy_route` is retained only to diagnose the effect of the target correction;
+- the source split and sensory boundary are fixed across model seeds to isolate MMALS initialization and training-order variability;
+- within-seed uncertainty uses source bootstrap; across-pilot replication uses model seed as the statistical unit;
+- candidate C1 promotion requires a positive model-seed confidence interval and at least 80% positive seeds for the primary effect;
+- dense held-out angles must remain absent from training and checkpoint selection;
+- causal evidence must include source-bootstrap CSR intervals and prediction-identity preservation;
+- passing the pilot does not establish final C1 qualification or C2-C6 claims.

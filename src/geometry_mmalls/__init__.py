@@ -5,6 +5,8 @@ from .geometry import (
     pairwise_fisher_rao,
     route_geodesic_loss,
     paired_route_geometry_loss,
+    paired_route_geometry_loss_stationary,
+    stationary_route_target,
     normalize_functional_context,
     context_chord_target,
     paired_context_geometry_loss,
@@ -34,6 +36,8 @@ __all__ = [
     "pairwise_fisher_rao",
     "route_geodesic_loss",
     "paired_route_geometry_loss",
+    "paired_route_geometry_loss_stationary",
+    "stationary_route_target",
     "normalize_functional_context",
     "context_chord_target",
     "paired_context_geometry_loss",
@@ -59,4 +63,4 @@ __all__ = [
     "TraceRecord",
 ]
 
-__version__ = "1.0.8"
+__version__ = "1.0.9"

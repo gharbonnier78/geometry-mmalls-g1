@@ -1,0 +1,86 @@
+protocol_version: "1.0.9"
+build_revision: "stationary-route-qualification-pilot-r1"
+status: "C0 protocol implementation; five-seed pilot pending execution"
+experiment:
+  name: "stationary_route_geometry_qualification_pilot"
+  hypothesis: >
+    The strong d4 context and route geometry observed in v1.0.8 should remain
+    reproducible when the route target is fixed independently of continual
+    stage span. A stationary target should remove contradictory supervision
+    while preserving or improving source-level order, held-out decoding, and
+    source-disjoint causal specificity.
+  falsification_condition: >
+    If the stationary full-alignment treatment does not improve route/context
+    geometry over d4 no-geometry across five model seeds, or if gains disappear
+    under dense-angle evaluation and source-disjoint causal confidence
+    intervals, the v1.0.8 effect is not ready for C1 promotion.
+primary_curriculum_name: "cb_a"
+primary_curriculum: [-60.0, -30.0, 0.0, 60.0, 30.0]
+fixed_split_seed: 0
+fixed_sensory_seed: 0
+pilot_model_seeds: [0, 1, 2, 3, 4]
+qualification_model_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+context_dimension: 4
+dense_eval_angles: [-75.0, -60.0, -45.0, -30.0, -15.0, 0.0, 15.0, 30.0, 45.0, 60.0, 75.0]
+route_geometry:
+  stationary_target: "unit_sphere_half_chord"
+  max_factor_span_degrees: 120.0
+  far_threshold_degrees: 60.0
+  far_route_margin: 0.50
+  far_weight: 0.25
+  match_weight: 1.0
+context_geometry:
+  max_factor_span_degrees: 120.0
+  far_threshold_degrees: 60.0
+  far_context_margin: 0.50
+  far_weight: 0.25
+  spread_floor: 0.05
+fiber_alignment:
+  direction_weight: 1.0
+  length_weight: 0.10
+loss_weights:
+  route_geometry: 0.10
+  context_geometry: 0.10
+  context_spread: 0.05
+  fiber_alignment: 0.05
+  centroid_alignment: 0.05
+  retention_anchor: 0.10
+methods:
+  d4_no_geo:
+    route_mode: "none"
+    full_alignment: false
+  d4_full_legacy_route:
+    route_mode: "legacy_nonstationary"
+    full_alignment: true
+  d4_full_stationary_route:
+    route_mode: "stationary"
+    full_alignment: true
+primary_contrasts:
+  - stationary_full_vs_no_geo
+  - stationary_vs_legacy_route
+statistics:
+  source_bootstrap_samples: 1000
+  seed_confidence_level: 0.95
+causal_protocol:
+  tangent_fit_fraction: 0.5
+  probe_angle: 15.0
+  scales: [-0.50, -0.25, 0.0, 0.25, 0.50]
+  orthogonal_controls: 8
+  source_bootstrap_samples: 1000
+  identity_preservation_floor: 0.95
+  csr_candidate_threshold: 1.50
+pilot_gates:
+  minimum_positive_seed_fraction: 0.80
+  route_rho_seed_ci_low: 0.0
+  context_rho_seed_ci_low: 0.0
+  causal_csr_source_ci_low: 1.0
+  identity_preservation_source_ci_low: 0.95
+non_claims:
+  - final C1 qualification
+  - predictive superiority
+  - host specialization
+  - memory transport
+  - operational utility
+  - backward transfer
+  - replay-free continual learning
+  - quantum advantage

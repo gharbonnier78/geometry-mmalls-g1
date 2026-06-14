@@ -1,0 +1,13 @@
+{
+  "version": "1.0.9",
+  "build_revision": "stationary-route-qualification-pilot-r1",
+  "notebook_python_syntax": "pass",
+  "package_tests": "31 passed",
+  "stationary_route_loss_tests": "pass",
+  "v1_0_8_results_included": true,
+  "v1_0_8_results_report_included": true,
+  "v1_0_9_protocol_report_included": true,
+  "reviewer_report_v1_1_included": true,
+  "full_v1_0_9_pilot_executed": false,
+  "scientific_status": "C0 implementation only until pilot execution"
+}

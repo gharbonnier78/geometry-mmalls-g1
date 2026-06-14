@@ -1,0 +1,173 @@
+\documentclass[10pt]{article}
+\usepackage[a4paper,margin=1.8cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,graphicx,microtype,array,tabularx,longtable,xcolor,hyperref}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+\newcommand{\rhoS}{\rho_{\mathrm{S}}}
+\newcommand{\MMALS}{\textsc{MMALS}}
+\title{Geometry-MMALS G1 v1.0.8: Results, Interpretation, and the Case for Stationary Geometry}
+\author{Guillaume Harbonnier}
+\date{June 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Geometry-MMALS G1 asks whether a continual-learning router learns an internal geometry that is grounded in a controlled transformation, causally meaningful, and operationally useful. Version 1.0.8 introduced a normalized functional context, chord-compatible context targets, anti-collapse path spread, interval-wise cross-source fiber alignment, centroid grounding, context dimensions two and four, held-out-source factor probes, and source-disjoint causal interventions. In the seed-0 development run, direct local context geometry alone failed to improve context order. Full alignment in four dimensions produced a large paired source effect on trained context order ($\Delta\rhoS=0.240$, source-bootstrap 95\% interval $[0.199,0.285]$), route order ($\Delta\rhoS=0.165$, $[0.114,0.216]$), fiber consistency, effective rank, held-out factor decoding ($R^2=0.301$), and causal specificity (mean nonzero-scale CSR approximately 1.79). These gains did not translate into material improvements in synthesis geometry, classification, or forgetting. A post-run audit also identified a curriculum-dependent route target: the same factor gap received different targets as the visible curriculum span expanded. The result is therefore strong single-seed candidate evidence for aligned d4 context and route geometry, but not a qualified functional or operational claim. We derive the stationary correction and specify the focused v1.0.9 five-seed pilot.
+\end{abstract}
+
+\section{Status and scope}
+The report is an archival analysis of the executed v1.0.8 development run. It is not a final empirical qualification paper. The accepted status is C0 execution integrity plus candidate C1 evidence. C2--C6 remain unqualified. The frozen sensory encoder, same-source cross-angle batches, context bottleneck, retention anchor, equal-compute ablations, and source-block bootstrap design follow the G1 evidence ladder established in the companion specification.
+
+The primary scientific question was refined after v1.0.7. Forced context mediation had shown that inferred context could support competitive and causally specific routing once the direct sensory shortcut was removed. The remaining problem was geometric: local source trajectories could become ordered while different sources used incompatible orientations. v1.0.8 therefore separated local context matching, path spread, transition-wise fiber alignment, and centroid grounding.
+
+\section{Mathematical design}
+Let $c^{\mathrm{raw}}_{s,a}\in\mathbb R^d$ be the context for source $s$ at angle $u_a$. The functional context used by routing, losses, metrics, decoding, and causal probes is
+\begin{equation}
+ c_{s,a}=\frac{c^{\mathrm{raw}}_{s,a}}{\max(\|c^{\mathrm{raw}}_{s,a}\|_2,\varepsilon)}.
+\end{equation}
+The half-chord distance is
+\begin{equation}
+ d_C(c_{s,a},c_{s,b})=\frac{1}{2}\|c_{s,a}-c_{s,b}\|_2,
+\end{equation}
+with a fixed factor target over the declared $120^\circ$ span,
+\begin{equation}
+ \tau(u_a,u_b)=\sin\left[\frac{\pi}{2}\min\left(\frac{|u_a-u_b|}{120^\circ},1\right)\right].
+\end{equation}
+The direct context loss matches $d_C$ to $\tau$ and adds a far-pair margin. Path spread penalizes nearly constant source trajectories. Fiber alignment compares normalized displacements $c_{s,a+1}-c_{s,a}$ for the same transition interval across sources. Centroid grounding constrains the factor centroids up to an isometry. The complete loss combines classification, old-angle retention anchoring, route geometry, context geometry, spread, fiber alignment, centroid grounding, and host diversity.
+
+\section{Ablation protocol}
+Seven equal-compute methods were trained on the curriculum $[-60,-30,0,60,30]$ using the same frozen sensory boundary and the same initialization within each context dimension:
+\begin{enumerate}
+\item d2 no geometry;
+\item d2 route geometry;
+\item d2 direct context geometry;
+\item d2 route plus context geometry;
+\item d2 full alignment;
+\item d4 no geometry;
+\item d4 full alignment.
+\end{enumerate}
+Each method used 15,360 forwarded images and 80 optimizer steps. Evidence was evaluated on 256 source identities. Source-level geometry was bootstrapped over source blocks, while factor decoding used disjoint source identities. The causal tangent was fitted on one source split and evaluated on the other.
+
+\section{Results}
+\subsection{Overview}
+Figure~\ref{fig:overview} shows that direct geometry and global alignment have different effects. The local direct-context term increases spread but does not by itself create correct factor order. Full alignment in four dimensions produces the strongest combined context, route, and fiber evidence.
+\begin{figure}[ht]
+\centering\includegraphics[width=0.98\linewidth]{figures/geometry_overview.pdf}
+\caption{Geometry evidence across the v1.0.8 ablation family.}
+\label{fig:overview}
+\end{figure}
+
+\subsection{Direct context geometry alone is insufficient}
+For d2 direct context geometry relative to d2 no geometry, trained context order changed by $-0.040$ and context stress worsened by $+0.020$. The source-bootstrap intervals did not support a positive context-order effect. Held-out context decoding fell from $R^2=0.083$ to approximately zero. At the same time, mean path variance increased from 0.127 to 0.367 and effective rank from 1.48 to 1.82. The intervention therefore created more movement without creating a shared factor geometry.
+
+This distinction is central: anti-collapse is necessary but not sufficient. Variation can be source-specific, rotated, reflected, or otherwise incompatible across source identities.
+
+\subsection{Global alignment resolves much of the local-fiber problem}
+In d2, adding fiber and centroid alignment to the combined route-context objective improved context order by 0.215 relative to the same local losses without alignment, with a fully positive source-bootstrap interval. Context stress improved by 0.087 and route order by 0.076. The result confirms the v1.0.7 diagnosis that the unresolved problem was not only local order, but cross-source orientation.
+
+The d4 result is substantially stronger. Full alignment relative to d4 no geometry gives the effects in Figure~\ref{fig:d4effect}. Context order improves by 0.240 and route order by 0.165. Synthesis order is essentially unchanged.
+\begin{figure}[ht]
+\centering\includegraphics[width=0.72\linewidth]{figures/d4_effects.pdf}
+\caption{Paired source effects for d4 full alignment relative to d4 no geometry. Error bars are source-bootstrap 95\% intervals.}
+\label{fig:d4effect}
+\end{figure}
+
+\subsection{Capacity is part of the geometry hypothesis}
+The d4 full-alignment model reaches context $\rhoS=0.541$, route $\rhoS=0.356$, fiber resultant length 0.557, effective rank 3.49, and held-out context $R^2=0.301$. The corresponding d4 no-geometry model has $\rhoS=0.301$, route $\rhoS=0.192$, fiber resultant 0.227, effective rank 2.64, and held-out $R^2=-0.009$. Figure~\ref{fig:capacity} summarizes the decodability and rank change.
+\begin{figure}[ht]
+\centering\includegraphics[width=0.78\linewidth]{figures/capacity_probe.pdf}
+\caption{Held-out factor decodability and effective context rank.}
+\label{fig:capacity}
+\end{figure}
+
+The interpretation is not that four dimensions are universally optimal. Rather, two dimensions were sufficient for context-mediated routing in v1.0.7 but were too restrictive for the simultaneous requirements of local factor order, cross-source alignment, anti-collapse, and stable causal geometry.
+
+\subsection{Source-disjoint causal specificity}
+The d4 no-geometry model has CSR around 0.71--0.73. The full-alignment model reaches approximately 1.68--1.86, with correct sign orientation and monotonic magnitude. Figure~\ref{fig:causal} shows the scale dependence. This is strong candidate causal evidence, but the run did not yet export source-bootstrap CSR intervals or prediction-identity preservation.
+\begin{figure}[ht]
+\centering\includegraphics[width=0.76\linewidth]{figures/causal_csr.pdf}
+\caption{Source-disjoint causal specificity ratio.}
+\label{fig:causal}
+\end{figure}
+
+\subsection{Geometry remains weakly coupled to task performance}
+Figure~\ref{fig:operational} shows the persistent geometry-function gap. d4 full alignment improves held-out mean accuracy by about 0.49 percentage points, final trained accuracy by 0.70 points, and forgetting by about 0.63 points relative to d4 no geometry. These are small changes without paired prediction confidence intervals. Synthesis-order improvement is also negligible.
+\begin{figure}[ht]
+\centering\includegraphics[width=0.92\linewidth]{figures/operational_metrics.pdf}
+\caption{Operational metrics. Better measured geometry does not yet imply better continual-learning function.}
+\label{fig:operational}
+\end{figure}
+
+\section{The nonstationary route-target defect}
+The v1.0.8 legacy route loss normalizes factor gaps by the maximum gap visible in the current paired batch. For the pair $(-60^\circ,-30^\circ)$, the target is 1 when only those two angles are visible, but becomes 0.25 after the full $120^\circ$ span is present. The model therefore receives contradictory supervision for the same physical relation.
+
+Let $r\in\Delta^{H-1}$ and $q=\sqrt r$. v1.0.9 replaces the legacy target with
+\begin{equation}
+ d_R(r_a,r_b)=\sqrt{1-\langle q_a,q_b\rangle},
+\end{equation}
+and the same fixed target $\tau(u_a,u_b)$ used by normalized context geometry. The stationary route loss is
+\begin{equation}
+ \mathcal L_{R,\mathrm{stat}}=\mathbb E_{s,a<b}\left[d_R(r_{s,a},r_{s,b})-\tau(u_a,u_b)\right]^2+\lambda_{\mathrm{far}}\mathcal L_{\mathrm{far}}.
+\end{equation}
+This correction freezes the topology independently of curriculum stage.
+
+\section{Reviewer-facing interpretation}
+The defensible v1.0.8 claim is narrow but meaningful:
+\begin{quote}
+Direct local context-distance supervision is insufficient. When local context constraints are combined with transition-wise cross-source alignment and sufficient latent capacity, the context becomes more ordered, less stressed, less collapsed, more decodable on unseen source identities, and more causally specific in its effect on routing. These gains do not yet propagate into material synthesis or predictive benefits.
+\end{quote}
+
+The following claims remain unsupported: a uniquely identified global manifold, predictive superiority from geometry, reproducible host specialization, memory transport, backward transfer, replay-free continual learning, and operational advantage.
+
+\section{Gate assessment}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Gate & v1.0.8 decision \\
+\midrule
+C0 protocol execution & Pass at development level \\
+Direct context geometry alone & Fail / inconclusive \\
+Full aligned d2 geometry & Positive candidate evidence \\
+Full aligned d4 geometry & Strong single-seed candidate evidence \\
+Anti-collapse in d4 & Candidate pass \\
+Held-out factor decoding & Promising in d4 \\
+Causal specificity & Strong candidate, no source CI \\
+Predictive utility & Not demonstrated \\
+Host specialization & Not evaluated \\
+Memory transport & Not implemented \\
+Operational utility & Not demonstrated \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\section{v1.0.9 focused pilot}
+The next notebook reduces the experiment to three d4 methods: no geometry, legacy full alignment, and stationary full alignment. It keeps the v1.0.8 source split and frozen sensory boundary, evaluates five model seeds, uses a dense 15-degree grid, exports paired prediction intervals, and adds source-bootstrap causal CSR plus prediction-identity preservation. Seed-level confidence intervals become the primary replication unit. Passing the pilot is still not final qualification, but it is the minimum evidence required before updating the reviewer status report.
+
+\section{Limitations}
+The current run uses one model seed, a controlled synthetic transformation, a small development source pool, and a frozen sensory encoder. The centroid metric is based on only five trained angles. The geometry target is supervised by known rotation angles. The retention anchor is controlled rehearsal rather than dual reconstructive/synthetic memory. No claim is made about arbitrary latent factors, domain-general continual learning, or quantum advantage.
+
+\section{Conclusion}
+v1.0.8 advances Geometry-MMALS from an architectural mediation result to a measurable context-geometry result. The strongest evidence is the d4 full-alignment treatment, which improves source-level order, fiber consistency, held-out factor decoding, effective rank, and source-disjoint causal specificity. The absence of material task benefit and the discovery of a nonstationary route target prevent C1 promotion. v1.0.9 therefore tests whether the result survives a stationary topology and five model seeds.
+
+\appendix
+\section{Selected numerical summary}
+\begin{center}
+\small
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+Method & Context $\rhoS$ & Route $\rhoS$ & Fiber & Held-out $R^2$ & Final acc. \\
+\midrule
+D2 no geo & 0.247 & 0.233 & 0.249 & 0.083 & 0.602 \\
+D2 context geo & 0.207 & 0.259 & 0.287 & -0.001 & 0.609 \\
+D2 full & 0.403 & 0.327 & 0.342 & 0.089 & 0.591 \\
+D4 no geo & 0.301 & 0.192 & 0.227 & -0.009 & 0.581 \\
+D4 full & 0.541 & 0.356 & 0.557 & 0.301 & 0.588 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Reproducibility snapshot}
+Notebook version 1.0.8, build revision \texttt{reviewer-loss-design-r2}, package version 1.0.8, source split hashes and initial-state hashes are preserved in the archived run manifest. The analysis schema patch mapping the semantic synthesis space to the stored \texttt{z\_mm} column is recorded separately as CHG-108-16. The raw CSV evidence is archived under \texttt{results/v1\_0\_8/seed\_0/}.
+
+\end{document}

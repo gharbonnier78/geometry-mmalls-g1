@@ -184,6 +184,104 @@ def paired_route_geometry_loss(
     return local + float(far_weight) * far + float(match_weight) * match
 
 
+
+
+def stationary_route_target(
+    factor_gap: torch.Tensor,
+    max_factor_span: float = 120.0,
+) -> torch.Tensor:
+    """Return the fixed chord-compatible target used by v1.0.9 routes."""
+
+    return context_chord_target(factor_gap, max_factor_span=max_factor_span)
+
+def paired_route_geometry_loss_stationary(
+    routes: torch.Tensor,
+    factors: torch.Tensor,
+    *,
+    max_factor_span: float = 120.0,
+    far_threshold_degrees: float = 60.0,
+    far_route_margin: float = 0.50,
+    far_weight: float = 0.25,
+    match_weight: float = 1.0,
+    eps: float = 1e-8,
+    return_diagnostics: bool = False,
+):
+    """Curriculum-independent paired route geometry loss.
+
+    Routes are embedded in square-root simplex coordinates. The observed
+    normalized chord distance is ``sqrt(1 - affinity)`` and is matched to the
+    same fixed semicircle-compatible target used for functional context:
+
+    ``sin((pi/2) * clip(|u_a-u_b| / max_factor_span, 0, 1))``.
+
+    Unlike :func:`paired_route_geometry_loss`, the target for a given factor
+    gap does not depend on the largest gap visible in the current continual
+    stage. This removes the nonstationary target identified after the v1.0.8
+    development run.
+    """
+
+    if routes.ndim != 3:
+        raise ValueError("routes must have shape [batch, angles, hosts]")
+    batch, n_angles, _ = routes.shape
+    if n_angles < 2:
+        zero = routes.sum() * 0.0
+        diagnostics = {
+            "route_match": zero,
+            "route_far": zero,
+            "mean_near_distance": zero,
+            "mean_far_distance": zero,
+        }
+        return (zero, diagnostics) if return_diagnostics else zero
+
+    factors_2d = _prepare_paired_factors(
+        factors, batch, n_angles, routes.device, routes.dtype
+    )
+    p = routes.clamp_min(eps)
+    p = p / p.sum(dim=-1, keepdim=True)
+    roots = torch.sqrt(p)
+
+    match_terms = []
+    far_terms = []
+    near_distances = []
+    far_distances = []
+
+    for left in range(n_angles):
+        for right in range(left + 1, n_angles):
+            affinity = (roots[:, left] * roots[:, right]).sum(dim=-1).clamp(0.0, 1.0)
+            observed = torch.sqrt((1.0 - affinity).clamp_min(0.0))
+            gap = torch.abs(factors_2d[:, left] - factors_2d[:, right])
+            target = stationary_route_target(gap, max_factor_span=max_factor_span)
+            match_terms.append(torch.square(observed - target).mean())
+
+            far_mask = gap >= float(far_threshold_degrees)
+            if torch.any(far_mask):
+                far_terms.append(
+                    torch.relu(float(far_route_margin) - observed[far_mask])
+                    .square()
+                    .mean()
+                )
+                far_distances.append(observed[far_mask].mean())
+
+            near_mask = gap <= float(far_threshold_degrees) / 2.0
+            if torch.any(near_mask):
+                near_distances.append(observed[near_mask].mean())
+
+    zero = routes.sum() * 0.0
+    match_loss = torch.stack(match_terms).mean() if match_terms else zero
+    far_loss = torch.stack(far_terms).mean() if far_terms else zero
+    total = float(match_weight) * match_loss + float(far_weight) * far_loss
+    diagnostics = {
+        "route_match": match_loss,
+        "route_far": far_loss,
+        "mean_near_distance": (
+            torch.stack(near_distances).mean() if near_distances else zero
+        ),
+        "mean_far_distance": (
+            torch.stack(far_distances).mean() if far_distances else zero
+        ),
+    }
+    return (total, diagnostics) if return_diagnostics else total
+
 def normalized_stress(
     reference_distances: np.ndarray,
     representation_distances: np.ndarray,
