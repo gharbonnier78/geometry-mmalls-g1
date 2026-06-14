@@ -1,18 +1,23 @@
 # Changelog
 
-## v1.0.7 - Context-bottleneck mediation experiment
+## v1.0.8 - Revised direct context geometry and global fiber alignment
 
-- Added a dedicated `ContextBottleneckRouter` that never receives `z0`.
-- Added a capacity-matched `SensoryBottleneckRouter` control.
-- Replaced the non-diagnostic stop-gradient proposal with explicit information-path controls.
-- Reduced the core run to six targeted equal-compute variants.
-- Added bottleneck, sensory, standard and static paired contrasts.
-- Added context/z0 route-shift and accuracy-drop mediation diagnostics with `context_is_primary`.
-- Preserved trained, interpolation and extrapolation geometry partitions.
-- Restricted counterbalanced curriculum reruns to the primary context-bottleneck treatment.
-- Added 19 passing package tests, including bottleneck router shape, gradient and parameter-isolation tests.
-- Archived the reviewer status PDF and complete LaTeX source inside the GitHub package.
-- Kept C1-C6, successful context mediation and operational superiority explicitly unqualified.
+- Normalized the functional context before context-bottleneck routing, losses, metrics and causal probes.
+- Retained raw context separately for scale and audit diagnostics.
+- Replaced scale-normalized raw Euclidean matching with half-chord distance on the unit sphere.
+- Added a semicircle-compatible sine target for the controlled rotation span.
+- Separated local context matching, far-pair separation and path-spread anti-collapse terms.
+- Aligned source fibers transition by transition rather than to one global tangent.
+- Separated factor-centroid grounding from local fiber alignment.
+- Focused the primary ablations on no geometry, route only, context only, route+context and full alignment.
+- Restored context dimension 2 as the primary test and retained dimension 4 as a capacity probe.
+- Added collapse diagnostics: raw norm, path variance, effective rank and near/far separation.
+- Added paired source bootstrap deltas for both correlation and stress.
+- Updated source-disjoint causal interventions to remain on the normalized context sphere.
+- Expanded the archival protocol report with the complete mathematical design and decision criteria.
+- Preserved complete v1.0.7 results and reviewer report v1.1 with LaTeX sources.
+- Kept C1-C6 explicitly unqualified.
+
 
 ## v1.0.6 - Static route controls and counterbalanced curriculum
 

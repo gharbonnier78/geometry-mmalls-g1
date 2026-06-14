@@ -2,36 +2,139 @@
 
 **From audit-space projections to grounded functional geometry in continual learning.**
 
-Geometry-MMALS G1 is a research specification and implementation scaffold for testing whether MMALS learns a meaningful internal geometry of representations, inferred contexts, routes, host transformations, synthesis states, and memory transport.
+Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns a meaningful internal geometry of sensory representations, inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
 
-> **Status:** v1.0.7 context-bottleneck protocol release. The repository supports a **C0 implementation and protocol-validity claim only**. It does **not** claim successful context mediation or that C1-C6 have passed. Qualification requires frozen thresholds, multi-seed runs, matched controls, archived manifests and hardened baselines.
+> **Current release:** v1.0.8, reviewer-loss-design revision `r2`.  
+> **Scientific status:** C0 protocol implementation only. C1-C6 remain unqualified.
 
-## Why this repository exists
+## Current scientific question
 
-Earlier MMALS work organized audit and control variables in a geometric decision space. That is useful for governance, but it is not evidence that the learning system itself has discovered a functional geometry. G1 separates these two layers:
+The executed v1.0.7 context-bottleneck study showed that inferred context can mediate competitive and causally specific routing when direct sensory access is blocked. It also showed that the prior route-geometry objective did not significantly organize context coordinates and could improve local source trajectories while weakening global centroid alignment.
 
-- **External audit/control geometry:** observable traces, costs, objectives, stability and policy indicators.
-- **Internal functional geometry:** sensory representations, inferred contexts, route distributions, host functions, synthesized representations and their evolution through continual learning.
+v1.0.8 therefore asks:
 
-A G1 claim is admissible only if the geometry passes four levels of evidence:
+> Can a scale-fixed, chord-compatible context objective produce local context order, prevent compressed trajectories, align source-specific fibers globally, and preserve functional usefulness?
 
-1. **Descriptive:** known context order and neighborhoods are preserved.
-2. **Predictive:** unseen intermediate contexts can be interpolated.
-3. **Causal:** controlled latent interventions produce specific functional changes.
-4. **Operational:** geometry improves accuracy, retention, cost, drift stability or host specialization against hardened baselines.
+## Revised v1.0.8 mathematical design
 
-## Primary experiment
+The context encoder produces a raw vector `context_raw`. The functional context is
 
-The first protocol uses continuous **RotatedMNIST** because the angle is an observable ground-truth factor. A frozen sensory encoder isolates geometry already present in perception. MMALS then learns:
+```text
+context = L2_normalize(context_raw)
+```
 
-- an inferred context coordinate;
-- a route trajectory on the probability simplex;
-- host-specific transformation fields;
-- a synthesized functional representation;
-- a transport map between continual-learning stages;
-- reconstructive audit memory and synthetic/compiled functional memory.
+The same normalized context is used by:
 
-The scientific progression is intentionally ordered:
+- the context-bottleneck router;
+- context geometry losses;
+- geometry metrics;
+- held-out factor decoding;
+- causal interventions.
+
+For unit contexts, the observed half-chord distance is
+
+```text
+d_context = 0.5 * ||context_a - context_b||_2
+```
+
+and the factor target is
+
+```text
+target = sin((pi / 2) * clip(|angle_a-angle_b| / 120, 0, 1))
+```
+
+The total protocol separates:
+
+- route geometry;
+- local context geometry;
+- far-pair separation;
+- per-source path-spread anti-collapse;
+- interval-wise cross-source fiber alignment;
+- factor-centroid grounding;
+- retention and host-function terms.
+
+See the full equations in:
+
+- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.pdf`
+- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.tex`
+
+## Primary notebook
+
+```text
+notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8.ipynb
+```
+
+The focused ablation family is:
+
+1. context bottleneck, no geometry;
+2. route geometry only;
+3. context geometry plus path spread;
+4. route plus context geometry;
+5. full route/context/fiber/centroid alignment;
+6. dimension-4 full alignment as a capacity probe.
+
+Dimension 2 remains the primary geometric test. Dimension 4 is not interpreted as a parameter-matched causal contrast.
+
+## Evidence outputs
+
+The notebook exports:
+
+- trained, interpolation, and extrapolation geometry separately;
+- source-block Spearman correlation and normalized stress;
+- factor-centroid geometry;
+- fiber resultant length;
+- held-out-source factor decoding;
+- raw-context norm, path variance, effective rank, and near/far separation;
+- paired treatment-control deltas for both correlation and stress;
+- staged accuracy, NLL, forgetting, and compute audits;
+- source-disjoint spherical causal probes.
+
+## Preserved evidence and reviewer material
+
+The repository includes:
+
+- complete executed v1.0.7 seed-0 results under `results/v1_0_7/seed_0/`;
+- the 22-page reviewer-oriented Status and Perspective report v1.1;
+- its complete LaTeX source and figures;
+- the v1.0.7 protocol report and migration history.
+
+## Repository map
+
+```text
+notebooks/                  Colab protocols
+src/geometry_mmalls/        PyTorch model, losses, metrics, memory stubs
+configs/                    Frozen protocol configurations
+docs/reports/               Archival PDFs, TeX and Markdown reports
+docs/changes/               Version-to-version tracked changes
+paper/                      G1 article and reviewer-status LaTeX sources
+results/v1_0_7/seed_0/      Executed historical evidence
+releases/                   Archived LaTeX source bundles
+tests/                      Numerical and structural regression tests
+```
+
+## Quick validation
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -e ".[dev]"
+pytest -q
+```
+
+## Claim discipline
+
+v1.0.8 does **not** claim:
+
+- C1-C6 qualification;
+- globally aligned context geometry;
+- predictive advantage from geometry;
+- causal qualification;
+- reproducible host specialization;
+- memory transport or backward transfer;
+- domain-general geometry;
+- quantum advantage.
+
+The scientific progression remains:
 
 ```text
 G1 grounded functional geometry
@@ -39,111 +142,4 @@ G1 grounded functional geometry
   -> G3 phase-aware / quantum-inspired routing
 ```
 
-No quantum-computing or quantum-advantage claim is made here.
-
-## v1.0.7 primary notebook
-
-`notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb`
-
-This protocol tests whether the weak context mediation observed in v1.0.6 was caused by direct sensory shortcutting. It adds a dedicated context-only bottleneck router and a capacity-matched sensory-only router. The primary contrast is context bottleneck with versus without geometry regularization.
-
-The proposed v1.0.6-to-v1.0.7 migration direction is retained, with one scientific correction: a stop-gradient control that still passes `z0` into the router is not diagnostic when the sensory encoder is already frozen. It is replaced by an explicit sensory-only information-path control.
-
-## Repository map
-
-```text
-paper/                      LaTeX article, references, figures and compiled PDF
-src/geometry_mmalls/        PyTorch model and geometry/metric utilities
-notebooks/                  Colab-ready experimental scaffold
-configs/                    Declared experiment configurations
-docs/                       Protocol, gates, reproducibility and French summary
-results/templates/          Empty result schemas for real experiments
-results/smoke/              Synthetic smoke outputs only
-scripts/                    Figure, smoke and paper-build scripts
-tests/                      Unit tests for geometric primitives
-```
-
-
-## Numerical-stability patch v1.0.2
-
-The v1.0.2 patch fixes the uniform-route NaN gradient in the Fisher-Rao geodesic loss, adds a regression gate, finite-value checks, and a stabilized causal tangent probe.
-
-This patch addresses the main methodological risks identified during package review:
-
-- the notebook labels the angle-supervised route geometry loss as the **G1-A supervised/grounded variant**;
-- Fisher-Rao utilities explicitly clip and normalize probability vectors near simplex boundaries;
-- numeric pilot gates are stated in `docs/CLAIMS_AND_GATES.md`;
-- TPUT-to-G1 notation is bridged in `docs/NOTATION_BRIDGE.md`;
-- reconstructive audit memory and synthetic functional memory have minimal executable stubs;
-- core smoke tests cover model traces, metrics, memory stubs and package imports.
-
-## Quick start
-
-### Synthetic smoke test
-
-This test does not train MMALS. It creates a known angular route trajectory and verifies that the metric pipeline detects order, interpolation and drift.
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e ".[dev]"
-python scripts/run_synthetic_smoke.py --config configs/rotated_mnist_g1.yaml
-pytest -q
-```
-
-For local inspection without installation, `pytest` also works from the repository root because `pyproject.toml` declares `src` as a pytest pythonpath.
-
-### Build the paper
-
-A TeX distribution with `latexmk` and BibTeX is required.
-
-```bash
-make paper
-```
-
-The compiled article is available directly at:
-
-- `paper/Geometry_MMALS_G1_Article.pdf`
-
-### Run in Colab
-
-Open `notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`. The first setup cell verifies package version `1.0.3` and records the active git commit SHA. After publishing this folder, change the repository URL only if the GitHub location differs from:
-
-```text
-https://github.com/gharbonnier78/geometry-mmalls-g1
-```
-
-## Evidence and claim discipline
-
-The implementation logs per-sample or per-batch traces for:
-
-- `z0`: frozen sensory representation;
-- `context`: inferred context coordinate;
-- `route`: host probability vector;
-- `host_outputs`: each host transformation;
-- `z_mm`: synthesized MMALS representation;
-- predictions, losses, task stage, true angle and resource estimates.
-
-Host specialization is not accepted from route frequency alone. It requires converging evidence from contribution gain, ablation locality, representation separation, route-function stability and cross-seed role matching.
-
-See:
-
-- [`docs/EXPERIMENT_PROTOCOL.md`](docs/EXPERIMENT_PROTOCOL.md)
-- [`docs/CLAIMS_AND_GATES.md`](docs/CLAIMS_AND_GATES.md)
-- [`docs/REPRODUCIBILITY_CHECKLIST.md`](docs/REPRODUCIBILITY_CHECKLIST.md)
-- [`docs/RESUME_FR.md`](docs/RESUME_FR.md)
-
-## Licensing and citation
-
-Code is released under the MIT License. The article and documentation may be reused with attribution; see `CITATION.cff` for the preferred citation.
-
-
-## Current protocol release: v1.0.7
-
-Primary notebook: `notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb`
-
-v1.0.7 asks whether the context variable can become a genuine mediator when direct `z0` access is removed. Six equal-compute variants compare standard, uniform-static, context-bottleneck and capacity-matched sensory-bottleneck routes, with and without paired geometry regularization.
-
-The repository also archives the 18-page reviewer status report and its complete LaTeX source under `docs/reports/` and `paper/reviewer_status_v1_0/`.
-
-Scientific status remains **C0 protocol implementation only**. Context mediation, C1-C6 and operational superiority are not claimed.
+Code is released under the MIT License. See `CITATION.cff` for citation metadata.
