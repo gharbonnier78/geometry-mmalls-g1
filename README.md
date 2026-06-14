@@ -1,97 +1,120 @@
 # Geometry-MMALS G1
 
-**From audit-space projections to grounded functional geometry in continual learning.**
+**From grounded context geometry to functional routing in continual learning.**
 
-Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns a meaningful internal geometry of inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
+Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns meaningful internal geometry across inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
 
-> **Current release:** v1.0.9, build `stationary-route-qualification-pilot-r1`.  
-> **Scientific status:** v1.0.8 seed-0 development evidence is archived; v1.0.9 is an unexecuted five-seed pilot protocol. Final C1-C6 qualification is not claimed.
+> **Latest executed evidence:** v1.0.9 five-seed matched-compute pilot.  
+> **Latest executable protocol:** v1.1.0 functional routing, complete C0 implementation and not yet executed.  
+> **Current scientific status:** candidate replicated context geometry; functional and operational geometry remain unqualified.
 
-## Current scientific question
+## What the system builds
 
-The executed v1.0.8 study found that local context geometry alone was insufficient. Full alignment in context dimension 4 substantially improved source-level context order, route order, fiber consistency, effective rank, held-out factor decoding, and source-disjoint causal specificity. These improvements remained weakly coupled to prediction and forgetting.
-
-A post-run audit identified a route-loss defect: the same angle gap received different targets as the visible curriculum span grew. v1.0.9 asks:
-
-> Does the d4 full-alignment result replicate across five model seeds after replacing the curriculum-dependent route target with a fixed chord-compatible topology?
-
-## Stationary route geometry
-
-For route probabilities `r`, use square-root simplex coordinates `q = sqrt(r)` and normalized chord distance:
+A frozen sensory encoder transforms a rotated handwritten digit into `z0`. A four-dimensional inferred context `c` summarizes the situation. A route `r` distributes probability mass over four functional hosts. Their weighted outputs form `zM`, which is classified.
 
 ```text
-d_route = sqrt(1 - <q_a, q_b>)
+image x -> frozen sensory z0 -> inferred context c -> route r
+        -> host transformations -> synthesis zM -> prediction
 ```
 
-The fixed target is:
+The central question is whether nearby rotation angles produce nearby contexts, whether unseen angles interpolate, and whether this geometry then controls routes and hosts.
+
+## v1.0.9 result
+
+Across model seeds `[0,1,2,3,4]`, stationary full alignment versus no geometry produces:
+
+- context rho effect `+0.107`, 95% seed CI `[+0.029,+0.185]`;
+- context stress effect `-0.042`, CI `[-0.084,-0.001]`;
+- held-out-source context decoding improvement of about `+0.132 R²`;
+- held-out angle MAE improvement of about `5°`.
+
+Every seed shows a positive context-order effect. The result generalizes across held-out source identities.
+
+The following do **not** replicate or improve reliably:
+
+- route geometry;
+- synthesis geometry;
+- prediction accuracy;
+- forgetting;
+- causal specificity;
+- stationary-route superiority over the legacy route target.
+
+The result is therefore representational, not yet functional or operational.
+
+## English article
+
+The 21-page article explains the program at two levels: an intuitive path for non-specialists and a complete mathematical account.
 
 ```text
-target = sin((pi / 2) * clip(|angle_a-angle_b| / 120, 0, 1))
+docs/reports/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf
+paper/results_v1_0_9_and_spec_v1_1_0/
+releases/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification_LaTeX.zip
 ```
 
-The target is independent of continual stage, curriculum order, and the number of visible angles.
+## v1.1.0 functional-routing implementation
 
-## Primary v1.0.9 notebook
+v1.1.0 freezes the successful `z0 -> c` representation and compares:
+
+1. `R0`: current MLP context router;
+2. `R1`: low-capacity linear router;
+3. `R2`: prototype-energy router.
+
+For the prototype router:
 
 ```text
-notebooks/Geometry_MMALS_G1_StationaryGeometry_Pilot_v1_0_9.ipynb
+E_geo_h(c) = half_chord(c, mu_h)^2 / (2 sigma_h^2) + bias_h
+r_h(c) proportional to exp(-E_geo_h(c) / temperature)
 ```
 
-The pilot compares:
+This is the first geometric component of the broader Energy-Guided Router. Future energy terms add host uncertainty, cost, memory risk, stability, and goals.
 
-1. `d4_no_geo`;
-2. `d4_full_legacy_route`;
-3. `d4_full_stationary_route`.
+v1.1.0 also introduces:
 
-The pilot profile uses model seeds `[0,1,2,3,4]` with a fixed source split and a common frozen sensory grove. It adds:
+- nominal root-simplex route geometry;
+- functional route geometry using an optimal-transport cost over measured host functions;
+- held-out low-capacity context-to-route probes;
+- Jacobian and finite tangent-versus-orthogonal interventions;
+- host territory, specialization, overlap, diversity, ablation, and resilience;
+- matched-compute, source-bootstrap, and seed-level gates.
 
-- a dense 15-degree evaluation grid;
-- paired source-bootstrap prediction intervals;
-- source-bootstrap causal CSR intervals;
-- class-log-probability and prediction-identity preservation;
-- model-seed confidence intervals and positive-seed fractions.
-
-## v1.0.8 archived result
-
-The repository now includes the complete executed v1.0.8 seed-0 evidence under:
+Implementation and specification files:
 
 ```text
-results/v1_0_8/seed_0/
+notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb
+src/geometry_mmalls/functional_routing.py
+configs/rotated_mnist_g1_v110.yaml
+docs/specs/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md
+configs/rotated_mnist_g1_v110_spec.yaml
+tests/test_functional_routing.py
 ```
-
-The archival interpretation is available as:
-
-```text
-docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.pdf
-paper/results_v1_0_8/
-releases/Geometry_MMALS_G1_v1_0_8_Results_Report_LaTeX.zip
-```
-
-The defensible v1.0.8 conclusion is that full alignment with context dimension 4 produced strong single-seed candidate geometry, but direct context geometry alone failed and operational benefit remained small.
-
-## Reviewer material retained
-
-- `docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_1.pdf`
-- `paper/reviewer_status_v1_1/`
-- `releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_1.zip`
-
-The reviewer report predates the v1.0.8 execution and is retained as a historical status document.
 
 ## Repository map
 
 ```text
-notebooks/                  Colab protocols
-src/geometry_mmalls/        PyTorch model, losses, metrics, memory stubs
-configs/                    Frozen protocol configurations
-docs/reports/               Archival PDFs, TeX and Markdown reports
-docs/changes/               Version-to-version tracked changes
-paper/                      G1 article and report LaTeX sources
-results/v1_0_8/seed_0/      Executed v1.0.8 evidence
-releases/                   Archived LaTeX source bundles
-tests/                      Numerical and structural regression tests
+notebooks/                 Executable Colab protocols through v1.1.0
+src/geometry_mmalls/       PyTorch models, geometric/functional routing, metrics, memory stubs
+configs/                   Frozen protocols and v1.1.0 specification
+results/v1_0_9/            Complete executed five-seed evidence
+paper/                     Article and reviewer LaTeX sources
+docs/reports/              Compiled archival reports
+docs/specs/                Complete v1.1.0 mathematical specification
+docs/changes/              Version and design history
+releases/                  Distributable LaTeX packages
+tests/                     Numerical and structural regression tests
 ```
 
-## Quick validation
+
+## Run v1.1.0
+
+After publishing this package to the existing repository, open:
+
+```text
+notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb
+```
+
+The default `pilot` profile runs seeds `[0,1,2,3,4]`. Set the Colab environment variable `G1_PROFILE=development` for a one-seed development run or `G1_PROFILE=qualification` for the preregistered ten-seed profile. The notebook reproduces and freezes one v1.0.9-aligned context checkpoint per seed before training the three routing treatments.
+
+## Validation
 
 ```bash
 python -m venv .venv
@@ -100,42 +123,29 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
-Expected package validation for v1.0.9:
-
-```text
-31 passed
-```
+The canonical v1.1.0 C0 implementation passes 40 package tests. The five-seed v1.1.0 experiment remains unexecuted.
 
 ## Claim discipline
 
-v1.0.9 does **not** claim:
+The repository does not claim:
 
-- final C1-C6 qualification;
-- predictive advantage from geometry;
-- reproducible host specialization;
+- final C1–C6 qualification;
+- predictive superiority from geometry;
+- replicated route geometry or host specialization;
 - memory transport or backward transfer;
 - operational utility;
 - domain-general geometry;
 - replay-free continual learning;
-- quantum advantage.
+- quantum computation or quantum advantage.
 
-The scientific progression remains:
+The planned progression is:
 
 ```text
-G1 grounded functional geometry
-  -> G2 energy-guided manifold routing
-  -> G3 phase-aware / quantum-inspired routing
+G1.1 geometry-mediated routing
+ -> G1.2 host ecology
+ -> G1.3 memory transport
+ -> G2 full energy-guided and goal-conditioned control
+ -> G3 phase-aware / quantum-inspired routing
 ```
 
 Code is released under the MIT License. See `CITATION.cff` for citation metadata.
-
-## v1.0.9 canonical stable build
-
-The current canonical notebook and Python functions include both execution
-corrections directly:
-
-- non-negative uint32 RNG seed normalization for dense negative angles;
-- root-space stationary route distance with finite gradients for coincident
-  and near-coincident routes.
-
-Build revision: `stationary-route-qualification-pilot-r3`. No runtime monkey-patch is required.

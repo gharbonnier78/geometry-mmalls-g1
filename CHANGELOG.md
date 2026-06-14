@@ -1,3 +1,22 @@
+
+## v1.1.0 - Functional geometry-mediated routing implementation
+
+- Added the complete Colab notebook `Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb`.
+- Reproduces and freezes one aligned d4 context checkpoint per model seed.
+- Added matched R0 MLP, R1 linear, and R2 prototype-energy routing treatments.
+- Added spherical k-means prototype initialization without angle labels.
+- Added stable root-simplex nominal route geometry.
+- Added evaluation-only host-function cost matrices and entropic optimal transport.
+- Added held-out low-capacity context-to-route probes with shuffled, tangent-removed, and orthogonal controls.
+- Added exact Jacobian-vector differential mediation and finite tangent-versus-orthogonal interventions.
+- Added nominal and functional causal-specificity ratios, prediction preservation, and true-class log-probability audits.
+- Added host territories, specialization, overlap, functional diversity, all-host ablations, top-host removal, and random-host resilience controls.
+- Added source-disjoint partitions, source bootstrap, seed-level confidence intervals, falsification gates, manifests, hashes, and environment capture.
+- Added an optional preregistered secondary mediation arm that remains separate from the primary architecture-only result.
+- Added `functional_routing.py` and seven functional-routing regression tests.
+- Updated package version to 1.1.0; 40 tests pass.
+- v1.1.0 remains C0 implementation only until the notebook is executed.
+
 # Changelog
 
 ## v1.0.9 - Stationary route geometry qualification pilot
@@ -109,3 +128,16 @@
 - Add collapsed-route and near-collapsed-route backward regression tests.
 - Add notebook numerical gate `CHG-109-14`.
 - Scientific method set and package version remain `1.0.9`.
+
+## Documentation and evidence update — v1.0.9 results + v1.1.0 specification
+
+- Archived the complete executed v1.0.9 five-seed result bundle.
+- Added the English article `Geometry-MMALS G1: Replicated Context Geometry and the Specification of Functional Routing`.
+- Added all article figures, exact aggregate evidence, and reproducible LaTeX sources.
+- Added reviewer report v1.2 and its complete LaTeX package.
+- Added the complete mathematical v1.1.0 functional-routing specification.
+- Added the v1.1.0 YAML protocol specification.
+- Defined MLP, linear, and prototype-energy router treatments.
+- Added nominal and functional optimal-transport route geometry.
+- Added mediation probes, causal interventions, host-ecology metrics, statistical gates, and falsification logic.
+- Preserved v1.1.0 as specification-only; no execution or C1–C6 qualification is claimed.

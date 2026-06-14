@@ -1,12 +1,12 @@
 cff-version: 1.2.0
 message: "If you use this research specification or implementation scaffold, please cite it."
-title: "Geometry-MMALS G1: From Audit-Space Projections to Grounded Functional Geometry in Continual Learning"
+title: "Geometry-MMALS G1: Replicated Context Geometry and Functional Routing Specification"
 type: software
 authors:
   - family-names: Harbonnier
     given-names: Guillaume
     orcid: ""
-version: 1.0.9
+version: 1.1.0
 date-released: 2026-06-14
 repository-code: "https://github.com/gharbonnier78/geometry-mmalls-g1"
 license: MIT
@@ -18,6 +18,6 @@ keywords:
   - representation learning
   - MMALS
 abstract: >-
-  Research specification and executable scaffold for testing grounded internal
-  geometry in MMALS representations, routes, host functions and continual
-  memory transport.
+  Executed five-seed evidence for grounded context geometry, together with a
+  complete executable protocol for testing functional mediation through geometric
+  routing, host ecology, and later continual memory transport.

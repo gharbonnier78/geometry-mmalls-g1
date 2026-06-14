@@ -1,8 +1,8 @@
-# Geometry-MMALS G1 v1.0.9 Artifact Manifest
+# Geometry-MMALS G1 v1.1.0 Artifact Manifest
 
 ## Build revision
 
-`stationary-route-qualification-pilot-r1`
+`functional-routing-bridge-c0-r1`
 
 ## Primary v1.0.9 protocol
 
@@ -77,3 +77,32 @@ unchanged.
 - Coincident-route gradient correction integrated in `geometry.py`
 - Runtime monkey-patching required: **no**
 - Package tests: **33 passed**
+
+## v1.0.9 results and v1.1.0 specification update
+
+- Complete results: `results/v1_0_9/`
+- Main English article PDF: `docs/reports/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf`
+- Main article source: `paper/results_v1_0_9_and_spec_v1_1_0/`
+- Article LaTeX release: `releases/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification_LaTeX.zip`
+- Reviewer report v1.2: `docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_2.pdf`
+- Reviewer source: `paper/reviewer_status_v1_2/`
+- v1.1.0 specification: `docs/specs/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md`
+- v1.1.0 config: `configs/rotated_mnist_g1_v110_spec.yaml`
+
+v1.1.0 remains specification-only and unexecuted.
+
+## v1.1.0 complete C0 implementation
+
+- Notebook: `notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb`
+- Canonical config: `configs/rotated_mnist_g1_v110.yaml`
+- Full mathematical specification: `docs/specs/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md`
+- Functional-routing source: `src/geometry_mmalls/functional_routing.py`
+- Regression tests: `tests/test_functional_routing.py`
+- Build validation: `docs/V1_1_0_BUILD_VALIDATION.json`
+- Release checklist: `docs/RELEASE_CHECKLIST_v1_1_0.md`
+- Package version: `1.1.0`
+- Build revision: `functional-routing-bridge-c0-r1`
+- Tests: `40 passed`
+- v1.1.0 executed: **no**
+- Runtime source patching required: **no**
+- C1-C6 qualification: **unclaimed**
