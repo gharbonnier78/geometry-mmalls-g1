@@ -247,8 +247,17 @@ def paired_route_geometry_loss_stationary(
 
     for left in range(n_angles):
         for right in range(left + 1, n_angles):
-            affinity = (roots[:, left] * roots[:, right]).sum(dim=-1).clamp(0.0, 1.0)
-            observed = torch.sqrt((1.0 - affinity).clamp_min(0.0))
+            # Compute the normalized chord directly in square-root-simplex
+            # coordinates. This is algebraically equivalent to
+            # sqrt(1 - affinity), but avoids catastrophic cancellation and the
+            # singular derivative of sqrt at zero when two routes are equal or
+            # nearly equal in float32. torch.linalg.vector_norm uses a finite
+            # zero subgradient for exactly coincident routes.
+            root_delta = roots[:, left] - roots[:, right]
+            observed = (
+                torch.linalg.vector_norm(root_delta, dim=-1)
+                / math.sqrt(2.0)
+            )
             gap = torch.abs(factors_2d[:, left] - factors_2d[:, right])
             target = stationary_route_target(gap, max_factor_span=max_factor_span)
             match_terms.append(torch.square(observed - target).mean())

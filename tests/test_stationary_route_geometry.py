@@ -42,3 +42,30 @@ def test_stationary_loss_is_permutation_equivariant_over_angles():
         routes[:, permutation], factors[permutation]
     )
     assert torch.allclose(original, permuted, atol=1e-6, rtol=1e-6)
+
+def test_collapsed_routes_backward_is_finite():
+    logits = torch.zeros(8, 5, 4, requires_grad=True)
+    routes = torch.softmax(logits, dim=-1)
+    factors = torch.tensor([-60.0, -30.0, 0.0, 30.0, 60.0])
+
+    loss = paired_route_geometry_loss_stationary(routes, factors)
+    loss.backward()
+
+    assert torch.isfinite(loss)
+    assert logits.grad is not None
+    assert torch.isfinite(logits.grad).all()
+
+
+def test_nearly_identical_routes_backward_is_finite():
+    logits = torch.zeros(8, 5, 4)
+    logits[:, 1:, 0] = 1e-6
+    logits.requires_grad_()
+    routes = torch.softmax(logits, dim=-1)
+    factors = torch.tensor([-60.0, -30.0, 0.0, 30.0, 60.0])
+
+    loss = paired_route_geometry_loss_stationary(routes, factors)
+    loss.backward()
+
+    assert torch.isfinite(loss)
+    assert logits.grad is not None
+    assert torch.isfinite(logits.grad).all()

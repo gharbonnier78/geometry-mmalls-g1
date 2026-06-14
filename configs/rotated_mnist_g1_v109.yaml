@@ -1,6 +1,6 @@
 protocol_version: "1.0.9"
-build_revision: "stationary-route-qualification-pilot-r1"
-status: "C0 protocol implementation; five-seed pilot pending execution"
+build_revision: "stationary-route-qualification-pilot-r3"
+status: "C0 implementation validated; five-seed pilot execution pending"
 experiment:
   name: "stationary_route_geometry_qualification_pilot"
   hypothesis: >
