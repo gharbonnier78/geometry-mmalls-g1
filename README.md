@@ -2,101 +2,80 @@
 
 **From audit-space projections to grounded functional geometry in continual learning.**
 
-Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns a meaningful internal geometry of sensory representations, inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
+Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns a meaningful internal geometry of inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
 
-> **Current release:** v1.0.8, reviewer-loss-design revision `r2`.  
-> **Scientific status:** C0 protocol implementation only. C1-C6 remain unqualified.
+> **Current release:** v1.0.9, build `stationary-route-qualification-pilot-r1`.  
+> **Scientific status:** v1.0.8 seed-0 development evidence is archived; v1.0.9 is an unexecuted five-seed pilot protocol. Final C1-C6 qualification is not claimed.
 
 ## Current scientific question
 
-The executed v1.0.7 context-bottleneck study showed that inferred context can mediate competitive and causally specific routing when direct sensory access is blocked. It also showed that the prior route-geometry objective did not significantly organize context coordinates and could improve local source trajectories while weakening global centroid alignment.
+The executed v1.0.8 study found that local context geometry alone was insufficient. Full alignment in context dimension 4 substantially improved source-level context order, route order, fiber consistency, effective rank, held-out factor decoding, and source-disjoint causal specificity. These improvements remained weakly coupled to prediction and forgetting.
 
-v1.0.8 therefore asks:
+A post-run audit identified a route-loss defect: the same angle gap received different targets as the visible curriculum span grew. v1.0.9 asks:
 
-> Can a scale-fixed, chord-compatible context objective produce local context order, prevent compressed trajectories, align source-specific fibers globally, and preserve functional usefulness?
+> Does the d4 full-alignment result replicate across five model seeds after replacing the curriculum-dependent route target with a fixed chord-compatible topology?
 
-## Revised v1.0.8 mathematical design
+## Stationary route geometry
 
-The context encoder produces a raw vector `context_raw`. The functional context is
-
-```text
-context = L2_normalize(context_raw)
-```
-
-The same normalized context is used by:
-
-- the context-bottleneck router;
-- context geometry losses;
-- geometry metrics;
-- held-out factor decoding;
-- causal interventions.
-
-For unit contexts, the observed half-chord distance is
+For route probabilities `r`, use square-root simplex coordinates `q = sqrt(r)` and normalized chord distance:
 
 ```text
-d_context = 0.5 * ||context_a - context_b||_2
+d_route = sqrt(1 - <q_a, q_b>)
 ```
 
-and the factor target is
+The fixed target is:
 
 ```text
 target = sin((pi / 2) * clip(|angle_a-angle_b| / 120, 0, 1))
 ```
 
-The total protocol separates:
+The target is independent of continual stage, curriculum order, and the number of visible angles.
 
-- route geometry;
-- local context geometry;
-- far-pair separation;
-- per-source path-spread anti-collapse;
-- interval-wise cross-source fiber alignment;
-- factor-centroid grounding;
-- retention and host-function terms.
-
-See the full equations in:
-
-- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.pdf`
-- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.tex`
-
-## Primary notebook
+## Primary v1.0.9 notebook
 
 ```text
-notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8.ipynb
+notebooks/Geometry_MMALS_G1_StationaryGeometry_Pilot_v1_0_9.ipynb
 ```
 
-The focused ablation family is:
+The pilot compares:
 
-1. context bottleneck, no geometry;
-2. route geometry only;
-3. context geometry plus path spread;
-4. route plus context geometry;
-5. full route/context/fiber/centroid alignment;
-6. dimension-4 full alignment as a capacity probe.
+1. `d4_no_geo`;
+2. `d4_full_legacy_route`;
+3. `d4_full_stationary_route`.
 
-Dimension 2 remains the primary geometric test. Dimension 4 is not interpreted as a parameter-matched causal contrast.
+The pilot profile uses model seeds `[0,1,2,3,4]` with a fixed source split and a common frozen sensory grove. It adds:
 
-## Evidence outputs
+- a dense 15-degree evaluation grid;
+- paired source-bootstrap prediction intervals;
+- source-bootstrap causal CSR intervals;
+- class-log-probability and prediction-identity preservation;
+- model-seed confidence intervals and positive-seed fractions.
 
-The notebook exports:
+## v1.0.8 archived result
 
-- trained, interpolation, and extrapolation geometry separately;
-- source-block Spearman correlation and normalized stress;
-- factor-centroid geometry;
-- fiber resultant length;
-- held-out-source factor decoding;
-- raw-context norm, path variance, effective rank, and near/far separation;
-- paired treatment-control deltas for both correlation and stress;
-- staged accuracy, NLL, forgetting, and compute audits;
-- source-disjoint spherical causal probes.
+The repository now includes the complete executed v1.0.8 seed-0 evidence under:
 
-## Preserved evidence and reviewer material
+```text
+results/v1_0_8/seed_0/
+```
 
-The repository includes:
+The archival interpretation is available as:
 
-- complete executed v1.0.7 seed-0 results under `results/v1_0_7/seed_0/`;
-- the 22-page reviewer-oriented Status and Perspective report v1.1;
-- its complete LaTeX source and figures;
-- the v1.0.7 protocol report and migration history.
+```text
+docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.pdf
+paper/results_v1_0_8/
+releases/Geometry_MMALS_G1_v1_0_8_Results_Report_LaTeX.zip
+```
+
+The defensible v1.0.8 conclusion is that full alignment with context dimension 4 produced strong single-seed candidate geometry, but direct context geometry alone failed and operational benefit remained small.
+
+## Reviewer material retained
+
+- `docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_1.pdf`
+- `paper/reviewer_status_v1_1/`
+- `releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_1.zip`
+
+The reviewer report predates the v1.0.8 execution and is retained as a historical status document.
 
 ## Repository map
 
@@ -106,8 +85,8 @@ src/geometry_mmalls/        PyTorch model, losses, metrics, memory stubs
 configs/                    Frozen protocol configurations
 docs/reports/               Archival PDFs, TeX and Markdown reports
 docs/changes/               Version-to-version tracked changes
-paper/                      G1 article and reviewer-status LaTeX sources
-results/v1_0_7/seed_0/      Executed historical evidence
+paper/                      G1 article and report LaTeX sources
+results/v1_0_8/seed_0/      Executed v1.0.8 evidence
 releases/                   Archived LaTeX source bundles
 tests/                      Numerical and structural regression tests
 ```
@@ -121,17 +100,23 @@ pip install -e ".[dev]"
 pytest -q
 ```
 
+Expected package validation for v1.0.9:
+
+```text
+31 passed
+```
+
 ## Claim discipline
 
-v1.0.8 does **not** claim:
+v1.0.9 does **not** claim:
 
-- C1-C6 qualification;
-- globally aligned context geometry;
+- final C1-C6 qualification;
 - predictive advantage from geometry;
-- causal qualification;
 - reproducible host specialization;
 - memory transport or backward transfer;
+- operational utility;
 - domain-general geometry;
+- replay-free continual learning;
 - quantum advantage.
 
 The scientific progression remains:

@@ -1,36 +1,42 @@
-# Geometry-MMALS G1 v1.0.8 Artifact Manifest
+# Geometry-MMALS G1 v1.0.9 Artifact Manifest
 
 ## Build revision
 
-`reviewer-loss-design-r2`
+`stationary-route-qualification-pilot-r1`
 
-## Primary protocol
+## Primary v1.0.9 protocol
 
-- `notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8.ipynb`
-- `notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8_REVISED.ipynb`
-- `configs/rotated_mnist_g1_v108.yaml`
-- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.pdf`
-- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.tex`
-- `docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.md`
+- `notebooks/Geometry_MMALS_G1_StationaryGeometry_Pilot_v1_0_9.ipynb`
+- `configs/rotated_mnist_g1_v109.yaml`
+- `docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.pdf`
+- `docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.tex`
+- `docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.md`
+- `docs/changes/Geometry_MMALS_G1_v1_0_8_to_v1_0_9.md`
 
-## Mathematical implementation
+## Stationary mathematical implementation
 
 - `src/geometry_mmalls/geometry.py`
-  - normalized functional context;
-  - chord-compatible factor target;
-  - local context geometry;
-  - path-spread anti-collapse;
-  - interval-wise fiber alignment;
-  - factor-centroid grounding.
-- `src/geometry_mmalls/metrics.py`
-  - context effective rank;
-  - raw-norm, path-spread and near/far collapse diagnostics.
-- `src/geometry_mmalls/model.py`
-  - functional normalized context and separate raw-context trace.
+  - `paired_route_geometry_loss_stationary`;
+  - fixed 120-degree chord-compatible route target;
+  - stable square-root-simplex optimization.
+- `tests/test_stationary_route_geometry.py`
+  - finite backward;
+  - collapsed-route penalty;
+  - permutation equivariance;
+  - curriculum-span stationarity check.
 
-## Archived executed evidence
+## Archived v1.0.8 executed evidence
 
-- `results/v1_0_7/seed_0/` - complete v1.0.7 development result bundle.
+- `results/v1_0_8/seed_0/`
+- `notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8_REVISED_PATCHED.ipynb`
+- `docs/changes/Geometry_MMALS_G1_v1_0_8_synthesis_column_patch.md`
+
+## v1.0.8 Results and Interpretation report
+
+- `docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.pdf`
+- `docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.tex`
+- `paper/results_v1_0_8/`
+- `releases/Geometry_MMALS_G1_v1_0_8_Results_Report_LaTeX.zip`
 
 ## Reviewer package retained
 
@@ -38,6 +44,14 @@
 - `paper/reviewer_status_v1_1/`
 - `releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_1.zip`
 
+## Build validation
+
+- package version: `1.0.9`;
+- notebook Python syntax: pass;
+- package tests: 31 passed;
+- v1.0.8 results report: 6 pages, openable, rendered and inspected;
+- v1.0.9 protocol report: 3 pages, openable, rendered and inspected.
+
 ## Status
 
-C0 protocol implementation only. No v1.0.8 empirical result is embedded. C1-C6 remain unqualified.
+The v1.0.8 seed-0 result is archived as development evidence. The v1.0.9 five-seed pilot has not been executed in this package. Final C1-C6 qualification remains unclaimed.

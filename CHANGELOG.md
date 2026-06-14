@@ -1,5 +1,22 @@
 # Changelog
 
+## v1.0.9 - Stationary route geometry qualification pilot
+
+- Added a curriculum-independent chord-compatible route target.
+- Added `paired_route_geometry_loss_stationary` and four regression tests.
+- Retained the v1.0.8 legacy route target as a diagnostic comparator.
+- Focused the main experiment on context dimension 4.
+- Added five fixed-split model seeds for the pilot profile.
+- Added a dense 15-degree evaluation grid from -75 to +75 degrees.
+- Added paired source-bootstrap prediction intervals.
+- Added source-bootstrap causal-specificity intervals and prediction-identity preservation.
+- Added model-seed confidence intervals and positive-seed fractions.
+- Archived the complete v1.0.8 seed-0 evidence and Results and Interpretation report.
+- Added the v1.0.9 protocol report and LaTeX source package.
+- Retained reviewer Status and Perspective report v1.1 and source package.
+- Kept final C1-C6 claims explicitly unqualified pending execution.
+
+
 ## v1.0.8 - Revised direct context geometry and global fiber alignment
 
 - Normalized the functional context before context-bottleneck routing, losses, metrics and causal probes.
