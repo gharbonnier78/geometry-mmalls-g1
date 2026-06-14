@@ -1,0 +1,142 @@
+protocol_version: "1.1.0-spec"
+status: "specification_only_not_executed"
+research_question: >
+  Can an explicitly geometry-mediated router convert the replicated v1.0.9
+  context representation into ordered, causally specific, and functionally
+  meaningful host allocation?
+
+frozen_representation:
+  sensory_encoder: true
+  context_encoder: true
+  context_dimension: 4
+  source_checkpoint_family: "v1.0.9 d4 aligned context, one matched checkpoint per seed"
+  use_true_angle_in_router_phase: false
+
+experiment:
+  dataset: "MNIST"
+  factor: "image rotation degrees"
+  curriculum: [-60.0, -30.0, 0.0, 60.0, 30.0]
+  dense_eval_angles: [-75.0, -60.0, -45.0, -30.0, -15.0, 0.0, 15.0, 30.0, 45.0, 60.0, 75.0]
+  pilot_model_seeds: [0, 1, 2, 3, 4]
+  qualification_model_seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  host_count: 4
+  matched_compute: true
+  matched_host_classifier_initial_state: true
+
+routers:
+  r0_mlp:
+    type: "mlp_context_router"
+    equation: "softmax((W2 phi(W1 c + b1) + b2) / tau)"
+  r1_linear:
+    type: "linear_context_router"
+    equation: "softmax((W c + b) / tau)"
+  r2_prototype_energy:
+    type: "prototype_energy_router"
+    prototype_normalization: "unit_sphere"
+    prototype_initialization: "spherical_kmeans_without_angle_labels"
+    learnable_bandwidth: true
+    energy: "half_chord(c, mu_h)^2 / (2 sigma_h^2) + bias_h"
+    route: "softmax(-energy / tau)"
+
+primary_contrasts:
+  - "r2_prototype_energy_vs_r0_mlp"
+  - "r2_prototype_energy_vs_r1_linear"
+  - "r1_linear_vs_r0_mlp"
+
+common_loss:
+  classification: 1.0
+  retention_anchor: 0.10
+  usage_balance: 0.05
+  host_diversity: 0.05
+  angle_supervised_route_geometry: 0.0
+
+nominal_route_metric:
+  name: "root_simplex_chord"
+  equation: "norm(sqrt(r_a)-sqrt(r_b))/sqrt(2)"
+
+functional_route_metric:
+  host_cost:
+    primary: "mean squared host-output distance on fixed held-out metric sources"
+    symmetrize: true
+    normalize_by_nonzero_median: true
+  transport:
+    method: "entropic_optimal_transport_sinkhorn"
+    evaluation_only: true
+    epsilon: 0.05
+
+mediation_probe:
+  type: "ridge_linear_context_to_root_route"
+  heldout_sources: true
+  dense_unseen_angles: true
+  controls:
+    - "angle_shuffle"
+    - "context_tangent_removed"
+    - "matched_orthogonal_component"
+
+causal_protocol:
+  tangent_fit_sources_disjoint_from_eval: true
+  intervention_scales: [-0.50, -0.25, 0.0, 0.25, 0.50]
+  orthogonal_controls: 8
+  nominal_csr: true
+  functional_csr: true
+  jacobian_differential_mediation: true
+  prediction_identity_preservation: true
+  true_class_log_probability: true
+
+host_ecology:
+  territory_curves: true
+  entropy_specialization: true
+  territory_overlap: true
+  functional_diversity: true
+  factor_specific_ablation: true
+  top_host_and_random_host_resilience: true
+
+statistics:
+  source_bootstrap_samples: 2000
+  seed_confidence_level: 0.95
+  seed_unit: "model_seed"
+  minimum_positive_seed_fraction: 0.80
+  anglewise_fdr: true
+
+candidate_gates:
+  context_preservation: "within numerical tolerance of frozen checkpoint"
+  nominal_route_mediation: "R2-R0 seed CI low > 0 and >=4/5 positive seeds"
+  functional_route_mediation: "R2-R0 functional effect seed CI low > 0"
+  causal_specificity: "functional CSR source CI low > 1 and seed mean > 1.5"
+  probe_generalization: "beats shuffled and orthogonal controls"
+  host_ecology: "specialization or factor-specific ablation improves without collapse"
+  identity_preservation: ">=0.95 source lower bound"
+  operational_equivalence_margin: 0.01
+
+secondary_mediation_arm:
+  enabled_only_after_primary_report: true
+  pooled_with_primary: false
+  loss: "relu(m - functional_tangent_change + functional_orthogonal_change)"
+
+required_exports:
+  - checkpoint_hashes
+  - initial_state_hashes
+  - compute_summary
+  - nominal_route_geometry
+  - functional_route_geometry
+  - host_cost_matrices
+  - mediation_probe_controls
+  - jacobian_and_finite_causal_results
+  - host_ecology_and_ablation
+  - accuracy_nll_forgetting_retention
+  - source_bootstrap_effects
+  - aggregate_seed_effects
+  - gate_summary
+  - run_manifest
+  - claim_manifest
+  - environment_capture
+
+non_claims:
+  - operational_superiority
+  - final_host_specialization
+  - memory_transport
+  - backward_transfer
+  - distributed_mycelial_routing
+  - full_multiobjective_energy_control
+  - reinforcement_learning_control
+  - quantum_advantage

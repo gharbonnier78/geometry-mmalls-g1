@@ -153,3 +153,22 @@ For the v1.0.9 pilot:
 - dense held-out angles must remain absent from training and checkpoint selection;
 - causal evidence must include source-bootstrap CSR intervals and prediction-identity preservation;
 - passing the pilot does not establish final C1 qualification or C2-C6 claims.
+
+## v1.0.9 replicated candidate evidence
+
+- Candidate pass: context geometry across five seeds.
+- Candidate pass: held-out-source context factor decoding.
+- Fail/inconclusive: route geometry.
+- Fail/inconclusive: synthesis geometry.
+- Fail: predictive superiority and forgetting improvement.
+- Fail: causal specificity threshold.
+- Diagnostic negative: stationary route target does not beat legacy target.
+
+## v1.1.0 implementation gates
+
+The v1.1.0 gates are defined in:
+
+- `docs/specs/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md`
+- `configs/rotated_mnist_g1_v110_spec.yaml`
+
+The protocol is fully implemented in `notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb`, but no v1.1.0 empirical gate has been executed or passed.
