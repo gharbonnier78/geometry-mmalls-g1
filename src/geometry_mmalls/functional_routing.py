@@ -1,4 +1,4 @@
-"""Functional routing primitives for Geometry-MMALS G1 v1.1.0.
+"""Functional routing primitives for Geometry-MMALS G1 v1.1.x.
 
 The module keeps architecture, geometry and evaluation primitives explicit so
 that the v1.1.0 notebook can test the bridge ``context -> route -> hosts``
@@ -142,6 +142,101 @@ class PrototypeEnergyRouter(nn.Module):
             "mean_assignment_distance": float(selected.mean().cpu()),
             "min_cluster_count": int(torch.bincount(assignments, minlength=self.num_hosts).min()),
         }
+
+
+class UniformRouter(nn.Module):
+    """Parameter-free router used to construct a neutral common host bank."""
+
+    def __init__(self, num_hosts: int) -> None:
+        super().__init__()
+        if num_hosts < 2:
+            raise ValueError("num_hosts must be at least 2")
+        self.num_hosts = int(num_hosts)
+
+    def forward(self, context: torch.Tensor, temperature: float = 1.0) -> torch.Tensor:
+        if temperature <= 0:
+            raise ValueError("temperature must be positive")
+        return torch.full(
+            (context.shape[0], self.num_hosts),
+            1.0 / self.num_hosts,
+            dtype=context.dtype,
+            device=context.device,
+        )
+
+
+class HybridDirectionalPrototypeRouter(PrototypeEnergyRouter):
+    """R3 router combining local prototype territories and global directions.
+
+    ``E_h(c) = alpha*d_C(c,mu_h)^2/(2*sigma_h^2) - beta*<a_h,c> + b_h``.
+    """
+
+    def __init__(
+        self,
+        context_dim: int,
+        num_hosts: int,
+        *,
+        sigma_min: float = 0.05,
+        temperature: float = 1.0,
+        prototype_weight: float = 1.0,
+        directional_weight: float = 1.0,
+        learnable_mixture: bool = True,
+    ) -> None:
+        super().__init__(context_dim, num_hosts, sigma_min=sigma_min, temperature=temperature)
+        if prototype_weight <= 0 or directional_weight <= 0:
+            raise ValueError("energy mixture weights must be positive")
+        self.direction_raw = nn.Parameter(F.normalize(torch.randn(num_hosts, context_dim), dim=-1))
+        self.learnable_mixture = bool(learnable_mixture)
+        p_raw = torch.tensor(math.log(math.expm1(float(prototype_weight))), dtype=torch.float32)
+        d_raw = torch.tensor(math.log(math.expm1(float(directional_weight))), dtype=torch.float32)
+        if self.learnable_mixture:
+            self.prototype_weight_raw = nn.Parameter(p_raw)
+            self.directional_weight_raw = nn.Parameter(d_raw)
+        else:
+            self.register_buffer("prototype_weight_raw", p_raw)
+            self.register_buffer("directional_weight_raw", d_raw)
+
+    @property
+    def directions(self) -> torch.Tensor:
+        return F.normalize(self.direction_raw, p=2, dim=-1, eps=1e-8)
+
+    @property
+    def prototype_weight(self) -> torch.Tensor:
+        return F.softplus(self.prototype_weight_raw).clamp_min(1e-6)
+
+    @property
+    def directional_weight(self) -> torch.Tensor:
+        return F.softplus(self.directional_weight_raw).clamp_min(1e-6)
+
+    def energy_components(self, context: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor]:
+        context = F.normalize(context, p=2, dim=-1, eps=1e-8)
+        delta = context[:, None, :] - self.prototypes[None, :, :]
+        half_chord_sq = 0.25 * torch.square(delta).sum(dim=-1)
+        sigma_sq = torch.square(self.bandwidths)[None, :]
+        local = half_chord_sq / (2.0 * sigma_sq)
+        directional = context @ self.directions.T
+        return local, directional
+
+    def energies(self, context: torch.Tensor) -> torch.Tensor:
+        local, directional = self.energy_components(context)
+        return self.prototype_weight * local - self.directional_weight * directional + self.bias[None, :]
+
+    @torch.no_grad()
+    def project_parameters_(self) -> None:
+        self.project_prototypes_()
+        self.direction_raw.copy_(F.normalize(self.direction_raw, p=2, dim=-1))
+
+    @torch.no_grad()
+    def initialize_from_contexts(self, contexts: torch.Tensor, *, seed: int = 0, iterations: int = 50) -> dict[str, float]:
+        diagnostics = super().initialize_from_contexts(contexts, seed=seed, iterations=iterations)
+        generator = torch.Generator(device=contexts.device)
+        generator.manual_seed(int(seed) + 73)
+        noise = 0.05 * torch.randn(self.prototypes.shape, generator=generator, device=contexts.device, dtype=contexts.dtype)
+        self.direction_raw.copy_(F.normalize(self.prototypes.to(contexts) + noise, dim=-1).to(self.direction_raw))
+        diagnostics.update({
+            "prototype_weight": float(self.prototype_weight.detach().cpu()),
+            "directional_weight": float(self.directional_weight.detach().cpu()),
+        })
+        return diagnostics
 
 
 @dataclass
@@ -444,3 +539,35 @@ def reconstruct_route_from_root_probe(root_prediction: np.ndarray, eps: float = 
     positive = np.clip(np.asarray(root_prediction, dtype=np.float64), 0.0, None)
     squared = positive ** 2
     return squared / np.clip(squared.sum(axis=-1, keepdims=True), eps, None)
+
+
+
+def local_continuity_ratio(
+    context_a: torch.Tensor,
+    context_b: torch.Tensor,
+    route_distance: torch.Tensor,
+    *,
+    eps: float = 1e-8,
+) -> torch.Tensor:
+    """Output/input distance ratio for local routing continuity audits."""
+    return route_distance / half_chord_distance(context_a, context_b).clamp_min(eps)
+
+
+def permute_hosts_and_routes(
+    routes: torch.Tensor,
+    host_outputs: torch.Tensor,
+    permutation: torch.Tensor,
+) -> tuple[torch.Tensor, torch.Tensor]:
+    """Apply the same host permutation to routes and host outputs."""
+    if permutation.ndim != 1:
+        raise ValueError("permutation must be one-dimensional")
+    if routes.shape[-1] != len(permutation) or host_outputs.shape[-2] != len(permutation):
+        raise ValueError("permutation size does not match the host dimension")
+    return routes[..., permutation], host_outputs[..., permutation, :]
+
+
+def route_weighted_synthesis(routes: torch.Tensor, host_outputs: torch.Tensor) -> torch.Tensor:
+    """Synthesize host outputs for arbitrary leading sample dimensions."""
+    if routes.shape[:-1] != host_outputs.shape[:-2]:
+        raise ValueError("route and host-output leading dimensions do not match")
+    return torch.einsum("...h,...hd->...d", routes, host_outputs)

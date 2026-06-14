@@ -102,4 +102,14 @@ __all__ = [
     "usage_balance_loss",
 ]
 
-__version__ = "1.1.0"
+
+from .functional_routing import (
+    HybridDirectionalPrototypeRouter,
+    UniformRouter,
+    local_continuity_ratio,
+    permute_hosts_and_routes,
+    route_weighted_synthesis,
+)
+from .verification import verify_evidence_bundle, write_verification_outputs
+
+__version__ = "1.1.1"
