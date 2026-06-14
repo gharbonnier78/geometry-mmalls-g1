@@ -92,3 +92,20 @@
 - Added a Colab-ready notebook scaffold.
 - Added synthetic smoke outputs, claim gates and reproducibility documentation.
 - Reserved energy-guided routing for G2 and phase-aware/quantum-inspired routing for G3.
+
+## v1.0.9 notebook patch — non-negative bootstrap seeds
+
+- Normalize notebook RNG seeds into the uint32 domain.
+- Fix failure on dense negative held-out angles such as `-75°`.
+- Apply the same normalization to bootstrap and orthogonal-control RNG helpers.
+- Add a regression gate for the formerly failing seed.
+- Scientific protocol and package version remain `1.0.9`.
+
+## v1.0.9 notebook patch — stationary-route gradient stability
+
+- Compute the stationary route chord directly in square-root-simplex
+  coordinates instead of `sqrt(1-affinity)`.
+- Prevent non-finite gradients for coincident and near-coincident routes.
+- Add collapsed-route and near-collapsed-route backward regression tests.
+- Add notebook numerical gate `CHG-109-14`.
+- Scientific method set and package version remain `1.0.9`.

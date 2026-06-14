@@ -128,3 +128,14 @@ G1 grounded functional geometry
 ```
 
 Code is released under the MIT License. See `CITATION.cff` for citation metadata.
+
+## v1.0.9 canonical stable build
+
+The current canonical notebook and Python functions include both execution
+corrections directly:
+
+- non-negative uint32 RNG seed normalization for dense negative angles;
+- root-space stationary route distance with finite gradients for coincident
+  and near-coincident routes.
+
+Build revision: `stationary-route-qualification-pilot-r3`. No runtime monkey-patch is required.

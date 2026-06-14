@@ -55,3 +55,25 @@
 ## Status
 
 The v1.0.8 seed-0 result is archived as development evidence. The v1.0.9 five-seed pilot has not been executed in this package. Final C1-C6 qualification remains unclaimed.
+
+## Post-release notebook patch
+
+The packaged v1.0.9 notebook includes the non-negative RNG seed correction
+(`CHG-109-13`) for dense held-out angles. This is an execution-stability
+correction and does not alter the scientific method set or claim status.
+
+## Post-release numerical patch
+
+`CHG-109-14` replaces the stationary route distance implementation with
+its algebraically equivalent root-space chord norm and adds backward
+regression tests for collapsed routes. The protocol and claims are
+unchanged.
+
+## Canonical stable build
+
+- Scientific version: `1.0.9`
+- Build revision: `stationary-route-qualification-pilot-r3`
+- Negative-angle RNG correction integrated in the notebook
+- Coincident-route gradient correction integrated in `geometry.py`
+- Runtime monkey-patching required: **no**
+- Package tests: **33 passed**
