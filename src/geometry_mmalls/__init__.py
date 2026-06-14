@@ -31,6 +31,27 @@ from .metrics import (
 from .model import ContextBottleneckRouter, SensoryBottleneckRouter
 from .memory import ReconstructiveAuditMemory, SyntheticFunctionalMemory, TraceRecord
 
+from .functional_routing import (
+    FunctionalRoutingMMALS,
+    FunctionalRoutingTrace,
+    LinearContextRouter,
+    MLPContextRouter,
+    PrototypeEnergyRouter,
+    entropic_transport_cost,
+    half_chord_distance,
+    host_functional_diversity_loss,
+    host_output_cost_matrix,
+    host_specialization,
+    host_territory,
+    pairwise_functional_route_distances,
+    parameter_count,
+    reconstruct_route_from_root_probe,
+    root_simplex_chord,
+    spherical_kmeans,
+    territory_overlap,
+    usage_balance_loss,
+)
+
 __all__ = [
     "fisher_rao_distance",
     "pairwise_fisher_rao",
@@ -61,6 +82,24 @@ __all__ = [
     "ReconstructiveAuditMemory",
     "SyntheticFunctionalMemory",
     "TraceRecord",
+    "FunctionalRoutingMMALS",
+    "FunctionalRoutingTrace",
+    "LinearContextRouter",
+    "MLPContextRouter",
+    "PrototypeEnergyRouter",
+    "entropic_transport_cost",
+    "half_chord_distance",
+    "host_functional_diversity_loss",
+    "host_output_cost_matrix",
+    "host_specialization",
+    "host_territory",
+    "pairwise_functional_route_distances",
+    "parameter_count",
+    "reconstruct_route_from_root_probe",
+    "root_simplex_chord",
+    "spherical_kmeans",
+    "territory_overlap",
+    "usage_balance_loss",
 ]
 
-__version__ = "1.0.9"
+__version__ = "1.1.0"
