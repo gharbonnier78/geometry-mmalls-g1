@@ -1,0 +1,88 @@
+{
+  "status": "pilot_not_final_qualification",
+  "notebook_version": "1.0.9",
+  "build_revision": "stationary-route-qualification-pilot-r3",
+  "package_version": "1.0.9",
+  "git_sha": "a07552248909fd68969234bba1979f146621b5a9",
+  "run_profile": "pilot",
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "fixed_split_seed": 0,
+  "fixed_sensory_seed": 0,
+  "initial_state_hashes": {
+    "0": "3e872d0513122e2ef31512ab79d18cb0a9f373d2638bc6ff3850964e11478b44",
+    "1": "521b8474daf383f1a10cff43ff27374c881ccb4c438cb9ddb6ec2d2b6f09ddef",
+    "2": "277b3c44403cfef37d621f892269342640639452c127e59d709bdf275ee1a8bc",
+    "3": "185212abe9fba75453b476a9bc327e20d517f96212b41d54b0557f43e49007e1",
+    "4": "eefa70f3bb28c5e93a8c92c30cd4eeab863b6a88692d30382a0d4bbb4069b6ec"
+  },
+  "split_manifest": {
+    "split_seed": 0,
+    "train_sha256": "0a841b138937f6f83ec3549d225da11eb256f9baea412aaf7d4165de22482ada",
+    "test_sha256": "856564b9eb131c38a73b6c7ce366d3964c7c0a2da6d26076762659e4687f8fda",
+    "tangent_fit_sha256": "8b2891e9ee786ba6e74872f7f1e30975d1bd3ab351b149d6d92ebf19330dd6ee",
+    "tangent_eval_sha256": "f5fe0ca9479578f4682f158246b2777fb43bf010300573d903028cec6b22aefc"
+  },
+  "sensory_accuracy": 0.942,
+  "method_specs": {
+    "d4_no_geo": {
+      "route_mode": "none",
+      "full_alignment": false
+    },
+    "d4_full_legacy_route": {
+      "route_mode": "legacy",
+      "full_alignment": true
+    },
+    "d4_full_stationary_route": {
+      "route_mode": "stationary",
+      "full_alignment": true
+    }
+  },
+  "stationary_route_geometry": {
+    "stationary_target": "unit_sphere_half_chord",
+    "max_factor_span_degrees": 120.0,
+    "far_threshold_degrees": 60.0,
+    "far_route_margin": 0.5,
+    "far_weight": 0.25,
+    "match_weight": 1.0
+  },
+  "dense_eval_angles": [
+    -75.0,
+    -60.0,
+    -45.0,
+    -30.0,
+    -15.0,
+    0.0,
+    15.0,
+    30.0,
+    45.0,
+    60.0,
+    75.0
+  ],
+  "tracked_changes": [
+    "CHG-109-01",
+    "CHG-109-02",
+    "CHG-109-03",
+    "CHG-109-04",
+    "CHG-109-05",
+    "CHG-109-06",
+    "CHG-109-07",
+    "CHG-109-08",
+    "CHG-109-09",
+    "CHG-109-10",
+    "CHG-109-11",
+    "CHG-109-12",
+    "CHG-109-13",
+    "CHG-109-14"
+  ],
+  "archived_v108_results": "results/v1_0_8/seed_0",
+  "v108_results_report": "docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.pdf",
+  "reviewer_report": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_1.pdf",
+  "warning": "Five-seed pilot evidence is not final C1-C6 qualification.",
+  "timestamp": 1781416889.2919555
+}
