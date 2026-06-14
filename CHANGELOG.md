@@ -1,19 +1,18 @@
 # Changelog
 
 
-## [1.0.5] - 2026-06-13
+## v1.0.6 - Static route controls and counterbalanced curriculum
 
-### Added
-- Context mediation training and inference controls.
-- Ascending, descending, and fixed-permuted curricula.
-- Current-only optimizer-step-matched reference.
-- C1/C2 evidence partitioning and source-paired bootstrap deltas.
-- Signed causal orientation and monotonicity gates.
-- Clean archive and exact-location notebook PDF export.
-
-### Status
-- Protocol implementation only. C1-C6 remain unqualified.
-
+- Added uniform and learned global static route controls.
+- Added an adaptive no-geometry anchored control for clean route-policy attribution.
+- Added explicit adaptive-route utility contrasts.
+- Renamed router interventions and added source-paired bootstrap intervals.
+- Replaced terminal-confounded curricula with four same-final-task cyclic counterbalances.
+- Added curriculum position-balance assertions and exports.
+- Added package/notebook version equality and source-hash evidence.
+- Restricted causal geometry gates to adaptive route policies.
+- Extended host ablation evidence to static mixtures.
+- Kept C1-C6 and adaptive-route superiority explicitly unqualified.
 
 ## v1.0.3 - Cross-angle paired protocol correction
 

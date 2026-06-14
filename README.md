@@ -140,6 +140,10 @@ See:
 Code is released under the MIT License. The article and documentation may be reused with attribution; see `CITATION.cff` for the preferred citation.
 
 
-## v1.0.5 context-mediation protocol
+## Current protocol release: v1.0.6
 
-The primary notebook is `notebooks/Geometry_MMALS_G1_ContextMediation_Curriculum_v1_0_5.ipynb`. It adds explicit context-only and direct-sensory router controls, context ablations, source-paired delta confidence intervals, curriculum-order controls, and signed causal-direction gates. The release remains a C0 protocol implementation until multi-seed qualification.
+Primary notebook: `notebooks/Geometry_MMALS_G1_StaticRoutes_CounterbalancedCurriculum_v1_0_6.ipynb`
+
+v1.0.6 tests whether instance-adaptive routing adds value beyond uniform and learned global static host mixtures. It also replaces terminal-confounded curriculum comparisons with four cyclic orders that all end at 30 degrees and balance every other angle across pre-final positions.
+
+Scientific status remains **C0 protocol implementation only**. C1-C6 and adaptive-route superiority are not claimed.

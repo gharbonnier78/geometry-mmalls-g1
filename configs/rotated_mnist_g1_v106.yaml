@@ -1,0 +1,25 @@
+protocol_version: "1.0.6"
+status: "C0 protocol implementation only"
+common_final_angle: 30.0
+counterbalanced_curricula:
+  cb_a: [-60.0, -30.0, 0.0, 60.0, 30.0]
+  cb_b: [-30.0, 0.0, 60.0, -60.0, 30.0]
+  cb_c: [0.0, 60.0, -60.0, -30.0, 30.0]
+  cb_d: [60.0, -60.0, -30.0, 0.0, 30.0]
+route_controls:
+  - adaptive_standard
+  - context_only
+  - direct_z0
+  - uniform_static
+  - learned_static
+static_route_initialization: "zero logits -> uniform simplex point"
+primary_questions:
+  - "Does adaptive routing outperform uniform and learned global static mixtures?"
+  - "Do curriculum effects persist when the final task is held constant?"
+  - "Are router intervention effects supported by source-paired bootstrap intervals?"
+non_claims:
+  - C1-C6 qualification
+  - adaptive-route superiority
+  - backward transfer
+  - replay-free continual learning
+  - quantum advantage
