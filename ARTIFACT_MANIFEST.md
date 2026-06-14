@@ -1,30 +1,44 @@
-# Artifact Manifest - Geometry-MMALS G1 v1.0.6
+# Artifact Manifest - Geometry-MMALS G1 v1.0.7
 
-## Primary artifacts
+## Primary protocol artifacts
 
-- `notebooks/Geometry_MMALS_G1_StaticRoutes_CounterbalancedCurriculum_v1_0_6.ipynb` - Colab protocol with research history and CHG-106 tracking.
-- `docs/reports/Geometry_MMALS_G1_v1_0_6_Static_Routes_Counterbalanced_Curriculum_Report.pdf` - archival protocol report.
-- `docs/reports/Geometry_MMALS_G1_v1_0_6_Static_Routes_Counterbalanced_Curriculum_Report.md` - editable report source.
-- `docs/changes/Geometry_MMALS_G1_v1_0_5_to_v1_0_6.md` - v1.0.5 to v1.0.6 tracked changes.
-- `configs/rotated_mnist_g1_v106.yaml` - static-route and counterbalanced-curriculum declaration.
-- `docs/V1_0_6_VALIDATION.json` - build and preflight status.
+- `notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb` - Colab-ready context-bottleneck experiment with complete research history and CHG-107 tracking.
+- `configs/rotated_mnist_g1_v107.yaml` - hypothesis, falsification condition, controls and non-claims.
+- `src/geometry_mmalls/model.py` - canonical context- and sensory-bottleneck router implementations.
+- `docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.pdf` - archival protocol report.
+- `docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.md` - editable report source.
+- `docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.tex` - LaTeX report source.
+- `docs/changes/Geometry_MMALS_G1_v1_0_6_to_v1_0_7.md` - tracked protocol delta.
+- `docs/changes/MIGRATION_v1_0_6_to_v1_0_7.md` - supplied migration proposal archived verbatim.
+- `docs/RELEASE_CHECKLIST_v1_0_7.md` - release and claim-discipline checklist.
+- `docs/V1_0_7_BUILD_VALIDATION.json` - machine-readable build validation.
 
-## Key controls
+## Reviewer synthesis archived in the repository
 
-- adaptive standard route;
-- context-only and direct-z0 adaptive routes;
+- `docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_0.pdf` - previously generated 18-page reviewer status report covering evidence through v1.0.6.
+- `paper/reviewer_status_v1_0/` - complete LaTeX source tree, bibliography, figures and report manifest.
+- `releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_0.zip` - original complete LaTeX source package.
+
+## Core v1.0.7 controls
+
+- standard route with retention anchor;
 - uniform static route;
-- learned global static route;
-- four cyclic curricula ending at 30 degrees;
-- source-paired router intervention confidence intervals.
+- context bottleneck with and without geometry;
+- capacity-matched sensory bottleneck with and without geometry;
+- equal initialization, data order, image forwards, optimizer steps and anchor weight;
+- trained/interpolation/extrapolation evidence partitions;
+- context and z0 intervention diagnostics;
+- optional same-final-task curricula for the primary treatment only.
 
 ## Validation
 
 - notebook JSON and Python syntax: PASS;
-- package tests: 16 passed;
-- PDF: 5 pages, openable, unencrypted, visually rendered;
-- clean archive hygiene: `.git`, datasets, runtime results, caches, bytecode, egg-info, and local environments excluded.
+- package tests: 19 passed;
+- protocol PDF: 3 pages, openable, unencrypted and visually inspected;
+- reviewer PDF: included from the verified 18-page report package;
+- package version: 1.0.7;
+- clean archive hygiene: `.git`, datasets, runtime results, caches, bytecode, egg-info and local environments excluded.
 
 ## Scientific status
 
-C0 protocol implementation only. The full v1.0.6 experiment was not executed during artifact generation. No C1-C6 or adaptive-route claim is included.
+C0 protocol implementation only. The full v1.0.7 experiment was not executed during package generation. No C1-C6, context-mediation, adaptive-route, backward-transfer or quantum claim is included.

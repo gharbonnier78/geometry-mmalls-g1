@@ -1,0 +1,11 @@
+{
+  "report_version": "1.0",
+  "evidence_release": "Geometry-MMALS G1 v1.0.6",
+  "evidence_git_sha": "ec15a6aee9fe952c24e5551d6caf62c356fdbf44",
+  "scientific_status": "reviewer-oriented development status report; C1-C6 not qualified",
+  "files": {
+    "main.tex": "ba41a00a886886300be7a35ef1561a974b94161d61c9d6546fd67be0e4aa442a",
+    "references.bib": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22",
+    "Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_0.pdf": "c3db4535238ed114f453fa7e9191060d4eeb95210f92202714b8ceec17c3ea42"
+  }
+}

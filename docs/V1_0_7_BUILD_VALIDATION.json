@@ -1,0 +1,20 @@
+{
+  "package_version": "1.0.7",
+  "notebook_version": "1.0.7",
+  "build_date": "2026-06-14",
+  "full_experiment_executed": false,
+  "notebook_json_valid": true,
+  "notebook_python_syntax_valid": true,
+  "package_tests_passed": 19,
+  "protocol_pdf_pages": 3,
+  "protocol_pdf_openable": true,
+  "protocol_pdf_encrypted": false,
+  "protocol_pdf_visually_inspected": true,
+  "reviewer_status_pdf_included": true,
+  "reviewer_status_latex_source_included": true,
+  "migration_note_archived": true,
+  "claim_status": "C0 protocol implementation only",
+  "local_full_notebook_execution_attempted": true,
+  "local_full_notebook_execution_passed": false,
+  "local_execution_limitation": "Container Torch/Torchvision binary mismatch: torchvision::nms operator unavailable. Package unit tests and notebook syntax passed; Colab execution remains required."
+}

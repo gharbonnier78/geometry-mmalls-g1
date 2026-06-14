@@ -16,6 +16,8 @@ from .metrics import (
     grouped_geometry_scores,
     centroid_geometry_scores,
 )
+from .model import ContextBottleneckRouter, SensoryBottleneckRouter
+from .memory import ReconstructiveAuditMemory, SyntheticFunctionalMemory, TraceRecord
 
 __all__ = [
     "fisher_rao_distance",
@@ -30,8 +32,11 @@ __all__ = [
     "bootstrap_mean_ci",
     "grouped_geometry_scores",
     "centroid_geometry_scores",
+    "ContextBottleneckRouter",
+    "SensoryBottleneckRouter",
+    "ReconstructiveAuditMemory",
+    "SyntheticFunctionalMemory",
+    "TraceRecord",
 ]
 
-__version__ = "1.0.6"
-
-from .memory import ReconstructiveAuditMemory, SyntheticFunctionalMemory, TraceRecord
+__version__ = "1.0.7"

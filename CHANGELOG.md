@@ -1,5 +1,18 @@
 # Changelog
 
+## v1.0.7 - Context-bottleneck mediation experiment
+
+- Added a dedicated `ContextBottleneckRouter` that never receives `z0`.
+- Added a capacity-matched `SensoryBottleneckRouter` control.
+- Replaced the non-diagnostic stop-gradient proposal with explicit information-path controls.
+- Reduced the core run to six targeted equal-compute variants.
+- Added bottleneck, sensory, standard and static paired contrasts.
+- Added context/z0 route-shift and accuracy-drop mediation diagnostics with `context_is_primary`.
+- Preserved trained, interpolation and extrapolation geometry partitions.
+- Restricted counterbalanced curriculum reruns to the primary context-bottleneck treatment.
+- Added 19 passing package tests, including bottleneck router shape, gradient and parameter-isolation tests.
+- Archived the reviewer status PDF and complete LaTeX source inside the GitHub package.
+- Kept C1-C6, successful context mediation and operational superiority explicitly unqualified.
 
 ## v1.0.6 - Static route controls and counterbalanced curriculum
 

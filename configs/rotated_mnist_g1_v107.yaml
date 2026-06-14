@@ -1,0 +1,48 @@
+protocol_version: "1.0.7"
+status: "C0 protocol implementation only"
+experiment:
+  name: "context_bottleneck"
+  hypothesis: >
+    If context-mediation failure in v1.0.6 was caused by a sensory shortcut,
+    then a capacity-controlled router that never sees z0 directly should make
+    route behavior primarily dependent on inferred context and should show a
+    positive context-geometry effect under paired geometry regularization.
+  falsification_condition: >
+    If context_bottleneck_geo does not improve trained context-space order over
+    context_bottleneck_no_geo with a paired-source confidence interval above
+    zero, or if context zeroing does not affect routing and prediction more than
+    z0 zeroing, the current context representation is not a sufficient mediator.
+  correction_to_migration_note: >
+    The originally proposed stop-gradient control was removed because the
+    sensory encoder is frozen and detaching z0 does not prevent router weights
+    from exploiting z0 values. A capacity-matched sensory-only bottleneck is
+    used instead as the scientifically meaningful control.
+primary_curriculum_name: "cb_a"
+primary_curriculum: [-60.0, -30.0, 0.0, 60.0, 30.0]
+common_final_angle: 30.0
+counterbalanced_curricula:
+  cb_a: [-60.0, -30.0, 0.0, 60.0, 30.0]
+  cb_b: [-30.0, 0.0, 60.0, -60.0, 30.0]
+  cb_c: [0.0, 60.0, -60.0, -30.0, 30.0]
+  cb_d: [60.0, -60.0, -30.0, 0.0, 30.0]
+router_controls:
+  - standard
+  - uniform_static
+  - context_bottleneck
+  - sensory_bottleneck
+primary_contrasts:
+  - bottleneck_geo_effect
+  - bottleneck_vs_standard
+  - sensory_geo_effect
+  - context_vs_sensory_geo
+mediation_success:
+  context_is_primary: true
+  minimum_context_to_z0_shift_ratio: 1.0
+  require_context_accuracy_drop_positive: true
+non_claims:
+  - C1-C6 qualification
+  - context mediation success
+  - adaptive-route superiority
+  - backward transfer
+  - replay-free continual learning
+  - quantum advantage

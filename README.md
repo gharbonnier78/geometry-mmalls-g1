@@ -4,7 +4,7 @@
 
 Geometry-MMALS G1 is a research specification and implementation scaffold for testing whether MMALS learns a meaningful internal geometry of representations, inferred contexts, routes, host transformations, synthesis states, and memory transport.
 
-> **Status:** v1.0.3 protocol-correction release. The repository currently supports a **C0 implementation and protocol-validity claim only**. It does **not** claim that the G1 geometry gates have succeeded. C1-C6 require frozen thresholds, multi-seed runs, matched controls, archived manifests and hardened baselines.
+> **Status:** v1.0.7 context-bottleneck protocol release. The repository supports a **C0 implementation and protocol-validity claim only**. It does **not** claim successful context mediation or that C1-C6 have passed. Qualification requires frozen thresholds, multi-seed runs, matched controls, archived manifests and hardened baselines.
 
 ## Why this repository exists
 
@@ -41,15 +41,13 @@ G1 grounded functional geometry
 
 No quantum-computing or quantum-advantage claim is made here.
 
-## v1.0.3 primary notebook
+## v1.0.7 primary notebook
 
-`notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb`
+`notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb`
 
-This protocol correction replaces the v1.0.2 single-angle geometry batch with
-same-source cross-angle views. It adds source-block metrics, held-out
-interpolation controls, staged forgetting evaluation and signed causal
-controls. The release remains a protocol implementation and does not claim that
-C1-C6 have passed.
+This protocol tests whether the weak context mediation observed in v1.0.6 was caused by direct sensory shortcutting. It adds a dedicated context-only bottleneck router and a capacity-matched sensory-only router. The primary contrast is context bottleneck with versus without geometry regularization.
+
+The proposed v1.0.6-to-v1.0.7 migration direction is retained, with one scientific correction: a stop-gradient control that still passes `z0` into the router is not diagnostic when the sensory encoder is already frozen. It is replaced by an explicit sensory-only information-path control.
 
 ## Repository map
 
@@ -140,10 +138,12 @@ See:
 Code is released under the MIT License. The article and documentation may be reused with attribution; see `CITATION.cff` for the preferred citation.
 
 
-## Current protocol release: v1.0.6
+## Current protocol release: v1.0.7
 
-Primary notebook: `notebooks/Geometry_MMALS_G1_StaticRoutes_CounterbalancedCurriculum_v1_0_6.ipynb`
+Primary notebook: `notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb`
 
-v1.0.6 tests whether instance-adaptive routing adds value beyond uniform and learned global static host mixtures. It also replaces terminal-confounded curriculum comparisons with four cyclic orders that all end at 30 degrees and balance every other angle across pre-final positions.
+v1.0.7 asks whether the context variable can become a genuine mediator when direct `z0` access is removed. Six equal-compute variants compare standard, uniform-static, context-bottleneck and capacity-matched sensory-bottleneck routes, with and without paired geometry regularization.
 
-Scientific status remains **C0 protocol implementation only**. C1-C6 and adaptive-route superiority are not claimed.
+The repository also archives the 18-page reviewer status report and its complete LaTeX source under `docs/reports/` and `paper/reviewer_status_v1_0/`.
+
+Scientific status remains **C0 protocol implementation only**. Context mediation, C1-C6 and operational superiority are not claimed.

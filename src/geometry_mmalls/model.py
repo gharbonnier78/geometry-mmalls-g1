@@ -49,6 +49,46 @@ class ResidualHost(nn.Module):
         return self.norm(z + self.net(z))
 
 
+class ContextBottleneckRouter(nn.Module):
+    """Capacity-controlled router that receives inferred context only.
+
+    The direct sensory representation ``z0`` is never accepted by this module.
+    Any instance-specific route geometry must therefore pass through the
+    context encoder. Two hidden layers avoid giving the bottleneck an obvious
+    capacity disadvantage relative to the standard concatenated router.
+    """
+
+    def __init__(self, context_dim: int, num_hosts: int, hidden_dim: int = 64) -> None:
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(context_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, num_hosts),
+        )
+
+    def forward(self, context: torch.Tensor) -> torch.Tensor:
+        return self.net(context)
+
+
+class SensoryBottleneckRouter(nn.Module):
+    """Capacity-matched control router that receives the sensory state only."""
+
+    def __init__(self, latent_dim: int, num_hosts: int, hidden_dim: int = 64) -> None:
+        super().__init__()
+        self.net = nn.Sequential(
+            nn.Linear(latent_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, hidden_dim),
+            nn.GELU(),
+            nn.Linear(hidden_dim, num_hosts),
+        )
+
+    def forward(self, z0: torch.Tensor) -> torch.Tensor:
+        return self.net(z0)
+
+
 @dataclass
 class MMALSTrace:
     z0: torch.Tensor
@@ -62,9 +102,10 @@ class MMALSTrace:
 class GeometryMMALS(nn.Module):
     """Context-inferred, host-routed MMALS scaffold.
 
-    The context coordinate is continuous. A softmax route maps the context and
-    sensory representation to host weights. G1 losses are applied outside the
-    module so every assumption remains visible in the training loop.
+    The default route uses both the sensory representation and inferred
+    context. G1 v1.0.7 additionally exposes dedicated context-only and
+    sensory-only bottleneck routers for controlled mediation experiments.
+    Losses remain outside the module so protocol assumptions stay visible.
     """
 
     def __init__(
@@ -76,6 +117,7 @@ class GeometryMMALS(nn.Module):
         host_hidden_dim: int = 128,
         num_classes: int = 10,
         freeze_encoder: bool = True,
+        bottleneck_hidden_dim: int = 64,
     ) -> None:
         super().__init__()
         if num_hosts < 2:
@@ -91,6 +133,16 @@ class GeometryMMALS(nn.Module):
             nn.Linear(latent_dim + context_dim, 64),
             nn.GELU(),
             nn.Linear(64, num_hosts),
+        )
+        self.context_bottleneck_router = ContextBottleneckRouter(
+            context_dim=context_dim,
+            num_hosts=num_hosts,
+            hidden_dim=bottleneck_hidden_dim,
+        )
+        self.sensory_bottleneck_router = SensoryBottleneckRouter(
+            latent_dim=latent_dim,
+            num_hosts=num_hosts,
+            hidden_dim=bottleneck_hidden_dim,
         )
         self.hosts = nn.ModuleList(
             [ResidualHost(latent_dim, host_hidden_dim) for _ in range(num_hosts)]
@@ -109,13 +161,13 @@ class GeometryMMALS(nn.Module):
                 return self.encoder(x)
         return self.encoder(x)
 
-    def forward(self, x: torch.Tensor, temperature: float = 1.0) -> MMALSTrace:
-        if temperature <= 0:
-            raise ValueError("temperature must be positive")
-        z0 = self.encode(x)
-        context = self.context_net(z0)
-        route_logits = self.router(torch.cat([z0, context], dim=-1))
-        route = torch.softmax(route_logits / temperature, dim=-1)
+    def synthesize(
+        self,
+        z0: torch.Tensor,
+        context: torch.Tensor,
+        route: torch.Tensor,
+    ) -> MMALSTrace:
+        """Run hosts, synthesis and classifier for a declared route."""
         host_outputs = torch.stack([host(z0) for host in self.hosts], dim=1)
         z_mm = torch.einsum("bh,bhd->bd", route, host_outputs)
         z_mm = self.synthesis_norm(z_mm)
@@ -128,3 +180,12 @@ class GeometryMMALS(nn.Module):
             z_mm=z_mm,
             logits=logits,
         )
+
+    def forward(self, x: torch.Tensor, temperature: float = 1.0) -> MMALSTrace:
+        if temperature <= 0:
+            raise ValueError("temperature must be positive")
+        z0 = self.encode(x)
+        context = self.context_net(z0)
+        route_logits = self.router(torch.cat([z0, context], dim=-1))
+        route = torch.softmax(route_logits / temperature, dim=-1)
+        return self.synthesize(z0, context, route)

@@ -20,3 +20,8 @@ The primary notebook is:
 The archived change report is:
 
 `docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.pdf`
+
+
+## v1.0.7
+
+Context-bottleneck protocol implemented. No empirical v1.0.7 result is included at build time. C0 only. The reviewer status report remains the authoritative synthesis of evidence through executed v1.0.6.
