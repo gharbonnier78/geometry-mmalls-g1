@@ -49,3 +49,20 @@ Freeze a common host bank and common functional cost matrix, compare MLP/linear/
   route mediation?
 - New router: hybrid directional-prototype energy
 - Verification Stack: v0.2 integrated
+
+## v1.1.1 completed pilot
+
+- Protocol integrity: PASS
+- Route-swap order: PASS
+- Prediction identity preservation: PASS
+- R3 held-out mediation: NOT QUALIFIED
+- R3 local continuity: NOT QUALIFIED
+- R3 functional causal specificity: NOT QUALIFIED
+- Operational non-degradation: NOT QUALIFIED
+
+## v1.1.2
+
+- C0 specification and executable notebook: COMPLETE
+- Five-seed pilot: NOT EXECUTED
+- Primary treatment: R5 smooth residual plus context-only continuity
+- Secondary axis: covariance/SPD diagnostics

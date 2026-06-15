@@ -184,3 +184,20 @@ versioned metric/protocol/claim rules, and emits a standard evidence bundle.
 ```text
 verification/notebooks/MMALS_Metric_Protocol_Claim_Verification_v0_2.ipynb
 ```
+
+## Geometry-MMALS G1 v1.1.1 completed result
+
+The corrected five-seed bridge-isolation record is under `results/v1_1_1/`.
+The protocol-integrity gates passed, but the R3 hybrid router did not qualify.
+The reviewer report is `docs/reports/Geometry_MMALS_G1_v1_1_1_Bridge_Isolation_Reviewer_Results.pdf`.
+
+## Geometry-MMALS G1 v1.1.2
+
+v1.1.2 tests linear-first bounded prototype residual routing, a context-only
+simplex-continuity hinge, and covariance/SPD context diagnostics.
+
+- Notebook: `notebooks/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2.ipynb`
+- Config: `configs/rotated_mnist_g1_v112.yaml`
+- Specification: `docs/reports/Geometry_MMALS_G1_v1_1_2_Smooth_Residual_SPD_Specification.pdf`
+
+Empirical status: not executed.

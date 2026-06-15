@@ -239,6 +239,133 @@ class HybridDirectionalPrototypeRouter(PrototypeEnergyRouter):
         return diagnostics
 
 
+class SmoothSimplexResidualRouter(PrototypeEnergyRouter):
+    """Linear-first router with a bounded, centered prototype residual.
+
+    The route logits are
+
+    ``l(c) = Wc + b + g(c) * s_max * tanh(delta_proto(c))``.
+
+    The linear path carries the global direction. The prototype residual is
+    zero-centered across hosts and bounded by ``residual_cap`` so local
+    territories cannot dominate the route map as they did in v1.1.1.
+    """
+
+    def __init__(
+        self,
+        context_dim: int,
+        num_hosts: int,
+        *,
+        sigma_min: float = 0.05,
+        temperature: float = 1.0,
+        residual_cap: float = 0.35,
+        gate_hidden_dim: int = 16,
+        learnable_cap: bool = False,
+    ) -> None:
+        super().__init__(
+            context_dim=context_dim,
+            num_hosts=num_hosts,
+            sigma_min=sigma_min,
+            temperature=temperature,
+        )
+        if residual_cap <= 0:
+            raise ValueError("residual_cap must be positive")
+        self.linear = nn.Linear(context_dim, num_hosts)
+        self.gate = nn.Sequential(
+            nn.Linear(context_dim, gate_hidden_dim),
+            nn.Tanh(),
+            nn.Linear(gate_hidden_dim, 1),
+        )
+        cap_logit = math.log(0.5 / 0.5)
+        if learnable_cap:
+            self.cap_logit = nn.Parameter(torch.tensor(cap_logit, dtype=torch.float32))
+        else:
+            self.register_buffer("cap_logit", torch.tensor(cap_logit, dtype=torch.float32))
+        self.residual_cap_max = float(residual_cap)
+        self.learnable_cap = bool(learnable_cap)
+
+    @property
+    def residual_cap(self) -> torch.Tensor:
+        return self.residual_cap_max * torch.sigmoid(self.cap_logit)
+
+    def prototype_residual(self, context: torch.Tensor) -> torch.Tensor:
+        context = F.normalize(context, p=2, dim=-1, eps=1e-8)
+        delta = context[:, None, :] - self.prototypes[None, :, :]
+        half_chord_sq = 0.25 * torch.square(delta).sum(dim=-1)
+        sigma_sq = torch.square(self.bandwidths)[None, :]
+        score = -half_chord_sq / (2.0 * sigma_sq) - self.bias[None, :]
+        score = score - score.mean(dim=-1, keepdim=True)
+        scale = score.detach().std(dim=-1, keepdim=True).clamp_min(1e-4)
+        return torch.tanh(score / scale)
+
+    def components(self, context: torch.Tensor) -> tuple[torch.Tensor, torch.Tensor, torch.Tensor]:
+        normalized = F.normalize(context, p=2, dim=-1, eps=1e-8)
+        base_logits = self.linear(normalized)
+        gate = torch.sigmoid(self.gate(normalized))
+        residual = self.residual_cap * gate * self.prototype_residual(normalized)
+        return base_logits, residual, gate
+
+    def forward(self, context: torch.Tensor, temperature: float | None = None) -> torch.Tensor:
+        tau = self.default_temperature if temperature is None else float(temperature)
+        if tau <= 0:
+            raise ValueError("temperature must be positive")
+        base_logits, residual, _ = self.components(context)
+        return torch.softmax((base_logits + residual) / tau, dim=-1)
+
+    @torch.no_grad()
+    def project_parameters_(self) -> None:
+        self.project_prototypes_()
+
+    @torch.no_grad()
+    def initialize_from_contexts(
+        self,
+        contexts: torch.Tensor,
+        *,
+        seed: int = 0,
+        iterations: int = 50,
+    ) -> dict[str, float]:
+        diagnostics = super().initialize_from_contexts(
+            contexts,
+            seed=seed,
+            iterations=iterations,
+        )
+        diagnostics.update({
+            "residual_cap": float(self.residual_cap.detach().cpu()),
+            "learnable_cap": int(self.learnable_cap),
+        })
+        return diagnostics
+
+
+def simplex_continuity_hinge_loss(
+    routes: torch.Tensor,
+    contexts: torch.Tensor,
+    *,
+    kappa: float = 1.0,
+    margin: float = 0.0,
+) -> torch.Tensor:
+    """Context-only Lipschitz hinge on route-simplex movement.
+
+    ``routes`` has shape ``[batch, views, hosts]`` and ``contexts`` has shape
+    ``[batch, views, context_dim]``. No external factor label is used.
+    """
+    if routes.ndim != 3 or contexts.ndim != 3:
+        raise ValueError("routes and contexts must be rank-3 tensors")
+    if routes.shape[:2] != contexts.shape[:2]:
+        raise ValueError("routes and contexts must share batch/view dimensions")
+    if kappa <= 0 or margin < 0:
+        raise ValueError("kappa must be positive and margin non-negative")
+    n_views = routes.shape[1]
+    if n_views < 2:
+        return routes.sum() * 0.0
+    index = torch.triu_indices(n_views, n_views, offset=1, device=routes.device)
+    route_a, route_b = routes[:, index[0]], routes[:, index[1]]
+    context_a, context_b = contexts[:, index[0]], contexts[:, index[1]]
+    d_route = root_simplex_chord(route_a, route_b)
+    d_context = half_chord_distance(context_a, context_b)
+    violation = d_route - float(kappa) * d_context - float(margin)
+    return torch.relu(violation).square().mean()
+
+
 @dataclass
 class FunctionalRoutingTrace:
     z0: torch.Tensor

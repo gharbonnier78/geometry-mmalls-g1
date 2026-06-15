@@ -1,0 +1,5 @@
+model_seed,method,mean_heldout_accuracy,final_trained_accuracy,router_parameters,mean_forgetting
+4,r0_mlp,0.578125,0.6453125,4740,0.0015625
+4,r1_linear,0.5635416666666666,0.625,20,0.0006249999999999977
+4,r2_prototype_energy,0.5510416666666665,0.61625,24,0.00031250000000000445
+4,r3_hybrid_energy,0.5625,0.6125,42,0.0

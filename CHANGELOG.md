@@ -153,3 +153,22 @@
 - Add Verification Stack v0.2 with PDF/ZIP parsing, versioned metric, protocol
   and claim rules, red-team cases, and stable report outputs.
 - Preserve complete v1.1.0 results and reviewer report v1.3.
+
+### v1.1.1 build r2 — optional verification dependency boundary
+
+- Keep scientific version `1.1.1` unchanged.
+- Update build revision to `bridge-isolation-common-hosts-c0-r2`.
+- Remove eager Verification Stack imports from the MMALS package root.
+- Load `pypdf` lazily only when an execution PDF is parsed.
+- Install `pypdf` explicitly in the Verification Stack notebook.
+- Add regression tests for core import without `pypdf`.
+
+## 1.1.2 - smooth residual routing and SPD diagnostics
+
+- Correct stale post-execution v1.1.1 manifests without changing numerical evidence.
+- Archive the completed v1.1.1 reviewer report and execution PDF.
+- Add R4/R5 bounded smooth simplex-residual routing.
+- Add context-only continuity regularization and ablation.
+- Add regularized covariance, log-Euclidean, AIRM, and Bures-Wasserstein diagnostics.
+- Add v1.1.2 Colab, specification, tests, verification profile, and release assets.
+- Move `pypdf` to the optional verification dependency.

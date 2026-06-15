@@ -1,5 +1,5 @@
 version: 1.1.1
-build_revision: bridge-isolation-common-hosts-c0-r1
+build_revision: bridge-isolation-common-hosts-c0-r2
 status: C0 implementation; bridge-isolation pilot pending execution
 experiment:
   name: Geometry-MMALS G1 v1.1.1 Bridge Isolation
@@ -175,3 +175,7 @@ non_claims:
 - reinforcement_learning_control
 - riemannian_manifold
 - quantum_advantage
+dependency_policy:
+  core_import: verification-independent
+  verification_optional_dependency: pypdf>=4.0
+  verification_install_location: verification notebook setup cell

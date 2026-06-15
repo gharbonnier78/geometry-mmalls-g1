@@ -1,0 +1,7 @@
+# SHA256  SIZE_BYTES  TARGET_PATH
+ca728e5a31c62d6ea4b54ee6f065387265106e875837ef2f069e79b51a1df2ab  364101536  geometry-mmalls-g1/releases/v1.1.1/Geometry_MMALS_G1_v1_1_1_Corrected_Results.zip
+fb2f5e6e56770f0f6f7f8346fb45b274018fd63115e632435df941ccaf93cff3  77282898  geometry-mmalls-g1/results/v1_1_1/seed_0/dense_trace.pkl
+54c00916dc6af361f411dcb54b3031ac6f7f1d7ae84664b2d4e4a43552dc1e33  77282898  geometry-mmalls-g1/results/v1_1_1/seed_1/dense_trace.pkl
+85d862cfc4edda1c56133f23f2b82a2597937fb1db8fa82308478dcbec070ec6  77282898  geometry-mmalls-g1/results/v1_1_1/seed_2/dense_trace.pkl
+f6d969e6aa48f212b4c113b3fa9d1c22f269ff9c5fa348911164f1ae42a4ed1f  77282898  geometry-mmalls-g1/results/v1_1_1/seed_3/dense_trace.pkl
+5ceefc6aae3d0ce4d65e6dd361f741a9339f80c1fb76702318ba836163a4caae  77282898  geometry-mmalls-g1/results/v1_1_1/seed_4/dense_trace.pkl

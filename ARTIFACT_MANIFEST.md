@@ -133,3 +133,22 @@ v1.1.0 remains specification-only and unexecuted.
 - `verification/reports/v1_1_0_recheck/`
 
 Scientific status: C0 implementation. v1.1.1 empirical claims remain pending.
+
+## v1.1.1 build r2 dependency-boundary fix
+
+- `notebooks/Geometry_MMALS_G1_BridgeIsolation_v1_1_1_FIXED.ipynb`
+- `verification/notebooks/MMALS_Metric_Protocol_Claim_Verification_v0_2_1.ipynb`
+- `docs/changes/Geometry_MMALS_G1_v1_1_1_Optional_Verification_Dependency_Fix.md`
+- core import is independent of `pypdf`
+- Verification Stack installs `pypdf` explicitly
+
+## v1.1.2 full release
+
+- corrected `results/v1_1_1/` manifests and complete evidence
+- v1.1.1 execution PDF and corrected reviewer report
+- `notebooks/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2.ipynb`
+- `configs/rotated_mnist_g1_v112.yaml`
+- smooth residual router and continuity loss
+- SPD geometry module and tests
+- v1.1.2 specification PDF, Markdown, and LaTeX source
+- Verification Stack v1.1.2 profile and SPD metrics/claims

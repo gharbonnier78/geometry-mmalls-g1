@@ -18,7 +18,6 @@ import zipfile
 
 import pandas as pd
 import yaml
-from pypdf import PdfReader
 
 STATUSES = {"PASS", "PARTIAL", "FAIL", "NOT_TESTED"}
 
@@ -66,6 +65,19 @@ def safe_extract_zip(zip_path: str | Path, destination: str | Path) -> list[str]
 
 
 def pdf_report(pdf_path: str | Path) -> dict[str, Any]:
+    """Parse an execution PDF.
+
+    ``pypdf`` is loaded lazily so the MMALS core package remains importable
+    in training notebooks that do not use the independent verifier.
+    """
+    try:
+        from pypdf import PdfReader
+    except ModuleNotFoundError as exc:
+        raise ModuleNotFoundError(
+            "The Verification Stack requires the optional dependency 'pypdf'. "
+            "Install it with: pip install 'pypdf>=4.0'"
+        ) from exc
+
     path = Path(pdf_path)
     reader = PdfReader(str(path))
     pages = [(page.extract_text() or "") for page in reader.pages]
@@ -296,6 +308,8 @@ def claim_report(metric: dict[str, Any], protocol: dict[str, Any], claims: dict[
             status = "NOT_TESTED"
         elif any(item == "FAIL" for item in statuses):
             status = "FAIL"
+        elif any(item == "NOT_TESTED" for item in statuses):
+            status = "NOT_TESTED"
         elif all(item == "PASS" for item in statuses):
             status = "PASS"
         else:
@@ -354,8 +368,8 @@ def verify_evidence_bundle(*, experiment_id: str, execution_pdf: str | Path, res
     )
     claims = claim_report(metric, protocol, load_yaml(claim_rules))
     bundle = {
-        "schema_version": "0.2.0",
-        "verification_version": "0.2.0",
+        "schema_version": "0.2.1",
+        "verification_version": "0.2.1",
         "experiment_id": experiment_id,
         "selected_results_root": str(selected_results_root.relative_to(extracted)),
         "experiment_profile": str(experiment_profile) if experiment_profile is not None else None,

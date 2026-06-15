@@ -1,4 +1,4 @@
-schema_version: 0.2.0
+schema_version: 0.2.1
 claims:
 - id: CONTEXT_GEOMETRY
   statement: The inferred context has replicated representational geometry.
@@ -86,3 +86,26 @@ claims:
   - RUN_MANIFEST
   required_experiment_gates:
   - C5_memory_transport
+- id: HELDOUT_FUNCTIONAL_STRESS_REDUCTION
+  statement: The primary smooth residual treatment reduces held-out common-cost functional
+    stress.
+  required_metrics:
+  - AGGREGATE_SEED_EFFECTS
+  - GATE_SUMMARY
+  required_protocol_rules:
+  - MATCHED_COMPUTE
+  - FROZEN_CONTEXT
+  required_experiment_gates:
+  - C1_heldout_functional_stress_reduction
+- id: SPD_COVARIANCE_VALUE
+  statement: Regularized covariance geometry adds factor-discrimination value beyond
+    centroid-only context geometry.
+  required_metrics:
+  - SPD_CONTEXT_GEOMETRY
+  - SPD_AGGREGATE_EFFECTS
+  - GATE_SUMMARY
+  required_protocol_rules:
+  - SOURCE_PARTITION_SEPARATION
+  - SEED_COUNT
+  required_experiment_gates:
+  - GEO_SPD_covariance_adds_value

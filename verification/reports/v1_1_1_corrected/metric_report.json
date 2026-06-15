@@ -1,0 +1,326 @@
+{
+  "schema_version": "0.2.1",
+  "metrics": [
+    {
+      "id": "COMPUTE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/compute_summary.csv",
+        "sha256": "492c6035621375fafe95fb225e746950d0e4a2845a7585a009e196b17c381fa0",
+        "rows": 20,
+        "columns": [
+          "model_seed",
+          "method",
+          "total_forward_images",
+          "total_optimizer_steps",
+          "total_wall_seconds"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 12.722016575650013
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 11.085431028997846
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 14.043371597999794
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "GATE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+        "sha256": "20a85652850a524fc1904853d5106e8b6dd92f21a63ce4b8bdd49a9c664127ca",
+        "rows": 12,
+        "columns": [
+          "gate",
+          "passed",
+          "status"
+        ],
+        "null_cells": 0,
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_SEED_EFFECTS",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/aggregate_seed_effects.csv",
+        "sha256": "9f796de3ee6ba1159571a93c0548e450c85483e5f4c20aa7afd41d7fa6c01ea5",
+        "rows": 40,
+        "columns": [
+          "contrast",
+          "partition",
+          "geometry",
+          "metric",
+          "mean_seed_effect",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count",
+          "favorable_seed_fraction"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean_seed_effect": 0.001334403553717265,
+          "seed_ci_low": -0.03938346906714772,
+          "seed_ci_high": 0.04205227617458225,
+          "seed_sd": 0.032792988022338446,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.6100000000000001
+        },
+        "numeric_min": {
+          "mean_seed_effect": -0.0512334618927216,
+          "seed_ci_low": -0.0929995338845612,
+          "seed_ci_high": -0.0411780610207845,
+          "seed_sd": 0.0072372776952487,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.0
+        },
+        "numeric_max": {
+          "mean_seed_effect": 0.0664821654155431,
+          "seed_ci_low": -0.0006225078074054,
+          "seed_ci_high": 0.1354373892337366,
+          "seed_sd": 0.0669716599279646,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_METHOD_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/aggregate_method_summary.csv",
+        "sha256": "6441bdfac649fa5460e5a4e31f854328e931374a50c6bc2c7547895f6a6e7f55",
+        "rows": 12,
+        "columns": [
+          "method",
+          "metric",
+          "mean",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean": 0.39534895833333333,
+          "seed_ci_low": 0.3875357799062591,
+          "seed_ci_high": 0.4031621367604075,
+          "seed_sd": 0.006292506216155842,
+          "seed_count": 5.0
+        },
+        "numeric_min": {
+          "mean": 0.0005,
+          "seed_ci_low": -7.508191936711939e-05,
+          "seed_ci_high": 0.0009424108678069,
+          "seed_sd": 0.0003563048203434,
+          "seed_count": 5.0
+        },
+        "numeric_max": {
+          "mean": 0.6353125000000001,
+          "seed_ci_low": 0.6224872797071125,
+          "seed_ci_high": 0.6481377202928876,
+          "seed_sd": 0.0141526335980416,
+          "seed_count": 5.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "CAUSAL_SEED_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/causal_seed_summary.csv",
+        "sha256": "921abfb2b091c31b583cc6706b96541e219cfeabed11919ae7f3509dcb3bc42b",
+        "rows": 20,
+        "columns": [
+          "model_seed",
+          "method",
+          "mean_functional_csr",
+          "min_functional_csr_ci_low",
+          "min_prediction_preservation"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "mean_functional_csr": 1.7396765580214215,
+          "min_functional_csr_ci_low": 0.6913290533361888,
+          "min_prediction_preservation": 0.9844339622641509
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "mean_functional_csr": 0.0288435356633816,
+          "min_functional_csr_ci_low": 3.506671360025275e-05,
+          "min_prediction_preservation": 0.9433962264150944
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "mean_functional_csr": 19.172341225315023,
+          "min_functional_csr_ci_low": 3.683681540222794,
+          "min_prediction_preservation": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "HOST_OR_ALLOCATION_ABLATION",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/host_ablation.csv",
+        "sha256": "f854eff475053dbe5f18d9f9486e36987cdc277e15d07c7db31cddd69fdc5924",
+        "rows": 880,
+        "columns": [
+          "model_seed",
+          "method",
+          "angle",
+          "host",
+          "baseline_accuracy",
+          "ablated_accuracy",
+          "accuracy_drop",
+          "is_top_host",
+          "is_random_control"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "angle": 0.0,
+          "host": 1.5,
+          "baseline_accuracy": 0.5931389365351629,
+          "ablated_accuracy": 0.5904052315608919,
+          "accuracy_drop": 0.0027337049742710046,
+          "is_top_host": 0.25,
+          "is_random_control": 0.25
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "angle": -75.0,
+          "host": 0.0,
+          "baseline_accuracy": 0.1792452830188679,
+          "ablated_accuracy": 0.1698113207547169,
+          "accuracy_drop": -0.0943396226415094,
+          "is_top_host": 0.0,
+          "is_random_control": 0.0
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "angle": 75.0,
+          "host": 3.0,
+          "baseline_accuracy": 0.9339622641509434,
+          "ablated_accuracy": 0.9339622641509434,
+          "accuracy_drop": 0.1132075471698113,
+          "is_top_host": 1.0,
+          "is_random_control": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "RUN_MANIFEST_METRIC",
+      "status": "PASS",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/run_manifest.json",
+        "sha256": "ee31a73f6bd84df9a527a6a23a37cc06daae05369d623b0877ea3d031e8758cc",
+        "missing_keys": [],
+        "top_level_keys": [
+          "artifacts",
+          "build_revision",
+          "common_bank_hashes",
+          "common_functional_metric",
+          "completed_seeds",
+          "context_checkpoint_hashes",
+          "execution_status",
+          "failed_or_unqualified_claims",
+          "gate_results",
+          "git_sha",
+          "hosts_frozen_across_router_treatments",
+          "manifest_corrected_at_utc",
+          "manifest_correction_reason",
+          "manifest_revision",
+          "methods",
+          "model_seeds",
+          "notebook_version",
+          "numerical_results_changed",
+          "package_version",
+          "primary_contrasts",
+          "primary_decision",
+          "run_profile",
+          "sensory_accuracy",
+          "source_v110_results",
+          "split_manifest",
+          "supported_claims",
+          "timestamp",
+          "verification_profile",
+          "warning"
+        ]
+      }
+    },
+    {
+      "id": "CLAIM_MANIFEST_METRIC",
+      "status": "PASS",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/claim_manifest.json",
+        "sha256": "69c270ba6bba774c7d3e1aaaea0a880f8ade8335934b9ddd5db0611377dd0dca",
+        "missing_keys": [],
+        "top_level_keys": [
+          "completed_seeds",
+          "correction_note",
+          "execution_status",
+          "failed_or_unqualified_claims",
+          "gate_results",
+          "manifest_revision",
+          "non_claims",
+          "numerical_results_changed",
+          "partial_findings",
+          "primary_decision",
+          "schema_version",
+          "status",
+          "supported_claims",
+          "version"
+        ]
+      }
+    },
+    {
+      "id": "SPD_CONTEXT_GEOMETRY",
+      "status": "NOT_TESTED",
+      "message": "No matching artifact found.",
+      "evidence": {
+        "patterns": [
+          "**/spd_context_geometry.csv"
+        ]
+      }
+    },
+    {
+      "id": "SPD_AGGREGATE_EFFECTS",
+      "status": "NOT_TESTED",
+      "message": "No matching artifact found.",
+      "evidence": {
+        "patterns": [
+          "**/spd_aggregate_effects.csv"
+        ]
+      }
+    }
+  ]
+}

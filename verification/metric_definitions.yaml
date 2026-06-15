@@ -1,4 +1,4 @@
-schema_version: 0.2.0
+schema_version: 0.2.1
 metrics:
 - id: COMPUTE_SUMMARY
   file_patterns:
@@ -58,3 +58,21 @@ metrics:
   - version
   - status
   - non_claims
+- id: SPD_CONTEXT_GEOMETRY
+  file_patterns:
+  - '**/spd_context_geometry.csv'
+  required_columns:
+  - model_seed
+  - metric
+  - rho
+  - stress
+  - near_far_auc
+- id: SPD_AGGREGATE_EFFECTS
+  file_patterns:
+  - '**/spd_aggregate_effects.csv'
+  required_columns:
+  - contrast
+  - metric
+  - mean_seed_effect
+  - seed_ci_low
+  - seed_ci_high

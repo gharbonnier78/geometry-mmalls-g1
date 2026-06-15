@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.1",
+  "version": "1.1.1",
+  "manifest_revision": "post_execution_correction_v1",
+  "numerical_results_changed": false,
+  "execution_status": "five_seed_pilot_completed",
+  "primary_decision": "r3_hybrid_router_not_qualified",
+  "status": "Five-seed v1.1.1 bridge-isolation pilot completed. Protocol-integrity gates passed. Route-swap ordering and prediction-identity preservation passed. Held-out nominal mediation, held-out functional mediation, local continuity, functional causal specificity, and operational non-degradation did not qualify.",
+  "completed_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "gate_results": {
+    "C0_context_and_common_bank_frozen": true,
+    "C0_equal_router_compute": true,
+    "C1_heldout_nominal_mediation": false,
+    "C1_heldout_functional_mediation_common_cost": false,
+    "C1_local_continuity_tail": false,
+    "C2_route_swap_order": true,
+    "C4_functional_causal_specificity": false,
+    "C4_identity_preservation": true,
+    "C6_operational_non_degradation": false,
+    "C3_mature_host_specialization": false,
+    "C5_memory_transport": false,
+    "operational_superiority": false
+  },
+  "supported_claims": [
+    "The sensory encoder, context encoder, common host bank, synthesis layer, classifier, and common functional cost matrix were held fixed across router treatments.",
+    "Router forward-image and optimizer-step budgets were matched within every model seed.",
+    "Far-factor route swaps produced larger common-cost functional changes than near-factor route swaps.",
+    "Controlled route interventions preserved prediction identity under the preregistered gate."
+  ],
+  "partial_findings": [
+    "R3 produced positive mean held-out nominal and functional order effects, but seed intervals crossed zero.",
+    "R2 and R3 reduced held-out functional stress, while prototype-dominated routing created heavy local-continuity tails.",
+    "The frozen ecosystem carries non-arbitrary route-function structure, but the tested hybrid router did not exploit it smoothly or operationally."
+  ],
+  "failed_or_unqualified_claims": [
+    "held-out nominal route mediation qualification",
+    "held-out functional route mediation qualification under the common cost matrix",
+    "local-continuity-tail qualification",
+    "functional causal-specificity qualification",
+    "operational non-degradation within the one-point margin"
+  ],
+  "non_claims": [
+    "operational_superiority",
+    "mature_host_specialization",
+    "memory_transport",
+    "full_multiobjective_energy_control",
+    "reinforcement_learning_control",
+    "riemannian_manifold",
+    "quantum_advantage"
+  ],
+  "correction_note": "The original notebook export retained a pre-execution status string. This corrected manifest changes metadata only; CSV, checkpoint, and trace evidence are unchanged."
+}

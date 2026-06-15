@@ -1,0 +1,23 @@
+{
+  "package": "Geometry-MMALS G1 GitHub delta",
+  "from_version": "1.1.0",
+  "to_version": "1.1.2",
+  "baseline_archive": "Geometry_MMALS_G1_GitHub_Package_v1_1_0_RESULTS_v1_1_1_PLAN.zip",
+  "baseline_archive_sha256": "37ce9c9eb12930fc3f66a93b7efa9182f84a35257c7ce2ccc9d1a59831364d6b",
+  "target_archive": "Geometry_MMALS_G1_GitHub_Package_v1_1_2_FULL.zip",
+  "target_archive_sha256": "adf81d38a3489f434d49bbba485e112cf070440db925d955e2f2caefd26fb3e0",
+  "comparison": {
+    "new_files_total": 256,
+    "changed_files_total": 13,
+    "deleted_files_total": 0,
+    "included_in_delta": 263,
+    "excluded_large_evidence": 6
+  },
+  "policy": {
+    "contains_only_new_or_changed_files": true,
+    "unchanged_files_included": false,
+    "deleted_files": [],
+    "large_evidence_policy": "Raw dense_trace.pkl files and the redundant nested corrected-results ZIP are not included in the GitHub delta. Their hashes and target paths are recorded in EXCLUDED_LARGE_EVIDENCE_SHA256SUMS.txt."
+  },
+  "apply": "Extract this archive into the parent directory of the existing geometry-mmalls-g1 repository and allow overwrite."
+}

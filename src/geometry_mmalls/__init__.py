@@ -110,6 +110,19 @@ from .functional_routing import (
     permute_hosts_and_routes,
     route_weighted_synthesis,
 )
-from .verification import verify_evidence_bundle, write_verification_outputs
 
-__version__ = "1.1.1"
+
+from .functional_routing import SmoothSimplexResidualRouter, simplex_continuity_hinge_loss
+from .spd_geometry import (
+    affine_invariant_distance,
+    bures_wasserstein_distance,
+    log_euclidean_distance,
+    pairwise_spd_distances,
+    regularized_covariance,
+)
+
+# The verification stack is intentionally not imported here.
+# It is an optional layer and may require pypdf. Import it explicitly with:
+#     from geometry_mmalls.verification import verify_evidence_bundle
+
+__version__ = "1.1.2"

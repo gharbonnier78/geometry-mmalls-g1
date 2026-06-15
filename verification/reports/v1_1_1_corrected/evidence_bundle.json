@@ -1,0 +1,1595 @@
+{
+  "schema_version": "0.2.1",
+  "verification_version": "0.2.1",
+  "experiment_id": "geometry_mmalls_g1_v1_1_1",
+  "selected_results_root": "v1_1_1",
+  "experiment_profile": null,
+  "inputs": {
+    "execution_pdf": "/mnt/data/Geometry_MMALS_G1_BridgeIsolation_v1_1_1.pdf",
+    "execution_pdf_sha256": "2f3d8d1ab70de60adf177ce16789cb788cf129cee27027bea68ef835e97aefd1",
+    "results_zip": "/mnt/data/Geometry_MMALS_G1_v1_1_1_Corrected_Results.zip",
+    "results_zip_sha256": "ca728e5a31c62d6ea4b54ee6f065387265106e875837ef2f069e79b51a1df2ab"
+  },
+  "pdf_report": {
+    "path": "/mnt/data/Geometry_MMALS_G1_BridgeIsolation_v1_1_1.pdf",
+    "sha256": "2f3d8d1ab70de60adf177ce16789cb788cf129cee27027bea68ef835e97aefd1",
+    "page_count": 44,
+    "metadata": {
+      "/Creator": "LaTeX with hyperref",
+      "/Producer": "xdvipdfmx (20210609)",
+      "/CreationDate": "D:20260615045603-00'00'"
+    },
+    "text_length": 87083,
+    "contains_traceback": false,
+    "contains_completed_seeds": true,
+    "contains_export_marker": true,
+    "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]"
+  },
+  "archive_inventory": [
+    {
+      "relative_path": "v1_1_1/MANIFEST_CORRECTION.md",
+      "size_bytes": 676,
+      "sha256": "077071c662f442fd5b818bdfbd3030b8c5d8e69272c65c11152f73ede57dcfbb"
+    },
+    {
+      "relative_path": "v1_1_1/aggregate_method_summary.csv",
+      "size_bytes": 1420,
+      "sha256": "6441bdfac649fa5460e5a4e31f854328e931374a50c6bc2c7547895f6a6e7f55"
+    },
+    {
+      "relative_path": "v1_1_1/aggregate_seed_effects.csv",
+      "size_bytes": 5905,
+      "sha256": "9f796de3ee6ba1159571a93c0548e450c85483e5f4c20aa7afd41d7fa6c01ea5"
+    },
+    {
+      "relative_path": "v1_1_1/allocation_territory.csv",
+      "size_bytes": 55839,
+      "sha256": "6f04638d5efe869b0510921484bc273bab49f448a35ab7a41d5cae68e7b7f659"
+    },
+    {
+      "relative_path": "v1_1_1/causal_mediation_summary.csv",
+      "size_bytes": 23618,
+      "sha256": "ca604caf95eaf8e389894ff4c2a8fa0da299e9644acf859de69e5071dc662417"
+    },
+    {
+      "relative_path": "v1_1_1/causal_seed_summary.csv",
+      "size_bytes": 1470,
+      "sha256": "921abfb2b091c31b583cc6706b96541e219cfeabed11919ae7f3509dcb3bc42b"
+    },
+    {
+      "relative_path": "v1_1_1/claim_manifest.json",
+      "size_bytes": 2844,
+      "sha256": "69c270ba6bba774c7d3e1aaaea0a880f8ade8335934b9ddd5db0611377dd0dca"
+    },
+    {
+      "relative_path": "v1_1_1/common_bank_stage_logs.csv",
+      "size_bytes": 3379,
+      "sha256": "b2c1ead7566d4dc7201b75fa5d10bb8ba7d5645710426ecd2c212533e28ebd85"
+    },
+    {
+      "relative_path": "v1_1_1/compute_summary.csv",
+      "size_bytes": 948,
+      "sha256": "492c6035621375fafe95fb225e746950d0e4a2845a7585a009e196b17c381fa0"
+    },
+    {
+      "relative_path": "v1_1_1/context_pretraining_stage_logs.csv",
+      "size_bytes": 5563,
+      "sha256": "758d43f82d32cfd832e1b83089e5860863a62a1eea0b094dd36acb228973b34a"
+    },
+    {
+      "relative_path": "v1_1_1/environment.txt",
+      "size_bytes": 134,
+      "sha256": "0724361f71e1222abcde9b0ff6475fcc98b24914adecac5833833a70afa28fdc"
+    },
+    {
+      "relative_path": "v1_1_1/forgetting.csv",
+      "size_bytes": 4844,
+      "sha256": "7cb3dfe3a0b797b423538b7c6c33cde1bc58b67bb12b843db6870696d29a700d"
+    },
+    {
+      "relative_path": "v1_1_1/gate_summary.csv",
+      "size_bytes": 651,
+      "sha256": "20a85652850a524fc1904853d5106e8b6dd92f21a63ce4b8bdd49a9c664127ca"
+    },
+    {
+      "relative_path": "v1_1_1/host_ablation.csv",
+      "size_bytes": 72647,
+      "sha256": "f854eff475053dbe5f18d9f9486e36987cdc277e15d07c7db31cddd69fdc5924"
+    },
+    {
+      "relative_path": "v1_1_1/host_overlap_and_cost.csv",
+      "size_bytes": 15438,
+      "sha256": "1712eb072b6b7f6e51b796b06d523f299bd4394fa655de390879c3949a395f6b"
+    },
+    {
+      "relative_path": "v1_1_1/local_continuity_raw.csv",
+      "size_bytes": 25447031,
+      "sha256": "c1dd3a299db09a8b3bcaea86528892d7f57db3a45802000fa16559ae2d542104"
+    },
+    {
+      "relative_path": "v1_1_1/local_continuity_summary.csv",
+      "size_bytes": 10990,
+      "sha256": "e6df7b9a69d69ef33784f876558739f44fa68fc2b002d52d85b8fbb3d9304ed2"
+    },
+    {
+      "relative_path": "v1_1_1/mediation_probe_controls.csv",
+      "size_bytes": 7903,
+      "sha256": "68b8fdfde6c3bf2c05ce157d30717bd01af6ee721762183cd272355e53244c8a"
+    },
+    {
+      "relative_path": "v1_1_1/paired_route_geometry_effects.csv",
+      "size_bytes": 24967,
+      "sha256": "1f6583d183e86f8509476cdc9d5ae2dcf60e8c300d4d6144a9b4d112b35ad7ad"
+    },
+    {
+      "relative_path": "v1_1_1/per_seed_method_summary.csv",
+      "size_bytes": 1381,
+      "sha256": "3bf132e64681208d647c17e2177d519a2d2b2b3e9560a2448c9e7dfa4fc294fd"
+    },
+    {
+      "relative_path": "v1_1_1/perturbation_sensitivity.csv",
+      "size_bytes": 590539,
+      "sha256": "54315a9d871510ee1ac3f17ea379cef716edb0763d2d50171edcc81ef04d3ad7"
+    },
+    {
+      "relative_path": "v1_1_1/preservation.csv",
+      "size_bytes": 686,
+      "sha256": "1e4003238eb567934a33ca803fa98c256dede8171fe9dc7ae7060f24d8a23f77"
+    },
+    {
+      "relative_path": "v1_1_1/route_geometry.csv",
+      "size_bytes": 16617,
+      "sha256": "f3238246e51b558d7a456c3b7fa5ff1d5ac2a68349819abd06c83fc35b0b0e38"
+    },
+    {
+      "relative_path": "v1_1_1/route_swap_effects.csv",
+      "size_bytes": 14940891,
+      "sha256": "32a9567d984adb8da0a9daea6004b057c641798a911a86556f3af603f9c96824"
+    },
+    {
+      "relative_path": "v1_1_1/route_swap_summary.csv",
+      "size_bytes": 2524,
+      "sha256": "e0e0d0f1f2616829b4cea3c731f80247aee6621a57f280e8fdde5a6fbae7e3de"
+    },
+    {
+      "relative_path": "v1_1_1/router_initialization.csv",
+      "size_bytes": 837,
+      "sha256": "6c5e4b5488d19e4b5a01e3a3b5eeb9dcb74bafba8898d95332694d04747dfc47"
+    },
+    {
+      "relative_path": "v1_1_1/routing_stage_logs.csv",
+      "size_bytes": 28032,
+      "sha256": "c67956754e9a430a9c937bb0b529f541d1d35056bc08207ceebb94f616971cff"
+    },
+    {
+      "relative_path": "v1_1_1/run_manifest.json",
+      "size_bytes": 5855,
+      "sha256": "ee31a73f6bd84df9a527a6a23a37cc06daae05369d623b0877ea3d031e8758cc"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/allocation_territory.csv",
+      "size_bytes": 11207,
+      "sha256": "b11790bf7208420ec2faf435c42039d50c66b3494ee931ad3b2e386fad2373a4"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/causal_mediation_raw.csv",
+      "size_bytes": 342957,
+      "sha256": "7b979d21cda5a00e966f63d3f96e0ceb88e6a3ee1bb5e3465dc9233727e49ea6"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/causal_mediation_summary.csv",
+      "size_bytes": 5007,
+      "sha256": "0e8901bd50d572bbf19b0205d926c955c90c161e9e909f11f1c12f8dbc501a7b"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "c1f9984e35f8b651953c301dfec16601d8e846faaee4770e7e579f9e97398caa"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/common_bank_stage_logs.csv",
+      "size_bytes": 775,
+      "sha256": "551a82f725271f6555a66042ebbbe8363730e8067fcfb774180fa65b497126c8"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "183647874971e81eaa1d6c2cec9e58d6d4e3e34ca759392a6b6a1100fb7826ea"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/context_pretraining_stage_logs.csv",
+      "size_bytes": 1247,
+      "sha256": "a06402dc83a57a100f87c0e52db2b92f506a149189a6f20c7d0ea93f2c81b6fd"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/dense_trace.pkl",
+      "size_bytes": 77282898,
+      "sha256": "fb2f5e6e56770f0f6f7f8346fb45b274018fd63115e632435df941ccaf93cff3"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/forgetting.csv",
+      "size_bytes": 1000,
+      "sha256": "7ae59ee6b26ed2e1769a01aa18decb458f62b9521059298e6a14edd352ba654d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/host_ablation.csv",
+      "size_bytes": 14506,
+      "sha256": "f9be608a02735f0b4a2e09ef01403106a990a1a536486c20ae9e412b638683a2"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/host_overlap_and_cost.csv",
+      "size_bytes": 3140,
+      "sha256": "325c19c96fd8550f470bcf6d899954bbdeb42db9c0aac916299ef1df5aae4084"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/local_continuity_raw.csv",
+      "size_bytes": 5091479,
+      "sha256": "3e1ac7bf3b6a274ce66da7dc6a1449eac72777fc567b3815d3b1927e74184734"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/mediation_probe_controls.csv",
+      "size_bytes": 1668,
+      "sha256": "f823814ccfa9871371c8c611909187e17ed2759ba2fd7d7cf663ca3b07879fec"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/method_summary.csv",
+      "size_bytes": 385,
+      "sha256": "8f3313e2a2cb0b8f300e0a307a4547e399566126a736fd9830100faa1ec12d19"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/paired_route_geometry_effects.csv",
+      "size_bytes": 5107,
+      "sha256": "b7a6751cf1d785e9dde304e6ba89cebfc422a760380420d5a4a71b0dc3e7943f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/perturbation_sensitivity.csv",
+      "size_bytes": 118294,
+      "sha256": "d6c9887c31ac41a3697cd5f204d7341b4ba3c541b832b73720ee07b1d45f08f7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/preservation.csv",
+      "size_bytes": 222,
+      "sha256": "c34d9b2ad6e60474de3838c8f77a98c4741ff1600b20ff73b8809374a80c5551"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/route_geometry.csv",
+      "size_bytes": 3400,
+      "sha256": "aa716affb93535079a13f7b9f533b49f8c88ab6636db062e45f12d5770068f6d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/route_swap_effects.csv",
+      "size_bytes": 2988457,
+      "sha256": "15c8160e1fc156903bb4cddbbcbdec8253a7737d84915c77f31f1951a31bd157"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/router_initialization.csv",
+      "size_bytes": 259,
+      "sha256": "0056e87bfbf219e96b16e18516b49d0d9e2474cd34ed9e18ac1fc6a03db40208"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/routing_stage_logs.csv",
+      "size_bytes": 5746,
+      "sha256": "87f30ebb6baacc82f9f4d70bf48ae47b24b6ea91e035084beee9fb484b797127"
+    },
+    {
+      "relative_path": "v1_1_1/seed_0/staged_evaluation.csv",
+      "size_bytes": 12727,
+      "sha256": "f4ae8713b5f96fb298fbafb36fa1096ead5dcce3b11f1393b7a6b70cf3750aef"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/allocation_territory.csv",
+      "size_bytes": 11210,
+      "sha256": "c709aed5489f040c2afd62917707244f830b8f0a90092fe4d2beccda4c3c9a5c"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/causal_mediation_raw.csv",
+      "size_bytes": 342724,
+      "sha256": "8cff0fdb170584fbd0233e4b5b26cd90e15e107cb9d590e22367fd8d716787a7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/causal_mediation_summary.csv",
+      "size_bytes": 4822,
+      "sha256": "8def9eb2fba6e1abdb9b44377a13dd0d29870ae29c3ef16a5dfe61f03a2c909f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "d74029f33c6517ed84177b48b2cdabfc4b93fe7909fe5c587cc870b6fbf36f79"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/common_bank_stage_logs.csv",
+      "size_bytes": 781,
+      "sha256": "8e24c10cb6f5b81698a65abc0351aa543d85d026e4de4a16d86b62f6e678f0fb"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "02e11f42d84f34d2532045b4303cfc9708a9c61be8a9c860bac63eeff003884f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/context_pretraining_stage_logs.csv",
+      "size_bytes": 1256,
+      "sha256": "ac22b63ea6706dcc821cd2b4da3ddfe001970504d54e0887043b4326494e30f0"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/dense_trace.pkl",
+      "size_bytes": 77282898,
+      "sha256": "54c00916dc6af361f411dcb54b3031ac6f7f1d7ae84664b2d4e4a43552dc1e33"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/forgetting.csv",
+      "size_bytes": 976,
+      "sha256": "85881723a393cf447c9edc4b9573fe563ae89a9faac9f4d1c7b48fbcf7b20f50"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/host_ablation.csv",
+      "size_bytes": 14471,
+      "sha256": "5d6a4bfebefeedb1303cbf238798c98cf6c8301295a24717811d0b094927d272"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/host_overlap_and_cost.csv",
+      "size_bytes": 3142,
+      "sha256": "8039c99ee46290ce396cf695673bad2fb7101b289baa5d038fe5b72e11f6387a"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/local_continuity_raw.csv",
+      "size_bytes": 5088687,
+      "sha256": "64e62f410064932fa8e811a75659706c27db784f916ebd855b26a4d1a05314db"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/mediation_probe_controls.csv",
+      "size_bytes": 1664,
+      "sha256": "7563619afa850954e9d9b83c65faf1a7cc112f8f971c55bc94c0009f5395fe7f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/method_summary.csv",
+      "size_bytes": 328,
+      "sha256": "d7e113c2cf599ecb406c121461435b39337a2281dac47eb000d6902d24318168"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/paired_route_geometry_effects.csv",
+      "size_bytes": 5043,
+      "sha256": "4f34a0534a4b6874867f56b3f76c93437db0d50b5277bfd4be61c8ead6a6125a"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/perturbation_sensitivity.csv",
+      "size_bytes": 118122,
+      "sha256": "adb32d6e349288047ebad3f3cd05f6f9a7cdddcc584188a1f7e52171c3ce7e8b"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/preservation.csv",
+      "size_bytes": 222,
+      "sha256": "c34d9b2ad6e60474de3838c8f77a98c4741ff1600b20ff73b8809374a80c5551"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/route_geometry.csv",
+      "size_bytes": 3389,
+      "sha256": "392c348529cae1c005141718d5aea4a7017458bab3a0e9a1b871c2b691ac47d3"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/route_swap_effects.csv",
+      "size_bytes": 2986117,
+      "sha256": "ed7b6e450dcd9a9b0e9460d0eaf1ce1d489f1283eaed3db3a949ab6033d51ad8"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/router_initialization.csv",
+      "size_bytes": 260,
+      "sha256": "63f6f8f86cfe2fe32a0c362c449f1f4824137aee6232ab105938a21711e45942"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/routing_stage_logs.csv",
+      "size_bytes": 5756,
+      "sha256": "6e2f919dff2fc4e685632daee27e576e2e3d9f261217a21b8688e4cfd7cbfa90"
+    },
+    {
+      "relative_path": "v1_1_1/seed_1/staged_evaluation.csv",
+      "size_bytes": 12751,
+      "sha256": "7ab9015cdbbb8c9d21b6f9e6b140189d191916ab6ec123d480b3d35249be3567"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/allocation_territory.csv",
+      "size_bytes": 11265,
+      "sha256": "7cccbeaf4907197778b2460f8cd7f3428c5726bc24ce0c28356c08b9d8cbda9f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/causal_mediation_raw.csv",
+      "size_bytes": 342145,
+      "sha256": "c5942567b499aaf414a1f2925285a8895626e3282fe3e83f923fcef64b51ceff"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/causal_mediation_summary.csv",
+      "size_bytes": 4941,
+      "sha256": "911a01195f3977e4628a709b2a77f45c7823cec50a5381cbd4ccbf3c95e705c3"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "1c86f738cff55598453dab350acc148568e383bceaf8431af52f8a65e510d4e6"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/common_bank_stage_logs.csv",
+      "size_bytes": 779,
+      "sha256": "48b710bb3890683bd66d8f48f5332429fe8efdb251aaf62569c7a72a26cad7a2"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "04dad7f6823cfde905c5d72db12eb70ece10a358427ef694ca6600d4a7ed2a8f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/context_pretraining_stage_logs.csv",
+      "size_bytes": 1251,
+      "sha256": "c4306732bd1626e71bb87844d7b364bb9c6e7872c5377901b3a0a32e1c08413d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/dense_trace.pkl",
+      "size_bytes": 77282898,
+      "sha256": "85d862cfc4edda1c56133f23f2b82a2597937fb1db8fa82308478dcbec070ec6"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/forgetting.csv",
+      "size_bytes": 1032,
+      "sha256": "4f204bcdca4e8ccb353517b8c1cf9f32f2b6ce01f312c70e208dbd0ff742e4cc"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/host_ablation.csv",
+      "size_bytes": 14816,
+      "sha256": "a99a109256720e14c06c53966f345e2079c58bd6ca9052ad520d1149f3f8f2cb"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/host_overlap_and_cost.csv",
+      "size_bytes": 3136,
+      "sha256": "a62676bab48cab7b1e8c7ecde5e6c4a3e0374791477eaaed5e54b15081f53270"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/local_continuity_raw.csv",
+      "size_bytes": 5090640,
+      "sha256": "7c8d2d7f5f51c48dc35bd598b1617dd5510ea8f6cda337fa8f326e5d8234fc33"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/mediation_probe_controls.csv",
+      "size_bytes": 1663,
+      "sha256": "1bff016ee16e3e1256f882d87f99aacafb00670d24cba8d9c7e5dac30781e402"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/method_summary.csv",
+      "size_bytes": 371,
+      "sha256": "007482898b99c4c03915180d9c2087a3ea4cdc5beb4fa3765e95f3a0fa5a75c7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/paired_route_geometry_effects.csv",
+      "size_bytes": 5055,
+      "sha256": "e865255ac162e975a2fdc388a594589bb5f30e9ad6ed7c1d10af32e1fcd58c2c"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/perturbation_sensitivity.csv",
+      "size_bytes": 118253,
+      "sha256": "7c0eef29c08c289bd6afb61b0699c0a6ba86c1de22511892f17f45b65079f4ba"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/preservation.csv",
+      "size_bytes": 222,
+      "sha256": "c34d9b2ad6e60474de3838c8f77a98c4741ff1600b20ff73b8809374a80c5551"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/route_geometry.csv",
+      "size_bytes": 3402,
+      "sha256": "faa8c03ce9e1db94c69153e03db894c46bd1cd0798ccead37619a817ab749d50"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/route_swap_effects.csv",
+      "size_bytes": 2991565,
+      "sha256": "099f0b7d7b90c71217c4bb16d2ea2cf781f1a073f8b3787be8016c2afa33337d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/router_initialization.csv",
+      "size_bytes": 259,
+      "sha256": "9b96af2c793399786995ec123a0439b68f3edbede9229389b74ddb583b247b19"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/routing_stage_logs.csv",
+      "size_bytes": 5756,
+      "sha256": "cc2259127d70b5d48d75885a8a588cefbeb2983cefbe91a0e93715ad7266a65e"
+    },
+    {
+      "relative_path": "v1_1_1/seed_2/staged_evaluation.csv",
+      "size_bytes": 12728,
+      "sha256": "b9fe2c670fb9ef9aa6df81cb80eb4d9eabecd50cef7a97246696676c85b4d134"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/allocation_territory.csv",
+      "size_bytes": 11196,
+      "sha256": "742485f1da5fce2670ff13081bd6afdebb53b4714ca6c2ab425c12eb5c306dae"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/causal_mediation_raw.csv",
+      "size_bytes": 340201,
+      "sha256": "eea8aabb3ffb2176cc317fdaf63295f694f42576cd2d4ffa5609bf9626cd66b2"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/causal_mediation_summary.csv",
+      "size_bytes": 4979,
+      "sha256": "178e9a6e602fdab7c50f28a0b89f78d486f46f8c1de8fb4e8a5e15d06aa74451"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "a539b66445912021976ed46878fde035616f3d066eeb509836f24cf745c88c4b"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/common_bank_stage_logs.csv",
+      "size_bytes": 779,
+      "sha256": "739c34902e20b517f61753c4a8282b49f1fad7e25a4934face5b94b25ce005bb"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "9fa48aaa70282136a03711a233c7d121b91d1b1dc444a984362c4d332c22f7d3"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/context_pretraining_stage_logs.csv",
+      "size_bytes": 1255,
+      "sha256": "392ff2ca5971f2b1565d23e0ec88cb9e9d08a8819209af1b5541301410e84890"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/dense_trace.pkl",
+      "size_bytes": 77282898,
+      "sha256": "f6d969e6aa48f212b4c113b3fa9d1c22f269ff9c5fa348911164f1ae42a4ed1f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/forgetting.csv",
+      "size_bytes": 1082,
+      "sha256": "875afba838359303f2efd04c139f6e4875de7d916addb7af5f40677f88c4fcb1"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/host_ablation.csv",
+      "size_bytes": 14515,
+      "sha256": "4bbfb1d1bc7e85c398bd044aefbbdf60c3a8c31686a1af6b4609569f020071a7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/host_overlap_and_cost.csv",
+      "size_bytes": 3142,
+      "sha256": "02020972fe14270dc0d0e7bd37d2056ee12e9888000cfe3c8f574acfe8373376"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/local_continuity_raw.csv",
+      "size_bytes": 5086744,
+      "sha256": "2a1303b4d9571e875b26d645b8ce2c6436f51eee8fa96c8c35237573d0c6a358"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/mediation_probe_controls.csv",
+      "size_bytes": 1658,
+      "sha256": "16ec58322348613e8a4c64d0fe0e61a6650ed20c181763f5b44512b026024319"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/method_summary.csv",
+      "size_bytes": 368,
+      "sha256": "62b66133062a9b56879830ef2def2ad70c36eef5e2dd392117cadce270ba0c3b"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/paired_route_geometry_effects.csv",
+      "size_bytes": 5077,
+      "sha256": "b575355f10eb43afd1c56c22153611d1b06bfa9cc5febbd71605393b211c72e5"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/perturbation_sensitivity.csv",
+      "size_bytes": 117911,
+      "sha256": "6b7ea1c57c438dfc0188fd4c22e947f571847aec046a49c5343b4938de20d7e6"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/preservation.csv",
+      "size_bytes": 222,
+      "sha256": "c34d9b2ad6e60474de3838c8f77a98c4741ff1600b20ff73b8809374a80c5551"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/route_geometry.csv",
+      "size_bytes": 3400,
+      "sha256": "9b948b364643ddb83309c33290a23eedf275ab77b03f892ce821cc9576208268"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/route_swap_effects.csv",
+      "size_bytes": 2987283,
+      "sha256": "10d9b89e633950d6d141f65d455e0a940741040bf4bf7b8f5262b229f33be9e8"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/router_initialization.csv",
+      "size_bytes": 260,
+      "sha256": "a33c72051bd5ca509d84d938f9236e972a969d4fb2869082d5b7290652776948"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/routing_stage_logs.csv",
+      "size_bytes": 5761,
+      "sha256": "dea1f835f7b43f554b59c7ffb0b665ba2b824e9f537b901a5ac5fd20b1328b50"
+    },
+    {
+      "relative_path": "v1_1_1/seed_3/staged_evaluation.csv",
+      "size_bytes": 12786,
+      "sha256": "82df1084c7777804c8a35bc6a49f2c5c785de04a7e9327b2535fa6dc2b403436"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/allocation_territory.csv",
+      "size_bytes": 11221,
+      "sha256": "d8e520494169702764907894461b864103b585ad8c46cf6f85ff3553266730c7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/causal_mediation_raw.csv",
+      "size_bytes": 344411,
+      "sha256": "f34e78f5768661965ea92518c30f45ec5795738036905288cc70f1074324ec3f"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/causal_mediation_summary.csv",
+      "size_bytes": 4993,
+      "sha256": "4338d46e9e7d20e320841fa0b6e84d7d37e25b24c14ee5cbc03db9739710871d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "cefff768212fb18bc8fc486e42e4f6643d221265d200b9643c52b5cd66e6cc75"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/common_bank_stage_logs.csv",
+      "size_bytes": 777,
+      "sha256": "d28b5e6c5b0e832f4a2728d983927d8b65127889eab32829a6028c0efddc2faa"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "2d410614c505d003d758632ec182915034dca6e975f36c66131a9bce1b754c55"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/context_pretraining_stage_logs.csv",
+      "size_bytes": 1274,
+      "sha256": "5d64248989d2a0b5f13ab5e9ab44ce9d7b6c998f92396e42fad7fe5e0d404087"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/dense_trace.pkl",
+      "size_bytes": 77282898,
+      "sha256": "5ceefc6aae3d0ce4d65e6dd361f741a9339f80c1fb76702318ba836163a4caae"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/forgetting.csv",
+      "size_bytes": 1010,
+      "sha256": "e0b59d74a706900078e8975128f962a2fb7c126d4635a3703b161ed8c6e0ec08"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/host_ablation.csv",
+      "size_bytes": 14771,
+      "sha256": "987e80739be73ed2806f87050e548cccd7c0d7aa0bd009dabd8f088c7181007d"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/host_overlap_and_cost.csv",
+      "size_bytes": 3142,
+      "sha256": "0f1503673d4127226d1425bf91f010cf776ea1742e5093b05fd0db1f1031edfb"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/local_continuity_raw.csv",
+      "size_bytes": 5089933,
+      "sha256": "dd7998ca298ef7af6ec22a8e18d1ef6eddc73ba71dfac1f30a3a05da204c5df7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/mediation_probe_controls.csv",
+      "size_bytes": 1662,
+      "sha256": "f8613e898106f1d1ec9c787eab4edc4c435740c7ad3074f16df924da7a24f8bc"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/method_summary.csv",
+      "size_bytes": 317,
+      "sha256": "f406e8f2e38868b9b77dabba930b03631a01343c7204b248de2db9b4f08c4cc5"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/paired_route_geometry_effects.csv",
+      "size_bytes": 5077,
+      "sha256": "529eef4b8224e45cc40b1b4aa4848c6822530ddfbe38308ffba42d5a384471ad"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/perturbation_sensitivity.csv",
+      "size_bytes": 118323,
+      "sha256": "9745fd91d853ac744c5aca078dbfb99feb676b6a560e792923277af533b25540"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/preservation.csv",
+      "size_bytes": 222,
+      "sha256": "c34d9b2ad6e60474de3838c8f77a98c4741ff1600b20ff73b8809374a80c5551"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/route_geometry.csv",
+      "size_bytes": 3394,
+      "sha256": "768b790430c55f64d87fae3ba37d5e4c474f0f38c8d0fd71d3215f7de7d92e97"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/route_swap_effects.csv",
+      "size_bytes": 2988109,
+      "sha256": "d45562d747886c2530ee8b5472facda9ffb551856127f8504ccd150ab5f56c92"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/router_initialization.csv",
+      "size_bytes": 259,
+      "sha256": "0e24072bbd42f71576c75d248459e15537dfa6699bfaddf15137e431efa49be8"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/routing_stage_logs.csv",
+      "size_bytes": 5761,
+      "sha256": "ecdbd4c7580997ae9afd55427e516a09e89ee55da164e1dc53a7c93db02063d7"
+    },
+    {
+      "relative_path": "v1_1_1/seed_4/staged_evaluation.csv",
+      "size_bytes": 12768,
+      "sha256": "32238bbab936037a617cc9a3679cd11aac15f7fceef460cf0ad0357265bdee1b"
+    },
+    {
+      "relative_path": "v1_1_1/sensory_history.csv",
+      "size_bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "relative_path": "v1_1_1/staged_evaluation.csv",
+      "size_bytes": 63544,
+      "sha256": "54686808a7e57f2a0bc7a8ab0dfd17d4e35201a97d6ca9adcb69cbcb5afabeb6"
+    }
+  ],
+  "metric_report": {
+    "schema_version": "0.2.1",
+    "metrics": [
+      {
+        "id": "COMPUTE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/compute_summary.csv",
+          "sha256": "492c6035621375fafe95fb225e746950d0e4a2845a7585a009e196b17c381fa0",
+          "rows": 20,
+          "columns": [
+            "model_seed",
+            "method",
+            "total_forward_images",
+            "total_optimizer_steps",
+            "total_wall_seconds"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 12.722016575650013
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 11.085431028997846
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 14.043371597999794
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "GATE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "sha256": "20a85652850a524fc1904853d5106e8b6dd92f21a63ce4b8bdd49a9c664127ca",
+          "rows": 12,
+          "columns": [
+            "gate",
+            "passed",
+            "status"
+          ],
+          "null_cells": 0,
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_SEED_EFFECTS",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/aggregate_seed_effects.csv",
+          "sha256": "9f796de3ee6ba1159571a93c0548e450c85483e5f4c20aa7afd41d7fa6c01ea5",
+          "rows": 40,
+          "columns": [
+            "contrast",
+            "partition",
+            "geometry",
+            "metric",
+            "mean_seed_effect",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count",
+            "favorable_seed_fraction"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean_seed_effect": 0.001334403553717265,
+            "seed_ci_low": -0.03938346906714772,
+            "seed_ci_high": 0.04205227617458225,
+            "seed_sd": 0.032792988022338446,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.6100000000000001
+          },
+          "numeric_min": {
+            "mean_seed_effect": -0.0512334618927216,
+            "seed_ci_low": -0.0929995338845612,
+            "seed_ci_high": -0.0411780610207845,
+            "seed_sd": 0.0072372776952487,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.0
+          },
+          "numeric_max": {
+            "mean_seed_effect": 0.0664821654155431,
+            "seed_ci_low": -0.0006225078074054,
+            "seed_ci_high": 0.1354373892337366,
+            "seed_sd": 0.0669716599279646,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_METHOD_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/aggregate_method_summary.csv",
+          "sha256": "6441bdfac649fa5460e5a4e31f854328e931374a50c6bc2c7547895f6a6e7f55",
+          "rows": 12,
+          "columns": [
+            "method",
+            "metric",
+            "mean",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean": 0.39534895833333333,
+            "seed_ci_low": 0.3875357799062591,
+            "seed_ci_high": 0.4031621367604075,
+            "seed_sd": 0.006292506216155842,
+            "seed_count": 5.0
+          },
+          "numeric_min": {
+            "mean": 0.0005,
+            "seed_ci_low": -7.508191936711939e-05,
+            "seed_ci_high": 0.0009424108678069,
+            "seed_sd": 0.0003563048203434,
+            "seed_count": 5.0
+          },
+          "numeric_max": {
+            "mean": 0.6353125000000001,
+            "seed_ci_low": 0.6224872797071125,
+            "seed_ci_high": 0.6481377202928876,
+            "seed_sd": 0.0141526335980416,
+            "seed_count": 5.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "CAUSAL_SEED_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/causal_seed_summary.csv",
+          "sha256": "921abfb2b091c31b583cc6706b96541e219cfeabed11919ae7f3509dcb3bc42b",
+          "rows": 20,
+          "columns": [
+            "model_seed",
+            "method",
+            "mean_functional_csr",
+            "min_functional_csr_ci_low",
+            "min_prediction_preservation"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "mean_functional_csr": 1.7396765580214215,
+            "min_functional_csr_ci_low": 0.6913290533361888,
+            "min_prediction_preservation": 0.9844339622641509
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "mean_functional_csr": 0.0288435356633816,
+            "min_functional_csr_ci_low": 3.506671360025275e-05,
+            "min_prediction_preservation": 0.9433962264150944
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "mean_functional_csr": 19.172341225315023,
+            "min_functional_csr_ci_low": 3.683681540222794,
+            "min_prediction_preservation": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "HOST_OR_ALLOCATION_ABLATION",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/host_ablation.csv",
+          "sha256": "f854eff475053dbe5f18d9f9486e36987cdc277e15d07c7db31cddd69fdc5924",
+          "rows": 880,
+          "columns": [
+            "model_seed",
+            "method",
+            "angle",
+            "host",
+            "baseline_accuracy",
+            "ablated_accuracy",
+            "accuracy_drop",
+            "is_top_host",
+            "is_random_control"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "angle": 0.0,
+            "host": 1.5,
+            "baseline_accuracy": 0.5931389365351629,
+            "ablated_accuracy": 0.5904052315608919,
+            "accuracy_drop": 0.0027337049742710046,
+            "is_top_host": 0.25,
+            "is_random_control": 0.25
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "angle": -75.0,
+            "host": 0.0,
+            "baseline_accuracy": 0.1792452830188679,
+            "ablated_accuracy": 0.1698113207547169,
+            "accuracy_drop": -0.0943396226415094,
+            "is_top_host": 0.0,
+            "is_random_control": 0.0
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "angle": 75.0,
+            "host": 3.0,
+            "baseline_accuracy": 0.9339622641509434,
+            "ablated_accuracy": 0.9339622641509434,
+            "accuracy_drop": 0.1132075471698113,
+            "is_top_host": 1.0,
+            "is_random_control": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "RUN_MANIFEST_METRIC",
+        "status": "PASS",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/run_manifest.json",
+          "sha256": "ee31a73f6bd84df9a527a6a23a37cc06daae05369d623b0877ea3d031e8758cc",
+          "missing_keys": [],
+          "top_level_keys": [
+            "artifacts",
+            "build_revision",
+            "common_bank_hashes",
+            "common_functional_metric",
+            "completed_seeds",
+            "context_checkpoint_hashes",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "gate_results",
+            "git_sha",
+            "hosts_frozen_across_router_treatments",
+            "manifest_corrected_at_utc",
+            "manifest_correction_reason",
+            "manifest_revision",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "numerical_results_changed",
+            "package_version",
+            "primary_contrasts",
+            "primary_decision",
+            "run_profile",
+            "sensory_accuracy",
+            "source_v110_results",
+            "split_manifest",
+            "supported_claims",
+            "timestamp",
+            "verification_profile",
+            "warning"
+          ]
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_METRIC",
+        "status": "PASS",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/claim_manifest.json",
+          "sha256": "69c270ba6bba774c7d3e1aaaea0a880f8ade8335934b9ddd5db0611377dd0dca",
+          "missing_keys": [],
+          "top_level_keys": [
+            "completed_seeds",
+            "correction_note",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "gate_results",
+            "manifest_revision",
+            "non_claims",
+            "numerical_results_changed",
+            "partial_findings",
+            "primary_decision",
+            "schema_version",
+            "status",
+            "supported_claims",
+            "version"
+          ]
+        }
+      },
+      {
+        "id": "SPD_CONTEXT_GEOMETRY",
+        "status": "NOT_TESTED",
+        "message": "No matching artifact found.",
+        "evidence": {
+          "patterns": [
+            "**/spd_context_geometry.csv"
+          ]
+        }
+      },
+      {
+        "id": "SPD_AGGREGATE_EFFECTS",
+        "status": "NOT_TESTED",
+        "message": "No matching artifact found.",
+        "evidence": {
+          "patterns": [
+            "**/spd_aggregate_effects.csv"
+          ]
+        }
+      }
+    ]
+  },
+  "protocol_report": {
+    "schema_version": "0.2.1",
+    "rules": [
+      {
+        "id": "ZIP_SAFE_PATHS",
+        "status": "PASS",
+        "message": "ZIP extraction completed without unsafe paths.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RESULTS_PRESENT",
+        "status": "PASS",
+        "message": "A results manifest or gate summary is present.",
+        "evidence": {
+          "run_manifest": "/tmp/mmals_verify_gigxt_jm/v1_1_1/run_manifest.json",
+          "gate_summary": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RUN_MANIFEST",
+        "status": "PASS",
+        "message": "Run manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/run_manifest.json",
+          "keys": [
+            "artifacts",
+            "build_revision",
+            "common_bank_hashes",
+            "common_functional_metric",
+            "completed_seeds",
+            "context_checkpoint_hashes",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "gate_results",
+            "git_sha",
+            "hosts_frozen_across_router_treatments",
+            "manifest_corrected_at_utc",
+            "manifest_correction_reason",
+            "manifest_revision",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "numerical_results_changed",
+            "package_version",
+            "primary_contrasts",
+            "primary_decision",
+            "run_profile",
+            "sensory_accuracy",
+            "source_v110_results",
+            "split_manifest",
+            "supported_claims",
+            "timestamp",
+            "verification_profile",
+            "warning"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST",
+        "status": "PASS",
+        "message": "Claim manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/claim_manifest.json",
+          "keys": [
+            "completed_seeds",
+            "correction_note",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "gate_results",
+            "manifest_revision",
+            "non_claims",
+            "numerical_results_changed",
+            "partial_findings",
+            "primary_decision",
+            "schema_version",
+            "status",
+            "supported_claims",
+            "version"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SEED_COUNT",
+        "status": "PASS",
+        "message": "Detected 5 model seeds; minimum is 5.",
+        "evidence": {
+          "seed_count": 5,
+          "minimum": 5,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_PARSE",
+        "status": "PASS",
+        "message": "Execution PDF has 44 pages.",
+        "evidence": {
+          "path": "/mnt/data/Geometry_MMALS_G1_BridgeIsolation_v1_1_1.pdf",
+          "sha256": "2f3d8d1ab70de60adf177ce16789cb788cf129cee27027bea68ef835e97aefd1",
+          "page_count": 44,
+          "metadata": {
+            "/Creator": "LaTeX with hyperref",
+            "/Producer": "xdvipdfmx (20210609)",
+            "/CreationDate": "D:20260615045603-00'00'"
+          },
+          "text_length": 87083,
+          "contains_traceback": false,
+          "contains_completed_seeds": true,
+          "contains_export_marker": true,
+          "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_NO_TRACEBACK",
+        "status": "PASS",
+        "message": "No Python traceback detected.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_EXECUTION_MARKERS",
+        "status": "PASS",
+        "message": "Completed-seed and export markers checked.",
+        "evidence": {
+          "completed_seeds": true,
+          "export_marker": true,
+          "line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "major"
+        }
+      },
+      {
+        "id": "MATCHED_COMPUTE",
+        "status": "PASS",
+        "message": "Matched compute checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/compute_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "FROZEN_CONTEXT",
+        "status": "PASS",
+        "message": "Frozen-context audit checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_gigxt_jm/v1_1_1/preservation.csv",
+          "max_abs_context_delta": 0.0,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SOURCE_PARTITION_SEPARATION",
+        "status": "PASS",
+        "message": "Partition hashes checked for accidental identity.",
+        "evidence": {
+          "hash_count": 8,
+          "unique_count": 8,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_FRESHNESS",
+        "status": "PASS",
+        "message": "Claim state compared with execution evidence.",
+        "evidence": {
+          "claim_status": "Five-seed v1.1.1 bridge-isolation pilot completed. Protocol-integrity gates passed. Route-swap ordering and prediction-identity preservation passed. Held-out nominal mediation, held-out functional mediation, local continuity, functional causal specificity, and operational non-degradation did not qualify.",
+          "severity": "major"
+        }
+      },
+      {
+        "id": "ARCHIVE_HYGIENE",
+        "status": "PASS",
+        "message": "Archive hygiene checked.",
+        "evidence": {
+          "dirty_count": 0,
+          "examples": [],
+          "severity": "minor"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_context_and_common_bank_frozen",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_context_and_common_bank_frozen.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_equal_router_compute",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_equal_router_compute.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_heldout_nominal_mediation",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_heldout_nominal_mediation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_heldout_functional_mediation_common_cost",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_heldout_functional_mediation_common_cost.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_local_continuity_tail",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_local_continuity_tail.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C2_route_swap_order",
+        "status": "PASS",
+        "message": "Imported experiment gate C2_route_swap_order.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_functional_causal_specificity",
+        "status": "FAIL",
+        "message": "Imported experiment gate C4_functional_causal_specificity.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_identity_preservation",
+        "status": "PASS",
+        "message": "Imported experiment gate C4_identity_preservation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C6_operational_non_degradation",
+        "status": "FAIL",
+        "message": "Imported experiment gate C6_operational_non_degradation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "equivalence_not_superiority"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C3_mature_host_specialization",
+        "status": "FAIL",
+        "message": "Imported experiment gate C3_mature_host_specialization.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "not_tested_hosts_frozen"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C5_memory_transport",
+        "status": "FAIL",
+        "message": "Imported experiment gate C5_memory_transport.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "not_implemented"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::operational_superiority",
+        "status": "FAIL",
+        "message": "Imported experiment gate operational_superiority.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_gigxt_jm/v1_1_1/gate_summary.csv",
+          "status": "not_preregistered_as_primary"
+        }
+      }
+    ]
+  },
+  "claim_report": {
+    "schema_version": "0.2.1",
+    "claims": [
+      {
+        "id": "CONTEXT_GEOMETRY",
+        "statement": "The inferred context has replicated representational geometry.",
+        "status": "PASS",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "RUN_MANIFEST_METRIC"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST",
+          "SEED_COUNT",
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "id": "HELDOUT_NOMINAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out nominal route order.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_nominal_mediation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "HELDOUT_FUNCTIONAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out functional route order under a common cost matrix.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_functional_mediation_common_cost"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "LOCAL_STABILITY",
+        "statement": "The router reduces high-tail local sensitivity without route collapse.",
+        "status": "FAIL",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C1_local_continuity_tail"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "CAUSAL_SPECIFICITY",
+        "statement": "Factor-tangent interventions are functionally more specific than orthogonal controls.",
+        "status": "FAIL",
+        "required_metrics": [
+          "CAUSAL_SEED_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [
+          "C4_functional_causal_specificity",
+          "C4_identity_preservation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL",
+          "PASS"
+        ]
+      },
+      {
+        "id": "HOST_SPECIALIZATION",
+        "statement": "Stable functional host specialization is established.",
+        "status": "FAIL",
+        "required_metrics": [
+          "HOST_OR_ALLOCATION_ABLATION",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SEED_COUNT"
+        ],
+        "required_experiment_gates": [
+          "C3_mature_host_specialization"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_NON_DEGRADATION",
+        "statement": "The routing intervention stays within the preregistered non-degradation margin.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C6_operational_non_degradation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_SUPERIORITY",
+        "statement": "The routing intervention improves operational performance.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "operational_superiority"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "MEMORY_TRANSPORT",
+        "statement": "Route-function memory transport is demonstrated.",
+        "status": "FAIL",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST"
+        ],
+        "required_experiment_gates": [
+          "C5_memory_transport"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "HELDOUT_FUNCTIONAL_STRESS_REDUCTION",
+        "statement": "The primary smooth residual treatment reduces held-out common-cost functional stress.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_functional_stress_reduction"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "SPD_COVARIANCE_VALUE",
+        "statement": "Regularized covariance geometry adds factor-discrimination value beyond centroid-only context geometry.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "SPD_CONTEXT_GEOMETRY",
+          "SPD_AGGREGATE_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SOURCE_PARTITION_SEPARATION",
+          "SEED_COUNT"
+        ],
+        "required_experiment_gates": [
+          "GEO_SPD_covariance_adds_value"
+        ],
+        "resolved_statuses": [
+          "NOT_TESTED",
+          "NOT_TESTED",
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      }
+    ]
+  }
+}

@@ -187,3 +187,16 @@ The protocol is fully implemented in `notebooks/Geometry_MMALS_G1_FunctionalRout
 - Memory transport: not implemented.
 
 No final geometry claim may rely on PCA/UMAP alone, and no Riemannian-manifold claim is allowed without explicit structural tests and metric comparisons.
+
+## v1.1.1 final gate record
+
+The completed pilot qualifies protocol integrity, route-swap ordering, and
+prediction-identity preservation. It does not qualify R3 held-out mediation,
+local continuity, functional causal specificity, or operational non-degradation.
+
+## v1.1.2 candidate gates
+
+The primary R5 treatment must pass held-out common-cost functional stress,
+functional order, q95 continuity non-degradation, route-swap ordering, causal
+specificity, identity preservation, and operational equivalence. The SPD axis is
+a separate diagnostic candidate and cannot promote a router claim by itself.
