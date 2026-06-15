@@ -29,3 +29,23 @@ Geometry-MMALS has candidate replicated evidence for grounded representational c
 v1.1.0 freezes the successful context representation and compares MLP, linear, and prototype-energy routers. It adds a functional optimal-transport route metric, causal mediation tests, and host-ecology measurements.
 
 v1.1.0 is now fully implemented in the canonical Colab notebook and Python package, but it has not yet been executed. No v1.1.0 empirical gate is passed by implementation alone.
+
+
+## Executed v1.1.0 functional-routing pilot
+
+The five-seed pilot is complete. The prototype-energy router improves nominal route order over the MLP on trained factors (`+0.088`, 95% seed CI `[+0.035,+0.142]`) and held-out factors (`+0.038`, `[+0.013,+0.064]`). Functional route order improves on trained factors (`+0.046`, `[+0.004,+0.089]`) but not on held-out factors (`+0.007`, `[-0.035,+0.049]`).
+
+The low-capacity linear router is at least as competitive and produces the strongest causal and ablation signals. Causal specificity, prediction-identity preservation for the prototype, stable host ecology, memory transport, and operational superiority remain unqualified.
+
+## Next executable target: v1.1.1
+
+Freeze a common host bank and common functional cost matrix, compare MLP/linear/prototype/hybrid routers, and make held-out functional mediation plus local stability distributions the primary gates.
+
+## v1.1.1
+
+- Implementation: complete C0
+- Pilot: not executed
+- Primary question: does a common frozen host bank reveal held-out functional
+  route mediation?
+- New router: hybrid directional-prototype energy
+- Verification Stack: v0.2 integrated

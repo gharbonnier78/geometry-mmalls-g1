@@ -1,0 +1,62 @@
+{
+  "version": "1.1.0",
+  "build_revision": "functional-routing-bridge-pilot-results-r1",
+  "status": "Five-seed pilot completed. Candidate structural route mediation is supported on trained factors; held-out functional mediation, causal specificity, host ecology, memory transport, and operational superiority remain unqualified.",
+  "claims": [
+    {
+      "id": "GEO_CONTEXT_109",
+      "status": "PARTIAL",
+      "statement": "The four-dimensional context exhibits replicated representational geometry and held-out-source factor information."
+    },
+    {
+      "id": "ROUTE_NOMINAL_110",
+      "status": "PARTIAL",
+      "statement": "Prototype-energy routing improves nominal route order over the MLP on trained and held-out factor grids."
+    },
+    {
+      "id": "ROUTE_FUNCTIONAL_110",
+      "status": "PARTIAL",
+      "statement": "Prototype-energy routing improves functional route order on trained factors, but not on held-out factors."
+    },
+    {
+      "id": "LINEAR_BRIDGE_110",
+      "status": "PARTIAL",
+      "statement": "A low-capacity linear router is at least as competitive as prototype-energy routing and shows the strongest causal and ablation signals."
+    },
+    {
+      "id": "CAUSAL_SPEC_110",
+      "status": "FAIL",
+      "statement": "Functional causal specificity is not replicated for prototype-energy routing."
+    },
+    {
+      "id": "HOST_ECOLOGY_110",
+      "status": "FAIL",
+      "statement": "Routing territories do not yet establish stable functional host specialization."
+    },
+    {
+      "id": "OP_NONDEGRADATION_110",
+      "status": "PASS",
+      "statement": "Routing changes remain within the preregistered operational non-degradation margin."
+    },
+    {
+      "id": "OP_SUPERIORITY_110",
+      "status": "NOT_TESTED",
+      "statement": "No operational superiority claim is supported."
+    },
+    {
+      "id": "MEMORY_TRANSPORT_110",
+      "status": "NOT_TESTED",
+      "statement": "Continual route-function memory transport is not implemented."
+    }
+  ],
+  "non_claims": [
+    "final_C1_C6_qualification",
+    "operational_superiority",
+    "mature_host_specialization",
+    "memory_transport",
+    "backward_transfer",
+    "full_multiobjective_energy_control",
+    "reinforcement_learning_control",
+    "quantum_advantage"
+  ]
+}

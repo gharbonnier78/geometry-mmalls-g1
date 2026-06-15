@@ -1,0 +1,4 @@
+case: missing_seed
+mutation: remove one model seed from run_manifest and aggregate CSVs
+expected_failures:
+- SEED_COUNT

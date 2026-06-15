@@ -1,0 +1,177 @@
+version: 1.1.1
+build_revision: bridge-isolation-common-hosts-c0-r1
+status: C0 implementation; bridge-isolation pilot pending execution
+experiment:
+  name: Geometry-MMALS G1 v1.1.1 Bridge Isolation
+  fixed_split_seed: 0
+  fixed_sensory_seed: 0
+  pilot_model_seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  qualification_model_seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  curriculum:
+  - -60.0
+  - -30.0
+  - 0.0
+  - 60.0
+  - 30.0
+  dense_eval_angles:
+  - -75.0
+  - -60.0
+  - -45.0
+  - -30.0
+  - -15.0
+  - 0.0
+  - 15.0
+  - 30.0
+  - 45.0
+  - 60.0
+  - 75.0
+  host_count: 4
+frozen_components:
+  sensory_encoder: true
+  context_encoder: true
+  common_hosts: true
+  synthesis_norm: true
+  classifier: true
+  common_functional_cost_matrix: true
+common_host_bank:
+  construction_router: uniform
+  angle_supervision: false
+  loss:
+    current_ce: 1.0
+    retention_anchor: 0.1
+    host_diversity: 0.05
+  freeze_after_training: true
+  cost_matrix_partition: metric_indices
+routers:
+  r0_mlp:
+    type: mlp_context_router
+    hidden_dim: 64
+    seed_offset: 100
+  r1_linear:
+    type: linear_context_router
+    seed_offset: 200
+  r2_prototype_energy:
+    type: prototype_energy_router
+    sigma_min: 0.05
+    spherical_kmeans_iterations: 50
+    seed_offset: 300
+  r3_hybrid_energy:
+    type: hybrid_directional_prototype_router
+    sigma_min: 0.05
+    spherical_kmeans_iterations: 50
+    prototype_weight: 1.0
+    directional_weight: 1.0
+    learnable_mixture: true
+    seed_offset: 400
+router_training:
+  temperature: 1.0
+  loss:
+    current_ce: 1.0
+    retention_anchor: 0.1
+    usage_balance: 0.02
+  angle_supervised_route_loss: false
+  trainable_parameters: router only
+primary_contrasts:
+- treatment: r1_linear
+  control: r0_mlp
+- treatment: r2_prototype_energy
+  control: r0_mlp
+- treatment: r3_hybrid_energy
+  control: r0_mlp
+- treatment: r3_hybrid_energy
+  control: r1_linear
+- treatment: r3_hybrid_energy
+  control: r2_prototype_energy
+functional_route_metric:
+  cost_matrix: common_frozen_C_star
+  transport:
+    epsilon: 0.05
+    iterations: 100
+local_continuity:
+  pairs: within-source adjacent dense-angle pairs
+  metrics:
+  - nominal_root_chord
+  - functional_sinkhorn
+  report_quantiles:
+  - 0.5
+  - 0.9
+  - 0.95
+  - 0.99
+  - 1.0
+  tail_reference: r0_mlp_p95
+perturbations:
+  context_noise_scales:
+  - 0.02
+  - 0.05
+  - 0.1
+  - 0.2
+  route_swap_near_max_degrees: 30.0
+  route_swap_far_min_degrees: 90.0
+  inference_order_check: true
+  candidate_permutation_integrity: true
+causal_protocol:
+  probe_angle: 15.0
+  intervention_scales:
+  - -0.5
+  - -0.25
+  - 0.0
+  - 0.25
+  - 0.5
+  orthogonal_controls: 8
+  prediction_identity_preservation: true
+statistics:
+  source_bootstrap_samples: 2000
+  seed_confidence_level: 0.95
+  minimum_positive_seed_fraction: 0.8
+candidate_gates:
+  heldout_nominal_mediation: R3-R0 seed CI low > 0 and >=4/5 favorable seeds
+  heldout_functional_mediation: R3-R0 common-cost seed CI low > 0 and >=4/5 favorable
+    seeds
+  local_continuity_tail: R3 p95 output/input ratio lower than R0 without route collapse
+  route_swap_order: far swaps have greater functional effect than near swaps
+  causal_specificity: functional CSR lower source CI > 1 in >=4/5 seeds and mean >
+    1.5
+  identity_preservation: source lower bound >= 0.95
+  operational_equivalence_margin: 0.01
+required_exports:
+- checkpoint_hashes
+- common_bank_hash
+- common_cost_matrix
+- compute_summary
+- context_and_bank_preservation
+- route_geometry
+- local_continuity_raw_and_summary
+- perturbation_sensitivity
+- route_swap_effects
+- mediation_probe_controls
+- causal_mediation
+- allocation_territories
+- accuracy_nll_forgetting
+- aggregate_seed_effects
+- gate_summary
+- run_manifest
+- claim_manifest
+- environment_capture
+non_claims:
+- operational_superiority
+- mature_host_specialization
+- memory_transport
+- full_multiobjective_energy_control
+- reinforcement_learning_control
+- riemannian_manifold
+- quantum_advantage

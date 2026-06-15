@@ -1,0 +1,4 @@
+case: test_leakage
+mutation: reuse an identical source hash for probe fit and causal evaluation
+expected_failures:
+- SOURCE_PARTITION_SEPARATION

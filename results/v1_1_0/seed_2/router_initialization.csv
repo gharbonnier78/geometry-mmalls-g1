@@ -1,0 +1,4 @@
+model_seed,method,router_parameters,mean_assignment_distance,min_cluster_count
+2,r0_mlp,4740,,
+2,r1_linear,20,,
+2,r2_prototype_energy,24,0.2778172492980957,432.0

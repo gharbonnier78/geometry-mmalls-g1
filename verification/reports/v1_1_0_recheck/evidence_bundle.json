@@ -1,0 +1,3503 @@
+{
+  "schema_version": "0.2.0",
+  "verification_version": "0.2.0",
+  "experiment_id": "geometry_mmalls_g1_v1_1_0",
+  "selected_results_root": "results/v1_1_0",
+  "experiment_profile": "/mnt/data/geometry-mmalls-g1-v111-release/geometry-mmalls-g1/verification/profiles/geometry_g1_v1_1_0.yaml",
+  "inputs": {
+    "execution_pdf": "/mnt/data/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.pdf",
+    "execution_pdf_sha256": "82687489db66c57356acf33287ed5a1ef05ec7a2a9b4d4dfd67a6f8d2f7f79b4",
+    "results_zip": "/mnt/data/Geometry_MMALS_G1_FunctionalRouting_v1_1_0_20260614_212819.zip",
+    "results_zip_sha256": "86c460e264b74d0e07fe5a4a547246a5c9f48df7564e4fabfe0b5818b5e221a4"
+  },
+  "pdf_report": {
+    "path": "/mnt/data/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.pdf",
+    "sha256": "82687489db66c57356acf33287ed5a1ef05ec7a2a9b4d4dfd67a6f8d2f7f79b4",
+    "page_count": 67,
+    "metadata": {
+      "/Creator": "LaTeX with hyperref",
+      "/Producer": "xdvipdfmx (20210609)",
+      "/CreationDate": "D:20260614215841-00'00'"
+    },
+    "text_length": 144374,
+    "contains_traceback": false,
+    "contains_completed_seeds": true,
+    "contains_export_marker": true,
+    "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]"
+  },
+  "archive_inventory": [
+    {
+      "relative_path": ".git/HEAD",
+      "size_bytes": 21,
+      "sha256": "28d25bf82af4c0e2b72f50959b2beb859e3e60b9630a5e8c603dad4ddb2b6e80"
+    },
+    {
+      "relative_path": ".git/config",
+      "size_bytes": 276,
+      "sha256": "5632399fc9b21bf1a98f3e8f21b3b4c16d72d35a92daf1bf722e300f3663e0d8"
+    },
+    {
+      "relative_path": ".git/description",
+      "size_bytes": 73,
+      "sha256": "85ab6c163d43a17ea9cf7788308bca1466f1b0a8d1cc92e26e9bf63da4062aee"
+    },
+    {
+      "relative_path": ".git/hooks/applypatch-msg.sample",
+      "size_bytes": 478,
+      "sha256": "0223497a0b8b033aa58a3a521b8629869386cf7ab0e2f101963d328aa62193f7"
+    },
+    {
+      "relative_path": ".git/hooks/commit-msg.sample",
+      "size_bytes": 896,
+      "sha256": "1f74d5e9292979b573ebd59741d46cb93ff391acdd083d340b94370753d92437"
+    },
+    {
+      "relative_path": ".git/hooks/fsmonitor-watchman.sample",
+      "size_bytes": 4655,
+      "sha256": "f3c0228d8e827f1c5260ac59fdd92c3d425c46e54711ef713c5a54ae0a4db2b4"
+    },
+    {
+      "relative_path": ".git/hooks/post-update.sample",
+      "size_bytes": 189,
+      "sha256": "81765af2daef323061dcbc5e61fc16481cb74b3bac9ad8a174b186523586f6c5"
+    },
+    {
+      "relative_path": ".git/hooks/pre-applypatch.sample",
+      "size_bytes": 424,
+      "sha256": "e15c5b469ea3e0a695bea6f2c82bcf8e62821074939ddd85b77e0007ff165475"
+    },
+    {
+      "relative_path": ".git/hooks/pre-commit.sample",
+      "size_bytes": 1643,
+      "sha256": "f9af7d95eb1231ecf2eba9770fedfa8d4797a12b02d7240e98d568201251244a"
+    },
+    {
+      "relative_path": ".git/hooks/pre-merge-commit.sample",
+      "size_bytes": 416,
+      "sha256": "d3825a70337940ebbd0a5c072984e13245920cdf8898bd225c8d27a6dfc9cb53"
+    },
+    {
+      "relative_path": ".git/hooks/pre-push.sample",
+      "size_bytes": 1374,
+      "sha256": "ecce9c7e04d3f5dd9d8ada81753dd1d549a9634b26770042b58dda00217d086a"
+    },
+    {
+      "relative_path": ".git/hooks/pre-rebase.sample",
+      "size_bytes": 4898,
+      "sha256": "4febce867790052338076f4e66cc47efb14879d18097d1d61c8261859eaaa7b3"
+    },
+    {
+      "relative_path": ".git/hooks/pre-receive.sample",
+      "size_bytes": 544,
+      "sha256": "a4c3d2b9c7bb3fd8d1441c31bd4ee71a595d66b44fcf49ddb310252320169989"
+    },
+    {
+      "relative_path": ".git/hooks/prepare-commit-msg.sample",
+      "size_bytes": 1492,
+      "sha256": "e9ddcaa4189fddd25ed97fc8c789eca7b6ca16390b2392ae3276f0c8e1aa4619"
+    },
+    {
+      "relative_path": ".git/hooks/push-to-checkout.sample",
+      "size_bytes": 2783,
+      "sha256": "a53d0741798b287c6dd7afa64aee473f305e65d3f49463bb9d7408ec3b12bf5f"
+    },
+    {
+      "relative_path": ".git/hooks/update.sample",
+      "size_bytes": 3650,
+      "sha256": "8d5f2fa83e103cf08b57eaa67521df9194f45cbdbcb37da52ad586097a14d106"
+    },
+    {
+      "relative_path": ".git/index",
+      "size_bytes": 45672,
+      "sha256": "3208dcad17472360d9ce4c7d7b4533d2eb3fb8ef0cd3a889ebae8aeb4d488ae5"
+    },
+    {
+      "relative_path": ".git/info/exclude",
+      "size_bytes": 240,
+      "sha256": "6671fe83b7a07c8932ee89164d1f2793b2318058eb8b98dc5c06ee0a5a3b0ec1"
+    },
+    {
+      "relative_path": ".git/logs/HEAD",
+      "size_bytes": 199,
+      "sha256": "99efb55d1a5dece3fe9867aee527344d44d114db16023691a9199456fb9aee26"
+    },
+    {
+      "relative_path": ".git/logs/refs/heads/main",
+      "size_bytes": 199,
+      "sha256": "99efb55d1a5dece3fe9867aee527344d44d114db16023691a9199456fb9aee26"
+    },
+    {
+      "relative_path": ".git/logs/refs/remotes/origin/HEAD",
+      "size_bytes": 199,
+      "sha256": "99efb55d1a5dece3fe9867aee527344d44d114db16023691a9199456fb9aee26"
+    },
+    {
+      "relative_path": ".git/objects/pack/pack-070c55fb9da41047a2bf4cc9657b32f27b09956a.idx",
+      "size_bytes": 17340,
+      "sha256": "36cb135643b34dde7dbcc51cecabe107544320a741ad98c8ce9eda7e6fe97b71"
+    },
+    {
+      "relative_path": ".git/objects/pack/pack-070c55fb9da41047a2bf4cc9657b32f27b09956a.pack",
+      "size_bytes": 34375353,
+      "sha256": "e81f0b138f760863f183e7dd4206fb84492ac37b5ae16b39616ebc3888f172d3"
+    },
+    {
+      "relative_path": ".git/packed-refs",
+      "size_bytes": 112,
+      "sha256": "4add20b50f02b7545866cf0fe12869805344489709ff7c85e55772a5650543db"
+    },
+    {
+      "relative_path": ".git/refs/heads/main",
+      "size_bytes": 41,
+      "sha256": "34e9312a158ba45a92c26987273fc8cb18f1d416a66b2189f6667deb2c519dba"
+    },
+    {
+      "relative_path": ".git/refs/remotes/origin/HEAD",
+      "size_bytes": 30,
+      "sha256": "2bb6a24aa0fc6c484100f5d51a29bbad841cd2c755f5d93faa204e5dbb4eb2b4"
+    },
+    {
+      "relative_path": "ARTIFACT_MANIFEST.md",
+      "size_bytes": 4381,
+      "sha256": "963cc82f112700a81f7491f3474dbc183a6bd1354454a8ff1c6caa49d92adb76"
+    },
+    {
+      "relative_path": "CHANGELOG.md",
+      "size_bytes": 8744,
+      "sha256": "899ce61d494d1483f1c7d3ac5f71884a0962481e0d2fba866ecbb629034d589b"
+    },
+    {
+      "relative_path": "CITATION.cff",
+      "size_bytes": 779,
+      "sha256": "24f62aa1839ebdd806e987718b296aab4f831b0fa24134adcb9223c3009b5a77"
+    },
+    {
+      "relative_path": "CONTRIBUTING.md",
+      "size_bytes": 797,
+      "sha256": "d9d95ebae4348dbb4ed1ab9ab1e287a767e26811e6766465b3e26e22abc3be5d"
+    },
+    {
+      "relative_path": "LICENSE",
+      "size_bytes": 1077,
+      "sha256": "836ddd0e7e8448b1a396e5a22ea93eb2d4b8d7e10ca6416fdcdba964e336fe3b"
+    },
+    {
+      "relative_path": "Makefile",
+      "size_bytes": 754,
+      "sha256": "cd22663f92a4a5d7f35f3b3af5cd7f7f94eb72e0a80933582b965ccafa011eb8"
+    },
+    {
+      "relative_path": "README.md",
+      "size_bytes": 5695,
+      "sha256": "0bfba0df4d211c854709a1da7f5fd670773549244c4e2fdbc7519616230130f9"
+    },
+    {
+      "relative_path": "SHA256SUMS",
+      "size_bytes": 38077,
+      "sha256": "02f0c5bfb40f8dfb33d47e843cfd12a07014220949d7144482e557b04e73daa7"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1.yaml",
+      "size_bytes": 1601,
+      "sha256": "ca526ec0cfbdf6ed0837ba2f6f96a25b2450baae2fdb531be11f69ffce822672"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v105.yaml",
+      "size_bytes": 476,
+      "sha256": "2b26808f21e9a7b5390aec071822406905979e229cf19928e3655a1ec15ae7b2"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v106.yaml",
+      "size_bytes": 863,
+      "sha256": "7885cd36711504692502e42d3bfcb9c0c7d3367c3fb11eff87ac1c91fdbce06c"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v107.yaml",
+      "size_bytes": 1926,
+      "sha256": "d1ad365e75bf1c7bc0bc3906691469f9606dd16e13668488d07d330920495913"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v108.yaml",
+      "size_bytes": 2104,
+      "sha256": "c111177e41342bbf87d95bbb6cc15309f5a59e29ed46ce81ab92176347ffb7a8"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v109.yaml",
+      "size_bytes": 2831,
+      "sha256": "f4ba285388df54fae8484ae8ddfeb8378354e39f91250a01bc378f2df7bb1fcd"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v110.yaml",
+      "size_bytes": 5052,
+      "sha256": "71b06fc928e2caee2cbbea328ac258f6e72646989207da575fffa79043e25b5e"
+    },
+    {
+      "relative_path": "configs/rotated_mnist_g1_v110_spec.yaml",
+      "size_bytes": 4334,
+      "sha256": "00ce3ee20707de3c86095b123a32583063737e74ec3bae9b0f151eb2ef82eb5e"
+    },
+    {
+      "relative_path": "data/MNIST/raw/t10k-images-idx3-ubyte",
+      "size_bytes": 7840016,
+      "sha256": "0fa7898d509279e482958e8ce81c8e77db3f2f8254e26661ceb7762c4d494ce7"
+    },
+    {
+      "relative_path": "data/MNIST/raw/t10k-images-idx3-ubyte.gz",
+      "size_bytes": 1648877,
+      "sha256": "8d422c7b0a1c1c79245a5bcf07fe86e33eeafee792b84584aec276f5a2dbc4e6"
+    },
+    {
+      "relative_path": "data/MNIST/raw/t10k-labels-idx1-ubyte",
+      "size_bytes": 10008,
+      "sha256": "ff7bcfd416de33731a308c3f266cc351222c34898ecbeaf847f06e48f7ec33f2"
+    },
+    {
+      "relative_path": "data/MNIST/raw/t10k-labels-idx1-ubyte.gz",
+      "size_bytes": 4542,
+      "sha256": "f7ae60f92e00ec6debd23a6088c31dbd2371eca3ffa0defaefb259924204aec6"
+    },
+    {
+      "relative_path": "data/MNIST/raw/train-images-idx3-ubyte",
+      "size_bytes": 47040016,
+      "sha256": "ba891046e6505d7aadcbbe25680a0738ad16aec93bde7f9b65e87a2fc25776db"
+    },
+    {
+      "relative_path": "data/MNIST/raw/train-images-idx3-ubyte.gz",
+      "size_bytes": 9912422,
+      "sha256": "440fcabf73cc546fa21475e81ea370265605f56be210a4024d2ca8f203523609"
+    },
+    {
+      "relative_path": "data/MNIST/raw/train-labels-idx1-ubyte",
+      "size_bytes": 60008,
+      "sha256": "65a50cbbf4e906d70832878ad85ccda5333a97f0f4c3dd2ef09a8a9eef7101c5"
+    },
+    {
+      "relative_path": "data/MNIST/raw/train-labels-idx1-ubyte.gz",
+      "size_bytes": 28881,
+      "sha256": "3552534a0a558bbed6aed32b30c495cca23d567ec52cac8be1a0730e8010255c"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/causal_probe_summary.csv",
+      "size_bytes": 591,
+      "sha256": "8cfb642b6d3bfd4bbf91d21284fbef8ce0cb85aeda2752c39201b25e9f52238e"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/compute_summary.csv",
+      "size_bytes": 431,
+      "sha256": "502d2b2eba68aafdba5b26a46e4347d363763a83c98a8fed97cb0904823bd939"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/curriculum_summary.csv",
+      "size_bytes": 481,
+      "sha256": "6532e9202acf312248e8fc27af335ce6671a8b6b99d17c6ed7a93ba7d4afd63d"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/development_contrasts.csv",
+      "size_bytes": 1037,
+      "sha256": "7efe933459393b1d7bd84cd87f7525e2f7302d162e51707464f162727e6e8562"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/development_gate_summary.csv",
+      "size_bytes": 820,
+      "sha256": "fdebcb49bb7e837d7901d17e77b6219ac1018b06705d8ee3540b2ac223864ca2"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/development_method_summary.csv",
+      "size_bytes": 1413,
+      "sha256": "3ed2532c09c395655af3ab9ac2606c47259b9106941c04807133d5aa0500abca"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/mediation_dependency_summary.csv",
+      "size_bytes": 931,
+      "sha256": "da6a63170fb67dae56e61d82e69e0af8c6a84296c9ff9f33df955906538fd73d"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/mediation_interventions_summary.csv",
+      "size_bytes": 3473,
+      "sha256": "334cc1242b5f3b4c03797b861a603e421b2a13e33b689bfcbf33e00a98532976"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/paired_prediction_deltas.csv",
+      "size_bytes": 2825,
+      "sha256": "8506f5faa08fa158f460488b093451b9da0513b8290a0a24330e279850145349"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/paired_source_deltas.csv",
+      "size_bytes": 7291,
+      "sha256": "632587a6bfa97c47cca1e8086e38370511a141fb2f079bba911272d297f05aa5"
+    },
+    {
+      "relative_path": "data/reviewer_status_v1_1/run_manifest.json",
+      "size_bytes": 3636,
+      "sha256": "1e1a2322cdb4122bb3a1fcdac7e29d330fcd5546f0d29f3384285bde7c36e2fa"
+    },
+    {
+      "relative_path": "docs/CLAIMS_AND_GATES.md",
+      "size_bytes": 8598,
+      "sha256": "4620acd14d0e091e56ff5ae83b3e1495ea31237e40f15e55b2e4a8873ebf8ce6"
+    },
+    {
+      "relative_path": "docs/EXPERIMENT_PROTOCOL.md",
+      "size_bytes": 7206,
+      "sha256": "c04d03a324bf2e2300b8ead532f265c7c489d063fcabfe6f5daac679a9281415"
+    },
+    {
+      "relative_path": "docs/GITHUB_RELEASE.md",
+      "size_bytes": 1717,
+      "sha256": "2cd8285206c1d19bab08b4177e6de46db66e5f525cf94a7af34b1c2934d814ec"
+    },
+    {
+      "relative_path": "docs/NOTATION_BRIDGE.md",
+      "size_bytes": 2533,
+      "sha256": "c3c1bd5f6e279d777ec549ae42564e8a9ebd27a8d901d9ad88d208cf26179f32"
+    },
+    {
+      "relative_path": "docs/RELEASE_CHECKLIST_v1_0_7.md",
+      "size_bytes": 1097,
+      "sha256": "51e01a63c4b9d9e126f445a94cf193334063bec8687652b818ab8f32782864eb"
+    },
+    {
+      "relative_path": "docs/RELEASE_CHECKLIST_v1_0_8.md",
+      "size_bytes": 1563,
+      "sha256": "57ad12d0a38bf0c08dca5b68c3a20949ced5823b670705abccecdc6859b4a4dc"
+    },
+    {
+      "relative_path": "docs/RELEASE_CHECKLIST_v1_0_9.md",
+      "size_bytes": 664,
+      "sha256": "0261de7bd07dc977bc76f718747ec58a2b5005882b605689632cd7387b14fd2a"
+    },
+    {
+      "relative_path": "docs/RELEASE_CHECKLIST_v1_1_0.md",
+      "size_bytes": 1221,
+      "sha256": "fe323405cc19c21b3b2eea174498d37a709ec359cc9d90dd2aa05e0ff54e18c5"
+    },
+    {
+      "relative_path": "docs/REPRODUCIBILITY_CHECKLIST.md",
+      "size_bytes": 1863,
+      "sha256": "205c9e16bae32255af8eea5217089edc2e6871e52d52d8365ab6bd7c5f2849fb"
+    },
+    {
+      "relative_path": "docs/RESUME_FR.md",
+      "size_bytes": 3429,
+      "sha256": "c399d6f9db5e1831d474794f9d6753b982a7104e8756442bf524ee630ae56e5d"
+    },
+    {
+      "relative_path": "docs/STATUS.md",
+      "size_bytes": 1358,
+      "sha256": "e991d55cef37c8b07e83c64b230c89311c5633a58116f807092d89e48b85a1a9"
+    },
+    {
+      "relative_path": "docs/TRACE_SCHEMA.md",
+      "size_bytes": 1273,
+      "sha256": "bf75972360f7a8952fd0705db9d16b2affef42c2a19c76fc65b88ae97606169c"
+    },
+    {
+      "relative_path": "docs/V1_0_6_VALIDATION.json",
+      "size_bytes": 333,
+      "sha256": "9d9aac13f3553416f0f1b357b5cb47a77073079a8f0a07a2314da16cb76dd101"
+    },
+    {
+      "relative_path": "docs/V1_0_7_BUILD_VALIDATION.json",
+      "size_bytes": 846,
+      "sha256": "17a373f8dfd6f5e24901a92d464df0211f8a290d76da50021793569834617559"
+    },
+    {
+      "relative_path": "docs/V1_0_8_BUILD_VALIDATION.json",
+      "size_bytes": 453,
+      "sha256": "ded3f0242182940a63547a4342c86cdd8ef0538fbf3e61646f13d369e9da1bc7"
+    },
+    {
+      "relative_path": "docs/V1_0_9_BUILD_VALIDATION.json",
+      "size_bytes": 706,
+      "sha256": "534c02f51723e07d347246b035a8042dd7aaf7852bf4dd5b27f546c3a73ddf05"
+    },
+    {
+      "relative_path": "docs/V1_1_0_BUILD_VALIDATION.json",
+      "size_bytes": 1050,
+      "sha256": "bb04dabe1098493066f91da47287986dfda9665a35a8d271e6854f7864192aa9"
+    },
+    {
+      "relative_path": "docs/V1_1_0_SPEC_VALIDATION.json",
+      "size_bytes": 1050,
+      "sha256": "bb04dabe1098493066f91da47287986dfda9665a35a8d271e6854f7864192aa9"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_2_to_v1_0_3.patch",
+      "size_bytes": 184962,
+      "sha256": "c449e11385999413167a8997a27d1398b228b618a8386a7090738d2b6daa1589"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_3_to_v1_0_4.md",
+      "size_bytes": 2176,
+      "sha256": "a4c8d046ec43ba801dc13424f6d0ef29c859bcffff2e6d7cbf388e168cad7812"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_4_to_v1_0_5.md",
+      "size_bytes": 1280,
+      "sha256": "6582ac277550efa813cc7611ab254b0d3539f956d3a4176e3b3b362960a26a72"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_5_to_v1_0_6.md",
+      "size_bytes": 2820,
+      "sha256": "790ebda40e039c5603e695ed0ff4b2129eea93823fb1ee7d803f55bdce4a3429"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_6_to_v1_0_7.md",
+      "size_bytes": 2353,
+      "sha256": "9462eb122f91ee3e9022b53ba933f006c8bf713ce06642f365cc2e3698a13243"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_7_to_v1_0_8.md",
+      "size_bytes": 4212,
+      "sha256": "eeac5b33880fc2d883ad2b5a2367b0381859b557f8e94c90e11f20ece69ce14e"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_8_synthesis_column_patch.md",
+      "size_bytes": 987,
+      "sha256": "b6253c5ab5df59fcf0e48af1cf1062a0712f3de3b2caeab54d02844e69dd9afe"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_8_to_v1_0_9.md",
+      "size_bytes": 2173,
+      "sha256": "bd9344b63c7cc3e7e83be6ea39f4c6372bece8fb3d39a9453d71873d5f65ea17"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_9_Nonnegative_RNG_Seed_Patch.md",
+      "size_bytes": 1301,
+      "sha256": "16719738933fb71fbe0f9831e368cb5867247d0ab079d78eb31dc82d2da7a8f5"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_9_STABLE_BUILD_NOTES.md",
+      "size_bytes": 1718,
+      "sha256": "f5e67e55777c64e6ac5f56f4a87f4c94dc552da0087928f066a7ce0f795470fe"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_9_Stationary_Route_Gradient_Patch.md",
+      "size_bytes": 1754,
+      "sha256": "0266a860453b4a94bbc81451431bc0f457e95dc1992c62c7da32cfbe1c976154"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_9_to_v1_1_0_Implementation.md",
+      "size_bytes": 2244,
+      "sha256": "5a3d70d1b54c3eb2a5e5c644ddebc302d8e876a010cf8d5dd34f087886455a65"
+    },
+    {
+      "relative_path": "docs/changes/Geometry_MMALS_G1_v1_0_9_to_v1_1_0_Spec.md",
+      "size_bytes": 1581,
+      "sha256": "64a8966767815777f730f8ca5b456f226aaf04ef346efa844223aac68db9a21f"
+    },
+    {
+      "relative_path": "docs/changes/MIGRATION_v1_0_6_to_v1_0_7.md",
+      "size_bytes": 12050,
+      "sha256": "176356c5175313eac0c85d677ddb86a229e2e5209e4b4b50e9a648d10c921554"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_0.pdf",
+      "size_bytes": 442834,
+      "sha256": "c3db4535238ed114f453fa7e9191060d4eeb95210f92202714b8ceec17c3ea42"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_1.pdf",
+      "size_bytes": 473991,
+      "sha256": "977b9f63bca8ee518d6dbac555cb675f012d0dfba641a7f6159bccebc790eee9"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_2.pdf",
+      "size_bytes": 385295,
+      "sha256": "60fcbe9b681835538965ea779d8277888a63f9543872440a1b6a14767548058c"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.md",
+      "size_bytes": 3103,
+      "sha256": "e0fb75f996f42b5e94030d7ccc970f85458c2c135f14eff23e425098e1f3bb77"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_3_Protocol_Correction_Report.pdf",
+      "size_bytes": 136082,
+      "sha256": "068cb8b47069c9af7d7c45968479efc76cad81fbf9f3a331305050a52002d5f2"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_4_Matched_Compute_Retention_Report.md",
+      "size_bytes": 8433,
+      "sha256": "bab4af16c99a29055f3332fe5c9b2ffcb3b7f5f25f4c387db7e693e98ab4851f"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_4_Matched_Compute_Retention_Report.pdf",
+      "size_bytes": 13301,
+      "sha256": "00eccb36b08de309bd47c3e8ec4acfe604fa19950080b27fdb18da0ca5a8a45c"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_5_Context_Mediation_Curriculum_Report.md",
+      "size_bytes": 6534,
+      "sha256": "a21370466f4a9f6f9bbd55e541803a7488f82395d00da44d13add4f3a473cd80"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_5_Context_Mediation_Curriculum_Report.pdf",
+      "size_bytes": 13593,
+      "sha256": "ce0ad469c40072abb1a1ace3de32cc087c8a420c235751e7b15f73a7f95d6965"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_6_Static_Routes_Counterbalanced_Curriculum_Report.md",
+      "size_bytes": 5853,
+      "sha256": "80541d95916c974ca7858fc28cfeb4a9abf4ee1c94bcd583a74565c465dea129"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_6_Static_Routes_Counterbalanced_Curriculum_Report.pdf",
+      "size_bytes": 12363,
+      "sha256": "b39169f2c488a6ff1b0cf7f22ffd35b9d5d9996740d0b8ee034e8b5a8312c1ac"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.md",
+      "size_bytes": 6242,
+      "sha256": "e3be51abafcba0d8211a5242edeb448fbafd462f6d50f589ea04a36e95ce8285"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.pdf",
+      "size_bytes": 49310,
+      "sha256": "41b5eb5b428076b9ecc131238c8c1a163bbd32d2ded0908e8f6eba13197003ed"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_7_Context_Bottleneck_Protocol_Report.tex",
+      "size_bytes": 6913,
+      "sha256": "4e96d6be011d6edc6ff7c62eb7cc0c4fde86f994f64b3e3cad9a48ab17859e88"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.md",
+      "size_bytes": 2374,
+      "sha256": "0a20887879d1a3748a02ee16ccd70672f44b7590a7a0ed7eebe69a0f84f80685"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.pdf",
+      "size_bytes": 61596,
+      "sha256": "d29978cbbb548a4e2fd9eed8c9be79b2736ef3d3ca9f46e696e37b586680ca57"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_8_Direct_Context_Global_Alignment_Protocol_Report.tex",
+      "size_bytes": 14460,
+      "sha256": "7cb65f449f8403610527b67036709ad0a0b58cfe050ae9fdb12576f6bae9f76f"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.pdf",
+      "size_bytes": 345240,
+      "sha256": "3f99f522e01f18868d0511a30e126cfaafd04fe66309b1e5a42f25fb59578ae6"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_8_Results_and_Interpretation_Report.tex",
+      "size_bytes": 14269,
+      "sha256": "1e1334010909b2cbe5592a389f667ed781105fe67157dd365c9124bd72f2cc77"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf",
+      "size_bytes": 527839,
+      "sha256": "937b517eb6933d8eb2712f76e8807841e28c62b405d5732858f31380d9cef572"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.md",
+      "size_bytes": 399,
+      "sha256": "79001fe18febae265c8a3622aad9d101487880dea9cbe4158932f701a9e5cc00"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.pdf",
+      "size_bytes": 250807,
+      "sha256": "8cea575fc26e7ee2247143ee68f062d89e2812cbd585dfc4737310389ee4e52c"
+    },
+    {
+      "relative_path": "docs/reports/Geometry_MMALS_G1_v1_0_9_Stationary_Geometry_Pilot_Protocol_Report.tex",
+      "size_bytes": 7354,
+      "sha256": "e3ecf2df3285bbeda89b1a80dcd3906609210f9dcdd954c386899d3af31702f7"
+    },
+    {
+      "relative_path": "docs/reports/figures/protocol_correction.png",
+      "size_bytes": 68223,
+      "sha256": "2f620a9916bccf940893118c6b75895ef4d5acf37e4d059b114f886c5872691f"
+    },
+    {
+      "relative_path": "docs/reports/figures/v102_distance_order_rho.png",
+      "size_bytes": 43733,
+      "sha256": "e91543112b7fdf9a792d69497d949c9d442ff6984810df7800e17c3360f5bd89"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/README.md",
+      "size_bytes": 131,
+      "sha256": "945a5ecd9cf9a626249b7acf4b7adff972b51088a179c4379e042550637e9752"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/development_method_summary.csv",
+      "size_bytes": 2227,
+      "sha256": "cd050f6e720209afada4f18ad9249935afc63c9e55499f20a96d639a3fc6b7a0"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/capacity_probe.pdf",
+      "size_bytes": 13351,
+      "sha256": "3f2afe40c23858e4e855783d2728d523a5c07cb26684a86a43fe580db511eb78"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/capacity_probe.png",
+      "size_bytes": 62966,
+      "sha256": "d34514e804cb8800e9149d1b1fb10712855ee29b57318f2ba50227b53a5305fc"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/causal_csr.pdf",
+      "size_bytes": 14456,
+      "sha256": "1f1429be47579505a37acbfb6c48339af185cd3b9f2b466e731a16c89e919148"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/causal_csr.png",
+      "size_bytes": 85241,
+      "sha256": "f82e941b22833623a3b54863ca369d7af4d2862696fd2122aca015c2f3a140bd"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/d4_effects.pdf",
+      "size_bytes": 12937,
+      "sha256": "c85a1d99a0f37eeac60d0d8cb8f7e77f0abb14867a18c10319d1c0893ed763fb"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/d4_effects.png",
+      "size_bytes": 43129,
+      "sha256": "bd4c70bb0f33613e80e1d5a1c3766f5ee26a69478b3a1ab3b5647089028be9b0"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/geometry_overview.pdf",
+      "size_bytes": 14365,
+      "sha256": "ae650112ad42b79811c59dc459fecbc74e88bd399e2b1e9ace8a33fc4747f175"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/geometry_overview.png",
+      "size_bytes": 66756,
+      "sha256": "ffcb1aa0831b82198ebd86ffa68c2f02262427728854723db18376ac78190a4d"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/operational_metrics.pdf",
+      "size_bytes": 14033,
+      "sha256": "310d8a071593ff6b7f9008f32f7da272fa7cc57ea221f3fe997116d297bcfd9f"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/figures/operational_metrics.png",
+      "size_bytes": 57047,
+      "sha256": "674094c604a49edb1669c6086c47ca6e4b8d2bd5597efcfcdb7ba3cc7f7eda75"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/heldout_causal_probe.csv",
+      "size_bytes": 839,
+      "sha256": "bd3c7ab2374d717e43db22b2e7534328c5e070f63027e3f4c3d015fa3135872f"
+    },
+    {
+      "relative_path": "docs/reports/v1_0_8_results/paired_source_deltas.csv",
+      "size_bytes": 8432,
+      "sha256": "c1d78626a4349a059d4c6cf0828b4edacfbbd20380df1c7e8caedf43cec1e1dd"
+    },
+    {
+      "relative_path": "docs/specs/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md",
+      "size_bytes": 12399,
+      "sha256": "28c5a525bedc7c28ae879a754f90acc505ec802886a33a3fd1ebfcd5057b5977"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_Colab.ipynb",
+      "size_bytes": 51071,
+      "sha256": "5b1a4b9c49321b156468e33df7c813b4774b77f5338557df5c10a62b49172d54"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_Colab_v1_0_2.ipynb",
+      "size_bytes": 33269,
+      "sha256": "b97bd1103bc58febaa8aeb559a6e7ca0d51faa3bc407bf5b20f7573a5efe4a51"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_ContextBottleneck_v1_0_7.ipynb",
+      "size_bytes": 62662,
+      "sha256": "75f8310546a9c29f805a9932f7ff93490384e44e1a8c56b172a349b3fbeb7ba8"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_ContextMediation_Curriculum_v1_0_5.ipynb",
+      "size_bytes": 88990,
+      "sha256": "9954c82b96a92605b0eb8fd2e428ba7da90ae0bda447e1a32ad01fbd370465c5"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_CrossAngle_Paired_v1_0_3.ipynb",
+      "size_bytes": 51071,
+      "sha256": "5b1a4b9c49321b156468e33df7c813b4774b77f5338557df5c10a62b49172d54"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8.ipynb",
+      "size_bytes": 53052,
+      "sha256": "96c28dd8dae995d38975911ef4b878289ce8816a434960b9d49396b2f9a470ef"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8_REVISED.ipynb",
+      "size_bytes": 53052,
+      "sha256": "96c28dd8dae995d38975911ef4b878289ce8816a434960b9d49396b2f9a470ef"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_DirectContext_GlobalAlignment_v1_0_8_REVISED_PATCHED.ipynb",
+      "size_bytes": 54453,
+      "sha256": "755539a4802489ad8a3dd5ba8a1fe331f49d41ff6fe772464d4feef24886d618"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb",
+      "size_bytes": 97447,
+      "sha256": "7422aa190428e0a250b899a9ef13cba1f03c17ccbb13d63ee8815cc7f9623a3d"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_MatchedCompute_Retention_v1_0_4.ipynb",
+      "size_bytes": 66736,
+      "sha256": "6a29bf70d6bc1733fd51657706b4ee6895251955d4aabb685e72d95ae7d0c327"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_StaticRoutes_CounterbalancedCurriculum_v1_0_6.ipynb",
+      "size_bytes": 103588,
+      "sha256": "6996510845b7cabbd47e0f04c0382ba3fa9ff32b5e5a137d7f595e1dba4f3aae"
+    },
+    {
+      "relative_path": "notebooks/Geometry_MMALS_G1_StationaryGeometry_Pilot_v1_0_9.ipynb",
+      "size_bytes": 68342,
+      "sha256": "8d8ef800e13f7923c8892ad83ff32ac5a31ad98fd0231e6d237b7c63acef0994"
+    },
+    {
+      "relative_path": "paper/Geometry_MMALS_G1_Article.pdf",
+      "size_bytes": 507036,
+      "sha256": "3c8ed455c66267ecc6faea6f56666583603856297a7a15f150b37bbedbcc8e39"
+    },
+    {
+      "relative_path": "paper/Geometry_MMALS_G1_Article_v1_0_1.pdf",
+      "size_bytes": 507036,
+      "sha256": "3c8ed455c66267ecc6faea6f56666583603856297a7a15f150b37bbedbcc8e39"
+    },
+    {
+      "relative_path": "paper/figures/conceptual_manifold.pdf",
+      "size_bytes": 13902,
+      "sha256": "c4fb3b87582bc05903385206cda31b30dd7a7235fcaf4b3b07e780554f08cab2"
+    },
+    {
+      "relative_path": "paper/figures/conceptual_manifold.png",
+      "size_bytes": 80715,
+      "sha256": "9e81dc2d2c2091c0f6fcc77326595387ba1216ce9ca24a42a076fd4eeecf7a6b"
+    },
+    {
+      "relative_path": "paper/figures/route_trajectory.pdf",
+      "size_bytes": 17616,
+      "sha256": "4975fcc96621464ed8fd33633b3376ebc30efb0d21f094c49dda0c473c4e4e39"
+    },
+    {
+      "relative_path": "paper/figures/route_trajectory.png",
+      "size_bytes": 118971,
+      "sha256": "6657208183164b999f93503c60be0c619dbe0271f20de2de4135aa77d1550f1d"
+    },
+    {
+      "relative_path": "paper/figures/transport_drift.pdf",
+      "size_bytes": 15316,
+      "sha256": "89b4120a2582d4be8e7ae01441b3fb8cc289ab6c0aca78fb82944c27cbca9eb8"
+    },
+    {
+      "relative_path": "paper/figures/transport_drift.png",
+      "size_bytes": 93590,
+      "sha256": "542ce4b847eba1f0a2102867bdc87e01164f65f90d4ec5499b674f905252d7fb"
+    },
+    {
+      "relative_path": "paper/main.tex",
+      "size_bytes": 65718,
+      "sha256": "ebe94448b358aae0a70a5694903ceb24f79a64f85417842b61d9591cca190d8c"
+    },
+    {
+      "relative_path": "paper/protocol_v1_0_9/README.md",
+      "size_bytes": 84,
+      "sha256": "bfdf7f20e7fd629acc18e67736509ca551a24b092e7d9bd78d3515144f48a778"
+    },
+    {
+      "relative_path": "paper/protocol_v1_0_9/main.tex",
+      "size_bytes": 7354,
+      "sha256": "e3ecf2df3285bbeda89b1a80dcd3906609210f9dcdd954c386899d3af31702f7"
+    },
+    {
+      "relative_path": "paper/references.bib",
+      "size_bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/README.md",
+      "size_bytes": 131,
+      "sha256": "945a5ecd9cf9a626249b7acf4b7adff972b51088a179c4379e042550637e9752"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/capacity_probe.pdf",
+      "size_bytes": 13351,
+      "sha256": "3f2afe40c23858e4e855783d2728d523a5c07cb26684a86a43fe580db511eb78"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/capacity_probe.png",
+      "size_bytes": 62966,
+      "sha256": "d34514e804cb8800e9149d1b1fb10712855ee29b57318f2ba50227b53a5305fc"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/causal_csr.pdf",
+      "size_bytes": 14456,
+      "sha256": "1f1429be47579505a37acbfb6c48339af185cd3b9f2b466e731a16c89e919148"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/causal_csr.png",
+      "size_bytes": 85241,
+      "sha256": "f82e941b22833623a3b54863ca369d7af4d2862696fd2122aca015c2f3a140bd"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/d4_effects.pdf",
+      "size_bytes": 12937,
+      "sha256": "c85a1d99a0f37eeac60d0d8cb8f7e77f0abb14867a18c10319d1c0893ed763fb"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/d4_effects.png",
+      "size_bytes": 43129,
+      "sha256": "bd4c70bb0f33613e80e1d5a1c3766f5ee26a69478b3a1ab3b5647089028be9b0"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/geometry_overview.pdf",
+      "size_bytes": 14365,
+      "sha256": "ae650112ad42b79811c59dc459fecbc74e88bd399e2b1e9ace8a33fc4747f175"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/geometry_overview.png",
+      "size_bytes": 66756,
+      "sha256": "ffcb1aa0831b82198ebd86ffa68c2f02262427728854723db18376ac78190a4d"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/operational_metrics.pdf",
+      "size_bytes": 14033,
+      "sha256": "310d8a071593ff6b7f9008f32f7da272fa7cc57ea221f3fe997116d297bcfd9f"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/figures/operational_metrics.png",
+      "size_bytes": 57047,
+      "sha256": "674094c604a49edb1669c6086c47ca6e4b8d2bd5597efcfcdb7ba3cc7f7eda75"
+    },
+    {
+      "relative_path": "paper/results_v1_0_8/main.tex",
+      "size_bytes": 14269,
+      "sha256": "1e1334010909b2cbe5592a389f667ed781105fe67157dd365c9124bd72f2cc77"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf",
+      "size_bytes": 527839,
+      "sha256": "937b517eb6933d8eb2712f76e8807841e28c62b405d5732858f31380d9cef572"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/README.md",
+      "size_bytes": 1170,
+      "sha256": "47691fb42dd905f64a2aa03e339bf541871a7e140eda361494c2967006202bb4"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/REPORT_MANIFEST.json",
+      "size_bytes": 5599,
+      "sha256": "76a32aa7f3775849277cb38b311bb927c20d68064c81bd7c8cba43845cec69fe"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/aggregate_method_summary.csv",
+      "size_bytes": 3508,
+      "sha256": "f4d169c94d0088db563830f20cd70c8e51b3372c640b2a82e2a30df448494165"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/aggregate_seed_effects.csv",
+      "size_bytes": 3543,
+      "sha256": "37900931e614536e505e4f9afa1d20f46a56fc8c6fdce6f421346812a11abbaa"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/causal_aggregate_summary.csv",
+      "size_bytes": 1876,
+      "sha256": "911272ff1091216e59fc1d59480e879fde864593238178389fc1001d53a11177"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/causal_probe_source_summary.csv",
+      "size_bytes": 11884,
+      "sha256": "079d5634b2c98d214e983bce81a501a50816ce521cf880ac935f27736a94f97e"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/causal_seed_summary.csv",
+      "size_bytes": 1664,
+      "sha256": "1426e693fce4e225fbfd41b4c1450e5c6587c87932458408a424c5cf42158705"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/compute_summary.csv",
+      "size_bytes": 808,
+      "sha256": "71bdd92bfd33d5f1cae6888b1104140f74a938a453825e93606af8cd1c464d10"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/per_seed_method_summary.csv",
+      "size_bytes": 3059,
+      "sha256": "4197e4a8118a44d169fe6e84cbee25961ebe36ff3b1ee7ed01f7a8078a4b8c9a"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/per_seed_prediction_effects.csv",
+      "size_bytes": 11757,
+      "sha256": "92bed56048e4a997a5fd9b55d6aa300070b8b5c95a4696187bfd72a06b741b8e"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/per_seed_source_effects.csv",
+      "size_bytes": 14794,
+      "sha256": "5c1904aee5cae0765d4f33be665cb9df1a9677d1779db69aa60dca1d44049abf"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/pilot_gate_summary.csv",
+      "size_bytes": 512,
+      "sha256": "c61848e779b9bed93c36752f6b7d2ea690244a4fbcc589501d8893da2c3901f0"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/run_manifest.json",
+      "size_bytes": 2559,
+      "sha256": "410ab0ba121a8f1df805cbc88991057908fccfbe67ff10ce321a566b8bed8864"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/data/sensory_history.csv",
+      "size_bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/causal_summary_v109.pdf",
+      "size_bytes": 15116,
+      "sha256": "49b2726df4d16965be85ed118834a41fc8be5e2a911c09ea4c51e10c37dd693c"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/causal_summary_v109.png",
+      "size_bytes": 91968,
+      "sha256": "c13a86e15a6dcbc390cbed4ab0c688517f841deebfb86833718f1e7c2ac8714e"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/context_fibers_pca_seed0.pdf",
+      "size_bytes": 33891,
+      "sha256": "7117d7d05a919313304ddd49f2375548394c6505a0d7683822f27659fd5749a8"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/context_fibers_pca_seed0.png",
+      "size_bytes": 649308,
+      "sha256": "2c44d34aabcecff3a55a3a471406d738d96b163ff3091cd2471fc01ee0901947"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/geometry_summary_v109.pdf",
+      "size_bytes": 15423,
+      "sha256": "a48aa4b63fad0b510aacf066f83e9a9f0f4db29ac819bab699ba003df1406b9a"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/geometry_summary_v109.png",
+      "size_bytes": 73093,
+      "sha256": "4494b1d9259ef095668e3c9aa9a51debde7091be4d36ba85abdc39d039a7fb3d"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/heldout_decoding_v109.pdf",
+      "size_bytes": 15915,
+      "sha256": "08c37f04c3ed318925ab5dbd815d1baecce8adc3be3d8fd4485804478e968bec"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/heldout_decoding_v109.png",
+      "size_bytes": 106152,
+      "sha256": "98f4bcddfec916b76465732a3be47cdd0354af0b242d17026ccdb7845cb3e619"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/operational_metrics_v109.pdf",
+      "size_bytes": 13406,
+      "sha256": "c1521ce79321347609c5b96e1659ba019b56950ab6edf9f1a2311b3941d92a83"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/operational_metrics_v109.png",
+      "size_bytes": 68768,
+      "sha256": "e9ce70e2d0170ef8630919c3945be6b49e92298dfbea166a4dfd4ed807e588c3"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/per_seed_context_v109.pdf",
+      "size_bytes": 14265,
+      "sha256": "900ac9fcebbd9d094809de74b90210225e0b25ebdd680f0447e1b27a718f4d46"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/per_seed_context_v109.png",
+      "size_bytes": 131726,
+      "sha256": "4b85d9696cdf229376e12970ef292a1ffb3b06971553e8f75ce50c2467e5ebd1"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/seed_effects_v109.pdf",
+      "size_bytes": 13213,
+      "sha256": "0e54e7c94bd34cf1c2352b2b8d2ec4b297102f2dea17655983f5863e625bc923"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/figures/seed_effects_v109.png",
+      "size_bytes": 53814,
+      "sha256": "abc674314c4010dfa1cb0f94c1bd8f61d81ff7d2b3328e60df86c268225b8bea"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/main.tex",
+      "size_bytes": 50210,
+      "sha256": "f5b070c37c4c97b267369d241c8db7875281fd83d54bc0ce0d8161a78220f364"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/references.bib",
+      "size_bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/specification/Geometry_MMALS_G1_v1_1_0_Functional_Routing_Specification.md",
+      "size_bytes": 12399,
+      "sha256": "28c5a525bedc7c28ae879a754f90acc505ec802886a33a3fd1ebfcd5057b5977"
+    },
+    {
+      "relative_path": "paper/results_v1_0_9_and_spec_v1_1_0/specification/rotated_mnist_g1_v110_spec.yaml",
+      "size_bytes": 4334,
+      "sha256": "00ce3ee20707de3c86095b123a32583063737e74ec3bae9b0f151eb2ef82eb5e"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/README.md",
+      "size_bytes": 1020,
+      "sha256": "a7ab878b2662bdf0299c466af28801c9e02b1882d77eca1d37e3fcff40ec2394"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/REPORT_MANIFEST.json",
+      "size_bytes": 568,
+      "sha256": "689e495a084244ba7c16876f9c1226db27ce17ba3ac06a13ff73ea1ba911dc7f"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/adaptive_vs_static_interpolation.pdf",
+      "size_bytes": 12897,
+      "sha256": "7bffb14aca2c715983fd0e8b6eccef3a9b42da763deecd6bb422afd9e55b32a6"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/curriculum_accuracy.pdf",
+      "size_bytes": 12862,
+      "sha256": "83aaaabb28999e6496d1acc6b8d98c146b3015d5de8d8ec324c85cfff414166c"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/curriculum_forgetting.pdf",
+      "size_bytes": 13279,
+      "sha256": "60891c37465091bfd5b6b6ab5a4fc2389b947b1df8ebc8f54f5dcfa26a48e28f"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/geometry_effect_c1.pdf",
+      "size_bytes": 21101,
+      "sha256": "16c67f7991646bd62f3508fae083f56d20bd80d516d14efda1e5680beb0e2bbf"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/method_accuracy_comparison.pdf",
+      "size_bytes": 15309,
+      "sha256": "808c2ecf87772df37b06981c6d62aae8ec5c4ff1dc35162a54e61b503e128c37"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/method_forgetting_comparison.pdf",
+      "size_bytes": 17179,
+      "sha256": "af2b8680aa89d3c4d036f95d25407823d4bb882cd1b28f277ba9a4503c094946"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/router_mediation_accuracy.pdf",
+      "size_bytes": 20163,
+      "sha256": "acf67f57d5b21743485ccb49ee60120e8fa6e2b528999b207a0b3ea3bbe159e7"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/figures/router_mediation_shift.pdf",
+      "size_bytes": 19293,
+      "sha256": "4d963a9d2e52702b645b68da9dcd70baddb5c1935e71fd8679abdb625f3d9607"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/main.tex",
+      "size_bytes": 39048,
+      "sha256": "ba41a00a886886300be7a35ef1561a974b94161d61c9d6546fd67be0e4aa442a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_0/references.bib",
+      "size_bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/README.md",
+      "size_bytes": 1242,
+      "sha256": "4c7ca635a366670ab4b1edfa393abb9ccf282274de74504577da2c040f89ef79"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/REPORT_MANIFEST.json",
+      "size_bytes": 581,
+      "sha256": "f6fb701e295b44190bc2b2fac1232a78ba9fd0dfd97a07f6d5db018a57f2b7f0"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/causal_csr_v107.pdf",
+      "size_bytes": 14606,
+      "sha256": "6651df71a2130e318cc5957b6cec82f9a130b7ab4a5e0854306d1f5b6487b2c3"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/causal_csr_v107.png",
+      "size_bytes": 127383,
+      "sha256": "88136a83b94ae9ee2e9115117f97e0c739a61b97d72b131071ec8be329f0f204"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/context_bottleneck_geometry_interpolation.pdf",
+      "size_bytes": 15290,
+      "sha256": "c76801af457aa0b181cc75c11b7b0381a2e5ed3c1c65e3f86c13fb5208820a6b"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/context_bottleneck_geometry_interpolation.png",
+      "size_bytes": 58987,
+      "sha256": "43eb12a8af89a67977f787fa46c58d256457f3c544630d63dbf28de458265e6e"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/context_bottleneck_geometry_trained.pdf",
+      "size_bytes": 15062,
+      "sha256": "95b23fb785a1d6708be92a7f576d8b36f6528a0cff3ba1b273c3bb1e40ad59d7"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/context_bottleneck_geometry_trained.png",
+      "size_bytes": 58610,
+      "sha256": "d007ac0f7521a3e5fbc1530fb8c5f0acda40156863e0a6017f1cf25f4670186d"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/curriculum_accuracy_v107.pdf",
+      "size_bytes": 12323,
+      "sha256": "143585f227583db654c388aa1a6b1a99aa2471828cfdd6208b556148cd922b8f"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/curriculum_accuracy_v107.png",
+      "size_bytes": 54029,
+      "sha256": "f41b9dc207c69f8472e35c2754a8558c9342271d453b217ff839c71cfc7f919a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/curriculum_forgetting_v107.pdf",
+      "size_bytes": 12889,
+      "sha256": "0047ad33d580149f0e93b5334959006645046cc386ade66a632466fe9db64a1b"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/curriculum_forgetting_v107.png",
+      "size_bytes": 49595,
+      "sha256": "84db508ecf022809dac6d6ffefe38ebb8fe471e12b7013e2cff0954b3fee1346"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/local_vs_global_route_alignment.pdf",
+      "size_bytes": 14065,
+      "sha256": "196460d1d252d018208d304a6a37a7c0aa2e3556a07c517f1878bafa7598720e"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/local_vs_global_route_alignment.png",
+      "size_bytes": 56895,
+      "sha256": "f4780d8655b9f6153ac8985f6b53da86fd26cd34407619c7c6fb7f9d028f3aef"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/mediation_accuracy_deltas_v107.pdf",
+      "size_bytes": 14599,
+      "sha256": "73d8bd3a19cb5482ea05b830fae87350a7da4a595a38a5a1a00e9aeff5f96be2"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/mediation_accuracy_deltas_v107.png",
+      "size_bytes": 80889,
+      "sha256": "aff6c636af8a0ba3afc1ac0186e2ea539c8ff12759b3e6599513b753fa6a8e39"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/method_accuracy_v107.pdf",
+      "size_bytes": 15181,
+      "sha256": "1ab6626a6c745a555d1177368e26fd701b260334bfff643ae6e790c1df9aaebd"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/method_accuracy_v107.png",
+      "size_bytes": 149749,
+      "sha256": "6c31c10f20da080466dfbcd9bb0de2bd7a6dc2f133b4b1ae16a5741ff729bb5c"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/method_forgetting_v107.pdf",
+      "size_bytes": 16178,
+      "sha256": "273b2f375ac5a71d4a530d20a34246f977f8add76b6f3339f8e6f9bc0fd5471a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/figures/method_forgetting_v107.png",
+      "size_bytes": 137796,
+      "sha256": "cad0922b838806c77be2e1cec6847ecf546e295944100cc99d4dd80f0b5bfa54"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/main.tex",
+      "size_bytes": 50592,
+      "sha256": "901e2b9da9ce854dfd090fd72fe0ba30534fe51fef5cf79249d8cef6166f1b25"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_1/references.bib",
+      "size_bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/Geometry_MMALS_G1_Reviewer_Report_v1_1_to_v1_2.md",
+      "size_bytes": 1604,
+      "sha256": "46ee2430f2f049fec01f5b9e092dd3c9e9e1048e530b7eb6c2fe8cd67dcceae8"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/README.md",
+      "size_bytes": 1221,
+      "sha256": "0713906e74eea023c957b474063950e897c2b5d125cfb3cf30f68d5da24b38ff"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/REPORT_MANIFEST.json",
+      "size_bytes": 1273,
+      "sha256": "d956b3a5bec8fd9e88034d176b286323d3fd08bdf9efec10520396150f9daacf"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/aggregate_method_summary.csv",
+      "size_bytes": 3508,
+      "sha256": "f4d169c94d0088db563830f20cd70c8e51b3372c640b2a82e2a30df448494165"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/aggregate_seed_effects.csv",
+      "size_bytes": 3543,
+      "sha256": "37900931e614536e505e4f9afa1d20f46a56fc8c6fdce6f421346812a11abbaa"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/causal_aggregate_summary.csv",
+      "size_bytes": 1876,
+      "sha256": "911272ff1091216e59fc1d59480e879fde864593238178389fc1001d53a11177"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/compute_summary.csv",
+      "size_bytes": 808,
+      "sha256": "71bdd92bfd33d5f1cae6888b1104140f74a938a453825e93606af8cd1c464d10"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/per_seed_method_summary.csv",
+      "size_bytes": 3059,
+      "sha256": "4197e4a8118a44d169fe6e84cbee25961ebe36ff3b1ee7ed01f7a8078a4b8c9a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/per_seed_prediction_effects.csv",
+      "size_bytes": 11757,
+      "sha256": "92bed56048e4a997a5fd9b55d6aa300070b8b5c95a4696187bfd72a06b741b8e"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/per_seed_source_effects.csv",
+      "size_bytes": 14794,
+      "sha256": "5c1904aee5cae0765d4f33be665cb9df1a9677d1779db69aa60dca1d44049abf"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/pilot_gate_summary.csv",
+      "size_bytes": 512,
+      "sha256": "c61848e779b9bed93c36752f6b7d2ea690244a4fbcc589501d8893da2c3901f0"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/data/run_manifest.json",
+      "size_bytes": 2559,
+      "sha256": "410ab0ba121a8f1df805cbc88991057908fccfbe67ff10ce321a566b8bed8864"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/causal_summary_v109.pdf",
+      "size_bytes": 15116,
+      "sha256": "49b2726df4d16965be85ed118834a41fc8be5e2a911c09ea4c51e10c37dd693c"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/causal_summary_v109.png",
+      "size_bytes": 91968,
+      "sha256": "c13a86e15a6dcbc390cbed4ab0c688517f841deebfb86833718f1e7c2ac8714e"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/geometry_summary_v109.pdf",
+      "size_bytes": 15423,
+      "sha256": "a48aa4b63fad0b510aacf066f83e9a9f0f4db29ac819bab699ba003df1406b9a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/geometry_summary_v109.png",
+      "size_bytes": 73093,
+      "sha256": "4494b1d9259ef095668e3c9aa9a51debde7091be4d36ba85abdc39d039a7fb3d"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/heldout_decoding_v109.pdf",
+      "size_bytes": 15915,
+      "sha256": "08c37f04c3ed318925ab5dbd815d1baecce8adc3be3d8fd4485804478e968bec"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/heldout_decoding_v109.png",
+      "size_bytes": 106152,
+      "sha256": "98f4bcddfec916b76465732a3be47cdd0354af0b242d17026ccdb7845cb3e619"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/operational_metrics_v109.pdf",
+      "size_bytes": 13406,
+      "sha256": "c1521ce79321347609c5b96e1659ba019b56950ab6edf9f1a2311b3941d92a83"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/operational_metrics_v109.png",
+      "size_bytes": 68768,
+      "sha256": "e9ce70e2d0170ef8630919c3945be6b49e92298dfbea166a4dfd4ed807e588c3"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/per_seed_context_v109.pdf",
+      "size_bytes": 14265,
+      "sha256": "900ac9fcebbd9d094809de74b90210225e0b25ebdd680f0447e1b27a718f4d46"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/per_seed_context_v109.png",
+      "size_bytes": 131726,
+      "sha256": "4b85d9696cdf229376e12970ef292a1ffb3b06971553e8f75ce50c2467e5ebd1"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/seed_effects_v109.pdf",
+      "size_bytes": 13213,
+      "sha256": "0e54e7c94bd34cf1c2352b2b8d2ec4b297102f2dea17655983f5863e625bc923"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/figures/seed_effects_v109.png",
+      "size_bytes": 53814,
+      "sha256": "abc674314c4010dfa1cb0f94c1bd8f61d81ff7d2b3328e60df86c268225b8bea"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/source/main.pdf",
+      "size_bytes": 444849,
+      "sha256": "106307e2d91b03181a884e9ff1fab7b41b8d683720d522ffbb68443b682465ca"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/source/main.run.xml",
+      "size_bytes": 2346,
+      "sha256": "ea7798876b8bd947a6617ce18e77420528b127c43c8f8018cc1a3eea76c198c5"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/source/main.tex",
+      "size_bytes": 41706,
+      "sha256": "ed6d8fbf4bdf8f5a226e587e161f48177a91016e35af2a6f713ec3fae0ff855a"
+    },
+    {
+      "relative_path": "paper/reviewer_status_v1_2/source/references.bib",
+      "size_bytes": 9227,
+      "sha256": "b5590d09dd2137614da1827c19bdef49fa8c99d7101e1ddffc6cca82aa241b22"
+    },
+    {
+      "relative_path": "pyproject.toml",
+      "size_bytes": 798,
+      "sha256": "8ebce8526a8fbcca619f6606f3ba9e4c3e5cfb88228d22867db9ac571cfc6a7b"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_0.zip",
+      "size_bytes": 988278,
+      "sha256": "8dca4b8a3d4321de83d187ee00eaacc5f602372e678aa57d605c270903af9ec5"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_1.zip",
+      "size_bytes": 1163511,
+      "sha256": "2abe4fc2e416d8595526c6e694a97ade058f3cd947bba407b95a849ce3565f7d"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_Status_and_Perspective_LaTeX_v1_2.zip",
+      "size_bytes": 922310,
+      "sha256": "5f1562b6138e3698509fc6face1165a2b63e2d86e9f92137ddb45cb34ceca920"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_v1_0_8_Protocol_Report_LaTeX_REVISED.zip",
+      "size_bytes": 8167,
+      "sha256": "20e7b1b06d7ed690163c3752d8455b264308e56edae920b8ff2a22dc195eb4ae"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_v1_0_8_Results_Report_LaTeX.zip",
+      "size_bytes": 320482,
+      "sha256": "e2e57801f4ccfc75b15a8e7b59810984093e02b1fba30262f3c2f41df1a6007b"
+    },
+    {
+      "relative_path": "releases/Geometry_MMALS_G1_v1_0_9_Protocol_Report_LaTeX.zip",
+      "size_bytes": 4105,
+      "sha256": "5e29a98fa5a38ca1332150f3ac42d93a17045dcb2248adea240fe3db2013a66e"
+    },
+    {
+      "relative_path": "requirements.txt",
+      "size_bytes": 134,
+      "sha256": "3d90e72da93c9006a99a170b2a35faa2223ca00e07ef68f9282e3568fa2c3f99"
+    },
+    {
+      "relative_path": "results/smoke/synthetic_metrics.json",
+      "size_bytes": 339,
+      "sha256": "ea145d4f54d1809a11dc9b3b2779e41a356ec94c08ad920ff894fa6ed95a7a4b"
+    },
+    {
+      "relative_path": "results/smoke/synthetic_route_trajectory.png",
+      "size_bytes": 127303,
+      "sha256": "5795f7ef7ff69fbd39310d8a54dacd12eff425d01f0961b0b302492bcc20dd87"
+    },
+    {
+      "relative_path": "results/smoke/synthetic_routes.csv",
+      "size_bytes": 23711,
+      "sha256": "26aedd5ace8c9988d35620aed0c420139c3b837ad7d229f5c74d2838724aa090"
+    },
+    {
+      "relative_path": "results/templates/causal_interventions.csv",
+      "size_bytes": 155,
+      "sha256": "1988306496ead7306593e980ce2fc335162a5e963732bc2b381d7c07034a1e1b"
+    },
+    {
+      "relative_path": "results/templates/host_specialization.csv",
+      "size_bytes": 212,
+      "sha256": "77b610bf0d2b11b5dc18e6fb13d87a8eb72050a1ae90ff55b0abf2128169f4b1"
+    },
+    {
+      "relative_path": "results/templates/per_seed_metrics.csv",
+      "size_bytes": 215,
+      "sha256": "b5b3cdcf7e9a45aed49ba1630c70272d903632097f80ac37b44d3cdce7cddde3"
+    },
+    {
+      "relative_path": "results/templates/run_manifest.json",
+      "size_bytes": 372,
+      "sha256": "86427a67cea691aaa9183fc7a7e62509011f58979e6e01a612f90200e18eead6"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/causal_probe_raw.csv",
+      "size_bytes": 2898,
+      "sha256": "1500087105416311c3600398784ba883484dbce767391da030ee1930bbcf8543"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/causal_probe_summary.csv",
+      "size_bytes": 591,
+      "sha256": "8cfb642b6d3bfd4bbf91d21284fbef8ce0cb85aeda2752c39201b25e9f52238e"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/compute_summary.csv",
+      "size_bytes": 431,
+      "sha256": "502d2b2eba68aafdba5b26a46e4347d363763a83c98a8fed97cb0904823bd939"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/curriculum_evaluation.csv",
+      "size_bytes": 17217,
+      "sha256": "b94722b96da2d27f7577b5e957489a51d5dc9976da579d8e1e013406f78cd516"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/curriculum_stage_logs.csv",
+      "size_bytes": 5034,
+      "sha256": "8361eee956d1a8e7da0a135fbe76a888fa7975208a002605780ed6db892fef8b"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/curriculum_summary.csv",
+      "size_bytes": 481,
+      "sha256": "6532e9202acf312248e8fc27af335ce6671a8b6b99d17c6ed7a93ba7d4afd63d"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/development_contrasts.csv",
+      "size_bytes": 1037,
+      "sha256": "7efe933459393b1d7bd84cd87f7525e2f7302d162e51707464f162727e6e8562"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/development_gate_summary.csv",
+      "size_bytes": 820,
+      "sha256": "fdebcb49bb7e837d7901d17e77b6219ac1018b06705d8ee3540b2ac223864ca2"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/development_method_summary.csv",
+      "size_bytes": 1413,
+      "sha256": "3ed2532c09c395655af3ab9ac2606c47259b9106941c04807133d5aa0500abca"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/environment.txt",
+      "size_bytes": 13458,
+      "sha256": "be4165a0dc88c456d3414f485a9ee1b462cb7d34f70e26bcbaea147da98acbe3"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/forgetting.csv",
+      "size_bytes": 1730,
+      "sha256": "3384b265cbd10cc61865b806388294f97c9ac622b789f4502aee9e69070e4229"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/host_bundle_raw.csv",
+      "size_bytes": 4102592,
+      "sha256": "aab3d15b39a1bcc8fa589a8dfd480b4d7ba0546db8e6b2c11c5d4a46a5c5b9c9"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/host_bundle_summary.csv",
+      "size_bytes": 22742,
+      "sha256": "50b1a11045178f368fa875b8dd3c5b93b6a7361f01f5dfc42d8e17c1f7317dee"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/interpolation_metrics.csv",
+      "size_bytes": 1819,
+      "sha256": "68686803fddaf50de088a75ffec4dba3dcd492d1234e866b358eb0ecd8cd26f4"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/mediation_dependency_summary.csv",
+      "size_bytes": 931,
+      "sha256": "da6a63170fb67dae56e61d82e69e0af8c6a84296c9ff9f33df955906538fd73d"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/mediation_interventions_raw.csv",
+      "size_bytes": 6760164,
+      "sha256": "bab3b40e803c1d55045466494b2f2d9e123fc45b55dd15864dcc9b0256dadd16"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/mediation_interventions_summary.csv",
+      "size_bytes": 3473,
+      "sha256": "334cc1242b5f3b4c03797b861a603e421b2a13e33b689bfcbf33e00a98532976"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/paired_prediction_deltas.csv",
+      "size_bytes": 2825,
+      "sha256": "8506f5faa08fa158f460488b093451b9da0513b8290a0a24330e279850145349"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/paired_source_deltas.csv",
+      "size_bytes": 7291,
+      "sha256": "632587a6bfa97c47cca1e8086e38370511a141fb2f079bba911272d297f05aa5"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/partitioned_geometry_metrics.csv",
+      "size_bytes": 13147,
+      "sha256": "ccbf0cd1751f80990790db67fb30a6ee1fe214a0fb18c7787d0a5f2b10de345a"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/run_manifest.json",
+      "size_bytes": 3636,
+      "sha256": "1e1a2322cdb4122bb3a1fcdac7e29d330fcd5546f0d29f3384285bde7c36e2fa"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/sensory_gate.csv",
+      "size_bytes": 48,
+      "sha256": "a88a5db0420d155efc5a12c2a015b9f9ddaa5ff22cd0d1b35377c24d99a84236"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/sensory_history.csv",
+      "size_bytes": 81,
+      "sha256": "99c103521d01a427e6233f444d2b7214dc181921ddda8fc1765a06b76a20dd7a"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/stage_logs.csv",
+      "size_bytes": 6894,
+      "sha256": "9e2c46b222be559bad5985f5f2922dc94eb2ac86ad56a89d8696f05afcfe3543"
+    },
+    {
+      "relative_path": "results/v1_0_7/seed_0/staged_evaluation.csv",
+      "size_bytes": 23184,
+      "sha256": "67bfd92608845d7652369cd019236bbfca6f13707e89e551eea4a22592ab2efa"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/compute_summary.csv",
+      "size_bytes": 383,
+      "sha256": "e0248badb9675dd03393669b8bf1c709e1e67f1db964aa64c433f4047effff26"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/context_collapse_diagnostics.csv",
+      "size_bytes": 3843,
+      "sha256": "e0033151c2712aabc4ab843713b85881a1098fb34922ec6521d252a538d1b3ea"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/development_gate_summary.csv",
+      "size_bytes": 397,
+      "sha256": "132af17ec30ae60198af571bb81bcd11f364b00b76a7b3ee3179f4a25332b68f"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/development_method_summary.csv",
+      "size_bytes": 2253,
+      "sha256": "7d34fa9702d0144d194071deefdb945506aab2b38ddbe8b8cd221b8384e82b6c"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/factor_probe.csv",
+      "size_bytes": 1174,
+      "sha256": "9fdb0623b66afe93fd8dca104026648be64d48244b0e9dac8c910ae7d39307e8"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/fiber_alignment_metrics.csv",
+      "size_bytes": 1224,
+      "sha256": "0bf78d3c48f97d465b43e420ea517d3ada21ffde43710019216d63eb6537ad80"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/forgetting.csv",
+      "size_bytes": 1870,
+      "sha256": "dbacabebd014c744051a33fc33da755115550facc1370f55925113e13a96523b"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/heldout_causal_probe.csv",
+      "size_bytes": 864,
+      "sha256": "94ac5204783a5a33e5cdbc6d72af4d510d53213abec34c257063403d4466d7e7"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/paired_source_deltas.csv",
+      "size_bytes": 8785,
+      "sha256": "a0b61b13901ae5b85146ab10b204684fd84d2d0d1566dd624a283a06ea55baac"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/partitioned_geometry_metrics.csv",
+      "size_bytes": 12647,
+      "sha256": "cf52cac649c430f12964e44fe4a506fab2d3aa6d0726f6e1387008fb80685b9b"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/run_manifest.json",
+      "size_bytes": 3458,
+      "sha256": "a1656b30b25ce9bac683a6fa17e83ec0297a9ca210162707a2c219b0d0ebf688"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/sensory_history.csv",
+      "size_bytes": 81,
+      "sha256": "6f032678db6999e0d1ab0fed33c2839e8f0d51d1c1fab08b8284fdc7d7f3c6ac"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/stage_logs.csv",
+      "size_bytes": 8799,
+      "sha256": "d430fc69b0234e6bb9d7489c61e54d5217d25277af997195311b989534852ea8"
+    },
+    {
+      "relative_path": "results/v1_0_8/seed_0/staged_evaluation.csv",
+      "size_bytes": 24851,
+      "sha256": "f6dcef6e1f9f52850f00e17e3c6d72b1ef01b0bfabd8c6440bc133df3516b8ca"
+    },
+    {
+      "relative_path": "results/v1_0_9/aggregate_method_summary.csv",
+      "size_bytes": 3508,
+      "sha256": "f4d169c94d0088db563830f20cd70c8e51b3372c640b2a82e2a30df448494165"
+    },
+    {
+      "relative_path": "results/v1_0_9/aggregate_seed_effects.csv",
+      "size_bytes": 3543,
+      "sha256": "37900931e614536e505e4f9afa1d20f46a56fc8c6fdce6f421346812a11abbaa"
+    },
+    {
+      "relative_path": "results/v1_0_9/causal_aggregate_summary.csv",
+      "size_bytes": 1876,
+      "sha256": "911272ff1091216e59fc1d59480e879fde864593238178389fc1001d53a11177"
+    },
+    {
+      "relative_path": "results/v1_0_9/causal_probe_source_summary.csv",
+      "size_bytes": 11884,
+      "sha256": "079d5634b2c98d214e983bce81a501a50816ce521cf880ac935f27736a94f97e"
+    },
+    {
+      "relative_path": "results/v1_0_9/causal_seed_summary.csv",
+      "size_bytes": 1664,
+      "sha256": "1426e693fce4e225fbfd41b4c1450e5c6587c87932458408a424c5cf42158705"
+    },
+    {
+      "relative_path": "results/v1_0_9/compute_summary.csv",
+      "size_bytes": 808,
+      "sha256": "71bdd92bfd33d5f1cae6888b1104140f74a938a453825e93606af8cd1c464d10"
+    },
+    {
+      "relative_path": "results/v1_0_9/per_seed_method_summary.csv",
+      "size_bytes": 3059,
+      "sha256": "4197e4a8118a44d169fe6e84cbee25961ebe36ff3b1ee7ed01f7a8078a4b8c9a"
+    },
+    {
+      "relative_path": "results/v1_0_9/per_seed_prediction_effects.csv",
+      "size_bytes": 11757,
+      "sha256": "92bed56048e4a997a5fd9b55d6aa300070b8b5c95a4696187bfd72a06b741b8e"
+    },
+    {
+      "relative_path": "results/v1_0_9/per_seed_source_effects.csv",
+      "size_bytes": 14794,
+      "sha256": "5c1904aee5cae0765d4f33be665cb9df1a9677d1779db69aa60dca1d44049abf"
+    },
+    {
+      "relative_path": "results/v1_0_9/pilot_gate_summary.csv",
+      "size_bytes": 512,
+      "sha256": "c61848e779b9bed93c36752f6b7d2ea690244a4fbcc589501d8893da2c3901f0"
+    },
+    {
+      "relative_path": "results/v1_0_9/run_manifest.json",
+      "size_bytes": 2559,
+      "sha256": "410ab0ba121a8f1df805cbc88991057908fccfbe67ff10ce321a566b8bed8864"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/causal_probe_raw.csv",
+      "size_bytes": 168413,
+      "sha256": "10c58c3968a7e8b96b2faa2bd9f7df3a3b219929a5af4a040884c86b19dae17f"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/causal_probe_summary.csv",
+      "size_bytes": 2553,
+      "sha256": "e6542750eecf687a8cd99f62bc2d600edbbf2fcc3d9549a96f0f51755c05be99"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/dense_trace.pkl",
+      "size_bytes": 6000201,
+      "sha256": "d531145401ff33f43601a5a061dac4cedc66ba6c0ba842d91cdeb8bc5b6a6ffc"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/factor_probe.csv",
+      "size_bytes": 542,
+      "sha256": "46f2fdb290824d1383849b1b41802bb46b492915be103bffb669ddba0625b6c6"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/forgetting.csv",
+      "size_bytes": 879,
+      "sha256": "8ebc84776c48ccf4bda0c70ec01311c0fa95cb52f4df9b832e6ddba037d8726e"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/geometry_metrics.csv",
+      "size_bytes": 3685,
+      "sha256": "4128f443aaf035484ea63d3bdb6c299b7b11575d7c9def255ba90aa857111e8c"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/method_summary.csv",
+      "size_bytes": 760,
+      "sha256": "586f64752ab295a66571df9ff993eb6278952d122d8f969a6f4988056ce05d97"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/paired_prediction_effects.csv",
+      "size_bytes": 2423,
+      "sha256": "ccf18e02e9bf2a7b836a9a67224056ba5a88ddcb4eabfe067ffe883f3f101136"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/paired_source_effects.csv",
+      "size_bytes": 3048,
+      "sha256": "6ca87a08ee27e2e1bae9a903db68675da1ef0c0f92bfc48fe895afd867421051"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/stage_logs.csv",
+      "size_bytes": 3767,
+      "sha256": "be05010b581304af7fb391b0b90c33049c43ca402072659145cf099d4dcf186d"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_0/staged_evaluation.csv",
+      "size_bytes": 10549,
+      "sha256": "a58cd5de79547532d0b167ea4b03d41201303971e29ad1275956bf9fa8a08308"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/causal_probe_raw.csv",
+      "size_bytes": 167834,
+      "sha256": "adcd48a59dda165db1b01183c45871f3c3a1656d1d0c66bbb201fc0ca51b28bd"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/causal_probe_summary.csv",
+      "size_bytes": 2540,
+      "sha256": "a6688d40f18c39af09968aadcc5503de070a447b2d20fc5ff420a06192840a07"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/dense_trace.pkl",
+      "size_bytes": 6000201,
+      "sha256": "6bfb74b940759914b16ddb27dc8a6e7c862c6e58768b9df1b68d3eea979f6e89"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/factor_probe.csv",
+      "size_bytes": 541,
+      "sha256": "39365ab8d7fd78e800ac890fb3c39fd611214fe51b8149bb53ce164cdbdf480c"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/forgetting.csv",
+      "size_bytes": 878,
+      "sha256": "b9768a46f66094c767799cdbfcfd3b439826bb373f58bf14de644a6a78ea2796"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/geometry_metrics.csv",
+      "size_bytes": 3700,
+      "sha256": "76d8636e522c2094c8ce61aa62eed5d962f307e1f6eb1b03eece304e35b7cae0"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/method_summary.csv",
+      "size_bytes": 770,
+      "sha256": "6357453abc8063d42fbe0f9bdcec6f9f0f985d79c83e882198b24650434af423"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/paired_prediction_effects.csv",
+      "size_bytes": 2402,
+      "sha256": "a69f2095de5e5a4521709b79cbeafe085ff9d8d7df93cc8f09de71e98f3b2e12"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/paired_source_effects.csv",
+      "size_bytes": 3025,
+      "sha256": "92337b475d4609f65f1dae41df8ee637624abf22beacfcf2195cd208d2cd49a1"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/stage_logs.csv",
+      "size_bytes": 3808,
+      "sha256": "e09bef9e7a09ea0e8ce841f38b270b4c0d65e022e92fc6a5bce75050cf90ce37"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_1/staged_evaluation.csv",
+      "size_bytes": 10612,
+      "sha256": "f82c1ddf25d98db60d89f13c6937360acbbe4b5ea3bf056a1635bf145ea6a1a3"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/causal_probe_raw.csv",
+      "size_bytes": 168256,
+      "sha256": "c7bda3755138bbf693845d16a50f9da60fcc880e31d7f0d7c9aacadbf5c824eb"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/causal_probe_summary.csv",
+      "size_bytes": 2483,
+      "sha256": "e27b113dc366278133cbc48890d1c9f47ca206ffd172de613140281497746f94"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/dense_trace.pkl",
+      "size_bytes": 6000201,
+      "sha256": "5caf87ebf0b5e6ae9580452925f511f9cb3665dd764c9c0ee69d9633df6a221a"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/factor_probe.csv",
+      "size_bytes": 544,
+      "sha256": "00aeaa4af2d3796eabfe6532a908efc1538f25108a4292782b07ed4637495f58"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/forgetting.csv",
+      "size_bytes": 885,
+      "sha256": "62188d3e41cb364185639bc78d4393a34359f61144908eee7df2ddd6a9f1c346"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/geometry_metrics.csv",
+      "size_bytes": 3701,
+      "sha256": "88237bbb308c9a5fe3bb2c11ff838a77d47173b2fa374e8957f644254fab8e62"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/method_summary.csv",
+      "size_bytes": 758,
+      "sha256": "2d8743e31a8a67ef00cf718b62058b9de6345e9cf32ebe0d0bbf04b3bd3dca5e"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/paired_prediction_effects.csv",
+      "size_bytes": 2414,
+      "sha256": "b70b65d3ca8d89fd2c3a945473a9747a5f3d4db85c3ed52951711ff9759122ce"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/paired_source_effects.csv",
+      "size_bytes": 3031,
+      "sha256": "130dd9dfabe298dada0f2e46ba313d1100ae03d4ff00899e0484f00250c67e99"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/stage_logs.csv",
+      "size_bytes": 3792,
+      "sha256": "3de0d3e91555eec98d57c0a8b6a2826d65a25e3fdf103dac250e8ca9cf64e730"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_2/staged_evaluation.csv",
+      "size_bytes": 10623,
+      "sha256": "6952e241bb605c613f35d011cd716a2a5797c9d00cdd4565830f1fcb125c6e72"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/causal_probe_raw.csv",
+      "size_bytes": 167154,
+      "sha256": "81905f0a18e22e9a56b47eb330f80f51f910cea8454bb47395988629df486825"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/causal_probe_summary.csv",
+      "size_bytes": 2551,
+      "sha256": "19df3bdd1a48075ceefc6c554a7d1076bc7cfcb6255a807601b01c7f64fb0ac8"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/dense_trace.pkl",
+      "size_bytes": 6000201,
+      "sha256": "3641f2341fdcba7e6eeecc946541e57c7a013bf6e5eaadf18673fb741d62edbe"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/factor_probe.csv",
+      "size_bytes": 540,
+      "sha256": "f030a86b36c695cb807e41e1e9eaede4918de73975c7cb41cf9b18f545e5c975"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/forgetting.csv",
+      "size_bytes": 879,
+      "sha256": "53e711d7fa1e0e62d7b5505b1f0135ab8ee871e98395a77d87674401a67314d5"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/geometry_metrics.csv",
+      "size_bytes": 3681,
+      "sha256": "4c2d59330c39ddea98657eb9090ed084376b9e87692a0a1aa52ab11669740aa7"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/method_summary.csv",
+      "size_bytes": 764,
+      "sha256": "18726af714a64ff32354574bf5edd1a23b177e1518a95b983615c873e0473788"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/paired_prediction_effects.csv",
+      "size_bytes": 2428,
+      "sha256": "803c4f632ca74be78782a8638a47f88a97f89ec4886ad6f49f9fedf49be3cfc2"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/paired_source_effects.csv",
+      "size_bytes": 3047,
+      "sha256": "f0ee7c23991a0e229a502b3d044502e74e9c7e8abe05c09e429b46104e735517"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/stage_logs.csv",
+      "size_bytes": 3812,
+      "sha256": "0657167d5b9b3c7d014fabca26bfa1ea5cdbfbe5d1c04a1adbd30a09c316413c"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_3/staged_evaluation.csv",
+      "size_bytes": 10594,
+      "sha256": "b0cd5befc268824f063bad725022d3dbb862b2dca85943ccb1337f9e64ef33a5"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/causal_probe_raw.csv",
+      "size_bytes": 167790,
+      "sha256": "3a9d19881d2140b7362d4e37ce5f0bad80d30120aa2c9e10a46c9a5cda2da5fb"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/causal_probe_summary.csv",
+      "size_bytes": 2557,
+      "sha256": "e0204d99ab9752658551a63144bb7dd27c996a2e5ca153fae3bfb2566cdfbe49"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/dense_trace.pkl",
+      "size_bytes": 6000201,
+      "sha256": "5a4f6989deb2a42ecf66c07c92f47eb359d40bfc05483af4710068a401ee85aa"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/factor_probe.csv",
+      "size_bytes": 544,
+      "sha256": "a381f721b453198ef0a918a8cc2860cd712451a1231c497ec2ec0cdec2afac30"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/forgetting.csv",
+      "size_bytes": 884,
+      "sha256": "2aff22be6b95aeac6ac41ee79525c7f1611e872cfe0722f1f766b4f61e0f19f5"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/geometry_metrics.csv",
+      "size_bytes": 3703,
+      "sha256": "f1e7a8ce154a30bb446eae303e237436f4b90d644c0528b5e9b477bce19c59c9"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/method_summary.csv",
+      "size_bytes": 759,
+      "sha256": "76e9e949b2a9781d078df0c91cd39675c4cd7e507c4f3a4e7c1a0d793b7f5c7e"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/paired_prediction_effects.csv",
+      "size_bytes": 2430,
+      "sha256": "8ae6ac6544e018d839c8ed6adee7e72cc74158f428ba4ceeda185cf742e81f4a"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/paired_source_effects.csv",
+      "size_bytes": 3023,
+      "sha256": "b3406b2311365d720217c8c62aeba9852f556473ff66240fe15f2123a025793e"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/stage_logs.csv",
+      "size_bytes": 3771,
+      "sha256": "338932dde2c150ba2af41d079fe6269d73a85adc951a3b84eef125da6cf5483b"
+    },
+    {
+      "relative_path": "results/v1_0_9/seed_4/staged_evaluation.csv",
+      "size_bytes": 10536,
+      "sha256": "1d24cdcefeba555f6b6241df5058b8746632e3b9f282db154f9fee6775571649"
+    },
+    {
+      "relative_path": "results/v1_0_9/sensory_history.csv",
+      "size_bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "relative_path": "results/v1_1_0/aggregate_method_summary.csv",
+      "size_bytes": 1716,
+      "sha256": "4d793a77b0fa53e689a4e7d717d8c5d69e889bf3fb443eb47f488b0b31eb3e27"
+    },
+    {
+      "relative_path": "results/v1_1_0/aggregate_seed_effects.csv",
+      "size_bytes": 3525,
+      "sha256": "1f0caff895699f27abd7157c2b44b10d8121a45987a2d2dfc428559f0057b3d6"
+    },
+    {
+      "relative_path": "results/v1_1_0/causal_mediation_summary.csv",
+      "size_bytes": 17237,
+      "sha256": "14f84de195867e00b3b4ceb04318039178f27f97eb7c3f31017886f654e25da7"
+    },
+    {
+      "relative_path": "results/v1_1_0/causal_seed_summary.csv",
+      "size_bytes": 1600,
+      "sha256": "42122b9f327e2d4edfb0979be45bf5b712af3d4befa0da9ac8ec38e50025f6bd"
+    },
+    {
+      "relative_path": "results/v1_1_0/claim_manifest.json",
+      "size_bytes": 547,
+      "sha256": "8ea497c58e40b391ae85fa8080b17b330afac01be8d57b5c78c21f0f59f60741"
+    },
+    {
+      "relative_path": "results/v1_1_0/compute_summary.csv",
+      "size_bytes": 712,
+      "sha256": "2796ba0dae0163f8c679bd760f54f18a137519e40b6d75648e2df37a7b2c2b2a"
+    },
+    {
+      "relative_path": "results/v1_1_0/context_preservation.csv",
+      "size_bytes": 361,
+      "sha256": "ab154abd58cb3cc7b8d1b2c526ad85eedafa195a408c494ea865fe873e6e07a1"
+    },
+    {
+      "relative_path": "results/v1_1_0/context_pretraining_stage_logs.csv",
+      "size_bytes": 5561,
+      "sha256": "922507d5fb45ceb72ef530cf7f42d1f63ec483c7c596be657ab5771021faeddd"
+    },
+    {
+      "relative_path": "results/v1_1_0/environment.txt",
+      "size_bytes": 131,
+      "sha256": "99ee208c2b4d0dc2e9c396ce8cc441f9036f2b4549df2490c2fab2b0add33df0"
+    },
+    {
+      "relative_path": "results/v1_1_0/forgetting.csv",
+      "size_bytes": 3873,
+      "sha256": "7b4a4d1f5c9110e5aa227aec5de50b73047c6ad524df7783854797d88df44681"
+    },
+    {
+      "relative_path": "results/v1_1_0/gate_summary.csv",
+      "size_bytes": 559,
+      "sha256": "418c202fddd796e9cc222e70771e02f992d0dcf993572ceb78fe7514d8baaf11"
+    },
+    {
+      "relative_path": "results/v1_1_0/host_ablation.csv",
+      "size_bytes": 34971,
+      "sha256": "d4a39f75748a3eb6c5c5d041950d39368c8a76c4e7e378af090fa63c9ccb36c4"
+    },
+    {
+      "relative_path": "results/v1_1_0/host_cost_matrices.csv",
+      "size_bytes": 7627,
+      "sha256": "4a2974710434483b71479dff9c6666007b8b666f0abe00cc5ff46be55353a908"
+    },
+    {
+      "relative_path": "results/v1_1_0/host_overlap_and_cost.csv",
+      "size_bytes": 11304,
+      "sha256": "b79aec7582dd425cff5388937e29046fe2830b8043a73af34905194b9020365e"
+    },
+    {
+      "relative_path": "results/v1_1_0/host_territory.csv",
+      "size_bytes": 41355,
+      "sha256": "041a9cb197d298233bddbd38b24d223e11a23582dee292450ff5e968f51f952f"
+    },
+    {
+      "relative_path": "results/v1_1_0/mediation_probe_controls.csv",
+      "size_bytes": 5903,
+      "sha256": "101b1b49e918d9abd464f285e981b7c0157075e783176cfc7af83e92b5cbae86"
+    },
+    {
+      "relative_path": "results/v1_1_0/paired_route_geometry_effects.csv",
+      "size_bytes": 14751,
+      "sha256": "754dc4c4a3d68b35dec802addf8403d055574739334a9f00aa15042f43ea8757"
+    },
+    {
+      "relative_path": "results/v1_1_0/per_seed_method_summary.csv",
+      "size_bytes": 1621,
+      "sha256": "4828b097693de730a9a22e2e2c65e67cecb38197c8c8824ee9aa9b49a809e90b"
+    },
+    {
+      "relative_path": "results/v1_1_0/route_geometry.csv",
+      "size_bytes": 12337,
+      "sha256": "51289c8f1efaa78010d69d736207855de822446cd3366c4523f81b0deb1a2acf"
+    },
+    {
+      "relative_path": "results/v1_1_0/router_initialization.csv",
+      "size_bytes": 496,
+      "sha256": "5813f06e496d5b9e1ea64291bc5b053a515a1dbd20bd6d9585ade698053d8306"
+    },
+    {
+      "relative_path": "results/v1_1_0/routing_stage_logs.csv",
+      "size_bytes": 17569,
+      "sha256": "eb66e728b916b9582c2b7716776fdde5df0a72c8098c416d31b7b4a2ffce0d97"
+    },
+    {
+      "relative_path": "results/v1_1_0/run_manifest.json",
+      "size_bytes": 3432,
+      "sha256": "db4ce64969386fb9a1ef7988d54bec449e6cc836b095fb7bae4bb32d61b19542"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/causal_mediation_raw.csv",
+      "size_bytes": 307344,
+      "sha256": "04b0aeafa105f22c8aecbc764ea9b1ff2f0a6058b78a73620f2adfae60bfba87"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/causal_mediation_summary.csv",
+      "size_bytes": 3662,
+      "sha256": "81372abd3d9ed2046622d75e71e687d10b727621264cc0b84cf683fc1c2104f5"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/checkpoint_hashes.json",
+      "size_bytes": 214,
+      "sha256": "9a264d1fea96681be1b45a967c4add479f4f1bcb9112cbae68ac2c0f315fda7c"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/context_preservation.csv",
+      "size_bytes": 121,
+      "sha256": "9acd912cb01685350fa64067b1dbecec64b9a8d6427e19da4e75dd912f043632"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/context_pretraining_stage_logs.csv",
+      "size_bytes": 1249,
+      "sha256": "8413b1b04dea1781ef274b59ddbbef3c8e4b9191385f62f973e1d45bf27867c3"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/dense_trace.pkl",
+      "size_bytes": 14132480,
+      "sha256": "ce35d233335c25be76e8d2c811b5e7f64f32b882c5cf3ca76c8ad6fccbaf9b96"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/forgetting.csv",
+      "size_bytes": 802,
+      "sha256": "c15cc6960037522f1e1c666aa8e84c82f7eda514e18d24d8583547cb2d520dbe"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/host_ablation.csv",
+      "size_bytes": 7062,
+      "sha256": "4007840fe3ea0770020de2b494480f09872444d33650957ee6fa98bbced8dc2b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/host_cost_matrices.csv",
+      "size_bytes": 1555,
+      "sha256": "6801dcd279c159a8c772941ad2eebb9781096ff181b0a8721cef636461cf13a8"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/host_overlap_and_cost.csv",
+      "size_bytes": 2312,
+      "sha256": "c87206648411eaa5d72044290bdd4843e145e74b0d7834038a9852f6ccb30310"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/host_territory.csv",
+      "size_bytes": 8286,
+      "sha256": "773d11541ee8751b088bf172c5ca05f56ded2ecf5a8e1fd542f0e13db2002d7d"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/mediation_probe_controls.csv",
+      "size_bytes": 1260,
+      "sha256": "f5bd79df9c52b199c1102b37655f0b87abb63c50eeb06cc38e731d052bb75201"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/method_summary.csv",
+      "size_bytes": 435,
+      "sha256": "16e76949dde13dc880dc727a70af185ab17ae1678fe6a5e40dc4d3889e3d9264"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/paired_route_geometry_effects.csv",
+      "size_bytes": 3007,
+      "sha256": "4cc7a95b8721c6f8864f2c9b385763575f2970aea5093ce4ba0894e874a9906e"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/route_geometry.csv",
+      "size_bytes": 2544,
+      "sha256": "56062610a5b11f67a7a0972af178730607de02a77eb08aed9b62509a3c34f137"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/router_initialization.csv",
+      "size_bytes": 163,
+      "sha256": "47b4f40111ede86a83adaf299395480854eada9f5140c81efb546237ec6db605"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/routing_stage_logs.csv",
+      "size_bytes": 3670,
+      "sha256": "9ac98279dbedea799aae2f4adbd42a43127679a2d19d6bcae9eb3dc8df6a35ba"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_0/staged_evaluation.csv",
+      "size_bytes": 9404,
+      "sha256": "97b624c32e8b5b8fff54178e6c276a72b43fbeffe37d85b12bcd7d4ac0ea6145"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/causal_mediation_raw.csv",
+      "size_bytes": 309505,
+      "sha256": "e51130c27d230bda48dd63e7ed6c69d463044d6f66b23bcd6222357ee8dcd276"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/causal_mediation_summary.csv",
+      "size_bytes": 3675,
+      "sha256": "d3a697e6e2f4f0d4966443b6b7ab28f12a46040e35b6965adb6b8ab8cf92e79b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/checkpoint_hashes.json",
+      "size_bytes": 214,
+      "sha256": "a60d5a0386ce01aaeb911545036c915314782cdb471b2e330fe97af276e8dc0a"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/context_preservation.csv",
+      "size_bytes": 121,
+      "sha256": "9acd912cb01685350fa64067b1dbecec64b9a8d6427e19da4e75dd912f043632"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/context_pretraining_stage_logs.csv",
+      "size_bytes": 1254,
+      "sha256": "9640766094158d9b320888dc040dfb3de40fdbf47c538b9ab2ee44625e2a283e"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/dense_trace.pkl",
+      "size_bytes": 14132480,
+      "sha256": "c921580c6c7abe5f07b1929d4160dfc948e0885793e5a7a2bbff5a4586065b58"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/forgetting.csv",
+      "size_bytes": 846,
+      "sha256": "7c0989a9463210b3f24600c614c53373c13aba0facc870cc0dceabfea7a66938"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/host_ablation.csv",
+      "size_bytes": 7048,
+      "sha256": "a5d2954f4d6ebab9ba7ee9ce02bc278dd720c536feb8413b92b2df522b4175ad"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/host_cost_matrices.csv",
+      "size_bytes": 1553,
+      "sha256": "1010c6cc6186589440797a2c4c41d4ea201855ca1c319c5a15174baad08efaa2"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/host_overlap_and_cost.csv",
+      "size_bytes": 2312,
+      "sha256": "aa456454287c0fda92c68c40aa32dc298ce0956d7afee3bdd4ee2c94831ba9eb"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/host_territory.csv",
+      "size_bytes": 8353,
+      "sha256": "1de6561b898ff99630c8d0133631a0ad3ffec158cc144bb22aafe010459ef6cf"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/mediation_probe_controls.csv",
+      "size_bytes": 1267,
+      "sha256": "d831fc4123457999c50edc49914176ab998d85442caa82d0ebd49fab791a6ee7"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/method_summary.csv",
+      "size_bytes": 442,
+      "sha256": "3b912ba7cbcac4295b59b4f5640e02af64ba5e8b71edaa88c9a78376860bd635"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/paired_route_geometry_effects.csv",
+      "size_bytes": 3060,
+      "sha256": "d3ed28c34d5703f5527c61fd3f5e1aa8a35a117aa5f048b46f25bc29c8aedda7"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/route_geometry.csv",
+      "size_bytes": 2533,
+      "sha256": "7dbf3899629d1c528fe493dd65d8cbeaa515dbd9bb59ac095e59b0e1b5902785"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/router_initialization.csv",
+      "size_bytes": 163,
+      "sha256": "1b741c6ddc34144c0fea9fa247ef03d0ae52531bac68152db3dde4743a06459a"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/routing_stage_logs.csv",
+      "size_bytes": 3675,
+      "sha256": "a4c2669ce7b70f915009741c2b996a22dd2d58886fbd74726814e5f5345cb0e6"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_1/staged_evaluation.csv",
+      "size_bytes": 9383,
+      "sha256": "29db565289b2ba1d285ba8f41e03339ec77c5bbb78a4f3759b5cef3b88c0e276"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/causal_mediation_raw.csv",
+      "size_bytes": 308115,
+      "sha256": "9604a1588af176a28dfeb6b6506c21a11e896af718fd138c5549ac4317ac9662"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/causal_mediation_summary.csv",
+      "size_bytes": 3672,
+      "sha256": "c35dee67b4bdb11b0b16be480098497a7a98739a84957a5f7cf8b6fd29ab493e"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/checkpoint_hashes.json",
+      "size_bytes": 214,
+      "sha256": "13d2dad8111bea621d41fbd065ceb23af4a763923f228daf1914a2bf39096ee7"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/context_preservation.csv",
+      "size_bytes": 121,
+      "sha256": "9acd912cb01685350fa64067b1dbecec64b9a8d6427e19da4e75dd912f043632"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/context_pretraining_stage_logs.csv",
+      "size_bytes": 1251,
+      "sha256": "6803cb648cabdf53a011d8c74521fbf090c4d0b0d7dcf1a04ab22216ba8400eb"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/dense_trace.pkl",
+      "size_bytes": 14132480,
+      "sha256": "193fcbe698a2072968942dd5475e90373245cf9184a000f22734008bff3c55fe"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/forgetting.csv",
+      "size_bytes": 830,
+      "sha256": "bc88b9dc12f73c2372d63ef030713b259721a7813be8359916ddb35bce4f2038"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/host_ablation.csv",
+      "size_bytes": 7105,
+      "sha256": "46400ed475422d080aa1683e65799dd97b6427604a6c7e526e0cb92f8433603f"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/host_cost_matrices.csv",
+      "size_bytes": 1555,
+      "sha256": "cf669cc0f5cc82e9a153df66760ed4b9ed8eb438db692a5b27437404dd27d6e6"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/host_overlap_and_cost.csv",
+      "size_bytes": 2316,
+      "sha256": "05525b689d7021e0e1a3ce381d9c179fe796f3a2bd9be2f134b1c13005d89720"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/host_territory.csv",
+      "size_bytes": 8289,
+      "sha256": "8e539f59b2ee081ada3befe46588a268ded8ca0a2a05a797396a928a1e5b0e95"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/mediation_probe_controls.csv",
+      "size_bytes": 1260,
+      "sha256": "0b20c449008ed2e5b081d5c398a1f00793d1beb14fc73c96ddc69ac12a3e5cf1"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/method_summary.csv",
+      "size_bytes": 424,
+      "sha256": "f32941f33f616fb7643af9e3cc7aa5a5d03e33768f367497827d6a9d33ca58c5"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/paired_route_geometry_effects.csv",
+      "size_bytes": 3047,
+      "sha256": "5e91ea867a1a38cbce5aa93535042e9345faacde41b66716f2b4ac6e7d74ce80"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/route_geometry.csv",
+      "size_bytes": 2541,
+      "sha256": "a62e1e012b2bc91a2c24072cc228a2e20f85a149b511e641c01a43197ccba678"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/router_initialization.csv",
+      "size_bytes": 162,
+      "sha256": "e7e1348bd3ea5bc59794f9e7fd63b341370692d72ae677971bc3e50d143a152e"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/routing_stage_logs.csv",
+      "size_bytes": 3658,
+      "sha256": "303f7379e2b9b6a03d65bfcd8b18552e3ce891502dfdbfdb21690f964dab464b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_2/staged_evaluation.csv",
+      "size_bytes": 9405,
+      "sha256": "ea26a814601ea48bc7481042eee5fe6ebeeeba6a689c51c015b5b79cf4889c55"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/causal_mediation_raw.csv",
+      "size_bytes": 307654,
+      "sha256": "24d1a15056492be9e846d3f35f4339801d4f95d0ad62dba226b366d0a6767c7b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/causal_mediation_summary.csv",
+      "size_bytes": 3632,
+      "sha256": "3a37101d3b86fcf45c087695c7f4ec86c0eda19c440e7c7d090732275b7f7cf3"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/checkpoint_hashes.json",
+      "size_bytes": 214,
+      "sha256": "7500d40097fd1ccd62d5c0d9f8eb5d58d0f6f8f6e74a70a0c781d37203855a91"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/context_preservation.csv",
+      "size_bytes": 121,
+      "sha256": "9acd912cb01685350fa64067b1dbecec64b9a8d6427e19da4e75dd912f043632"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/context_pretraining_stage_logs.csv",
+      "size_bytes": 1254,
+      "sha256": "08dc0efdc5d2b15d7e84afa3fc1e93559ff170f4b52d55ee3b764e48db6e2a20"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/dense_trace.pkl",
+      "size_bytes": 14132480,
+      "sha256": "91b72ac7486c11e697d7dfa7772c5d70bef46b89d1a1fc7e09a99253e29a1891"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/forgetting.csv",
+      "size_bytes": 816,
+      "sha256": "0f420bed22d24a9cbe205c9ad0b41ed1ad2870693b075cb01af5dc10ca769a06"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/host_ablation.csv",
+      "size_bytes": 7096,
+      "sha256": "1520b7900acfdb3840f6361cbdc017464d2e55741ac5c1ef7dc9c40b2e28a6d6"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/host_cost_matrices.csv",
+      "size_bytes": 1555,
+      "sha256": "fbb21b657923203ec7c0b04c53be4207836f2ea3c1b99a62aa41ac3a4756e486"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/host_overlap_and_cost.csv",
+      "size_bytes": 2314,
+      "sha256": "d359714245a0d895312a67358bbd0d823464d1894e0c150eadabe4df63696684"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/host_territory.csv",
+      "size_bytes": 8318,
+      "sha256": "c5b5d86e9dff71071fcf9ae5a978bdb44e9251ec392aa21b2332d3a2aefd2f97"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/mediation_probe_controls.csv",
+      "size_bytes": 1258,
+      "sha256": "107781617b16b013194bfe6ce7e6d11d58a11fd50964018f2f9c023b972b4989"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/method_summary.csv",
+      "size_bytes": 434,
+      "sha256": "31023efbf5b423479851933682372a893600b9ba093a946d0413b2dd3a3b225a"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/paired_route_geometry_effects.csv",
+      "size_bytes": 3015,
+      "sha256": "80a586c8a0e15320d308d91aaf19b4ebc356a61338e40797e1a0f68be5e1515c"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/route_geometry.csv",
+      "size_bytes": 2545,
+      "sha256": "34c0f80e68448a699075aa3bc1d4fd0d9a9249c2c4a7a3407ea016003a7ee9c6"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/router_initialization.csv",
+      "size_bytes": 162,
+      "sha256": "96521128382fe7ed7668ee2910de193b6ea224df3eb39023d719774c78917e22"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/routing_stage_logs.csv",
+      "size_bytes": 3650,
+      "sha256": "c835327a7b6c71129b5b0f235c6af6f1159afee99d92b0491bbfff3c94d287dc"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_3/staged_evaluation.csv",
+      "size_bytes": 9368,
+      "sha256": "fc00c3e414cd2938377c5f66ad8191c930fa4ea1dbe20f19a13195f3e2df66de"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/causal_mediation_raw.csv",
+      "size_bytes": 311332,
+      "sha256": "cb6e4d2fabe9c8c36b68b0d6b608532c250bd9d6c2a7edc0d4d329303c8a2739"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/causal_mediation_summary.csv",
+      "size_bytes": 3720,
+      "sha256": "a61c74d83f98f623412b3212424c657a11e56eab36eab74fff0e83b51ebf5ce8"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/checkpoint_hashes.json",
+      "size_bytes": 214,
+      "sha256": "fe20d13c776b63f0f28c855a7f74d680535c4487b6913a169f2d60a43cbdab1b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/context_preservation.csv",
+      "size_bytes": 121,
+      "sha256": "9acd912cb01685350fa64067b1dbecec64b9a8d6427e19da4e75dd912f043632"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/context_pretraining_stage_logs.csv",
+      "size_bytes": 1273,
+      "sha256": "2c5a8640d560b52071a2763d245e4b731b6030bfa731ddcc855312269c41e895"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/dense_trace.pkl",
+      "size_bytes": 14132480,
+      "sha256": "93ffb40c2cabdef2d70cca46834fb0178d17bd96db9d29222f089f0f48fbafbb"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/forgetting.csv",
+      "size_bytes": 835,
+      "sha256": "ad7646a144592b221c91632612b239adc47d0d28e3bcba0e7590712fca8a1dd2"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/host_ablation.csv",
+      "size_bytes": 7092,
+      "sha256": "24d4d5cc755e10aa5dd3abe1f0661e7583a5a8c777efe8e9435722f979c399f9"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/host_cost_matrices.csv",
+      "size_bytes": 1557,
+      "sha256": "b7fce17bc0550123015600464563b76d24ace09ad7e5f518353ff2b4cacffac1"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/host_overlap_and_cost.csv",
+      "size_bytes": 2314,
+      "sha256": "e88415f9a7089e41da236f7a1e326a8682cdb135f3988bce005e21880d98b762"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/host_territory.csv",
+      "size_bytes": 8369,
+      "sha256": "8606a354318ebd16e3729a80688119eaac58aaef0aa13a48c931c1ebe01e9408"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/mediation_probe_controls.csv",
+      "size_bytes": 1270,
+      "sha256": "fe911f29040d91e3f0163de701813fc90ce430d5b4049bc358465ebd091e5318"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/method_summary.csv",
+      "size_bytes": 430,
+      "sha256": "321526c65fa797b731a4a070263ebbfda38127f8799cf057d19090fd5633ee3d"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/paired_route_geometry_effects.csv",
+      "size_bytes": 3014,
+      "sha256": "0edea5a2cb76cc7c19d46a90a98e2631c3506cc072e883323ec37d479ac330d2"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/route_geometry.csv",
+      "size_bytes": 2542,
+      "sha256": "c8a101075e1910f23ab6864a53e2adad5a7c85fff1cc17f7eab5879bf22964d6"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/router_initialization.csv",
+      "size_bytes": 162,
+      "sha256": "f34ad098548dba2106ddc0f4e9d9a751075928c1942171af6180f15ce5813d2b"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/routing_stage_logs.csv",
+      "size_bytes": 3656,
+      "sha256": "4328287343e24d730888447b37468d8c810bec207b77ed942eb3d344efeb33d9"
+    },
+    {
+      "relative_path": "results/v1_1_0/seed_4/staged_evaluation.csv",
+      "size_bytes": 9366,
+      "sha256": "6ec5aa3761c3df6d34f5a29d2498ec2adb1c88a64d78f75bc0deee85a8199deb"
+    },
+    {
+      "relative_path": "results/v1_1_0/sensory_history.csv",
+      "size_bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "relative_path": "results/v1_1_0/staged_evaluation.csv",
+      "size_bytes": 46710,
+      "sha256": "2a72ef1baa309369321242103cf552b9e0345919e671a24866e89892ceb7b568"
+    },
+    {
+      "relative_path": "scripts/build_protocol_report_v103.py",
+      "size_bytes": 420,
+      "sha256": "6487289d3e2407bd78b81561374b1e2d9b3c9755316ec316993ce89b06e2b81b"
+    },
+    {
+      "relative_path": "scripts/make_figures.py",
+      "size_bytes": 2368,
+      "sha256": "08b5b877cd0c0224095a70525c6f1bd2671d2e5e076945f70670e8648ec3cab5"
+    },
+    {
+      "relative_path": "scripts/run_synthetic_smoke.py",
+      "size_bytes": 5125,
+      "sha256": "f116514206795228d68fb4fcfde76330e1742845a73593b5f387b10568c6b02c"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__init__.py",
+      "size_bytes": 2904,
+      "sha256": "467311d1bd5129a85c30dfa04bf922239deea385f7a0582fbc1f5c35a945f4b0"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/__init__.cpython-312.pyc",
+      "size_bytes": 2233,
+      "sha256": "8e9a8a8a5c0955ba69c14d598546569d7a402ff0cd995117197c0d826a58889b"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/__init__.cpython-313.pyc",
+      "size_bytes": 729,
+      "sha256": "7e9386d0133e537052ce6673d046c7221d1607de3748d7dead0fafd8b2b2fd56"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/data.cpython-312.pyc",
+      "size_bytes": 5838,
+      "sha256": "9fbd3f813242df256dbc76dea91c5592c6fbac646cc3f3be573e0ec8466efb95"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/functional_routing.cpython-312.pyc",
+      "size_bytes": 29377,
+      "sha256": "8dd4a443d681d24b671a1109cde57ca2e6102c3f76e1e2c7ba0582a948d83f2d"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/geometry.cpython-312.pyc",
+      "size_bytes": 29925,
+      "sha256": "b1fe22f247db111bf42b66ffed1f3bc3b306d8514ab16d1d9ebdd34bfba1dceb"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/geometry.cpython-313.pyc",
+      "size_bytes": 8921,
+      "sha256": "2fd28dc6b91f3b552fe5cfe63b5e09861cbbe86c3192f731ed5b6ea6b58ccd30"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/memory.cpython-312.pyc",
+      "size_bytes": 7199,
+      "sha256": "661e6a138e6395ef6a90546ba889028b536e0c9efd2b25d045c227b41c7a96a9"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/memory.cpython-313.pyc",
+      "size_bytes": 7316,
+      "sha256": "194f6264cbf359e3b1a6a44c0c8cf6ad90dd4b71211d44d1fb40590641a393aa"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/metrics.cpython-312.pyc",
+      "size_bytes": 26496,
+      "sha256": "713fd1e4d8874d9468cf5ff6dc664b6e002f68edf3ef4797c6acc6cdab90e1c5"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/metrics.cpython-313.pyc",
+      "size_bytes": 8756,
+      "sha256": "fb94fb17fae213de4bee9b646e61144e4dae2511d85aea5348264926bf5c3bce"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/model.cpython-312.pyc",
+      "size_bytes": 11564,
+      "sha256": "31aad41b9b27360279bf151c196aed6767afb74343d3b01e164070dfa687e4ee"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/__pycache__/model.cpython-313.pyc",
+      "size_bytes": 7439,
+      "sha256": "436e0724bb0cbf09832fc053357507e5b2df90ae7972c1a6d491af46a6321a3a"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/data.py",
+      "size_bytes": 3161,
+      "sha256": "c494ab535c5a4abbc9629007f614d262e94671005e95cd50193f90d8d6940b69"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/functional_routing.py",
+      "size_bytes": 17034,
+      "sha256": "029f85625634a0d90a925313611104cc0f3509446160e9b2a88509fef2f31e21"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/geometry.py",
+      "size_bytes": 22763,
+      "sha256": "4c15033bc921c408edc32282a067a81446ba9c7e6335758a9d32eac1cbf2e41a"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/memory.py",
+      "size_bytes": 3567,
+      "sha256": "e8a32c5002a3d46fbb411e2f658da35f27dc7a9acb661551c027b07b8b8b4aa9"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/metrics.py",
+      "size_bytes": 15749,
+      "sha256": "3ba73987951a1e44aa134735be455b73c05bfbd32637a782ba00ae622b34c12a"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/model.py",
+      "size_bytes": 7191,
+      "sha256": "adc506e9a0ef8b610e8f32f92bd4af7d83581ac5c85069f453a38e27ffd14d52"
+    },
+    {
+      "relative_path": "src/geometry_mmalls/trace.py",
+      "size_bytes": 826,
+      "sha256": "7623f698066d5c0ef66cf6374979e0c852c4181f3426ea46bd81089cfe30035e"
+    },
+    {
+      "relative_path": "src/geometry_mmalls_g1.egg-info/PKG-INFO",
+      "size_bytes": 6348,
+      "sha256": "7b163e834a453cc6a52da30c06ad237b608cec20310d9277b4b86b102c40c3a9"
+    },
+    {
+      "relative_path": "src/geometry_mmalls_g1.egg-info/SOURCES.txt",
+      "size_bytes": 704,
+      "sha256": "39c911c076443e40e8bfeb4bc568ced312d0710100e4eda0b3beb21bc0e81007"
+    },
+    {
+      "relative_path": "src/geometry_mmalls_g1.egg-info/dependency_links.txt",
+      "size_bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "relative_path": "src/geometry_mmalls_g1.egg-info/requires.txt",
+      "size_bytes": 151,
+      "sha256": "52293af0a01653b1d4d71594c3e224eb154c3cf667c6eb07332e186cc2f8d51a"
+    },
+    {
+      "relative_path": "src/geometry_mmalls_g1.egg-info/top_level.txt",
+      "size_bytes": 16,
+      "sha256": "ac4a27c66750a672e133333b59f0445961f48f3bb44906aab5ed9f3a27ed1bd3"
+    },
+    {
+      "relative_path": "tests/__pycache__/test_core.cpython-313-pytest-9.0.2.pyc",
+      "size_bytes": 7433,
+      "sha256": "0dea1eb394957e3c36b2b9ad62ff833ad5cf670a11ed724552ab8ec0350bd712"
+    },
+    {
+      "relative_path": "tests/__pycache__/test_geometry.cpython-313-pytest-9.0.2.pyc",
+      "size_bytes": 15058,
+      "sha256": "72d358daf31fe798e7462e52c1a39ccd5f7354815cd946a1715b40559da5d2bd"
+    },
+    {
+      "relative_path": "tests/__pycache__/test_memory.cpython-313-pytest-9.0.2.pyc",
+      "size_bytes": 6607,
+      "sha256": "eefac898a3efbee9f620b9f8cd35b56ff3ed525fab41eb3187162dfea3feebba"
+    },
+    {
+      "relative_path": "tests/__pycache__/test_metrics.cpython-313-pytest-9.0.2.pyc",
+      "size_bytes": 6297,
+      "sha256": "d3b1932dbf6a4b59b1517944a2499e4bf5007cdbeb1879d59c9868d47c8d7964"
+    },
+    {
+      "relative_path": "tests/test_context_alignment.py",
+      "size_bytes": 3364,
+      "sha256": "f19781e2132c80eeaaa9d98dbe1f32e5c92925583ccf650443f52c0748851907"
+    },
+    {
+      "relative_path": "tests/test_core.py",
+      "size_bytes": 2523,
+      "sha256": "1de930c19471958a8c28672d38c16ca1c78124f5e95003867dac1a157d5df100"
+    },
+    {
+      "relative_path": "tests/test_functional_routing.py",
+      "size_bytes": 4100,
+      "sha256": "212d5dab9da55b2e0ced4f5802c2c0eb1d7642dcc447d1fe336254d81523baef"
+    },
+    {
+      "relative_path": "tests/test_geometry.py",
+      "size_bytes": 2663,
+      "sha256": "0130e154c3f29a4f8220f9cb1c54c3b54ec9a65fa409223716ea09e6d24722f0"
+    },
+    {
+      "relative_path": "tests/test_memory.py",
+      "size_bytes": 815,
+      "sha256": "cc5266e62429f8b1aba61ea7c01582ff99904c0c02c1a3115734d1c831a5a778"
+    },
+    {
+      "relative_path": "tests/test_metrics.py",
+      "size_bytes": 1605,
+      "sha256": "0c713421038cd3b20353208e5e371aae48e6d59e8a39c59d6a855314c6607f7f"
+    },
+    {
+      "relative_path": "tests/test_stationary_route_geometry.py",
+      "size_bytes": 2663,
+      "sha256": "07afe1a8e0d9243127107b70ebd2dbfb687c9ba676c2ae8517910dfa992ffe4a"
+    }
+  ],
+  "metric_report": {
+    "schema_version": "0.2.0",
+    "metrics": [
+      {
+        "id": "COMPUTE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/compute_summary.csv",
+          "sha256": "2796ba0dae0163f8c679bd760f54f18a137519e40b6d75648e2df37a7b2c2b2a",
+          "rows": 15,
+          "columns": [
+            "model_seed",
+            "method",
+            "total_forward_images",
+            "total_optimizer_steps",
+            "total_wall_seconds"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 13.248151437666396
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 10.370432329998948
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 17.370302952000202
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "GATE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "sha256": "418c202fddd796e9cc222e70771e02f992d0dcf993572ceb78fe7514d8baaf11",
+          "rows": 11,
+          "columns": [
+            "gate",
+            "passed",
+            "status"
+          ],
+          "null_cells": 0,
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_SEED_EFFECTS",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/aggregate_seed_effects.csv",
+          "sha256": "1f0caff895699f27abd7157c2b44b10d8121a45987a2d2dfc428559f0057b3d6",
+          "rows": 24,
+          "columns": [
+            "contrast",
+            "partition",
+            "geometry",
+            "metric",
+            "mean_seed_effect",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count",
+            "favorable_seed_fraction"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean_seed_effect": 6.345835637811975e-05,
+            "seed_ci_low": -0.0652940633139037,
+            "seed_ci_high": 0.06542098002665991,
+            "seed_sd": 0.052637043326399256,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.6916666666666668
+          },
+          "numeric_min": {
+            "mean_seed_effect": -0.0753758716050867,
+            "seed_ci_low": -0.1758204851489026,
+            "seed_ci_high": -0.0079528084393274,
+            "seed_sd": 0.0206304781082032,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.2
+          },
+          "numeric_max": {
+            "mean_seed_effect": 0.0951317298419789,
+            "seed_ci_low": 0.0351110563089871,
+            "seed_ci_high": 0.1809672682448705,
+            "seed_sd": 0.0861111064530063,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_METHOD_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/aggregate_method_summary.csv",
+          "sha256": "4d793a77b0fa53e689a4e7d717d8c5d69e889bf3fb443eb47f488b0b31eb3e27",
+          "rows": 15,
+          "columns": [
+            "method",
+            "metric",
+            "mean",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean": 0.4027439957118453,
+            "seed_ci_low": 0.3678711957995292,
+            "seed_ci_high": 0.4376167956241614,
+            "seed_sd": 0.02808553679800998,
+            "seed_count": 5.0
+          },
+          "numeric_min": {
+            "mean": 0.0929375,
+            "seed_ci_low": 0.0809540251224014,
+            "seed_ci_high": 0.1049209748775985,
+            "seed_sd": 0.0026132653550629,
+            "seed_count": 5.0
+          },
+          "numeric_max": {
+            "mean": 0.63025,
+            "seed_ci_low": 0.6239645249712306,
+            "seed_ci_high": 0.6477253889047587,
+            "seed_sd": 0.0769924607041965,
+            "seed_count": 5.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "CAUSAL_SEED_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/causal_seed_summary.csv",
+          "sha256": "42122b9f327e2d4edfb0979be45bf5b712af3d4befa0da9ac8ec38e50025f6bd",
+          "rows": 15,
+          "columns": [
+            "model_seed",
+            "method",
+            "mean_nominal_csr",
+            "mean_functional_csr",
+            "min_functional_csr_ci_low",
+            "mean_dmr",
+            "min_prediction_preservation_ci_low"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "mean_nominal_csr": 0.9126971166643305,
+            "mean_functional_csr": 1.047928080236251,
+            "min_functional_csr_ci_low": 0.5983199098933548,
+            "mean_dmr": 0.9076871935575481,
+            "min_prediction_preservation_ci_low": 0.9645703124999999
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "mean_nominal_csr": 0.3430597628081637,
+            "mean_functional_csr": 0.0105549536795624,
+            "min_functional_csr_ci_low": 0.0001615220963744,
+            "mean_dmr": 0.3175544234691841,
+            "min_prediction_preservation_ci_low": 0.9060546875
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "mean_nominal_csr": 1.5130266655681717,
+            "mean_functional_csr": 4.473650840001905,
+            "min_functional_csr_ci_low": 2.106013021319743,
+            "mean_dmr": 1.5425326540044095,
+            "min_prediction_preservation_ci_low": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "HOST_OR_ALLOCATION_ABLATION",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/host_ablation.csv",
+          "sha256": "d4a39f75748a3eb6c5c5d041950d39368c8a76c4e7e378af090fa63c9ccb36c4",
+          "rows": 660,
+          "columns": [
+            "model_seed",
+            "method",
+            "angle",
+            "host",
+            "baseline_accuracy",
+            "ablated_accuracy",
+            "accuracy_drop",
+            "is_top_host",
+            "is_random_control"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "angle": 0.0,
+            "host": 1.5,
+            "baseline_accuracy": 0.6214015151515152,
+            "ablated_accuracy": 0.5982836174242424,
+            "accuracy_drop": 0.023117897727272727,
+            "is_top_host": 0.25,
+            "is_random_control": 0.25
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "angle": -75.0,
+            "host": 0.0,
+            "baseline_accuracy": 0.1953125,
+            "ablated_accuracy": 0.1640625,
+            "accuracy_drop": -0.1015625,
+            "is_top_host": 0.0,
+            "is_random_control": 0.0
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "angle": 75.0,
+            "host": 3.0,
+            "baseline_accuracy": 0.9453125,
+            "ablated_accuracy": 0.953125,
+            "accuracy_drop": 0.28125,
+            "is_top_host": 1.0,
+            "is_random_control": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "RUN_MANIFEST_METRIC",
+        "status": "PASS",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/run_manifest.json",
+          "sha256": "db4ce64969386fb9a1ef7988d54bec449e6cc836b095fb7bae4bb32d61b19542",
+          "missing_keys": [],
+          "top_level_keys": [
+            "article",
+            "build_revision",
+            "common_initial_state_hashes",
+            "context_checkpoint_hashes",
+            "functional_metric_evaluation_only",
+            "git_sha",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "package_version",
+            "primary_contrasts",
+            "reviewer_report",
+            "run_profile",
+            "secondary_mediation_arm_executed",
+            "sensory_accuracy",
+            "source_v109_results",
+            "split_manifest",
+            "timestamp",
+            "warning"
+          ]
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_METRIC",
+        "status": "PASS",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/claim_manifest.json",
+          "sha256": "8ea497c58e40b391ae85fa8080b17b330afac01be8d57b5c78c21f0f59f60741",
+          "missing_keys": [],
+          "top_level_keys": [
+            "eligible_if_gates_pass",
+            "non_claims",
+            "status",
+            "version"
+          ]
+        }
+      }
+    ]
+  },
+  "protocol_report": {
+    "schema_version": "0.2.0",
+    "rules": [
+      {
+        "id": "ZIP_SAFE_PATHS",
+        "status": "PASS",
+        "message": "ZIP extraction completed without unsafe paths.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RESULTS_PRESENT",
+        "status": "PASS",
+        "message": "A results manifest or gate summary is present.",
+        "evidence": {
+          "run_manifest": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/run_manifest.json",
+          "gate_summary": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RUN_MANIFEST",
+        "status": "PASS",
+        "message": "Run manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/run_manifest.json",
+          "keys": [
+            "article",
+            "build_revision",
+            "common_initial_state_hashes",
+            "context_checkpoint_hashes",
+            "functional_metric_evaluation_only",
+            "git_sha",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "package_version",
+            "primary_contrasts",
+            "reviewer_report",
+            "run_profile",
+            "secondary_mediation_arm_executed",
+            "sensory_accuracy",
+            "source_v109_results",
+            "split_manifest",
+            "timestamp",
+            "warning"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST",
+        "status": "PASS",
+        "message": "Claim manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/claim_manifest.json",
+          "keys": [
+            "eligible_if_gates_pass",
+            "non_claims",
+            "status",
+            "version"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SEED_COUNT",
+        "status": "PASS",
+        "message": "Detected 5 model seeds; minimum is 5.",
+        "evidence": {
+          "seed_count": 5,
+          "minimum": 5,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_PARSE",
+        "status": "PASS",
+        "message": "Execution PDF has 67 pages.",
+        "evidence": {
+          "path": "/mnt/data/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.pdf",
+          "sha256": "82687489db66c57356acf33287ed5a1ef05ec7a2a9b4d4dfd67a6f8d2f7f79b4",
+          "page_count": 67,
+          "metadata": {
+            "/Creator": "LaTeX with hyperref",
+            "/Producer": "xdvipdfmx (20210609)",
+            "/CreationDate": "D:20260614215841-00'00'"
+          },
+          "text_length": 144374,
+          "contains_traceback": false,
+          "contains_completed_seeds": true,
+          "contains_export_marker": true,
+          "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_NO_TRACEBACK",
+        "status": "PASS",
+        "message": "No Python traceback detected.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_EXECUTION_MARKERS",
+        "status": "PASS",
+        "message": "Completed-seed and export markers checked.",
+        "evidence": {
+          "completed_seeds": true,
+          "export_marker": true,
+          "line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "major"
+        }
+      },
+      {
+        "id": "MATCHED_COMPUTE",
+        "status": "PASS",
+        "message": "Matched compute checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/compute_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "FROZEN_CONTEXT",
+        "status": "PASS",
+        "message": "Frozen-context audit checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/context_preservation.csv",
+          "max_abs_context_delta": 0.0,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SOURCE_PARTITION_SEPARATION",
+        "status": "PASS",
+        "message": "Partition hashes checked for accidental identity.",
+        "evidence": {
+          "hash_count": 7,
+          "unique_count": 7,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_FRESHNESS",
+        "status": "FAIL",
+        "message": "Claim state compared with execution evidence.",
+        "evidence": {
+          "claim_status": "C0 complete implementation; empirical v1.1.0 claims pending execution",
+          "severity": "major"
+        }
+      },
+      {
+        "id": "ARCHIVE_HYGIENE",
+        "status": "PARTIAL",
+        "message": "Archive hygiene checked.",
+        "evidence": {
+          "dirty_count": 16,
+          "examples": [
+            "src/geometry_mmalls/__pycache__/__init__.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/__init__.cpython-313.pyc",
+            "src/geometry_mmalls/__pycache__/data.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/functional_routing.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/geometry.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/geometry.cpython-313.pyc",
+            "src/geometry_mmalls/__pycache__/memory.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/memory.cpython-313.pyc",
+            "src/geometry_mmalls/__pycache__/metrics.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/metrics.cpython-313.pyc",
+            "src/geometry_mmalls/__pycache__/model.cpython-312.pyc",
+            "src/geometry_mmalls/__pycache__/model.cpython-313.pyc",
+            "tests/__pycache__/test_core.cpython-313-pytest-9.0.2.pyc",
+            "tests/__pycache__/test_geometry.cpython-313-pytest-9.0.2.pyc",
+            "tests/__pycache__/test_memory.cpython-313-pytest-9.0.2.pyc",
+            "tests/__pycache__/test_metrics.cpython-313-pytest-9.0.2.pyc"
+          ],
+          "severity": "minor"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_context_frozen_and_preserved",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_context_frozen_and_preserved.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_equal_compute",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_equal_compute.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_nominal_route_mediation",
+        "status": "PASS",
+        "message": "Imported experiment gate C1_nominal_route_mediation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_functional_route_mediation",
+        "status": "PASS",
+        "message": "Imported experiment gate C1_functional_route_mediation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_probe_generalization",
+        "status": "PASS",
+        "message": "Imported experiment gate C1_probe_generalization.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_functional_causal_specificity",
+        "status": "FAIL",
+        "message": "Imported experiment gate C4_functional_causal_specificity.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C3_host_ecology",
+        "status": "FAIL",
+        "message": "Imported experiment gate C3_host_ecology.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_identity_preservation",
+        "status": "FAIL",
+        "message": "Imported experiment gate C4_identity_preservation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C6_operational_non_degradation",
+        "status": "PASS",
+        "message": "Imported experiment gate C6_operational_non_degradation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "equivalence_not_superiority"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C5_memory_transport",
+        "status": "FAIL",
+        "message": "Imported experiment gate C5_memory_transport.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "not_implemented"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::operational_superiority",
+        "status": "FAIL",
+        "message": "Imported experiment gate operational_superiority.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "not_preregistered_as_primary"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C3_mature_host_specialization",
+        "status": "FAIL",
+        "message": "Canonical gate C3_mature_host_specialization mapped from C3_host_ecology.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+          "status": "candidate_only",
+          "mapped_from": "C3_host_ecology"
+        }
+      }
+    ]
+  },
+  "claim_report": {
+    "schema_version": "0.2.0",
+    "claims": [
+      {
+        "id": "CONTEXT_GEOMETRY",
+        "statement": "The inferred context has replicated representational geometry.",
+        "status": "PASS",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "RUN_MANIFEST_METRIC"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST",
+          "SEED_COUNT",
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "id": "HELDOUT_NOMINAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out nominal route order.",
+        "status": "PARTIAL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_nominal_mediation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "HELDOUT_FUNCTIONAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out functional route order under a common cost matrix.",
+        "status": "PARTIAL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_functional_mediation_common_cost"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "LOCAL_STABILITY",
+        "statement": "The router reduces high-tail local sensitivity without route collapse.",
+        "status": "PARTIAL",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C1_local_continuity_tail"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "CAUSAL_SPECIFICITY",
+        "statement": "Factor-tangent interventions are functionally more specific than orthogonal controls.",
+        "status": "FAIL",
+        "required_metrics": [
+          "CAUSAL_SEED_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [
+          "C4_functional_causal_specificity",
+          "C4_identity_preservation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "HOST_SPECIALIZATION",
+        "statement": "Stable functional host specialization is established.",
+        "status": "FAIL",
+        "required_metrics": [
+          "HOST_OR_ALLOCATION_ABLATION",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SEED_COUNT"
+        ],
+        "required_experiment_gates": [
+          "C3_mature_host_specialization"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_NON_DEGRADATION",
+        "statement": "The routing intervention stays within the preregistered non-degradation margin.",
+        "status": "PASS",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C6_operational_non_degradation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_SUPERIORITY",
+        "statement": "The routing intervention improves operational performance.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "operational_superiority"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "MEMORY_TRANSPORT",
+        "statement": "Route-function memory transport is demonstrated.",
+        "status": "FAIL",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST"
+        ],
+        "required_experiment_gates": [
+          "C5_memory_transport"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      }
+    ]
+  }
+}

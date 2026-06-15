@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this research specification or implementation scaffold, please cite it."
-title: "Geometry-MMALS G1: Replicated Context Geometry and Functional Routing Specification"
+title: "Geometry-MMALS G1: From Replicated Context Geometry to Partial Functional Routing"
 type: software
 authors:
   - family-names: Harbonnier
@@ -18,6 +18,7 @@ keywords:
   - representation learning
   - MMALS
 abstract: >-
-  Executed five-seed evidence for grounded context geometry, together with a
-  complete executable protocol for testing functional mediation through geometric
-  routing, host ecology, and later continual memory transport.
+  Five-seed evidence for replicated context geometry and partial structural
+  context-to-route mediation. The release includes nominal and functional route
+  metrics, causal and host-ecology negative results, a v1.1.1 bridge-isolation
+  plan, and a machine-readable verification starter stack.

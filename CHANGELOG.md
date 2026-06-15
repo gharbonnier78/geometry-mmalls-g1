@@ -141,3 +141,15 @@
 - Added nominal and functional optimal-transport route geometry.
 - Added mediation probes, causal interventions, host-ecology metrics, statistical gates, and falsification logic.
 - Preserved v1.1.0 as specification-only; no execution or C1–C6 qualification is claimed.
+
+## 1.1.1 - bridge isolation and verification stack
+
+- Freeze a common host bank, classifier, synthesis layer and common host-cost
+  matrix for router comparisons.
+- Add R3 hybrid directional-prototype energy routing.
+- Add local continuity distributions, perturbation maps and route-swap audits.
+- Make held-out functional mediation under one common cost matrix the primary
+  bridge gate.
+- Add Verification Stack v0.2 with PDF/ZIP parsing, versioned metric, protocol
+  and claim rules, red-team cases, and stable report outputs.
+- Preserve complete v1.1.0 results and reviewer report v1.3.

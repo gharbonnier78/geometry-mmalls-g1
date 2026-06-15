@@ -172,3 +172,18 @@ The v1.1.0 gates are defined in:
 - `configs/rotated_mnist_g1_v110_spec.yaml`
 
 The protocol is fully implemented in `notebooks/Geometry_MMALS_G1_FunctionalRouting_v1_1_0.ipynb`, but no v1.1.0 empirical gate has been executed or passed.
+
+
+## v1.1.0 executed evidence amendment
+
+- Protocol integrity: PASS.
+- Prototype nominal route mediation: candidate pass on trained and held-out factors.
+- Prototype functional route mediation: candidate pass on trained factors only.
+- Held-out functional mediation: not established.
+- Low-capacity linear routing: equally competitive; strongest exploratory causal and ablation signals.
+- Prototype causal specificity and identity preservation: fail.
+- Host ecology: route territories observed, functional specialization not qualified.
+- Operational non-degradation: pass as equivalence, not superiority.
+- Memory transport: not implemented.
+
+No final geometry claim may rely on PCA/UMAP alone, and no Riemannian-manifold claim is allowed without explicit structural tests and metric comparisons.

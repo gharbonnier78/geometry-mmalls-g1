@@ -1,0 +1,197 @@
+{
+  "schema_version": "0.2.0",
+  "claims": [
+    {
+      "id": "CONTEXT_GEOMETRY",
+      "statement": "The inferred context has replicated representational geometry.",
+      "status": "PASS",
+      "required_metrics": [
+        "AGGREGATE_SEED_EFFECTS",
+        "RUN_MANIFEST_METRIC"
+      ],
+      "required_protocol_rules": [
+        "RUN_MANIFEST",
+        "SEED_COUNT",
+        "SOURCE_PARTITION_SEPARATION"
+      ],
+      "required_experiment_gates": [],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "id": "HELDOUT_NOMINAL_ROUTE_MEDIATION",
+      "statement": "The tested router improves held-out nominal route order.",
+      "status": "PARTIAL",
+      "required_metrics": [
+        "AGGREGATE_SEED_EFFECTS",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "MATCHED_COMPUTE",
+        "FROZEN_CONTEXT"
+      ],
+      "required_experiment_gates": [
+        "C1_heldout_nominal_mediation"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "NOT_TESTED"
+      ]
+    },
+    {
+      "id": "HELDOUT_FUNCTIONAL_ROUTE_MEDIATION",
+      "statement": "The tested router improves held-out functional route order under a common cost matrix.",
+      "status": "PARTIAL",
+      "required_metrics": [
+        "AGGREGATE_SEED_EFFECTS",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "MATCHED_COMPUTE",
+        "FROZEN_CONTEXT"
+      ],
+      "required_experiment_gates": [
+        "C1_heldout_functional_mediation_common_cost"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS",
+        "NOT_TESTED"
+      ]
+    },
+    {
+      "id": "LOCAL_STABILITY",
+      "statement": "The router reduces high-tail local sensitivity without route collapse.",
+      "status": "PARTIAL",
+      "required_metrics": [
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "MATCHED_COMPUTE"
+      ],
+      "required_experiment_gates": [
+        "C1_local_continuity_tail"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "NOT_TESTED"
+      ]
+    },
+    {
+      "id": "CAUSAL_SPECIFICITY",
+      "statement": "Factor-tangent interventions are functionally more specific than orthogonal controls.",
+      "status": "FAIL",
+      "required_metrics": [
+        "CAUSAL_SEED_SUMMARY",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "SOURCE_PARTITION_SEPARATION"
+      ],
+      "required_experiment_gates": [
+        "C4_functional_causal_specificity",
+        "C4_identity_preservation"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "FAIL",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "HOST_SPECIALIZATION",
+      "statement": "Stable functional host specialization is established.",
+      "status": "FAIL",
+      "required_metrics": [
+        "HOST_OR_ALLOCATION_ABLATION",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "SEED_COUNT"
+      ],
+      "required_experiment_gates": [
+        "C3_mature_host_specialization"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "OPERATIONAL_NON_DEGRADATION",
+      "statement": "The routing intervention stays within the preregistered non-degradation margin.",
+      "status": "PASS",
+      "required_metrics": [
+        "AGGREGATE_METHOD_SUMMARY",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "MATCHED_COMPUTE"
+      ],
+      "required_experiment_gates": [
+        "C6_operational_non_degradation"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "PASS"
+      ]
+    },
+    {
+      "id": "OPERATIONAL_SUPERIORITY",
+      "statement": "The routing intervention improves operational performance.",
+      "status": "FAIL",
+      "required_metrics": [
+        "AGGREGATE_METHOD_SUMMARY",
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "MATCHED_COMPUTE"
+      ],
+      "required_experiment_gates": [
+        "operational_superiority"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "PASS",
+        "FAIL"
+      ]
+    },
+    {
+      "id": "MEMORY_TRANSPORT",
+      "statement": "Route-function memory transport is demonstrated.",
+      "status": "FAIL",
+      "required_metrics": [
+        "GATE_SUMMARY"
+      ],
+      "required_protocol_rules": [
+        "RUN_MANIFEST"
+      ],
+      "required_experiment_gates": [
+        "C5_memory_transport"
+      ],
+      "resolved_statuses": [
+        "PASS",
+        "PASS",
+        "FAIL"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "notebook_version": "1.1.0",
+  "build_revision": "functional-routing-bridge-pilot-results-r1",
+  "package_version": "1.1.0",
+  "git_sha": "b7abd55a9ae0bd835142b37de3b8cc9370c36e40",
+  "run_profile": "pilot",
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "context_checkpoint_hashes": {
+    "0": "994fbd92290ab0dba14d5f0f3dd615a8b77dbbf53659e986fd4cc050984cebcd",
+    "1": "69491e17d8bbca1e8038b4ba470ff9d794f19a9c4bfbade32cc0422e38b17a7f",
+    "2": "afd118c9727d830b09eda5acc9584cbdf1b657254a4d6c4512776d1d7f5fc73b",
+    "3": "e138aeac1dccf2dacf3052a2b3e417fe1b1f0e72dba61d128afa74b805801fef",
+    "4": "1a78273df8f0cd5b20db6be77d2749e52953fc601f3e1fbb795a9dd100ddffe3"
+  },
+  "common_initial_state_hashes": {
+    "0": "8cfebef03070fa635e6d5582cbe0aebd93621d00bef2ad19d46c07967e9b901a",
+    "1": "e5c929cc429dcc5e8ee0dc1812cb4abaef50f167f627c91fac61414321151687",
+    "2": "ba1149326e13b2f88a18d2eaa9d2ae3e9889c0f10e944b9909cfbb5b1135f976",
+    "3": "abd2ed61b3d7f48b4f24bdf09591862ff911fc8f9af78fac96125346d97c6b44",
+    "4": "7497fcca8961db692fdc4ce7597db936b945849837dc4ae00337c6a6e020489e"
+  },
+  "split_manifest": {
+    "split_seed": 0,
+    "train_sha256": "0a841b138937f6f83ec3549d225da11eb256f9baea412aaf7d4165de22482ada",
+    "test_sha256": "4212df40340e13adf6739d7728e1a223a23cc3bc3fc34218989e0603221cc138",
+    "metric_sha256": "8b2891e9ee786ba6e74872f7f1e30975d1bd3ab351b149d6d92ebf19330dd6ee",
+    "probe_fit_sha256": "f5fe0ca9479578f4682f158246b2777fb43bf010300573d903028cec6b22aefc",
+    "probe_eval_sha256": "7ed8e2dac2004ee5ae6a8f5411129d4e7567e32e035cd8b1cf17201308a80078",
+    "tangent_fit_sha256": "1a76deccf426f8ad3c1a05fd85e8570050fd36aff58cb6ed610954a831af6d90",
+    "causal_eval_sha256": "1157a479700e35c347ceb0c38e47a5f52fdfffd2c3e422989786a7cd0c2a7280"
+  },
+  "sensory_accuracy": 0.942,
+  "methods": {
+    "r0_mlp": {
+      "type": "mlp_context_router",
+      "hidden_dim": 64,
+      "seed_offset": 11010,
+      "equation": "softmax((W2 phi(W1 c + b1) + b2) / tau)"
+    },
+    "r1_linear": {
+      "type": "linear_context_router",
+      "seed_offset": 11020,
+      "equation": "softmax((W c + b) / tau)"
+    },
+    "r2_prototype_energy": {
+      "type": "prototype_energy_router",
+      "seed_offset": 11030,
+      "sigma_min": 0.05,
+      "spherical_kmeans_iterations": 50,
+      "prototype_normalization": "unit_sphere",
+      "prototype_initialization": "spherical_kmeans_without_angle_labels",
+      "learnable_bandwidth": true,
+      "energy": "half_chord(c, mu_h)^2 / (2 sigma_h^2) + bias_h",
+      "route": "softmax(-energy / tau)"
+    }
+  },
+  "primary_contrasts": [
+    {
+      "name": "r2_prototype_energy_vs_r0_mlp",
+      "treatment": "r2_prototype_energy",
+      "control": "r0_mlp"
+    },
+    {
+      "name": "r2_prototype_energy_vs_r1_linear",
+      "treatment": "r2_prototype_energy",
+      "control": "r1_linear"
+    },
+    {
+      "name": "r1_linear_vs_r0_mlp",
+      "treatment": "r1_linear",
+      "control": "r0_mlp"
+    }
+  ],
+  "functional_metric_evaluation_only": true,
+  "secondary_mediation_arm_executed": false,
+  "source_v109_results": "results/v1_0_9",
+  "article": "docs/reports/Geometry_MMALS_G1_v1_0_9_Results_and_v1_1_0_Specification.pdf",
+  "reviewer_report": "docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_3.pdf",
+  "warning": "Five-seed pilot completed. Candidate route mediation is partial; no final C1-C6 qualification or operational superiority may be claimed.",
+  "timestamp": 1781472348.9622328,
+  "results_report": "docs/reports/Geometry_MMALS_G1_v1_1_0_Results_and_v1_1_1_Roadmap.pdf"
+}

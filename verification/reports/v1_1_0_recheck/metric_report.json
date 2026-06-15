@@ -1,0 +1,294 @@
+{
+  "schema_version": "0.2.0",
+  "metrics": [
+    {
+      "id": "COMPUTE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/compute_summary.csv",
+        "sha256": "2796ba0dae0163f8c679bd760f54f18a137519e40b6d75648e2df37a7b2c2b2a",
+        "rows": 15,
+        "columns": [
+          "model_seed",
+          "method",
+          "total_forward_images",
+          "total_optimizer_steps",
+          "total_wall_seconds"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 13.248151437666396
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 10.370432329998948
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 17.370302952000202
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "GATE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/gate_summary.csv",
+        "sha256": "418c202fddd796e9cc222e70771e02f992d0dcf993572ceb78fe7514d8baaf11",
+        "rows": 11,
+        "columns": [
+          "gate",
+          "passed",
+          "status"
+        ],
+        "null_cells": 0,
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_SEED_EFFECTS",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/aggregate_seed_effects.csv",
+        "sha256": "1f0caff895699f27abd7157c2b44b10d8121a45987a2d2dfc428559f0057b3d6",
+        "rows": 24,
+        "columns": [
+          "contrast",
+          "partition",
+          "geometry",
+          "metric",
+          "mean_seed_effect",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count",
+          "favorable_seed_fraction"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean_seed_effect": 6.345835637811975e-05,
+          "seed_ci_low": -0.0652940633139037,
+          "seed_ci_high": 0.06542098002665991,
+          "seed_sd": 0.052637043326399256,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.6916666666666668
+        },
+        "numeric_min": {
+          "mean_seed_effect": -0.0753758716050867,
+          "seed_ci_low": -0.1758204851489026,
+          "seed_ci_high": -0.0079528084393274,
+          "seed_sd": 0.0206304781082032,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.2
+        },
+        "numeric_max": {
+          "mean_seed_effect": 0.0951317298419789,
+          "seed_ci_low": 0.0351110563089871,
+          "seed_ci_high": 0.1809672682448705,
+          "seed_sd": 0.0861111064530063,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_METHOD_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/aggregate_method_summary.csv",
+        "sha256": "4d793a77b0fa53e689a4e7d717d8c5d69e889bf3fb443eb47f488b0b31eb3e27",
+        "rows": 15,
+        "columns": [
+          "method",
+          "metric",
+          "mean",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean": 0.4027439957118453,
+          "seed_ci_low": 0.3678711957995292,
+          "seed_ci_high": 0.4376167956241614,
+          "seed_sd": 0.02808553679800998,
+          "seed_count": 5.0
+        },
+        "numeric_min": {
+          "mean": 0.0929375,
+          "seed_ci_low": 0.0809540251224014,
+          "seed_ci_high": 0.1049209748775985,
+          "seed_sd": 0.0026132653550629,
+          "seed_count": 5.0
+        },
+        "numeric_max": {
+          "mean": 0.63025,
+          "seed_ci_low": 0.6239645249712306,
+          "seed_ci_high": 0.6477253889047587,
+          "seed_sd": 0.0769924607041965,
+          "seed_count": 5.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "CAUSAL_SEED_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/causal_seed_summary.csv",
+        "sha256": "42122b9f327e2d4edfb0979be45bf5b712af3d4befa0da9ac8ec38e50025f6bd",
+        "rows": 15,
+        "columns": [
+          "model_seed",
+          "method",
+          "mean_nominal_csr",
+          "mean_functional_csr",
+          "min_functional_csr_ci_low",
+          "mean_dmr",
+          "min_prediction_preservation_ci_low"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "mean_nominal_csr": 0.9126971166643305,
+          "mean_functional_csr": 1.047928080236251,
+          "min_functional_csr_ci_low": 0.5983199098933548,
+          "mean_dmr": 0.9076871935575481,
+          "min_prediction_preservation_ci_low": 0.9645703124999999
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "mean_nominal_csr": 0.3430597628081637,
+          "mean_functional_csr": 0.0105549536795624,
+          "min_functional_csr_ci_low": 0.0001615220963744,
+          "mean_dmr": 0.3175544234691841,
+          "min_prediction_preservation_ci_low": 0.9060546875
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "mean_nominal_csr": 1.5130266655681717,
+          "mean_functional_csr": 4.473650840001905,
+          "min_functional_csr_ci_low": 2.106013021319743,
+          "mean_dmr": 1.5425326540044095,
+          "min_prediction_preservation_ci_low": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "HOST_OR_ALLOCATION_ABLATION",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/host_ablation.csv",
+        "sha256": "d4a39f75748a3eb6c5c5d041950d39368c8a76c4e7e378af090fa63c9ccb36c4",
+        "rows": 660,
+        "columns": [
+          "model_seed",
+          "method",
+          "angle",
+          "host",
+          "baseline_accuracy",
+          "ablated_accuracy",
+          "accuracy_drop",
+          "is_top_host",
+          "is_random_control"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "angle": 0.0,
+          "host": 1.5,
+          "baseline_accuracy": 0.6214015151515152,
+          "ablated_accuracy": 0.5982836174242424,
+          "accuracy_drop": 0.023117897727272727,
+          "is_top_host": 0.25,
+          "is_random_control": 0.25
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "angle": -75.0,
+          "host": 0.0,
+          "baseline_accuracy": 0.1953125,
+          "ablated_accuracy": 0.1640625,
+          "accuracy_drop": -0.1015625,
+          "is_top_host": 0.0,
+          "is_random_control": 0.0
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "angle": 75.0,
+          "host": 3.0,
+          "baseline_accuracy": 0.9453125,
+          "ablated_accuracy": 0.953125,
+          "accuracy_drop": 0.28125,
+          "is_top_host": 1.0,
+          "is_random_control": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "RUN_MANIFEST_METRIC",
+      "status": "PASS",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/run_manifest.json",
+        "sha256": "db4ce64969386fb9a1ef7988d54bec449e6cc836b095fb7bae4bb32d61b19542",
+        "missing_keys": [],
+        "top_level_keys": [
+          "article",
+          "build_revision",
+          "common_initial_state_hashes",
+          "context_checkpoint_hashes",
+          "functional_metric_evaluation_only",
+          "git_sha",
+          "methods",
+          "model_seeds",
+          "notebook_version",
+          "package_version",
+          "primary_contrasts",
+          "reviewer_report",
+          "run_profile",
+          "secondary_mediation_arm_executed",
+          "sensory_accuracy",
+          "source_v109_results",
+          "split_manifest",
+          "timestamp",
+          "warning"
+        ]
+      }
+    },
+    {
+      "id": "CLAIM_MANIFEST_METRIC",
+      "status": "PASS",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_nuifzjxo/results/v1_1_0/claim_manifest.json",
+        "sha256": "8ea497c58e40b391ae85fa8080b17b330afac01be8d57b5c78c21f0f59f60741",
+        "missing_keys": [],
+        "top_level_keys": [
+          "eligible_if_gates_pass",
+          "non_claims",
+          "status",
+          "version"
+        ]
+      }
+    }
+  ]
+}

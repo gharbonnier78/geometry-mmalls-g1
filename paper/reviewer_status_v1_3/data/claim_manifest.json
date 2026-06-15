@@ -1,0 +1,19 @@
+{
+  "version": "1.1.0",
+  "status": "C0 complete implementation; empirical v1.1.0 claims pending execution",
+  "eligible_if_gates_pass": [
+    "functional context-to-route mediation",
+    "prototype-energy structural routing candidate",
+    "host ecology candidate"
+  ],
+  "non_claims": [
+    "operational_superiority",
+    "final_host_specialization",
+    "memory_transport",
+    "backward_transfer",
+    "distributed_mycelial_routing",
+    "full_multiobjective_energy_control",
+    "reinforcement_learning_control",
+    "quantum_advantage"
+  ]
+}

@@ -1,0 +1,50 @@
+schema_version: 0.2.0
+minimum_model_seeds: 5
+context_tolerance: 1.0e-06
+archive_hygiene:
+  banned_path_fragments:
+  - /.git/
+  - __pycache__
+  - .pytest_cache
+  - .pyc
+  - /data/MNIST/
+rules:
+- id: ZIP_SAFE_PATHS
+  severity: critical
+  description: ZIP paths must be safe.
+- id: RESULTS_PRESENT
+  severity: critical
+  description: A results root must exist.
+- id: RUN_MANIFEST
+  severity: critical
+  description: A parseable run manifest is required.
+- id: CLAIM_MANIFEST
+  severity: critical
+  description: A parseable claim manifest is required.
+- id: SEED_COUNT
+  severity: critical
+  description: The configured minimum seed count is required.
+- id: PDF_PARSE
+  severity: critical
+  description: The execution PDF must parse.
+- id: PDF_NO_TRACEBACK
+  severity: critical
+  description: The archive PDF must contain no unresolved traceback.
+- id: PDF_EXECUTION_MARKERS
+  severity: major
+  description: Seed completion and export markers should be present.
+- id: MATCHED_COMPUTE
+  severity: critical
+  description: Compute must match across treatments.
+- id: FROZEN_CONTEXT
+  severity: critical
+  description: Frozen context must be preserved.
+- id: SOURCE_PARTITION_SEPARATION
+  severity: critical
+  description: Partition hashes must be distinct.
+- id: CLAIM_MANIFEST_FRESHNESS
+  severity: major
+  description: Claim status must match execution state.
+- id: ARCHIVE_HYGIENE
+  severity: minor
+  description: Release archives should exclude caches and datasets.

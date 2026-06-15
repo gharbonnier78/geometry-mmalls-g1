@@ -1,0 +1,12 @@
+gate,passed,status
+C0_context_frozen_and_preserved,True,protocol_integrity
+C0_equal_compute,True,protocol_integrity
+C1_nominal_route_mediation,True,candidate_only
+C1_functional_route_mediation,True,candidate_only
+C1_probe_generalization,True,candidate_only
+C4_functional_causal_specificity,False,candidate_only
+C3_host_ecology,False,candidate_only
+C4_identity_preservation,False,candidate_only
+C6_operational_non_degradation,True,equivalence_not_superiority
+C5_memory_transport,False,not_implemented
+operational_superiority,False,not_preregistered_as_primary

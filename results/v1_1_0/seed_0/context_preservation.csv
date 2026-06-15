@@ -1,0 +1,3 @@
+method,reference,max_abs_context_delta,mean_l2_context_delta
+r1_linear,r0_mlp,0.0,0.0
+r2_prototype_energy,r0_mlp,0.0,0.0

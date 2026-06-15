@@ -106,3 +106,30 @@ v1.1.0 remains specification-only and unexecuted.
 - v1.1.0 executed: **no**
 - Runtime source patching required: **no**
 - C1-C6 qualification: **unclaimed**
+
+
+## v1.1.0 executed-results release
+
+- Results article: `docs/reports/Geometry_MMALS_G1_v1_1_0_Results_and_v1_1_1_Roadmap.pdf`
+- Reviewer report: `docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_3.pdf`
+- Complete results: `results/v1_1_0/`
+- Execution PDF: `docs/execution_archives/Geometry_MMALS_G1_v1_1_0_Execution_Archive_20260614.pdf`
+- v1.1.1+ roadmap: `docs/specs/Geometry_MMALS_G1_v1_1_1_and_1_1_x_Roadmap.md`
+- Verification starter: `verification/`
+- Tests: `40 passed in 13.39s`
+
+## v1.1.1 bridge-isolation release
+
+- `notebooks/Geometry_MMALS_G1_BridgeIsolation_v1_1_1.ipynb`
+- `configs/rotated_mnist_g1_v111.yaml`
+- `src/geometry_mmalls/functional_routing.py`
+- `src/geometry_mmalls/verification.py`
+- `verification/notebooks/MMALS_Metric_Protocol_Claim_Verification_v0_2.ipynb`
+- `verification/metric_definitions.yaml`
+- `verification/protocol_rules.yaml`
+- `verification/claim_rules.yaml`
+- `verification/profiles/`
+- `verification/red_team_cases/`
+- `verification/reports/v1_1_0_recheck/`
+
+Scientific status: C0 implementation. v1.1.1 empirical claims remain pending.

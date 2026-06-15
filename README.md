@@ -4,9 +4,9 @@
 
 Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns meaningful internal geometry across inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
 
-> **Latest executed evidence:** v1.0.9 five-seed matched-compute pilot.  
-> **Latest executable protocol:** v1.1.0 functional routing, complete C0 implementation and not yet executed.  
-> **Current scientific status:** candidate replicated context geometry; functional and operational geometry remain unqualified.
+> **Latest executed evidence:** v1.1.0 five-seed functional-routing pilot.  
+> **Latest planned protocol:** v1.1.1 local-stability and bridge-isolation experiment.  
+> **Current scientific status:** replicated context geometry and partial structural route mediation; held-out functional mediation, causal host ecology, memory transport, and operational superiority remain unqualified.
 
 ## What the system builds
 
@@ -149,3 +149,38 @@ G1.1 geometry-mediated routing
 ```
 
 Code is released under the MIT License. See `CITATION.cff` for citation metadata.
+
+
+## v1.1.0 executed result
+
+With the v1.0.9 context frozen and compute matched, the prototype-energy router improves nominal route order over the MLP on trained factors and the dense held-out angle grid. Functional optimal-transport route order improves on trained factors but not on held-out factors. The 20-parameter linear router is at least as competitive as the 24-parameter prototype router and produces stronger exploratory causal and ablation signals.
+
+The result advances the chain from `factor -> context` to a partial `context -> route` bridge. It does not yet establish stable `route -> host function` mediation or operational benefit.
+
+See:
+
+```text
+docs/reports/Geometry_MMALS_G1_v1_1_0_Results_and_v1_1_1_Roadmap.pdf
+docs/reports/Geometry_MMALS_G1_Status_and_Perspective_Reviewer_Report_v1_3.pdf
+docs/specs/Geometry_MMALS_G1_v1_1_1_and_1_1_x_Roadmap.md
+verification/reports/v1_1_0/verification_summary.md
+```
+
+## Geometry-MMALS G1 v1.1.1
+
+v1.1.1 isolates the context-to-route bridge with one common frozen host bank
+and one common functional cost matrix. It compares MLP, linear, prototype
+energy, and hybrid directional-prototype energy routing.
+
+```text
+notebooks/Geometry_MMALS_G1_BridgeIsolation_v1_1_1.ipynb
+```
+
+## Verification Stack v0.2
+
+The reusable verifier reads an execution PDF and a result ZIP, applies
+versioned metric/protocol/claim rules, and emits a standard evidence bundle.
+
+```text
+verification/notebooks/MMALS_Metric_Protocol_Claim_Verification_v0_2.ipynb
+```
