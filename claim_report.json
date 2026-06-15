@@ -1,4 +1,0 @@
-case: synthetic_as_real
-mutation: remove synthetic or smoke labels
-expected_failures:
-- CLAIM_MANIFEST

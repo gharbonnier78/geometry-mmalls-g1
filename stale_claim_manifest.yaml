@@ -1,4 +1,0 @@
-case: missing_checkpoint
-mutation: remove checkpoint hashes and checkpoint files
-expected_failures:
-- RUN_MANIFEST

@@ -1,4 +1,0 @@
-case: specialization_without_ablation
-mutation: claim specialization while omitting ablation evidence
-expected_failures:
-- HOST_SPECIALIZATION
