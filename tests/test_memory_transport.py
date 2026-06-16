@@ -6,6 +6,7 @@ from geometry_mmalls.memory_transport import (
     distillation_kl,
     functional_path_statistics,
     functional_transport_anchor_loss,
+    isotropic_root_gaussian,
     root_gaussian_nll,
     root_route_anchor_loss,
 )
@@ -45,16 +46,25 @@ def test_path_statistics_detect_detour():
     stats = functional_path_statistics([a, b, c], _cost(), iterations=8)
     assert stats.cumulative_length > 0
     assert stats.endpoint_distance >= 0
-    assert stats.path_excess >= 1.0
+    assert torch.isfinite(torch.tensor(stats.path_to_endpoint_cost_ratio))
+    assert stats.path_to_endpoint_cost_ratio >= 0.0
+    assert stats.path_excess == stats.path_to_endpoint_cost_ratio
 
 
 def test_root_gaussian_memory_has_finite_nll():
     fit = _routes(5, n=10)
     test = _routes(6, n=5)
     memory = compile_root_gaussian(fit)
+    isotropic = isotropic_root_gaussian(memory)
     value = root_gaussian_nll(test, memory)
+    isotropic_value = root_gaussian_nll(test, isotropic)
+    expected_variance = torch.trace(memory.covariance) / memory.covariance.shape[0]
     assert memory.count == 10
-    assert torch.isfinite(value)
+    assert torch.isfinite(value) and torch.isfinite(isotropic_value)
+    assert torch.allclose(
+        isotropic.covariance,
+        expected_variance * torch.eye(memory.covariance.shape[0]),
+    )
 
 
 def test_distillation_kl_is_zero_for_identical_logits():

@@ -207,3 +207,9 @@ Empirical status: not executed.
 ## v1.1.3 C0
 
 Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.
+
+### v1.1.3 C0-r2 pre-pilot correction
+
+The functional-memory experiment now uses explicit matched remembered-source access rather than a vague fixed-byte budget. Pilot execution is blocked until a development-seed gradient calibration has been run and the resulting functional-transport coefficient and report SHA-256 are committed to `configs/rotated_mnist_g1_v113.yaml`.
+
+The path diagnostic is a regularized cost ratio, not a geodesic excess. Exact reconstruction hashes are audit-only; sensory performance and frozen-component deltas are integrity gates. v1.1.3 is the final planned experiment with a fully frozen host bank.

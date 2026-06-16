@@ -70,3 +70,12 @@ qualified.
 ## v1.1.3 C0
 
 Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.
+
+## v1.1.3 C0-r2 pre-pilot status
+
+- reviewer corrections integrated: **YES**;
+- gradient calibration completed: **NO**;
+- pilot lock: **FALSE**;
+- five-seed pilot: **BLOCKED until calibration is committed**;
+- frozen-host regime: **final planned experiment**;
+- next regime after v1.1.3: controlled causal host adaptation, regardless of positive, negative, or partial result.

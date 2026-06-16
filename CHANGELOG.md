@@ -193,3 +193,20 @@
 ## v1.1.3 C0
 
 Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.
+
+## v1.1.3 C0-r2 - pre-pilot reviewer corrections
+
+- Rename the primary resource constraint to matched remembered-source and replay-access budget.
+- Remove memory-efficiency wording and keep byte-matched sensitivity optional and secondary.
+- Separate angle, acquisition-stage, intermediate-stage, and final-stage notation.
+- Make acquisition snapshots occur immediately after the last stage optimizer step and before any next-stage operation.
+- Define the common host cost with host-output dimension scaling and off-diagonal median normalization.
+- Expose route/distillation temperatures and inner/outer Sinkhorn parameters in the reviewer specification.
+- Replace the ambiguous compiled-memory baseline with a trace-matched isotropic Gaussian.
+- Treat parameter hashes as audit metadata and gate reconstruction through preregistered sensory performance.
+- Add M3-versus-M2 old-angle forgetting as a secondary operational-alignment contrast.
+- Rename path excess as a path-to-endpoint regularized cost ratio and remove the invalid >=1 assumption.
+- Add mandatory development-seed gradient-norm calibration and block pilot execution until lambda_F is locked in YAML.
+- Fix the generated notebook stage-evaluation return contract and add explicit snapshot-event and memory-information exports.
+- Declare v1.1.3 the final fully frozen-host experiment.
+- Package regression tests: 59 passed.

@@ -1,31 +1,34 @@
 # Geometry-MMALS G1 v1.1.3
 
-## Functional Memory Transport, Route-Path Diagnostics, and Limited-Replay Retention
+## Functional Memory Transport under Matched Remembered-Source Access
 
-**Status:** complete C0 specification and executable Colab; empirical pilot pending.  
-**Build revision:** `functional-memory-transport-c0-r1`.
+**Status:** corrected C0 specification and executable Colab; gradient-scale calibration required before the five-seed pilot.  
+**Build revision:** `functional-memory-transport-c0-r2`.  
+**Program decision:** v1.1.3 is the final planned experiment in the fully frozen-host regime.
 
 ## Abstract
 
-Geometry-MMALS G1 v1.1.1 isolated the context-to-route bridge under one frozen host ecosystem. The hybrid prototype router did not qualify, although route-swap ordering showed that the frozen ecosystem contained non-arbitrary functional structure. Version 1.1.2 repaired the sharp local tails of the prototype family with a bounded smooth residual and a context-only continuity hinge. The repair succeeded mechanically but did not outperform the low-capacity linear router on held-out functional order or stress. At the same time, covariance-aware context geometry improved stress over centroid-only geometry by -0.0442 with a five-seed confidence interval entirely below zero.
+Geometry-MMALS G1 v1.1.1 isolated the context-to-route bridge under one frozen host ecosystem. Version 1.1.2 repaired the sharp local tails of prototype routing but did not outperform the low-capacity linear router on the preregistered held-out functional contrast. Covariance-aware context geometry nevertheless added stable information beyond centroid-only geometry.
 
-Version 1.1.3 therefore stops adding router capacity. It fixes one linear router architecture and asks a different question: **what memory object should constrain a route as learning proceeds?** The experiment compares current-only learning, limited replay, nominal route anchoring, functional transport anchoring under a frozen host-cost matrix, and a joint functional-memory objective. It measures paired route drift, paired functional drift, distributional transport, latent drift, output drift, identity preservation, path length, endpoint drift, and path excess. A separate compiled-memory diagnostic compares barycentric and covariance-aware summaries in root-simplex coordinates.
+Version 1.1.3 therefore stops adding router capacity. It fixes one linear router and asks which memory object should constrain that router during sequential learning. The experiment compares current-only learning, limited replay, nominal route anchoring, functional transport under a frozen host-cost matrix, and joint functional memory. Treatments receive the same remembered identities, the same access to old images, the same memory batches, and matched compute. They do **not** store the same number of bytes: richer treatments deliberately preserve richer targets for the same remembered sources. A byte-matched analysis is optional and secondary.
 
-The central claim is deliberately narrow: v1.1.3 can establish whether functional route transport preserves old behavior more efficiently than nominal route anchoring under a fixed ecosystem and fixed memory budget. It cannot establish mature host specialization, positive backward transfer, optimality of the transport plan, or a learned Riemannian manifold.
+The protocol measures paired nominal and functional drift, old-angle forgetting, distributional transport, mediated-latent drift, output drift, prediction identity, and accumulated regularized transport cost along the learning path. A diagnostic compiled memory compares a covariance-aware Gaussian with a precisely defined isotropic Gaussian in root-simplex coordinates.
+
+The central claims are narrow. v1.1.3 can test whether functional transport preserves old route-function behavior better than nominal route anchoring under matched remembered-source access, and whether joint functional memory reduces old-angle forgetting beyond replay. It cannot establish mature host specialization, positive backward transfer, transport optimality, a learned Riemannian manifold, or the central co-adaptive MMALS hypothesis.
 
 ## 1. Why v1.1.3 follows v1.1.2
 
-The v1.1.2 five-seed pilot produced three important observations:
+The v1.1.2 pilot produced three relevant observations:
 
-1. R5 was better than the MLP baseline on held-out functional geometry, but not robustly better than the linear router.
-2. R5 reduced the large local-continuity tails of R2/R3, showing that smoothness can be repaired without proving a better bridge.
-3. covariance-aware context geometry added stable information beyond centroids.
+1. structured low-capacity routing improved functional geometry over the flexible MLP baseline, but the bounded residual did not robustly beat the linear router;
+2. the continuity repair removed the very large local tails of the prototype family without creating a qualified functional bridge;
+3. context covariance added stable factor information beyond centroid geometry.
 
-These findings suggest that the next bottleneck is not another routing architecture. The next falsifiable question is whether the system is preserving the correct **route-function memory object** over time.
+The next experiment therefore changes the memory objective, not the router architecture. This is a closure experiment for the frozen-host regime: after v1.1.3, the program either retains a narrow functional-memory result or records that ordered routing and richer memory remain insufficient with a neutral frozen host bank.
 
-## 2. Frozen experimental ecosystem
+## 2. Frozen ecosystem and reconstruction acceptance
 
-For every model seed, v1.1.3 reconstructs and freezes the same objects used by all memory treatments:
+For every model seed, all treatments reconstruct the same ecosystem from the same code, seeds, data partitions, and training protocol:
 
 \[
 z_0=P(x),\qquad c=C_\phi(z_0),\qquad u_h=g_h(z_0),
@@ -35,252 +38,409 @@ z_0=P(x),\qquad c=C_\phi(z_0),\qquad u_h=g_h(z_0),
 z_M(r)=\sum_{h=1}^{H}r_hu_h,\qquad \hat y=Q(z_M).
 \]
 
-The sensory encoder \(P\), context encoder \(C_\phi\), host bank \(\{g_h\}\), synthesis normalization, classifier \(Q\), and functional host-cost matrix \(C^\star\) are frozen. Only a linear router is trained:
+The sensory encoder \(P\), context encoder \(C_\phi\), host bank \(\{g_h\}\), synthesis normalization, classifier \(Q\), and common host-cost matrix \(C^\star\) are frozen during the memory-treatment comparison. Only a linear router is trainable:
 
 \[
 r_\theta(c)=\operatorname{softmax}(Wc+b).
 \]
 
-This removes router architecture as a confound. Differences among treatments come only from the memory objective.
-
-## 3. Memory object
-
-For source \(x\), factor regime \(u\), and stage \(t\), the route-function state is
+Every treatment starts from the same newly initialized router for a given model seed:
 
 \[
-\Phi_t(x,u)=\bigl(r_t,\;z_{M,t},\;p_t\bigr),
+\text{router seed}=\text{model seed}+1300.
 \]
 
-where
+No treatment loads a trained v1.1.2 router.
 
-\[
-r_t=r_{\theta_t}(C_\phi(P(x_u))),\qquad
-z_{M,t}=\sum_h r_{t,h}g_h(P(x_u)),\qquad
-p_t=\operatorname{softmax}(Q(z_{M,t})).
-\]
+Exact parameter hashes are recorded for traceability but are **not** a portability gate because deterministic floating-point reconstruction can vary across software and hardware stacks. Reconstruction acceptance is metric-based:
 
-A route vector is therefore only one coordinate of memory. Two identical-looking routes can differ functionally when the host ecosystem changes; conversely, in this frozen-ecosystem protocol, a route change has a measurable functional interpretation through \(C^\star\).
+- sensory test accuracy must be at least \(0.92\);
+- the reference v1.1.2 sensory accuracy is \(0.942\);
+- all reconstructed component hashes are exported;
+- frozen-component deltas after each memory treatment must be at most \(10^{-6}\).
 
-## 4. Limited replay protocol
+## 3. Remembered-source access budget
 
-At each curriculum stage, the model receives:
+At each curriculum stage, every treatment receives:
 
 - the full current-stage training subset;
-- a fixed memory of 64 source identities per previously learned angle;
+- exactly 64 remembered source identities for each previously learned angle;
+- the same old-image accesses and memory-batch schedule;
+- the same current and memory forward counts;
+- the same number of optimizer steps;
 - no access to the remaining historical training examples.
 
-Memory source IDs are selected once by the split seed and are identical across treatments. For each newly learned angle, the experiment stores the original router snapshot. Later memory targets are always computed from that original snapshot, not from the immediately preceding stage. This prevents a slowly drifting teacher from redefining old memory.
+This is a **matched remembered-source and replay-access budget**, not a matched byte budget.
 
-Evaluation uses source-disjoint test partitions. Therefore the principal drift metrics compare the final model with the original stage snapshot on identities never used to fit the memory objectives.
+M1 stores or reconstructs labels for replay. M2 and M3 additionally preserve route targets. M4 additionally preserves mediated-latent and output targets. The richer information object is intentional: the main question compares what is preserved for the same remembered identities.
+
+The notebook exports, for every treatment:
+
+- remembered identity count;
+- target fields and dimensions;
+- estimated auxiliary target bytes per remembered source;
+- current and memory forward counts;
+- optimizer-step counts.
+
+An optional secondary sensitivity analysis may equalize estimated bytes by reducing the number of M4 identities. It is disabled in the primary pilot and cannot replace the main contrast.
+
+Memory identities are selected deterministically from the fixed split permutation and are identical across treatments.
+
+## 4. Acquisition snapshot contract
+
+Let \(a\) denote an angle, \(\tau(a)\) the stage at which angle \(a\) is first learned, \(s\) a later evaluation stage, and \(T\) the final stage.
+
+The acquisition contract is exact:
+
+1. complete the final optimizer step of stage \(\tau(a)\);
+2. deep-copy the router state immediately;
+3. instantiate a frozen teacher from that copied state;
+4. compute and store teacher targets for the remembered identities of angle \(a\);
+5. evaluate the end of stage \(\tau(a)\);
+6. only then begin any data loading or optimizer operation for stage \(\tau(a)+1\).
+
+Two distinct artifacts are exported:
+
+- `router_snapshot_at_acquisition`;
+- `teacher_targets_at_acquisition`.
+
+Teacher targets are never recomputed from a later model.
 
 ## 5. Treatments
 
 | Treatment | Current CE | Replay CE | Route anchor | Functional OT | Latent anchor | Output KL |
 |---|---:|---:|---:|---:|---:|---:|
-| M0 current only | yes | no | no | no | no | no |
+| M0 current only | yes | zero-weight matched pass | no | no | no | no |
 | M1 replay CE | yes | yes | no | no | no | no |
 | M2 route anchor | yes | yes | yes | no | no | no |
 | M3 functional transport | yes | yes | no | yes | no | no |
 | M4 joint functional memory | yes | yes | no | yes | yes | yes |
 
-All treatments use the same linear router initialization, optimizer, current-stage batches, memory batches, number of optimizer steps, and frozen ecosystem.
+M0 still performs the matched memory forward pass, but old-memory losses receive zero weight.
 
-## 6. Losses
+## 6. Exact memory losses
 
-### 6.1 Nominal route anchoring
+### 6.1 Nominal route anchor
 
-The nominal anchor acts on square-root simplex coordinates:
+The nominal route loss uses root-simplex coordinates:
 
 \[
 \mathcal L_R
 =
 \frac{1}{2B}\sum_{n=1}^{B}
 \left\|
-\sqrt{r_t^{(n)}}-\sqrt{r_{\mathrm{ref}}^{(n)}}
+\sqrt{r_s^{(n)}}-\sqrt{r_{\mathrm{ref}}^{(n)}}
 \right\|_2^2.
 \]
 
-### 6.2 Functional route transport
+### 6.2 Common functional host cost
 
-The frozen host-cost matrix is
+Let \(d_z\) be the host-output dimension. The unnormalized cost is
+
+\[
+\widetilde C_{hk}
+=
+\frac{1}{d_z}
+\mathbb E_x
+\left[
+\left\|g_h(P(x))-g_k(P(x))\right\|_2^2
+\right].
+\]
+
+The common cost used by every treatment is median-normalized:
 
 \[
 C^\star_{hk}
 =
-\mathbb E_x
-\frac{\|g_h(P(x))-g_k(P(x))\|_2^2}{d_M}.
+\frac{\widetilde C_{hk}}
+{\operatorname{median}_{i<j}\widetilde C_{ij}},
+\qquad C^\star_{hh}=0.
 \]
 
-For paired routes, the functional transport loss is
+### 6.3 Paired functional transport
 
 \[
 \mathcal L_F
 =
 \frac{1}{B}\sum_{n=1}^{B}
-\operatorname{OT}_{C^\star}
-\left(r_t^{(n)},r_{\mathrm{ref}}^{(n)}\right).
+\operatorname{OT}_{C^\star,\epsilon_r}
+\left(r_s^{(n)},r_{\mathrm{ref}}^{(n)}\right),
 \]
 
-This penalizes movement between functionally dissimilar hosts more than movement between redundant hosts.
+with route Sinkhorn regularization
 
-### 6.3 Latent and output preservation
+\[
+\epsilon_r=0.05,
+\qquad K_r=100\text{ iterations}.
+\]
+
+### 6.4 Latent and output preservation
 
 \[
 \mathcal L_Z
 =
 \frac{1}{B}\sum_n
-\|z_{M,t}^{(n)}-z_{M,\mathrm{ref}}^{(n)}\|_2^2,
+\left\|z_{M,s}^{(n)}-z_{M,\mathrm{ref}}^{(n)}\right\|_2^2,
 \]
 
 \[
 \mathcal L_Y
 =
-T^2\operatorname{KL}
+T_d^2
+\operatorname{KL}
 \left(
-\operatorname{softmax}(\ell_{\mathrm{ref}}/T)
+\operatorname{softmax}(\ell_{\mathrm{ref}}/T_d)
 \;\|\;
-\operatorname{softmax}(\ell_t/T)
+\operatorname{softmax}(\ell_s/T_d)
+\right),
+\]
+
+where
+
+\[
+T_d=2.0,
+\qquad \tau_{\mathrm{route}}=1.0.
+\]
+
+## 7. Pre-pilot gradient-scale calibration
+
+Equal scalar coefficients do not imply equal optimization pressure. Before the five-seed pilot, one development calibration is mandatory.
+
+The calibration uses:
+
+- model seed 0;
+- the development data profile;
+- eight preregistered probe batches;
+- the same linear router and frozen ecosystem;
+- identical old-memory examples for both losses.
+
+After inducing limited current-task drift, the notebook measures unweighted router-gradient norms
+
+\[
+g_R=\operatorname{median}\|\nabla_\theta\mathcal L_R\|_2,
+\qquad
+g_F=\operatorname{median}\|\nabla_\theta\mathcal L_F\|_2.
+\]
+
+The route-anchor coefficient is fixed at
+
+\[
+\lambda_R=0.5.
+\]
+
+The functional coefficient is proposed once as
+
+\[
+\lambda_F
+=
+\operatorname{clip}
+\left(
+\lambda_R\frac{g_R}{g_F},
+0.05,
+2.0
 \right).
 \]
 
-M4 combines functional transport, latent preservation, and output distillation. The joint objective is a stronger memory treatment, not a claim that all components are necessary.
+The calibration report, selected \(\lambda_F\), and its SHA-256 checksum must be committed to the YAML before the pilot. Pilot and qualification profiles refuse to start while calibration status is not `locked`. Coefficients are never adapted during the pilot.
 
-## 7. Distributional transport
+## 8. Distributional transport
 
-For an old angle \(u\), let
-
-\[
-\mu_{u,t}=\frac{1}{N}\sum_{n=1}^{N}\delta_{r_t(x_n,u)}.
-\]
-
-The distributional memory movement between stages is
+For angle \(a\) after stage \(s\), define the empirical route law
 
 \[
-\mathcal T_{u}^{t-1\to t}
+\mu_{a,s}
 =
-\inf_{\gamma\in\Pi(\mu_{u,t-1},\mu_{u,t})}
-\sum_{ij}\gamma_{ij}
-\,d_{C^\star}(r_i,r_j).
+\frac{1}{N}\sum_{n=1}^{N}
+\delta_{r_s(x_n,a)}.
 \]
 
-This measure does not require source-by-source matching. It asks whether the whole route distribution moved, complementing paired drift.
-
-## 8. Route-path diagnostics
-
-For an old regime \(u\), let \(\mu_{u,s}\) denote its route distribution after stage \(s\). The cumulative path length is
+The inner functional ground cost is
 
 \[
-L_u=\sum_{s=u+1}^{T}d_F(\mu_{u,s-1},\mu_{u,s}),
+D^{(r)}_{ij}
+=
+\operatorname{OT}_{C^\star,\epsilon_r}(r_i,r_j).
 \]
 
-and the endpoint drift is
+The outer cloud transport is
 
 \[
-D_u=d_F(\mu_{u,u},\mu_{u,T}).
+\mathcal T_a^{s-1\rightarrow s}
+=
+\operatorname{OT}_{D^{(r)},\epsilon_c}
+\left(\mu_{a,s-1},\mu_{a,s}\right),
 \]
 
-The path-excess ratio is
+with
 
 \[
-E_u=\frac{L_u}{D_u+\varepsilon}.
+\epsilon_c=0.05,
+\qquad K_c=100\text{ iterations}.
 \]
 
-A large \(E_u\) indicates oscillatory or wasteful memory motion: the route moved far during learning even if the final endpoint returned near its origin.
+This complements source-matched drift. It does not prove optimal transport optimality or identify a unique causal transport plan.
 
-## 9. Compiled memory diagnostic
+## 9. Regularized route-path diagnostics
 
-The reconstructive memory stores exact per-source route-function traces. A smaller compiled memory stores a Gaussian summary of the square-root routes:
+For angle \(a\), the accumulated regularized path cost is
 
 \[
-q_u=\mathcal N(m_u,\Sigma_u),
+L_a
+=
+\sum_{s=\tau(a)+1}^{T}
+\delta_F\left(\mu_{a,s-1},\mu_{a,s}\right),
+\]
+
+and the direct endpoint cost is
+
+\[
+D_a
+=
+\delta_F\left(\mu_{a,\tau(a)},\mu_{a,T}\right),
+\]
+
+where \(\delta_F\) is the entropically regularized functional transport dissimilarity used by the implementation.
+
+The reported ratio is
+
+\[
+E_a
+=
+\frac{L_a}{D_a+\varepsilon}.
+\]
+
+This is a **path-to-endpoint regularized cost ratio**, not a geodesic excess. Because raw entropic OT is not guaranteed to be a metric, \(E_a\ge 1\) is not guaranteed and values below one are possible. The quantity is used only as a comparative diagnostic under an identical computation rule.
+
+## 10. Compiled-memory diagnostic
+
+For the root routes \(y=\sqrt r\), the covariance-aware summary is
+
+\[
+q_a^{\mathrm{cov}}
+=
+\mathcal N(m_a,\Sigma_a),
 \qquad
-m_u=\mathbb E[\sqrt r],
+m_a=\mathbb E[y].
+\]
+
+The single preregistered baseline is the trace-matched isotropic Gaussian
+
+\[
+q_a^{\mathrm{iso}}
+=
+\mathcal N(m_a,\sigma_a^2 I),
 \qquad
-\Sigma_u=\operatorname{Cov}(\sqrt r)+\epsilon I.
+\sigma_a^2
+=
+\frac{1}{d_r}\operatorname{tr}(\Sigma_a).
 \]
 
-The diagnostic compares held-out negative log-likelihood under:
-
-1. an isotropic or barycenter-only summary;
-2. the covariance-aware compiled summary.
-
-This is a compression diagnostic only. It does not replace replay in the primary v1.1.3 experiment.
-
-## 10. Primary contrasts and gates
-
-### Primary contrast A: M3 versus M2
-
-Does functional transport preserve old functional state better than nominal route anchoring?
-
-Primary gate:
+The diagnostic contrast is
 
 \[
-\Delta D_F=D_F(M3)-D_F(M2)<0
+\Delta\mathrm{NLL}
+=
+\mathrm{NLL}(q^{\mathrm{cov}})
+-
+\mathrm{NLL}(q^{\mathrm{iso}}),
 \]
 
-with the upper bound of the five-seed 95% confidence interval below zero and at least four of five favorable seeds.
+where negative values favor covariance-aware compilation. This branch is diagnostic only and does not replace replay.
 
-### Primary contrast B: M4 versus M1
+## 11. Preregistered constants
 
-Does joint functional memory reduce old-angle forgetting beyond limited replay alone?
+| Element | Value |
+|---|---:|
+| Remembered identities | 64 per previous angle |
+| Identity selection | fixed split permutation, first 64 memory indices |
+| Router initialization | `model_seed + 1300` |
+| Route temperature | 1.0 |
+| Distillation temperature | 2.0 |
+| Route Sinkhorn | \(\epsilon=0.05\), 100 iterations |
+| Cloud Sinkhorn | \(\epsilon=0.05\), 100 iterations |
+| New-angle equivalence margin | 0.01 |
+| Seed confidence | 95% t interval |
+| Favorable-seed requirement | at least 4/5 |
+| Sensory acceptance floor | 0.92 |
+| Calibration seed / batches | 0 / 8 |
+| \(\lambda_R\) | 0.5 |
+| \(\lambda_F\) | locked after development calibration |
+| Profiles | development calibration / development / pilot / qualification |
 
-Primary gate:
+## 12. Contrasts, metrics, and directions
 
-\[
-\Delta F=F(M4)-F(M1)<0
-\]
+| ID | Treatment - control | Metric | Favorable direction | Role |
+|---|---|---|---|---|
+| A1 | M3 - M2 | endpoint functional drift \(D_F\) | \(<0\) | primary functional-memory gate |
+| A2 | M3 - M2 | old-angle forgetting | \(<0\) | secondary operational alignment |
+| B1 | M4 - M1 | old-angle forgetting | \(<0\) | primary retention gate |
+| B2 | M4 - M1 | path-to-endpoint cost ratio | \(<0\) | secondary path diagnostic |
+| S1 | M4 - M1 | new-angle accuracy difference | \(|\Delta|\le0.01\) | safety equivalence |
+| D1 | covariance - isotropic | held-out root-route NLL | \(<0\) | diagnostic candidate only |
 
-with the upper confidence bound below zero and at least four of five favorable seeds.
+A1 qualifies only if the upper bound of the five-seed 95% confidence interval is below zero and at least four of five seeds are favorable. B1 uses the same decision rule. A2 is reported regardless of outcome but is not substituted for A1.
 
-### Safety gates
+Mandatory safety gates are:
 
-- equal compute and identical memory budget;
-- frozen context, host bank, classifier, and \(C^\star\);
-- final-versus-original prediction identity lower bound at least 0.95;
-- new-angle accuracy within 0.01 of M1 in at least four of five seeds;
-- no full old-dataset access.
+- frozen ecosystem;
+- matched current and memory compute;
+- exact remembered-source count and no full historical access;
+- source-disjoint evaluation;
+- acquisition snapshot ordering;
+- locked pre-pilot gradient calibration;
+- prediction-identity preservation;
+- new-angle non-degradation.
 
-### Secondary gates
+Failure of a protocol-integrity gate blocks the corresponding scientific claim.
 
-- M4 reduces functional path excess versus M1;
-- covariance-aware compiled memory improves held-out root-route NLL in at least four of five seeds;
-- distributional transport agrees directionally with paired functional drift.
+## 13. Required exports
 
-## 11. Required exports
+The notebook exports:
 
-The notebook exports per-seed and aggregate evidence for:
-
-- split and memory-budget manifests;
-- context and common-bank hashes;
+- split and remembered-source manifests;
+- metric-based reconstruction acceptance and audit hashes;
+- acquisition snapshot event logs;
+- memory-information budget summary;
+- gradient calibration report and lock metadata;
+- common host-cost matrix definition and tensor;
 - staged accuracy, NLL, and forgetting;
-- paired nominal route drift;
-- paired functional drift;
-- latent drift;
-- output KL and prediction identity;
+- paired nominal and functional drift;
+- M3-versus-M2 forgetting alignment;
+- latent drift, output KL, and prediction identity;
 - distributional functional transport;
-- cumulative path length, endpoint drift, and path excess;
-- compiled-memory fit and held-out diagnostics;
-- compute counts;
-- gate summary;
-- run and claim manifests;
-- environment capture.
+- accumulated regularized path cost, endpoint cost, and ratio;
+- covariance and isotropic compiled-memory NLL;
+- aggregate seed effects and gate summary;
+- run manifest, claim manifest, and environment capture.
 
-## 12. Interpretation discipline
+## 14. Interpretation and stopping rule
 
-A successful v1.1.3 pilot would support the narrow statement that, under a fixed functional ecosystem and fixed limited-memory budget, functional transport preserves old route-function behavior better than nominal route anchoring or replay alone.
+A positive A1 result would support only:
 
-It would not establish:
+> Functional transport preserves old route-function behavior better than nominal route anchoring under matched remembered-source access and matched compute in a frozen host ecosystem.
+
+A positive B1 result would support only:
+
+> Richer joint functional memory reduces old-angle forgetting beyond replay for the same remembered identities and old-image access.
+
+Neither result answers whether context geometry can organize useful host specialization. Therefore v1.1.3 is the final fully frozen-host experiment:
+
+- if A1 or B1 passes, retain the narrow memory claim and proceed to controlled host adaptation;
+- if both fail, record the frozen-regime limit and proceed to controlled host adaptation;
+- if results are mixed, classify them as partial and still leave the fully frozen regime.
+
+No additional router, distance, or frozen-bank memory variant is planned after v1.1.3.
+
+## 15. Non-claims
+
+v1.1.3 does not establish:
 
 - mature host specialization;
 - positive backward transfer;
 - operational superiority;
-- optimality of the chosen entropic transport;
+- byte efficiency of richer memory objects;
+- optimality or metricity of entropic transport;
+- geodesic route motion;
 - a learned Riemannian manifold;
 - reinforcement-learning control;
 - quantum advantage.
-
-## 13. Roadmap after v1.1.3
-
-- **v1.1.4:** selective causal host adaptation, host contribution, recovery, and cross-seed qualification;
-- **G2.1:** explicit bottom-up host state reporting to the router;
-- **TPUT:** goal-conditioned forward-backward control after the memory and causal host layers are independently qualified.

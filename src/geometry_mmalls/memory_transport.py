@@ -151,8 +151,13 @@ def distributional_functional_transport(
 class PathStatistics:
     cumulative_length: float
     endpoint_distance: float
-    path_excess: float
+    path_to_endpoint_cost_ratio: float
     steps: int
+
+    @property
+    def path_excess(self) -> float:
+        """Backward-compatible alias; this quantity is not a geodesic excess."""
+        return self.path_to_endpoint_cost_ratio
 
 
 def functional_path_statistics(
@@ -162,7 +167,12 @@ def functional_path_statistics(
     epsilon: float = 0.05,
     iterations: int = 100,
 ) -> PathStatistics:
-    """Paired mean path length, endpoint drift, and excess across stage snapshots."""
+    """Accumulated regularized transport cost and direct endpoint cost.
+
+    The underlying entropic OT value is a regularized dissimilarity rather than
+    a guaranteed metric. Consequently, the reported ratio is not a geodesic
+    excess and is not guaranteed to be at least one.
+    """
     if len(stage_routes) < 2:
         raise ValueError("at least two stage route tensors are required")
     first_shape = stage_routes[0].shape
@@ -176,7 +186,7 @@ def functional_path_statistics(
     return PathStatistics(
         cumulative_length=total,
         endpoint_distance=endpoint,
-        path_excess=total / max(endpoint, 1e-12),
+        path_to_endpoint_cost_ratio=total / max(endpoint, 1e-12),
         steps=len(segments),
     )
 
@@ -212,6 +222,22 @@ def compile_root_gaussian(
     )
     return RootGaussianMemory(mean=mean, covariance=covariance, count=len(routes))
 
+
+
+def isotropic_root_gaussian(memory: RootGaussianMemory) -> RootGaussianMemory:
+    """Return the trace-matched isotropic baseline for a root-Gaussian memory."""
+    dimension = memory.covariance.shape[0]
+    variance = torch.trace(memory.covariance) / float(dimension)
+    covariance = variance * torch.eye(
+        dimension,
+        dtype=memory.covariance.dtype,
+        device=memory.covariance.device,
+    )
+    return RootGaussianMemory(
+        mean=memory.mean,
+        covariance=covariance,
+        count=memory.count,
+    )
 
 def root_gaussian_nll(routes: torch.Tensor, memory: RootGaussianMemory) -> torch.Tensor:
     """Average Gaussian negative log-likelihood in root-route coordinates."""

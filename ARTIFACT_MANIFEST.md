@@ -189,3 +189,18 @@ Scientific status:
 ## v1.1.3 C0
 
 Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.
+
+## v1.1.3 C0-r2 pre-pilot correction
+
+- `notebooks/Geometry_MMALS_G1_FunctionalMemoryTransport_v1_1_3.ipynb`
+- `notebooks/Geometry_MMALS_G1_FunctionalMemoryTransport_v1_1_3_C0_R2.ipynb`
+- `configs/rotated_mnist_g1_v113.yaml`
+- `docs/specs/Geometry_MMALS_G1_v1_1_3_Functional_Memory_Transport_Specification.md`
+- `docs/reports/Geometry_MMALS_G1_v1_1_3_Functional_Memory_Transport_Specification.pdf`
+- `docs/changes/Geometry_MMALS_G1_v1_1_3_C0_R1_to_C0_R2.md`
+- `docs/calibration/Geometry_MMALS_G1_v1_1_3_Gradient_Scale_Calibration_Workflow.md`
+- `src/geometry_mmalls/memory_transport.py`
+- `tests/test_memory_transport.py`
+- Build revision: `functional-memory-transport-c0-r2`
+- Empirical status: gradient calibration pending; pilot blocked
+- Tests: 59 passed
