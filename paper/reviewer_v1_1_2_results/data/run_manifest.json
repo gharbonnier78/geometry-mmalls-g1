@@ -1,0 +1,136 @@
+{
+  "notebook_version": "1.1.2",
+  "build_revision": "smooth-residual-spd-diagnostics-c0-r1",
+  "package_version": "1.1.2",
+  "git_sha": "c5106d1c7f7e99c8b6de9b1880d21c1dbe00ad6e",
+  "run_profile": "pilot",
+  "model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "context_checkpoint_hashes": {
+    "0": "994fbd92290ab0dba14d5f0f3dd615a8b77dbbf53659e986fd4cc050984cebcd",
+    "1": "69491e17d8bbca1e8038b4ba470ff9d794f19a9c4bfbade32cc0422e38b17a7f",
+    "2": "afd118c9727d830b09eda5acc9584cbdf1b657254a4d6c4512776d1d7f5fc73b",
+    "3": "e138aeac1dccf2dacf3052a2b3e417fe1b1f0e72dba61d128afa74b805801fef",
+    "4": "1a78273df8f0cd5b20db6be77d2749e52953fc601f3e1fbb795a9dd100ddffe3"
+  },
+  "common_bank_hashes": {
+    "0": "2723918549e474b0d5d36b6c2b21032f38ae20c8131242233a20642981bd744e",
+    "1": "09f1faa20a791eb178a66f4487d8b16f4d766d3f94e01771deb9fa46be542f86",
+    "2": "c6de439b1dcfa2eb59407de981d28d683212e62e7c77f749dbafcc3e212c0fc1",
+    "3": "393c9ea1c7b344037afe5934b1f09e334c31520a574e8b94be8d0fd2c29b679a",
+    "4": "482bf87b0a61449a345f74a6577f8d28422eadcd70f97c143428aafb25da2753"
+  },
+  "split_manifest": {
+    "split_seed": 0,
+    "train_sha256": "0a841b138937f6f83ec3549d225da11eb256f9baea412aaf7d4165de22482ada",
+    "test_sha256": "4212df40340e13adf6739d7728e1a223a23cc3bc3fc34218989e0603221cc138",
+    "metric_sha256": "16841cee039709f3f10731a532d0dbe03034e0cd3afda07a8df4835f43679e7a",
+    "probe_fit_sha256": "9abf4e879965047407200612abe14680a7c55959c4c09b01fe4f58a6a531e57e",
+    "probe_eval_sha256": "64417a77d57cd3400bf128081ac6f9134f556b086fc17c55e5a93da6103c817b",
+    "tangent_fit_sha256": "4fcd5c22fe224f9604c16b93d1b8ec4d2c6d2cec4a0c742789bfb40edd829b1a",
+    "causal_eval_sha256": "87bdc5033eeef29ac2b471018783da7992f0ed24d625761a9e0a38e2e74ef2f4",
+    "swap_eval_sha256": "b127b57ec515c5eef0a9d12cd9ac2b94e6ebb6b5aeeea841f3ec3f8c00a6eaed"
+  },
+  "sensory_accuracy": 0.942,
+  "methods": {
+    "r0_mlp": {
+      "type": "mlp_context_router",
+      "hidden_dim": 64,
+      "continuity_weight": 0.0,
+      "seed_offset": 100
+    },
+    "r1_linear": {
+      "type": "linear_context_router",
+      "continuity_weight": 0.0,
+      "seed_offset": 200
+    },
+    "r2_prototype_energy": {
+      "type": "prototype_energy_router",
+      "sigma_min": 0.05,
+      "spherical_kmeans_iterations": 50,
+      "continuity_weight": 0.0,
+      "seed_offset": 300
+    },
+    "r3_hybrid_energy": {
+      "type": "hybrid_directional_prototype_router",
+      "sigma_min": 0.05,
+      "spherical_kmeans_iterations": 50,
+      "prototype_weight": 1.0,
+      "directional_weight": 1.0,
+      "learnable_mixture": true,
+      "continuity_weight": 0.0,
+      "seed_offset": 400
+    },
+    "r4_smooth_residual": {
+      "type": "smooth_simplex_residual_router",
+      "sigma_min": 0.05,
+      "spherical_kmeans_iterations": 50,
+      "residual_cap": 0.35,
+      "gate_hidden_dim": 16,
+      "learnable_cap": false,
+      "continuity_weight": 0.0,
+      "seed_offset": 500
+    },
+    "r5_smooth_residual_continuity": {
+      "type": "smooth_simplex_residual_router",
+      "sigma_min": 0.05,
+      "spherical_kmeans_iterations": 50,
+      "residual_cap": 0.35,
+      "gate_hidden_dim": 16,
+      "learnable_cap": false,
+      "continuity_weight": 0.1,
+      "seed_offset": 600
+    }
+  },
+  "primary_contrasts": [
+    {
+      "treatment": "r5_smooth_residual_continuity",
+      "control": "r1_linear"
+    },
+    {
+      "treatment": "r5_smooth_residual_continuity",
+      "control": "r0_mlp"
+    },
+    {
+      "treatment": "r5_smooth_residual_continuity",
+      "control": "r3_hybrid_energy"
+    },
+    {
+      "treatment": "r5_smooth_residual_continuity",
+      "control": "r4_smooth_residual"
+    },
+    {
+      "treatment": "r4_smooth_residual",
+      "control": "r1_linear"
+    }
+  ],
+  "common_functional_metric": true,
+  "hosts_frozen_across_router_treatments": true,
+  "continuity_uses_external_factor_labels": false,
+  "spd_axis": "diagnostic_candidate_only",
+  "source_v111_results": "results/v1_1_1",
+  "verification_profile": "verification/profiles/geometry_g1_v1_1_2.yaml",
+  "warning": "The five-seed pilot is complete. R5 did not qualify on the preregistered router gates. The SPD result is diagnostic only and does not establish a learned Riemannian manifold.",
+  "timestamp": 1781569891.0659773,
+  "execution_status": "five_seed_pilot_completed",
+  "completed_model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "primary_decision": "r5_smooth_residual_router_not_qualified",
+  "diagnostic_decision": "spd_covariance_adds_value_candidate_supported",
+  "manifest_correction": {
+    "type": "metadata_only",
+    "reason": "The original claim manifest retained the pre-execution 'pilot_pending' status after all five seeds and gates completed.",
+    "numerical_results_changed": false,
+    "executed_build_revision_preserved": true
+  }
+}

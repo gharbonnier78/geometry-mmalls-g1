@@ -1,0 +1,2 @@
+# SHA256  SIZE_BYTES  PATH
+ad20a50c4888f8f0aff4de0ec4df24e25918008e56b06df4882765d4833e240f  36527791  releases/v1.1.2/Geometry_MMALS_G1_v1_1_2_Corrected_Results.zip

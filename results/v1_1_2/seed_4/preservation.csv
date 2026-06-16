@@ -1,0 +1,6 @@
+method,reference,max_abs_context_delta,max_abs_host_output_delta,mean_context_l2_delta,mean_host_l2_delta
+r1_linear,r0_mlp,0.0,0.0,0.0,0.0
+r2_prototype_energy,r0_mlp,0.0,0.0,0.0,0.0
+r3_hybrid_energy,r0_mlp,0.0,0.0,0.0,0.0
+r4_smooth_residual,r0_mlp,0.0,0.0,0.0,0.0
+r5_smooth_residual_continuity,r0_mlp,0.0,0.0,0.0,0.0

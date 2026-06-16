@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.1",
+  "version": "1.1.2",
+  "build_revision": "smooth-residual-spd-diagnostics-c0-r1",
+  "execution_status": "five_seed_pilot_completed",
+  "completed_model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "primary_treatment": "r5_smooth_residual_continuity",
+  "primary_structural_reference": "r1_linear",
+  "primary_operational_reference": "r0_mlp",
+  "primary_decision": "r5_smooth_residual_router_not_qualified",
+  "diagnostic_decision": "spd_covariance_adds_value_candidate_supported",
+  "numerical_results_changed": false,
+  "supported_claims": [
+    {
+      "claim": "context_and_common_host_bank_are_frozen_across_router_treatments",
+      "gate": "C0_context_and_common_bank_frozen",
+      "status": "PASS"
+    },
+    {
+      "claim": "router_compute_is_matched_across_treatments",
+      "gate": "C0_equal_router_compute",
+      "status": "PASS"
+    },
+    {
+      "claim": "far_route_swaps_have_larger_functional_distance_than_near_swaps",
+      "gate": "C2_route_swap_order",
+      "status": "PASS"
+    },
+    {
+      "claim": "small_causal_interventions_preserve_prediction_identity",
+      "gate": "C4_identity_preservation",
+      "status": "PASS"
+    },
+    {
+      "claim": "covariance_aware_context_geometry_reduces_stress_relative_to_centroid_only_geometry",
+      "gate": "GEO_SPD_covariance_adds_value",
+      "status": "PASS_DIAGNOSTIC_ONLY"
+    }
+  ],
+  "partial_findings": [
+    {
+      "finding": "r5_beats_r0_on_heldout_functional_order_and_stress",
+      "status": "SECONDARY_NOT_PRIMARY_QUALIFICATION",
+      "detail": "R5 versus R0 held-out functional rho +0.049574 with 95% seed interval [0.024319, 0.074828]; functional stress -0.039398 with interval [-0.059165, -0.019631]."
+    },
+    {
+      "finding": "r5_matches_but_does_not_robustly_improve_on_r1",
+      "status": "PRIMARY_CONTRAST_NON_QUALIFYING",
+      "detail": "R5 versus R1 held-out functional rho +0.010886 with interval [-0.048685, 0.070456]; functional stress -0.017859 with interval [-0.067115, 0.031396]."
+    },
+    {
+      "finding": "continuity_repair_succeeds_relative_to_r3_but_not_robustly_relative_to_r1",
+      "status": "MECHANISTIC_REPAIR_ONLY",
+      "detail": "R5 reduces held-out functional q95 by 1.675537 on average relative to R3, but the R5-R1 q95 interval crosses the preregistered tolerance."
+    }
+  ],
+  "failed_or_unqualified_claims": [
+    {
+      "claim": "heldout_functional_stress_reduction_vs_r1",
+      "gate": "C1_heldout_functional_stress_reduction",
+      "status": "FAIL"
+    },
+    {
+      "claim": "heldout_functional_order_improvement_vs_r1",
+      "gate": "C1_heldout_functional_order",
+      "status": "FAIL"
+    },
+    {
+      "claim": "local_continuity_non_degradation_vs_r1",
+      "gate": "C1_local_continuity_non_degradation",
+      "status": "FAIL"
+    },
+    {
+      "claim": "functional_causal_specificity",
+      "gate": "C4_functional_causal_specificity",
+      "status": "FAIL"
+    },
+    {
+      "claim": "operational_non_degradation_vs_r0",
+      "gate": "C6_operational_non_degradation",
+      "status": "FAIL"
+    }
+  ],
+  "not_tested_or_not_claimed": [
+    {
+      "claim": "mature_host_specialization",
+      "gate": "C3_mature_host_specialization",
+      "status": "NOT_TESTED_HOSTS_FROZEN"
+    },
+    {
+      "claim": "memory_transport",
+      "gate": "C5_memory_transport",
+      "status": "NOT_IMPLEMENTED"
+    },
+    {
+      "claim": "operational_superiority",
+      "gate": "operational_superiority",
+      "status": "NOT_PREREGISTERED_AS_PRIMARY"
+    },
+    {
+      "claim": "learned_riemannian_manifold",
+      "status": "NOT_CLAIMED"
+    },
+    {
+      "claim": "quantum_advantage",
+      "status": "NOT_CLAIMED"
+    }
+  ],
+  "non_claims": [
+    "operational_superiority",
+    "mature_host_specialization",
+    "memory_transport",
+    "full_multiobjective_energy_control",
+    "reinforcement_learning_control",
+    "riemannian_manifold",
+    "quantum_advantage"
+  ]
+}

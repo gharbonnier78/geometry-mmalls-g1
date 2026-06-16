@@ -1,0 +1,319 @@
+{
+  "schema_version": "0.2.1",
+  "rules": [
+    {
+      "id": "ZIP_SAFE_PATHS",
+      "status": "PASS",
+      "message": "ZIP extraction completed without unsafe paths.",
+      "evidence": {
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "RESULTS_PRESENT",
+      "status": "PASS",
+      "message": "A results manifest or gate summary is present.",
+      "evidence": {
+        "run_manifest": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+        "gate_summary": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "RUN_MANIFEST",
+      "status": "PASS",
+      "message": "Run manifest parsed.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+        "keys": [
+          "build_revision",
+          "common_bank_hashes",
+          "common_functional_metric",
+          "completed_model_seeds",
+          "context_checkpoint_hashes",
+          "continuity_uses_external_factor_labels",
+          "diagnostic_decision",
+          "execution_status",
+          "git_sha",
+          "hosts_frozen_across_router_treatments",
+          "manifest_correction",
+          "methods",
+          "model_seeds",
+          "notebook_version",
+          "package_version",
+          "primary_contrasts",
+          "primary_decision",
+          "run_profile",
+          "sensory_accuracy",
+          "source_v111_results",
+          "spd_axis",
+          "split_manifest",
+          "timestamp",
+          "verification_profile",
+          "warning"
+        ],
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "CLAIM_MANIFEST",
+      "status": "PASS",
+      "message": "Claim manifest parsed.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/claim_manifest.json",
+        "keys": [
+          "build_revision",
+          "completed_model_seeds",
+          "diagnostic_decision",
+          "execution_status",
+          "failed_or_unqualified_claims",
+          "non_claims",
+          "not_tested_or_not_claimed",
+          "numerical_results_changed",
+          "partial_findings",
+          "primary_decision",
+          "primary_operational_reference",
+          "primary_structural_reference",
+          "primary_treatment",
+          "schema_version",
+          "supported_claims",
+          "version"
+        ],
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "SEED_COUNT",
+      "status": "PASS",
+      "message": "Detected 5 model seeds; minimum is 5.",
+      "evidence": {
+        "seed_count": 5,
+        "minimum": 5,
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "PDF_PARSE",
+      "status": "PASS",
+      "message": "Execution PDF has 47 pages.",
+      "evidence": {
+        "path": "/mnt/data/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf",
+        "sha256": "0ac551f887fed3555ad5739e0321b55ab64f6e48a472d17b9219942fd317c2ff",
+        "page_count": 47,
+        "metadata": {
+          "/Producer": "pypdf"
+        },
+        "text_length": 91168,
+        "contains_traceback": false,
+        "contains_completed_seeds": true,
+        "contains_export_marker": true,
+        "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]",
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "PDF_NO_TRACEBACK",
+      "status": "PASS",
+      "message": "No Python traceback detected.",
+      "evidence": {
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "PDF_EXECUTION_MARKERS",
+      "status": "PASS",
+      "message": "Completed-seed and export markers checked.",
+      "evidence": {
+        "completed_seeds": true,
+        "export_marker": true,
+        "line": "Completed seeds: [0, 1, 2, 3, 4]",
+        "severity": "major"
+      }
+    },
+    {
+      "id": "MATCHED_COMPUTE",
+      "status": "PASS",
+      "message": "Matched compute checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/compute_summary.csv",
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "FROZEN_CONTEXT",
+      "status": "PASS",
+      "message": "Frozen-context audit checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/preservation.csv",
+        "max_abs_context_delta": 0.0,
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "SOURCE_PARTITION_SEPARATION",
+      "status": "PASS",
+      "message": "Partition hashes checked for accidental identity.",
+      "evidence": {
+        "hash_count": 8,
+        "unique_count": 8,
+        "severity": "critical"
+      }
+    },
+    {
+      "id": "CLAIM_MANIFEST_FRESHNESS",
+      "status": "PASS",
+      "message": "Claim state compared with execution evidence.",
+      "evidence": {
+        "claim_status": null,
+        "severity": "major"
+      }
+    },
+    {
+      "id": "ARCHIVE_HYGIENE",
+      "status": "PASS",
+      "message": "Archive hygiene checked.",
+      "evidence": {
+        "dirty_count": 0,
+        "examples": [],
+        "severity": "minor"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C0_context_and_common_bank_frozen",
+      "status": "PASS",
+      "message": "Imported experiment gate C0_context_and_common_bank_frozen.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "protocol_integrity"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C0_equal_router_compute",
+      "status": "PASS",
+      "message": "Imported experiment gate C0_equal_router_compute.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "protocol_integrity"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C1_heldout_functional_stress_reduction",
+      "status": "FAIL",
+      "message": "Imported experiment gate C1_heldout_functional_stress_reduction.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C1_heldout_functional_order",
+      "status": "FAIL",
+      "message": "Imported experiment gate C1_heldout_functional_order.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C1_local_continuity_non_degradation",
+      "status": "FAIL",
+      "message": "Imported experiment gate C1_local_continuity_non_degradation.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C2_route_swap_order",
+      "status": "PASS",
+      "message": "Imported experiment gate C2_route_swap_order.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C4_functional_causal_specificity",
+      "status": "FAIL",
+      "message": "Imported experiment gate C4_functional_causal_specificity.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C4_identity_preservation",
+      "status": "PASS",
+      "message": "Imported experiment gate C4_identity_preservation.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C6_operational_non_degradation",
+      "status": "FAIL",
+      "message": "Imported experiment gate C6_operational_non_degradation.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "equivalence_not_superiority"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::GEO_SPD_covariance_adds_value",
+      "status": "PASS",
+      "message": "Imported experiment gate GEO_SPD_covariance_adds_value.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "diagnostic_candidate_only"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C3_mature_host_specialization",
+      "status": "NOT_TESTED",
+      "message": "Imported experiment gate C3_mature_host_specialization.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "not_tested_hosts_frozen"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C5_memory_transport",
+      "status": "NOT_TESTED",
+      "message": "Imported experiment gate C5_memory_transport.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "not_implemented"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::operational_superiority",
+      "status": "NOT_TESTED",
+      "message": "Imported experiment gate operational_superiority.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "not_preregistered_as_primary"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C1_heldout_functional_mediation_common_cost",
+      "status": "FAIL",
+      "message": "Canonical gate C1_heldout_functional_mediation_common_cost mapped from C1_heldout_functional_order.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only",
+        "mapped_from": "C1_heldout_functional_order"
+      }
+    },
+    {
+      "id": "EXPERIMENT_GATE::C1_local_continuity_tail",
+      "status": "FAIL",
+      "message": "Canonical gate C1_local_continuity_tail mapped from C1_local_continuity_non_degradation.",
+      "evidence": {
+        "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "status": "candidate_only",
+        "mapped_from": "C1_local_continuity_non_degradation"
+      }
+    }
+  ]
+}

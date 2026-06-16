@@ -1,0 +1,242 @@
+[33mc5106d1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m release: archive Geometry-MMALS G1 v1.1.1 results and introduce the v1.1.2 smooth-residual/SPD program
+ ARTIFACT_MANIFEST.md                               |     19 [32m+[m
+ CHANGELOG.md                                       |     19 [32m+[m
+ CITATION.cff                                       |      2 [32m+[m[31m-[m
+ DELTA_APPLY_README.md                              |     35 [32m+[m
+ DELTA_FILE_INDEX.csv                               |    264 [32m+[m
+ DELTA_MANIFEST.json                                |     23 [32m+[m
+ EXCLUDED_LARGE_EVIDENCE_SHA256SUMS.txt             |      7 [32m+[m
+ README.md                                          |     17 [32m+[m
+ SHA256SUMS                                         |    267 [32m+[m[31m-[m
+ configs/rotated_mnist_g1_v111.yaml                 |      6 [32m+[m[31m-[m
+ configs/rotated_mnist_g1_v112.yaml                 |    226 [32m+[m
+ docs/CLAIMS_AND_GATES.md                           |     13 [32m+[m
+ docs/STATUS.md                                     |     17 [32m+[m
+ docs/V1_1_1_BUILD_VALIDATION.json                  |      9 [32m+[m[31m-[m
+ docs/V1_1_2_BUILD_VALIDATION.json                  |     13 [32m+[m
+ ..._v1_1_1_Optional_Verification_Dependency_Fix.md |     71 [32m+[m
+ ...etry_MMALS_G1_v1_1_1_to_v1_1_2_Release_Notes.md |     24 [32m+[m
+ .../Geometry_MMALS_G1_BridgeIsolation_v1_1_1.pdf   |    Bin [31m0[m -> [32m219228[m bytes
+ ...G1_v1_1_1_Bridge_Isolation_Reviewer_Results.pdf |    Bin [31m0[m -> [32m521775[m bytes
+ ...G1_v1_1_2_Smooth_Residual_SPD_Specification.pdf |    Bin [31m0[m -> [32m303574[m bytes
+ ..._G1_v1_1_2_Smooth_Residual_SPD_Specification.md |    129 [32m+[m
+ .../Geometry_MMALS_G1_BridgeIsolation_v1_1_1.ipynb |      7 [32m+[m[31m-[m
+ ...try_MMALS_G1_BridgeIsolation_v1_1_1_FIXED.ipynb |   1404 [32m+[m
+ ...ometry_MMALS_G1_SmoothResidual_SPD_v1_1_2.ipynb |   1748 [32m+[m
+ paper/reviewer_v1_1_1_corrected/README.md          |     21 [32m+[m
+ .../data/MANIFEST_CORRECTION.md                    |     16 [32m+[m
+ .../data/aggregate_method_summary.csv              |     13 [32m+[m
+ .../data/aggregate_seed_effects.csv                |     41 [32m+[m
+ .../data/allocation_territory.csv                  |    881 [32m+[m
+ .../data/causal_mediation_summary.csv              |    101 [32m+[m
+ .../data/causal_seed_summary.csv                   |     21 [32m+[m
+ .../data/claim_manifest.json                       |     58 [32m+[m
+ .../data/common_bank_stage_logs.csv                |     26 [32m+[m
+ .../data/compute_summary.csv                       |     21 [32m+[m
+ .../data/context_pretraining_stage_logs.csv        |     26 [32m+[m
+ .../reviewer_v1_1_1_corrected/data/environment.txt |      1 [32m+[m
+ .../reviewer_v1_1_1_corrected/data/forgetting.csv  |    101 [32m+[m
+ .../data/gate_summary.csv                          |     13 [32m+[m
+ .../data/host_ablation.csv                         |    881 [32m+[m
+ .../data/host_overlap_and_cost.csv                 |    321 [32m+[m
+ .../data/local_continuity_raw.csv                  | 230401 [32m++++++++++++++++++[m
+ .../data/local_continuity_summary.csv              |     81 [32m+[m
+ .../data/mediation_probe_controls.csv              |     81 [32m+[m
+ .../data/paired_route_geometry_effects.csv         |    201 [32m+[m
+ .../data/per_seed_method_summary.csv               |     21 [32m+[m
+ .../data/perturbation_sensitivity.csv              |   8481 [32m+[m
+ .../data/preservation.csv                          |     16 [32m+[m
+ .../data/route_geometry.csv                        |    161 [32m+[m
+ .../data/route_swap_effects.csv                    | 144161 [32m+++++++++++[m
+ .../data/route_swap_summary.csv                    |     41 [32m+[m
+ .../data/router_initialization.csv                 |     21 [32m+[m
+ .../data/routing_stage_logs.csv                    |    101 [32m+[m
+ .../data/run_manifest.json                         |    148 [32m+[m
+ .../data/sensory_history.csv                       |      3 [32m+[m
+ .../data/staged_evaluation.csv                     |   1101 [32m+[m
+ .../figures/causal_csr.pdf                         |    Bin [31m0[m -> [32m16638[m bytes
+ .../figures/causal_csr.png                         |    Bin [31m0[m -> [32m79608[m bytes
+ .../figures/continuity_q95.pdf                     |    Bin [31m0[m -> [32m15849[m bytes
+ .../figures/continuity_q95.png                     |    Bin [31m0[m -> [32m69046[m bytes
+ .../figures/heldout_effect_forest.pdf              |    Bin [31m0[m -> [32m24836[m bytes
+ .../figures/heldout_effect_forest.png              |    Bin [31m0[m -> [32m58067[m bytes
+ .../figures/heldout_stress_forest.pdf              |    Bin [31m0[m -> [32m24695[m bytes
+ .../figures/heldout_stress_forest.png              |    Bin [31m0[m -> [32m62134[m bytes
+ .../figures/operational_summary.pdf                |    Bin [31m0[m -> [32m23622[m bytes
+ .../figures/operational_summary.png                |    Bin [31m0[m -> [32m89490[m bytes
+ .../figures/probe_controls.pdf                     |    Bin [31m0[m -> [32m18202[m bytes
+ .../figures/probe_controls.png                     |    Bin [31m0[m -> [32m63941[m bytes
+ .../figures/route_swap_order.pdf                   |    Bin [31m0[m -> [32m19022[m bytes
+ .../figures/route_swap_order.png                   |    Bin [31m0[m -> [32m82238[m bytes
+ .../figures/simplex_trajectories_seed0.pdf         |    Bin [31m0[m -> [32m29337[m bytes
+ .../figures/simplex_trajectories_seed0.png         |    Bin [31m0[m -> [32m144803[m bytes
+ .../figures_contact_sheet.png                      |    Bin [31m0[m -> [32m344676[m bytes
+ paper/reviewer_v1_1_1_corrected/main.pdf           |    Bin [31m0[m -> [32m521775[m bytes
+ paper/reviewer_v1_1_1_corrected/main.tex           |    548 [32m+[m
+ paper/specification_v1_1_2/README.md               |      1 [32m+[m
+ .../figures/continuity_q95.pdf                     |    Bin [31m0[m -> [32m15849[m bytes
+ .../figures/heldout_effect_forest.pdf              |    Bin [31m0[m -> [32m24836[m bytes
+ .../figures/route_swap_order.pdf                   |    Bin [31m0[m -> [32m19022[m bytes
+ paper/specification_v1_1_2/main.pdf                |    Bin [31m0[m -> [32m303574[m bytes
+ paper/specification_v1_1_2/main.tex                |    138 [32m+[m
+ paper/specification_v1_1_2/specification.md        |    129 [32m+[m
+ pyproject.toml                                     |      6 [32m+[m[31m-[m
+ ...1_Bridge_Isolation_Reviewer_LaTeX_CORRECTED.zip |    Bin [31m0[m -> [32m13210508[m bytes
+ ...1_2_Smooth_Residual_SPD_Specification_LaTeX.zip |    Bin [31m0[m -> [32m342863[m bytes
+ requirements-verification.txt                      |      1 [32m+[m
+ results/v1_1_1/MANIFEST_CORRECTION.md              |     16 [32m+[m
+ results/v1_1_1/aggregate_method_summary.csv        |     13 [32m+[m
+ results/v1_1_1/aggregate_seed_effects.csv          |     41 [32m+[m
+ results/v1_1_1/allocation_territory.csv            |    881 [32m+[m
+ results/v1_1_1/causal_mediation_summary.csv        |    101 [32m+[m
+ results/v1_1_1/causal_seed_summary.csv             |     21 [32m+[m
+ results/v1_1_1/claim_manifest.json                 |     58 [32m+[m
+ results/v1_1_1/common_bank_stage_logs.csv          |     26 [32m+[m
+ results/v1_1_1/compute_summary.csv                 |     21 [32m+[m
+ results/v1_1_1/context_pretraining_stage_logs.csv  |     26 [32m+[m
+ results/v1_1_1/environment.txt                     |      1 [32m+[m
+ results/v1_1_1/forgetting.csv                      |    101 [32m+[m
+ results/v1_1_1/gate_summary.csv                    |     13 [32m+[m
+ results/v1_1_1/host_ablation.csv                   |    881 [32m+[m
+ results/v1_1_1/host_overlap_and_cost.csv           |    321 [32m+[m
+ results/v1_1_1/local_continuity_raw.csv            | 230401 [32m++++++++++++++++++[m
+ results/v1_1_1/local_continuity_summary.csv        |     81 [32m+[m
+ results/v1_1_1/mediation_probe_controls.csv        |     81 [32m+[m
+ results/v1_1_1/paired_route_geometry_effects.csv   |    201 [32m+[m
+ results/v1_1_1/per_seed_method_summary.csv         |     21 [32m+[m
+ results/v1_1_1/perturbation_sensitivity.csv        |   8481 [32m+[m
+ results/v1_1_1/preservation.csv                    |     16 [32m+[m
+ results/v1_1_1/route_geometry.csv                  |    161 [32m+[m
+ results/v1_1_1/route_swap_effects.csv              | 144161 [32m+++++++++++[m
+ results/v1_1_1/route_swap_summary.csv              |     41 [32m+[m
+ results/v1_1_1/router_initialization.csv           |     21 [32m+[m
+ results/v1_1_1/routing_stage_logs.csv              |    101 [32m+[m
+ results/v1_1_1/run_manifest.json                   |    148 [32m+[m
+ results/v1_1_1/seed_0/allocation_territory.csv     |    177 [32m+[m
+ results/v1_1_1/seed_0/causal_mediation_raw.csv     |   2121 [32m+[m
+ results/v1_1_1/seed_0/causal_mediation_summary.csv |     21 [32m+[m
+ results/v1_1_1/seed_0/checkpoint_hashes.json       |      4 [32m+[m
+ results/v1_1_1/seed_0/common_bank_stage_logs.csv   |      6 [32m+[m
+ results/v1_1_1/seed_0/common_host_cost_matrix.pt   |    Bin [31m0[m -> [32m1817[m bytes
+ .../seed_0/context_pretraining_stage_logs.csv      |      6 [32m+[m
+ results/v1_1_1/seed_0/forgetting.csv               |     21 [32m+[m
+ results/v1_1_1/seed_0/host_ablation.csv            |    177 [32m+[m
+ results/v1_1_1/seed_0/host_overlap_and_cost.csv    |     65 [32m+[m
+ results/v1_1_1/seed_0/local_continuity_raw.csv     |  46081 [32m++++[m
+ results/v1_1_1/seed_0/mediation_probe_controls.csv |     17 [32m+[m
+ results/v1_1_1/seed_0/method_summary.csv           |      5 [32m+[m
+ .../seed_0/paired_route_geometry_effects.csv       |     41 [32m+[m
+ results/v1_1_1/seed_0/perturbation_sensitivity.csv |   1697 [32m+[m
+ results/v1_1_1/seed_0/preservation.csv             |      4 [32m+[m
+ results/v1_1_1/seed_0/route_geometry.csv           |     33 [32m+[m
+ results/v1_1_1/seed_0/route_swap_effects.csv       |  28833 [32m+++[m
+ results/v1_1_1/seed_0/router_initialization.csv    |      5 [32m+[m
+ results/v1_1_1/seed_0/routing_stage_logs.csv       |     21 [32m+[m
+ results/v1_1_1/seed_0/staged_evaluation.csv        |    221 [32m+[m
+ results/v1_1_1/seed_1/allocation_territory.csv     |    177 [32m+[m
+ results/v1_1_1/seed_1/causal_mediation_raw.csv     |   2121 [32m+[m
+ results/v1_1_1/seed_1/causal_mediation_summary.csv |     21 [32m+[m
+ results/v1_1_1/seed_1/checkpoint_hashes.json       |      4 [32m+[m
+ results/v1_1_1/seed_1/common_bank_stage_logs.csv   |      6 [32m+[m
+ results/v1_1_1/seed_1/common_host_cost_matrix.pt   |    Bin [31m0[m -> [32m1817[m bytes
+ .../seed_1/context_pretraining_stage_logs.csv      |      6 [32m+[m
+ results/v1_1_1/seed_1/forgetting.csv               |     21 [32m+[m
+ results/v1_1_1/seed_1/host_ablation.csv            |    177 [32m+[m
+ results/v1_1_1/seed_1/host_overlap_and_cost.csv    |     65 [32m+[m
+ results/v1_1_1/seed_1/local_continuity_raw.csv     |  46081 [32m++++[m
+ results/v1_1_1/seed_1/mediation_probe_controls.csv |     17 [32m+[m
+ results/v1_1_1/seed_1/method_summary.csv           |      5 [32m+[m
+ .../seed_1/paired_route_geometry_effects.csv       |     41 [32m+[m
+ results/v1_1_1/seed_1/perturbation_sensitivity.csv |   1697 [32m+[m
+ results/v1_1_1/seed_1/preservation.csv             |      4 [32m+[m
+ results/v1_1_1/seed_1/route_geometry.csv           |     33 [32m+[m
+ results/v1_1_1/seed_1/route_swap_effects.csv       |  28833 [32m+++[m
+ results/v1_1_1/seed_1/router_initialization.csv    |      5 [32m+[m
+ results/v1_1_1/seed_1/routing_stage_logs.csv       |     21 [32m+[m
+ results/v1_1_1/seed_1/staged_evaluation.csv        |    221 [32m+[m
+ results/v1_1_1/seed_2/allocation_territory.csv     |    177 [32m+[m
+ results/v1_1_1/seed_2/causal_mediation_raw.csv     |   2121 [32m+[m
+ results/v1_1_1/seed_2/causal_mediation_summary.csv |     21 [32m+[m
+ results/v1_1_1/seed_2/checkpoint_hashes.json       |      4 [32m+[m
+ results/v1_1_1/seed_2/common_bank_stage_logs.csv   |      6 [32m+[m
+ results/v1_1_1/seed_2/common_host_cost_matrix.pt   |    Bin [31m0[m -> [32m1817[m bytes
+ .../seed_2/context_pretraining_stage_logs.csv      |      6 [32m+[m
+ results/v1_1_1/seed_2/forgetting.csv               |     21 [32m+[m
+ results/v1_1_1/seed_2/host_ablation.csv            |    177 [32m+[m
+ results/v1_1_1/seed_2/host_overlap_and_cost.csv    |     65 [32m+[m
+ results/v1_1_1/seed_2/local_continuity_raw.csv     |  46081 [32m++++[m
+ results/v1_1_1/seed_2/mediation_probe_controls.csv |     17 [32m+[m
+ results/v1_1_1/seed_2/method_summary.csv           |      5 [32m+[m
+ .../seed_2/paired_route_geometry_effects.csv       |     41 [32m+[m
+ results/v1_1_1/seed_2/perturbation_sensitivity.csv |   1697 [32m+[m
+ results/v1_1_1/seed_2/preservation.csv             |      4 [32m+[m
+ results/v1_1_1/seed_2/route_geometry.csv           |     33 [32m+[m
+ results/v1_1_1/seed_2/route_swap_effects.csv       |  28833 [32m+++[m
+ results/v1_1_1/seed_2/router_initialization.csv    |      5 [32m+[m
+ results/v1_1_1/seed_2/routing_stage_logs.csv       |     21 [32m+[m
+ results/v1_1_1/seed_2/staged_evaluation.csv        |    221 [32m+[m
+ results/v1_1_1/seed_3/allocation_territory.csv     |    177 [32m+[m
+ results/v1_1_1/seed_3/causal_mediation_raw.csv     |   2121 [32m+[m
+ results/v1_1_1/seed_3/causal_mediation_summary.csv |     21 [32m+[m
+ results/v1_1_1/seed_3/checkpoint_hashes.json       |      4 [32m+[m
+ results/v1_1_1/seed_3/common_bank_stage_logs.csv   |      6 [32m+[m
+ results/v1_1_1/seed_3/common_host_cost_matrix.pt   |    Bin [31m0[m -> [32m1817[m bytes
+ .../seed_3/context_pretraining_stage_logs.csv      |      6 [32m+[m
+ results/v1_1_1/seed_3/forgetting.csv               |     21 [32m+[m
+ results/v1_1_1/seed_3/host_ablation.csv            |    177 [32m+[m
+ results/v1_1_1/seed_3/host_overlap_and_cost.csv    |     65 [32m+[m
+ results/v1_1_1/seed_3/local_continuity_raw.csv     |  46081 [32m++++[m
+ results/v1_1_1/seed_3/mediation_probe_controls.csv |     17 [32m+[m
+ results/v1_1_1/seed_3/method_summary.csv           |      5 [32m+[m
+ .../seed_3/paired_route_geometry_effects.csv       |     41 [32m+[m
+ results/v1_1_1/seed_3/perturbation_sensitivity.csv |   1697 [32m+[m
+ results/v1_1_1/seed_3/preservation.csv             |      4 [32m+[m
+ results/v1_1_1/seed_3/route_geometry.csv           |     33 [32m+[m
+ results/v1_1_1/seed_3/route_swap_effects.csv       |  28833 [32m+++[m
+ results/v1_1_1/seed_3/router_initialization.csv    |      5 [32m+[m
+ results/v1_1_1/seed_3/routing_stage_logs.csv       |     21 [32m+[m
+ results/v1_1_1/seed_3/staged_evaluation.csv        |    221 [32m+[m
+ results/v1_1_1/seed_4/allocation_territory.csv     |    177 [32m+[m
+ results/v1_1_1/seed_4/causal_mediation_raw.csv     |   2121 [32m+[m
+ results/v1_1_1/seed_4/causal_mediation_summary.csv |     21 [32m+[m
+ results/v1_1_1/seed_4/checkpoint_hashes.json       |      4 [32m+[m
+ results/v1_1_1/seed_4/common_bank_stage_logs.csv   |      6 [32m+[m
+ results/v1_1_1/seed_4/common_host_cost_matrix.pt   |    Bin [31m0[m -> [32m1817[m bytes
+ .../seed_4/context_pretraining_stage_logs.csv      |      6 [32m+[m
+ results/v1_1_1/seed_4/forgetting.csv               |     21 [32m+[m
+ results/v1_1_1/seed_4/host_ablation.csv            |    177 [32m+[m
+ results/v1_1_1/seed_4/host_overlap_and_cost.csv    |     65 [32m+[m
+ results/v1_1_1/seed_4/local_continuity_raw.csv     |  46081 [32m++++[m
+ results/v1_1_1/seed_4/mediation_probe_controls.csv |     17 [32m+[m
+ results/v1_1_1/seed_4/method_summary.csv           |      5 [32m+[m
+ .../seed_4/paired_route_geometry_effects.csv       |     41 [32m+[m
+ results/v1_1_1/seed_4/perturbation_sensitivity.csv |   1697 [32m+[m
+ results/v1_1_1/seed_4/preservation.csv             |      4 [32m+[m
+ results/v1_1_1/seed_4/route_geometry.csv           |     33 [32m+[m
+ results/v1_1_1/seed_4/route_swap_effects.csv       |  28833 [32m+++[m
+ results/v1_1_1/seed_4/router_initialization.csv    |      5 [32m+[m
+ results/v1_1_1/seed_4/routing_stage_logs.csv       |     21 [32m+[m
+ results/v1_1_1/seed_4/staged_evaluation.csv        |    221 [32m+[m
+ results/v1_1_1/sensory_history.csv                 |      3 [32m+[m
+ results/v1_1_1/staged_evaluation.csv               |   1101 [32m+[m
+ src/geometry_mmalls/__init__.py                    |     17 [32m+[m[31m-[m
+ src/geometry_mmalls/functional_routing.py          |    127 [32m+[m
+ src/geometry_mmalls/spd_geometry.py                |     89 [32m+[m
+ src/geometry_mmalls/verification.py                |     20 [32m+[m[31m-[m
+ tatus                                              |    228 [32m+[m
+ tests/test_optional_verification_dependency.py     |     40 [32m+[m
+ tests/test_smooth_residual_v112.py                 |     34 [32m+[m
+ tests/test_spd_geometry_v112.py                    |     35 [32m+[m
+ verification/claim_rules.yaml                      |     25 [32m+[m[31m-[m
+ verification/metric_definitions.yaml               |     20 [32m+[m[31m-[m
+ ...S_Metric_Protocol_Claim_Verification_v0_2.ipynb |     13 [32m+[m[31m-[m
+ ...Metric_Protocol_Claim_Verification_v0_2_1.ipynb |    246 [32m+[m
+ verification/profiles/geometry_g1_v1_1_2.yaml      |     12 [32m+[m
+ verification/protocol_rules.yaml                   |      2 [32m+[m[31m-[m
+ .../reports/v1_1_1_corrected/claim_report.json     |    245 [32m+[m
+ .../reports/v1_1_1_corrected/evidence_bundle.json  |   1595 [32m+[m
+ .../reports/v1_1_1_corrected/metric_report.json    |    326 [32m+[m
+ .../reports/v1_1_1_corrected/protocol_report.json  |    294 [32m+[m
+ .../v1_1_1_corrected/verification_gate_summary.csv |     47 [32m+[m
+ .../v1_1_1_corrected/verification_summary.md       |     52 [32m+[m
+ 240 files changed, 1181451 insertions(+), 40 deletions(-)

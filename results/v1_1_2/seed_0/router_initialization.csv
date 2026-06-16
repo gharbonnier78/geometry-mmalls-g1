@@ -1,0 +1,7 @@
+model_seed,method,router_parameters,mean_assignment_distance,min_cluster_count,prototype_weight,directional_weight,residual_cap,learnable_cap
+0,r0_mlp,4740,,,,,,
+0,r1_linear,20,,,,,,
+0,r2_prototype_energy,24,0.2511824667453766,321.0,,,,
+0,r3_hybrid_energy,42,0.2510855197906494,322.0,1.0,1.0,,
+0,r4_smooth_residual,141,0.2484627217054367,505.0,,,0.17499999701976776,0.0
+0,r5_smooth_residual_continuity,141,0.2511824667453766,321.0,,,0.17499999701976776,0.0

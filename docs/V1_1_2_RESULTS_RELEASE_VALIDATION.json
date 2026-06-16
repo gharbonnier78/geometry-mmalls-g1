@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "release": "Geometry-MMALS G1 v1.1.2 executed-results release",
+  "scientific_version": "1.1.2",
+  "executed_build_revision": "smooth-residual-spd-diagnostics-c0-r1",
+  "execution_status": "five_seed_pilot_completed",
+  "completed_model_seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "primary_decision": "r5_smooth_residual_router_not_qualified",
+  "diagnostic_decision": "spd_covariance_adds_value_candidate_supported",
+  "numerical_results_changed_by_manifest_correction": false,
+  "reviewer_pdf": {
+    "path": "docs/reports/Geometry_MMALS_G1_v1_1_2_Smooth_Residual_SPD_Reviewer_Results.pdf",
+    "pages": 15,
+    "sha256": "5a222db9d32af2183ed9829b7638c7a1e8684247137cf8a5e1b354cb74acebd2"
+  },
+  "clean_execution_pdf": {
+    "path": "docs/execution_archives/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf",
+    "pages": 47,
+    "sha256": "0ac551f887fed3555ad5739e0321b55ab64f6e48a472d17b9219942fd317c2ff"
+  },
+  "corrected_results": {
+    "path": "results/v1_1_2",
+    "file_count": 154,
+    "corrected_results_zip_sha256": "ad20a50c4888f8f0aff4de0ec4df24e25918008e56b06df4882765d4833e240f"
+  },
+  "verification": {
+    "version": "0.2.1",
+    "report_path": "verification/reports/v1_1_2_corrected",
+    "protocol_integrity": "PASS",
+    "claim_manifest_freshness": "PASS"
+  },
+  "tests": {
+    "passed": 55,
+    "failed": 0
+  },
+  "notebook": {
+    "canonical": "notebooks/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2.ipynb",
+    "status_and_manifest_patch_integrated": true,
+    "webpdf_export_cell_integrated": true
+  },
+  "claim_gates": {
+    "C0_context_and_common_bank_frozen": "PASS",
+    "C0_equal_router_compute": "PASS",
+    "C1_heldout_functional_stress_reduction": "FAIL",
+    "C1_heldout_functional_order": "FAIL",
+    "C1_local_continuity_non_degradation": "FAIL",
+    "C2_route_swap_order": "PASS",
+    "C4_functional_causal_specificity": "FAIL",
+    "C4_identity_preservation": "PASS",
+    "C6_operational_non_degradation": "FAIL",
+    "GEO_SPD_covariance_adds_value": "PASS_DIAGNOSTIC_ONLY",
+    "C3_mature_host_specialization": "NOT_TESTED",
+    "C5_memory_transport": "NOT_TESTED",
+    "operational_superiority": "NOT_CLAIMED"
+  }
+}

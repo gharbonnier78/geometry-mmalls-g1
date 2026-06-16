@@ -1,0 +1,50 @@
+category,id,status,message
+metric,COMPUTE_SUMMARY,PASS,CSV structure checked.
+metric,GATE_SUMMARY,PASS,CSV structure checked.
+metric,AGGREGATE_SEED_EFFECTS,PASS,CSV structure checked.
+metric,AGGREGATE_METHOD_SUMMARY,PASS,CSV structure checked.
+metric,CAUSAL_SEED_SUMMARY,PASS,CSV structure checked.
+metric,HOST_OR_ALLOCATION_ABLATION,PASS,CSV structure checked.
+metric,RUN_MANIFEST_METRIC,PASS,JSON structure checked.
+metric,CLAIM_MANIFEST_METRIC,FAIL,JSON structure checked.
+metric,SPD_CONTEXT_GEOMETRY,PASS,CSV structure checked.
+metric,SPD_AGGREGATE_EFFECTS,PASS,CSV structure checked.
+protocol,ZIP_SAFE_PATHS,PASS,ZIP extraction completed without unsafe paths.
+protocol,RESULTS_PRESENT,PASS,A results manifest or gate summary is present.
+protocol,RUN_MANIFEST,PASS,Run manifest parsed.
+protocol,CLAIM_MANIFEST,PASS,Claim manifest parsed.
+protocol,SEED_COUNT,PASS,Detected 5 model seeds; minimum is 5.
+protocol,PDF_PARSE,PASS,Execution PDF has 47 pages.
+protocol,PDF_NO_TRACEBACK,PASS,No Python traceback detected.
+protocol,PDF_EXECUTION_MARKERS,PASS,Completed-seed and export markers checked.
+protocol,MATCHED_COMPUTE,PASS,Matched compute checked.
+protocol,FROZEN_CONTEXT,PASS,Frozen-context audit checked.
+protocol,SOURCE_PARTITION_SEPARATION,PASS,Partition hashes checked for accidental identity.
+protocol,CLAIM_MANIFEST_FRESHNESS,PASS,Claim state compared with execution evidence.
+protocol,ARCHIVE_HYGIENE,PASS,Archive hygiene checked.
+protocol,EXPERIMENT_GATE::C0_context_and_common_bank_frozen,PASS,Imported experiment gate C0_context_and_common_bank_frozen.
+protocol,EXPERIMENT_GATE::C0_equal_router_compute,PASS,Imported experiment gate C0_equal_router_compute.
+protocol,EXPERIMENT_GATE::C1_heldout_functional_stress_reduction,FAIL,Imported experiment gate C1_heldout_functional_stress_reduction.
+protocol,EXPERIMENT_GATE::C1_heldout_functional_order,FAIL,Imported experiment gate C1_heldout_functional_order.
+protocol,EXPERIMENT_GATE::C1_local_continuity_non_degradation,FAIL,Imported experiment gate C1_local_continuity_non_degradation.
+protocol,EXPERIMENT_GATE::C2_route_swap_order,PASS,Imported experiment gate C2_route_swap_order.
+protocol,EXPERIMENT_GATE::C4_functional_causal_specificity,FAIL,Imported experiment gate C4_functional_causal_specificity.
+protocol,EXPERIMENT_GATE::C4_identity_preservation,PASS,Imported experiment gate C4_identity_preservation.
+protocol,EXPERIMENT_GATE::C6_operational_non_degradation,FAIL,Imported experiment gate C6_operational_non_degradation.
+protocol,EXPERIMENT_GATE::GEO_SPD_covariance_adds_value,PASS,Imported experiment gate GEO_SPD_covariance_adds_value.
+protocol,EXPERIMENT_GATE::C3_mature_host_specialization,NOT_TESTED,Imported experiment gate C3_mature_host_specialization.
+protocol,EXPERIMENT_GATE::C5_memory_transport,NOT_TESTED,Imported experiment gate C5_memory_transport.
+protocol,EXPERIMENT_GATE::operational_superiority,NOT_TESTED,Imported experiment gate operational_superiority.
+protocol,EXPERIMENT_GATE::C1_heldout_functional_mediation_common_cost,FAIL,Canonical gate C1_heldout_functional_mediation_common_cost mapped from C1_heldout_functional_order.
+protocol,EXPERIMENT_GATE::C1_local_continuity_tail,FAIL,Canonical gate C1_local_continuity_tail mapped from C1_local_continuity_non_degradation.
+claim,CONTEXT_GEOMETRY,PASS,The inferred context has replicated representational geometry.
+claim,HELDOUT_NOMINAL_ROUTE_MEDIATION,NOT_TESTED,The tested router improves held-out nominal route order.
+claim,HELDOUT_FUNCTIONAL_ROUTE_MEDIATION,FAIL,The tested router improves held-out functional route order under a common cost matrix.
+claim,LOCAL_STABILITY,FAIL,The router reduces high-tail local sensitivity without route collapse.
+claim,CAUSAL_SPECIFICITY,FAIL,Factor-tangent interventions are functionally more specific than orthogonal controls.
+claim,HOST_SPECIALIZATION,NOT_TESTED,Stable functional host specialization is established.
+claim,OPERATIONAL_NON_DEGRADATION,FAIL,The routing intervention stays within the preregistered non-degradation margin.
+claim,OPERATIONAL_SUPERIORITY,NOT_TESTED,The routing intervention improves operational performance.
+claim,MEMORY_TRANSPORT,NOT_TESTED,Route-function memory transport is demonstrated.
+claim,HELDOUT_FUNCTIONAL_STRESS_REDUCTION,FAIL,The primary smooth residual treatment reduces held-out common-cost functional stress.
+claim,SPD_COVARIANCE_VALUE,PASS,Regularized covariance geometry adds factor-discrimination value beyond centroid-only context geometry.

@@ -1,0 +1,1751 @@
+{
+  "schema_version": "0.2.1",
+  "verification_version": "0.2.1",
+  "experiment_id": "geometry_g1_v1_1_2",
+  "selected_results_root": "v1_1_2",
+  "experiment_profile": "/mnt/data/work_v112_results/repo/geometry-mmalls-g1/verification/profiles/geometry_g1_v1_1_2.yaml",
+  "inputs": {
+    "execution_pdf": "/mnt/data/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf",
+    "execution_pdf_sha256": "0ac551f887fed3555ad5739e0321b55ab64f6e48a472d17b9219942fd317c2ff",
+    "results_zip": "/mnt/data/Geometry_MMALS_G1_v1_1_2_Corrected_Results.zip",
+    "results_zip_sha256": "ad20a50c4888f8f0aff4de0ec4df24e25918008e56b06df4882765d4833e240f"
+  },
+  "pdf_report": {
+    "path": "/mnt/data/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf",
+    "sha256": "0ac551f887fed3555ad5739e0321b55ab64f6e48a472d17b9219942fd317c2ff",
+    "page_count": 47,
+    "metadata": {
+      "/Producer": "pypdf"
+    },
+    "text_length": 91168,
+    "contains_traceback": false,
+    "contains_completed_seeds": true,
+    "contains_export_marker": true,
+    "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]"
+  },
+  "archive_inventory": [
+    {
+      "relative_path": "v1_1_2/MANIFEST_CORRECTION.md",
+      "size_bytes": 1116,
+      "sha256": "7451bc06a341ab8249a6275b044ea219740f46e9f04a11d1d09a59c9f746ffea"
+    },
+    {
+      "relative_path": "v1_1_2/aggregate_method_summary.csv",
+      "size_bytes": 2160,
+      "sha256": "ae5fed2823537c475d1f290f529ee8eb09b49fd664ccc1279a7b94df46ade6c4"
+    },
+    {
+      "relative_path": "v1_1_2/aggregate_seed_effects.csv",
+      "size_bytes": 6457,
+      "sha256": "515beb4ccd4881e9cabe0edb6fb1abcefbbc82450f20e39ce07841a2313af3d2"
+    },
+    {
+      "relative_path": "v1_1_2/allocation_territory.csv",
+      "size_bytes": 88961,
+      "sha256": "9613fdde3a5e66790a29170a1a7efc2cfd67c2780bd737060ecfbbe70ee20c20"
+    },
+    {
+      "relative_path": "v1_1_2/causal_mediation_summary.csv",
+      "size_bytes": 35545,
+      "sha256": "6b6955e9101347a19a24c3ceb72205ed6d81d0a22fc775b142148b3ab6c6fa26"
+    },
+    {
+      "relative_path": "v1_1_2/causal_seed_summary.csv",
+      "size_bytes": 2269,
+      "sha256": "059e117de237d8fc608d0ac0462480b37a860e761ff4c68462b1a59b2f14e6ab"
+    },
+    {
+      "relative_path": "v1_1_2/claim_manifest.json",
+      "size_bytes": 3956,
+      "sha256": "b7d350f0eb9d075b52348db3b41d180da91d300fc6798545db42f69556162d3b"
+    },
+    {
+      "relative_path": "v1_1_2/common_bank_stage_logs.csv",
+      "size_bytes": 3382,
+      "sha256": "aa1f45aa297694ab118582fb00cd1efd76d98aa5c75560e8859097b59d03188e"
+    },
+    {
+      "relative_path": "v1_1_2/compute_summary.csv",
+      "size_bytes": 1491,
+      "sha256": "4efa2abc800b077f35b8c2f4aa46587f437195f6021cadee5e829cc13f46eeb8"
+    },
+    {
+      "relative_path": "v1_1_2/context_pretraining_stage_logs.csv",
+      "size_bytes": 5568,
+      "sha256": "73d5835169f0f17809c8426a092ddeb876fa64715dc80d9b29027473308633b0"
+    },
+    {
+      "relative_path": "v1_1_2/environment.txt",
+      "size_bytes": 131,
+      "sha256": "99ee208c2b4d0dc2e9c396ce8cc441f9036f2b4549df2490c2fab2b0add33df0"
+    },
+    {
+      "relative_path": "v1_1_2/forgetting.csv",
+      "size_bytes": 7697,
+      "sha256": "d57cf662a6dac613928aebd4259029d7b76c618d19cb911f7b11ce4981d05057"
+    },
+    {
+      "relative_path": "v1_1_2/gate_summary.csv",
+      "size_bytes": 717,
+      "sha256": "4f92bf4a2db34d7e6f167b6b88969ce9778d0e6ae53d332d5def298c05428273"
+    },
+    {
+      "relative_path": "v1_1_2/host_ablation.csv",
+      "size_bytes": 113750,
+      "sha256": "df4e1b391c39aa191c032671c308597887dce44cbb8223d741ad4eeaaeaa9f06"
+    },
+    {
+      "relative_path": "v1_1_2/host_overlap_and_cost.csv",
+      "size_bytes": 24868,
+      "sha256": "b76556e3a2a7fc4e53eb8e7890b7dfa2ebba416e29cf2e4c27a61bab9af54b98"
+    },
+    {
+      "relative_path": "v1_1_2/local_continuity_raw.csv",
+      "size_bytes": 39539222,
+      "sha256": "1ffb838f6999df59a90c7d19b1b9686cf2be27553ba9cb4e7b4c9dbf24eebf48"
+    },
+    {
+      "relative_path": "v1_1_2/local_continuity_summary.csv",
+      "size_bytes": 16975,
+      "sha256": "51fab4df4c1f22fa49b5b5720d941032ee56e0e86f2a87b55a7ec293b1bc4873"
+    },
+    {
+      "relative_path": "v1_1_2/mediation_probe_controls.csv",
+      "size_bytes": 12280,
+      "sha256": "6309cc9d863a6f7c8b1088ac7f27d1d308fddd9935cfe20075aa7de02e5115e5"
+    },
+    {
+      "relative_path": "v1_1_2/paired_route_geometry_effects.csv",
+      "size_bytes": 27792,
+      "sha256": "5c2926c80d13f4283bd7142037dd5a013c7804cd12d786c817fb28c10bc4c2dd"
+    },
+    {
+      "relative_path": "v1_1_2/per_seed_method_summary.csv",
+      "size_bytes": 2178,
+      "sha256": "29d51513239ab6f62feaba4e5b8d103c83374533d7c7c57970140c314dc90009"
+    },
+    {
+      "relative_path": "v1_1_2/perturbation_sensitivity.csv",
+      "size_bytes": 935780,
+      "sha256": "12ef6635e690d0d008aa6d4a45b0ef14cbf72186242e5cbe3b248a9b8f1a4e98"
+    },
+    {
+      "relative_path": "v1_1_2/preservation.csv",
+      "size_bytes": 1161,
+      "sha256": "5c0fa945860cba0363b188a223318757556a4e910bec53a706af37cbdc46776d"
+    },
+    {
+      "relative_path": "v1_1_2/route_geometry.csv",
+      "size_bytes": 25762,
+      "sha256": "5a2ce4f56beb603db2dcbf8e23d2385384b90ce5f245610f130c310ed56b8299"
+    },
+    {
+      "relative_path": "v1_1_2/route_swap_effects.csv",
+      "size_bytes": 23292521,
+      "sha256": "b87e7b3c3b74b65a15c5e1aa612d6d6679e0fe0ab577b8463333fdd286af4080"
+    },
+    {
+      "relative_path": "v1_1_2/route_swap_summary.csv",
+      "size_bytes": 3987,
+      "sha256": "022decb1ae9b448e77cd05f484874ed96e502585c2be4636ddfb900e3f3dffb9"
+    },
+    {
+      "relative_path": "v1_1_2/router_initialization.csv",
+      "size_bytes": 1723,
+      "sha256": "341d8f25b3bb0e757df120a81c1c06ff30626115220654125ae2e62431f002ef"
+    },
+    {
+      "relative_path": "v1_1_2/routing_stage_logs.csv",
+      "size_bytes": 44455,
+      "sha256": "4de453b339ff815d935d11300aa46c5238e2380df1b1885d62f12448a4a56a49"
+    },
+    {
+      "relative_path": "v1_1_2/run_manifest.json",
+      "size_bytes": 4858,
+      "sha256": "1d267a7c155e71c437ff4c736f5dfe63e076a5c8a70a663a13097c93a225a35f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/allocation_territory.csv",
+      "size_bytes": 17818,
+      "sha256": "148bd33dcafb08c8f73ebc15c56effddd704e9bb3887ddcc773ea59c6055a51a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/causal_mediation_raw.csv",
+      "size_bytes": 526355,
+      "sha256": "485ef93d7ba71b8c68cf230d4b74280e48c56724cad852f60ac8f1d61ec159e4"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/causal_mediation_summary.csv",
+      "size_bytes": 7437,
+      "sha256": "a83c137fa2eab73bc283df623b47b8e604ee63f3b0f4fe1b534d5454e4fd39ba"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "c1f9984e35f8b651953c301dfec16601d8e846faaee4770e7e579f9e97398caa"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/common_bank_stage_logs.csv",
+      "size_bytes": 775,
+      "sha256": "0e300431a93ca32a26cdd1918be782d10df01c7002b02f1444a7cf8d3ecc364b"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "183647874971e81eaa1d6c2cec9e58d6d4e3e34ca759392a6b6a1100fb7826ea"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/context_pretraining_stage_logs.csv",
+      "size_bytes": 1252,
+      "sha256": "a7e571db8220792d2bb797b294ead52f99f7dcdcc98647601429fe4250318fdd"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/forgetting.csv",
+      "size_bytes": 1543,
+      "sha256": "b847ce334a5279d9c75961935950ab69050ad29bea018e18237cc13f336c1847"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/host_ablation.csv",
+      "size_bytes": 22818,
+      "sha256": "c686af58a8054badfc982e480b869f56a146d6ad5728c3aac11d6df59b1577d7"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/host_overlap_and_cost.csv",
+      "size_bytes": 5022,
+      "sha256": "1502909a6c32b29361159b70b07289d5e7495f224d3494458b1402780991bde8"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/local_continuity_raw.csv",
+      "size_bytes": 7909389,
+      "sha256": "9e8605de0196975277d10106cbe747703e04a2666272e4dd520f831752e47a55"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/mediation_probe_controls.csv",
+      "size_bytes": 2543,
+      "sha256": "3b126c33fae032c4c3e7c98ede03181dc9df069ed7bba250da893de072accc9f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/method_summary.csv",
+      "size_bytes": 520,
+      "sha256": "bb4b600e455c10073ad31b05738d6290f2cf857307cd6cf6c2d8637ab66b5dc5"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/paired_route_geometry_effects.csv",
+      "size_bytes": 5623,
+      "sha256": "5ee42ee0abb3e3158643a1ec4493db2e096da83ad4f74462d43d087f892696ab"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/perturbation_sensitivity.csv",
+      "size_bytes": 187391,
+      "sha256": "20e8a4b107b42b81f063f314e3feb5790ca530846d48ce95ff916f6f74f05c9e"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/preservation.csv",
+      "size_bytes": 317,
+      "sha256": "cc8addf6337fb3d1f14e2aa481be222dcde6e87e13a16c5e4f7f0a7dc85df55a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/route_geometry.csv",
+      "size_bytes": 5223,
+      "sha256": "668dc67ed5e7c632973d8a24afd006d24928f82afd98ab422018902149e2b08f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/route_swap_effects.csv",
+      "size_bytes": 4659082,
+      "sha256": "7e2e5573986ea0d4c4b25f0c3fc011c1df9254601db10c68c42929e0e66711d5"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/router_initialization.csv",
+      "size_bytes": 457,
+      "sha256": "2841d1357a19581120747759665d9503c0f3dcaa1f0e7b2a2b3a73cf11f2dbe4"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/routing_stage_logs.csv",
+      "size_bytes": 9054,
+      "sha256": "5ae8806d4d5d96bf43970134f07b5d8cb75cfc5373d508f16afee7be603d2866"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/spd_context_covariances.csv",
+      "size_bytes": 5629,
+      "sha256": "7a7609584f7ef7bf627bb4fe22d07206275d5f96a2a3e78d382ad82a0d53dbc5"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/spd_context_geometry.csv",
+      "size_bytes": 401,
+      "sha256": "624b51841d98ce36191201640afbd895657f232b24116c464b831547803a7df1"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/spd_pairwise_context_distances.csv",
+      "size_bytes": 14827,
+      "sha256": "2e20cbfd8848a31e680dcb47b8effea9b081ffe2cb72bbd0662a6944653ea71a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_0/staged_evaluation.csv",
+      "size_bytes": 20310,
+      "sha256": "87c2ed8360f755ded80338a7ce05a02d11e46a738aa7b18d5db79657afb465a0"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/allocation_territory.csv",
+      "size_bytes": 17832,
+      "sha256": "87f5e656edc04a42e7b9b0f4b39aca1efc94235b8b3d09809b7acc9ddd6c4af1"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/causal_mediation_raw.csv",
+      "size_bytes": 526399,
+      "sha256": "1c886a5f84ce8f87d0c3268de67b0d49c1760922533c4ae9a695dd3cf0861792"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/causal_mediation_summary.csv",
+      "size_bytes": 7210,
+      "sha256": "967e9a5abf9213482dd0788bc70f9602b6789fb086a6671bd1459af72043bc27"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "d74029f33c6517ed84177b48b2cdabfc4b93fe7909fe5c587cc870b6fbf36f79"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/common_bank_stage_logs.csv",
+      "size_bytes": 781,
+      "sha256": "90be22c598d9d9453f9b3fc30fc15903ab3e722e5128a9a4253d424f5fa48810"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "02e11f42d84f34d2532045b4303cfc9708a9c61be8a9c860bac63eeff003884f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/context_pretraining_stage_logs.csv",
+      "size_bytes": 1257,
+      "sha256": "e247860165dd20af98b9f86780ede14d415ed87da1db5120adc937f19c6516a3"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/forgetting.csv",
+      "size_bytes": 1520,
+      "sha256": "6f4186cb51ba581a370aa7730ee0cf9bfd054c0a550e3ada0e6ed1628b045085"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/host_ablation.csv",
+      "size_bytes": 22704,
+      "sha256": "ff7a8fa1f44390745e110ee16a9b8276a7685ac9a730f8e5743d176002b3eead"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/host_overlap_and_cost.csv",
+      "size_bytes": 5030,
+      "sha256": "832d75620adcf4f55274b089c9eb8aa76342f9905ec76f4355630c15cbfe8105"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/local_continuity_raw.csv",
+      "size_bytes": 7911518,
+      "sha256": "eb88512e36c3a8282f1e3e51ef6b7d65ab6fd3a5dbcb6235d66fa7b42cd4474f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/mediation_probe_controls.csv",
+      "size_bytes": 2541,
+      "sha256": "029ae5d0d6dcd930f9ded25e770b6eed25e3dcba77a25127068935833ea10182"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/method_summary.csv",
+      "size_bytes": 474,
+      "sha256": "e8c4024b3b7b14d2f173d5bc2e6852c9c97ed7bb51a14b801759464b8964f47e"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/paired_route_geometry_effects.csv",
+      "size_bytes": 5642,
+      "sha256": "ade1c4ceaa49f42ab49274293549f8c549f22f41f85def29eb639da71c16037f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/perturbation_sensitivity.csv",
+      "size_bytes": 187207,
+      "sha256": "448527f1623796952173da9696e6591cc04aa16812312eb4ba7d0b269c275a16"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/preservation.csv",
+      "size_bytes": 317,
+      "sha256": "cc8addf6337fb3d1f14e2aa481be222dcde6e87e13a16c5e4f7f0a7dc85df55a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/route_geometry.csv",
+      "size_bytes": 5216,
+      "sha256": "9b6c0a7ee155d3ac02ca43e899ab943b7e4adc6846e61ab5708f76e3c52cb8c5"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/route_swap_effects.csv",
+      "size_bytes": 4658964,
+      "sha256": "250ba4a1bfa29707126ec080c8c3e736cbeb06e1e395c50a1f12006f0cd0f502"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/router_initialization.csv",
+      "size_bytes": 460,
+      "sha256": "387047318180e700cee8fef4be58695e9d10ed0d35cddd024225f409521eec16"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/routing_stage_logs.csv",
+      "size_bytes": 9059,
+      "sha256": "eaaf5297e899f833c702c3ef73339f117c9d5133ade42a938710b511143c792b"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/spd_context_covariances.csv",
+      "size_bytes": 5645,
+      "sha256": "d136f8adc446de4756f89ff94159ba472464d88211e6debea1b2618266ec20e7"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/spd_context_geometry.csv",
+      "size_bytes": 382,
+      "sha256": "c6c790b4225d27cc1f4523ce49539da6c294a228d36b9d4b5eb5b555068fdcba"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/spd_pairwise_context_distances.csv",
+      "size_bytes": 14856,
+      "sha256": "32bcbc37b878e10df6ca4bf17a316a4c095d43f1695d43335cc1cc6eb7b66830"
+    },
+    {
+      "relative_path": "v1_1_2/seed_1/staged_evaluation.csv",
+      "size_bytes": 20269,
+      "sha256": "77f4d6cc2dabea480fedfd08c1fba0e337c69da1857302ca08822005946c2aab"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/allocation_territory.csv",
+      "size_bytes": 17874,
+      "sha256": "c013d4d9e677e0dad790d175c32b766d67b3ba819da1ee664ea1a545ae02d33d"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/causal_mediation_raw.csv",
+      "size_bytes": 524892,
+      "sha256": "e0230589f111b8a47d75cb5146d693107b1588c696aa377c8fa264892ea0c4fb"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/causal_mediation_summary.csv",
+      "size_bytes": 7311,
+      "sha256": "249f2779d25dbcc868de794c4f0c0871b766b64123ea084bc4ff654e977a7a5a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "1c86f738cff55598453dab350acc148568e383bceaf8431af52f8a65e510d4e6"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/common_bank_stage_logs.csv",
+      "size_bytes": 779,
+      "sha256": "553d01975c17ff3eda90f19f03c1d965def41ae8870a651b8f9308a0c385e0e8"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "04dad7f6823cfde905c5d72db12eb70ece10a358427ef694ca6600d4a7ed2a8f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/context_pretraining_stage_logs.csv",
+      "size_bytes": 1253,
+      "sha256": "7ba9e47a2ebbba730a31268d93e38c989d86f6cad4c18651f6bc90dec4da06db"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/forgetting.csv",
+      "size_bytes": 1623,
+      "sha256": "12c560fd1a3d6e7199e2015b5b7102e4d3e21b62d4a838185944e9f6b25a902d"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/host_ablation.csv",
+      "size_bytes": 23093,
+      "sha256": "b23d9d81f5c54686c0e00fddc5f667dc1cd1c4d6f42c418fdd1b490b7c1a1723"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/host_overlap_and_cost.csv",
+      "size_bytes": 5026,
+      "sha256": "29eb9bbd5fdaf1a8d31e34c3440fe0b125b9e17c0b12cef4f3e680c33281d8bb"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/local_continuity_raw.csv",
+      "size_bytes": 7900773,
+      "sha256": "72ac2923647bda823b89c91c79c41aa222684199e2455fb1ad748e1945637fa0"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/mediation_probe_controls.csv",
+      "size_bytes": 2534,
+      "sha256": "413e43ff83d662804496a06191626fed656f5f7e6cac0cdd0e355295ab862968"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/method_summary.csv",
+      "size_bytes": 543,
+      "sha256": "375c1fbc63f63496e04398ac695b62a651314c32df94062da641ab4e49e71098"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/paired_route_geometry_effects.csv",
+      "size_bytes": 5661,
+      "sha256": "0132680afe267295d8b26ee7552b53743c617def1dd45ac029df852bcef6a2f3"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/perturbation_sensitivity.csv",
+      "size_bytes": 187253,
+      "sha256": "bf2908f3dc0488eab0965391aec6f5d9ee045d278ff7f21c54c0df81b8a9a110"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/preservation.csv",
+      "size_bytes": 317,
+      "sha256": "cc8addf6337fb3d1f14e2aa481be222dcde6e87e13a16c5e4f7f0a7dc85df55a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/route_geometry.csv",
+      "size_bytes": 5234,
+      "sha256": "f43c0e0191e57440c3e138481dedca6af86ea46ab155c5d2486206c22ca5052a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/route_swap_effects.csv",
+      "size_bytes": 4655501,
+      "sha256": "7c833238baff015cdc085efdaaf232da82c2664428413c546ed6c8efc119c244"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/router_initialization.csv",
+      "size_bytes": 457,
+      "sha256": "3b7142d389d701afb8cb5477d6f8f9aa3ae3ab826c43d17345336eaeb1b044da"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/routing_stage_logs.csv",
+      "size_bytes": 9057,
+      "sha256": "11a159e53c51d4b66e54322e5e33ed68b5357a9bae7ac31b166941858040c742"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/spd_context_covariances.csv",
+      "size_bytes": 5704,
+      "sha256": "743470697901d577ce28ac58d67a0d49e1194023c18b24c75f5032751a52619f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/spd_context_geometry.csv",
+      "size_bytes": 402,
+      "sha256": "22cb925dc0861e0832150469d86c0619be98f3db5b78f0ffcc44109015346fec"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/spd_pairwise_context_distances.csv",
+      "size_bytes": 14862,
+      "sha256": "cc74f1b81743770c0297e16462ed1dc66ddb3d42dd31840967cf8ae008881f58"
+    },
+    {
+      "relative_path": "v1_1_2/seed_2/staged_evaluation.csv",
+      "size_bytes": 20311,
+      "sha256": "c65f15583e8fa6170b3de3388f493aab1ffdab54cca9cbad36481f1fb763d377"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/allocation_territory.csv",
+      "size_bytes": 17842,
+      "sha256": "19edd04aba186c4974a2ef193702d6aaf89f3ee8d247609a338d9954a2992fbe"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/causal_mediation_raw.csv",
+      "size_bytes": 523203,
+      "sha256": "854c4f8471d5c7a3fe07d505e36016c7d50f2cc023c309e1baa42d5aa1af59d1"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/causal_mediation_summary.csv",
+      "size_bytes": 7270,
+      "sha256": "3f6ac8e55332423327408bde4c0fdd3f3dbf29f65f28446c7d2c254f4e721742"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "a539b66445912021976ed46878fde035616f3d066eeb509836f24cf745c88c4b"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/common_bank_stage_logs.csv",
+      "size_bytes": 780,
+      "sha256": "f238b1a1d21de2709f87b8644530e5a19408f0b158daafa7c02f8338fbe7122c"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "9fa48aaa70282136a03711a233c7d121b91d1b1dc444a984362c4d332c22f7d3"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/context_pretraining_stage_logs.csv",
+      "size_bytes": 1253,
+      "sha256": "b70c5a3815bfa14762dffdd497dfef26256bff923d09535c36cd485baf0256f4"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/forgetting.csv",
+      "size_bytes": 1667,
+      "sha256": "8e27c7b72fcdd35bf6df0a2a3bf1b2be34f82d6638f13f82fc41468f319e39c8"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/host_ablation.csv",
+      "size_bytes": 22554,
+      "sha256": "41ed8bc54562160c64888a959fa9fe011db6edf6a533cc0420c52ba04132515f"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/host_overlap_and_cost.csv",
+      "size_bytes": 5028,
+      "sha256": "7e0cab99d89cf7c7b0a4703f5e21836d3d76f06b646616f2da954b59ca0d8f8e"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/local_continuity_raw.csv",
+      "size_bytes": 7908158,
+      "sha256": "8c1025756b5dd8a19e512f59ab8022a515e9197090a373726671520199c729ba"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/mediation_probe_controls.csv",
+      "size_bytes": 2534,
+      "sha256": "1f67c9043b752e9e94355ccc4aa8c705303d9293640a9fd4aa3538cab4861536"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/method_summary.csv",
+      "size_bytes": 540,
+      "sha256": "86c0b9ebf1da8fb83fc5b020bce73f46fd4b608fa42d3f16f6c1e3bbacfe01cc"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/paired_route_geometry_effects.csv",
+      "size_bytes": 5624,
+      "sha256": "051b26bedf5a1a5819a31768fc9a63630bb460254ec894fbc38cd2e7d9aad6a5"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/perturbation_sensitivity.csv",
+      "size_bytes": 186822,
+      "sha256": "50bb6cb0d4393040b9b1cde5d3b9f9d8eb9d3cc56056a8779f0d8a0a21329b80"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/preservation.csv",
+      "size_bytes": 317,
+      "sha256": "cc8addf6337fb3d1f14e2aa481be222dcde6e87e13a16c5e4f7f0a7dc85df55a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/route_geometry.csv",
+      "size_bytes": 5236,
+      "sha256": "441da5856555db6514b25a6f0d466741d939b9353ea2256802412ca70153624d"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/route_swap_effects.csv",
+      "size_bytes": 4660853,
+      "sha256": "d25f1409a4bbc9be6ba0700483e4f844427eb412078155ff8aa37fc4b434d620"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/router_initialization.csv",
+      "size_bytes": 460,
+      "sha256": "ed9f27a1598621483aad67a5c66789c6325b0163f030ad66a74197c7941a3d42"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/routing_stage_logs.csv",
+      "size_bytes": 9074,
+      "sha256": "ad35775e8482a37e69742eca3fb29b312b36828f3bafa64715c9d9c656d77012"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/spd_context_covariances.csv",
+      "size_bytes": 5622,
+      "sha256": "c83305abfc4e3e52840faa8d864cec4651a9ee82fb00efa93bc44f7843195730"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/spd_context_geometry.csv",
+      "size_bytes": 384,
+      "sha256": "208c296f8c92d5d25b7f7c61e943e4d87d622ffbbce8e60933c087c259d770b0"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/spd_pairwise_context_distances.csv",
+      "size_bytes": 14867,
+      "sha256": "f1c705ec9b27990fa70cbba844420d6359a5ef58c326178365908decd9b72765"
+    },
+    {
+      "relative_path": "v1_1_2/seed_3/staged_evaluation.csv",
+      "size_bytes": 20352,
+      "sha256": "4c7b616a1de55f023888c21931c5ca27f0188a19babfdbc75a8d4e671badde53"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/allocation_territory.csv",
+      "size_bytes": 17855,
+      "sha256": "b8b845b1c551bbbd2a1ab24b27328b4b559295956478ce8b449a10d760e44b23"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/causal_mediation_raw.csv",
+      "size_bytes": 529419,
+      "sha256": "6b07cc32d82acc073b87697d76739cc0e446852f8742a351bb58f4058558046d"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/causal_mediation_summary.csv",
+      "size_bytes": 7441,
+      "sha256": "ca105e19eac5463a27c8f64f79e3dcb8e0514fa80d67df488f1d7c68f73b6b05"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/checkpoint_hashes.json",
+      "size_bytes": 194,
+      "sha256": "cefff768212fb18bc8fc486e42e4f6643d221265d200b9643c52b5cd66e6cc75"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/common_bank_stage_logs.csv",
+      "size_bytes": 779,
+      "sha256": "5d90b4a9ff5c6b193bde7c782aaee47bebcef5de7eff2e6126e224ff44c11f39"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/common_host_cost_matrix.pt",
+      "size_bytes": 1817,
+      "sha256": "2d410614c505d003d758632ec182915034dca6e975f36c66131a9bce1b754c55"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/context_pretraining_stage_logs.csv",
+      "size_bytes": 1273,
+      "sha256": "14183501904c9aba047a03b7585772fe3f91b8f1fb302788f86cf59b3f804f83"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/forgetting.csv",
+      "size_bytes": 1600,
+      "sha256": "466a862df0a8368fcee8b218e3345489328c454c36296d648b02318f14607a66"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/host_ablation.csv",
+      "size_bytes": 23013,
+      "sha256": "cd6590832b85a2eb4b56580e0ffa8ffdc818b21d7c4685b6e33b86376d6ca805"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/host_overlap_and_cost.csv",
+      "size_bytes": 5026,
+      "sha256": "529783c3529529521138a4192d0bc031bb2fba15c078ad3c3565ef76d1b231cc"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/local_continuity_raw.csv",
+      "size_bytes": 7909836,
+      "sha256": "1d98e878403e4f6da4865c9f4d85a12c24dc5261046e00172c58b58e64e02461"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/mediation_probe_controls.csv",
+      "size_bytes": 2540,
+      "sha256": "df2941cdf19b0af617b9e00059cf037bac967a1c1ae3b76d428700308921679a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/method_summary.csv",
+      "size_bytes": 489,
+      "sha256": "da0ad5d0851fd36c357413c65ad6ee9f8518656ad0ddbf5d68ba8ff0036bdfbb"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/paired_route_geometry_effects.csv",
+      "size_bytes": 5634,
+      "sha256": "8613d914da4371aa80fc788f9690b20f82b20dfe2b41dbf2e7a3540a19849b05"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/perturbation_sensitivity.csv",
+      "size_bytes": 187471,
+      "sha256": "9b2d78648ddee8e061ce0b64ae5cdd1a59aa8856bff981d35e9c2eb849b033be"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/preservation.csv",
+      "size_bytes": 317,
+      "sha256": "cc8addf6337fb3d1f14e2aa481be222dcde6e87e13a16c5e4f7f0a7dc85df55a"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/route_geometry.csv",
+      "size_bytes": 5221,
+      "sha256": "a81c257202511bbeffd4af4cc82ad77123edab475adfa69e4806c2c239567bcf"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/route_swap_effects.csv",
+      "size_bytes": 4658761,
+      "sha256": "16d0ec552ba271a3d3b3ddef6176b8758c19f4da12147fe5060cf24e75471dd4"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/router_initialization.csv",
+      "size_bytes": 457,
+      "sha256": "3982fc2f678a40f41ba786189e857a63baa71b61e17f6ef90ef0be1f17336db2"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/routing_stage_logs.csv",
+      "size_bytes": 9075,
+      "sha256": "a536ccaad176f4e588b1270a8ac3a5b321da52cc86bd194224bcfc5bf6a17b9b"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/spd_context_covariances.csv",
+      "size_bytes": 5672,
+      "sha256": "c4ce410d16f58279b31eddb9d9ed22e7ddf1cdc584cbd6d303622e60dfe1168e"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/spd_context_geometry.csv",
+      "size_bytes": 398,
+      "sha256": "677e7fcc2e33a3273982d736e6ac8cfade532b613f1b4a852039887c0409a873"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/spd_pairwise_context_distances.csv",
+      "size_bytes": 14849,
+      "sha256": "0adfa1e13d92668d4e3aed1329602dd9a0539a0ff0261c2483c629e898df16e7"
+    },
+    {
+      "relative_path": "v1_1_2/seed_4/staged_evaluation.csv",
+      "size_bytes": 20332,
+      "sha256": "06cdfe774f91f6008200c89cb44d59d8cc723ab7d73b16e4b3907d39b9829527"
+    },
+    {
+      "relative_path": "v1_1_2/sensory_history.csv",
+      "size_bytes": 80,
+      "sha256": "2ca304f78b7ed7544aa0430b279d325ae9df1559ac98b2a1307bfc3819bdb368"
+    },
+    {
+      "relative_path": "v1_1_2/spd_aggregate_effects.csv",
+      "size_bytes": 239,
+      "sha256": "bc3e5f2d1d52b12afa49d35c96d245fab217cca04b894597cf72cf527a144254"
+    },
+    {
+      "relative_path": "v1_1_2/spd_context_covariances.csv",
+      "size_bytes": 28136,
+      "sha256": "dacb58e6bfd0b8e636c69a308f0fcb730be29d9fb3b2d02f5ea9eb6701c760bf"
+    },
+    {
+      "relative_path": "v1_1_2/spd_context_geometry.csv",
+      "size_bytes": 1799,
+      "sha256": "2090aba8aa530143427406bf9cbe8cb4fa4876ac3c25342868cdc5d864803ae2"
+    },
+    {
+      "relative_path": "v1_1_2/spd_pairwise_context_distances.csv",
+      "size_bytes": 74009,
+      "sha256": "ad24dc89104e958aed1f7ec5fc9f96403eb4dc55a0d7a784bf6467c1bab6da04"
+    },
+    {
+      "relative_path": "v1_1_2/staged_evaluation.csv",
+      "size_bytes": 101358,
+      "sha256": "7e4fe2830358edca79539e55c734ff7a029161401603f2439228a2140a3de54b"
+    }
+  ],
+  "metric_report": {
+    "schema_version": "0.2.1",
+    "metrics": [
+      {
+        "id": "COMPUTE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/compute_summary.csv",
+          "sha256": "4efa2abc800b077f35b8c2f4aa46587f437195f6021cadee5e829cc13f46eeb8",
+          "rows": 30,
+          "columns": [
+            "model_seed",
+            "method",
+            "total_forward_images",
+            "total_optimizer_steps",
+            "total_wall_seconds"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 11.940902230399661
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 9.95354891399893
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "total_forward_images": 15360.0,
+            "total_optimizer_steps": 80.0,
+            "total_wall_seconds": 13.930207735000296
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "GATE_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "sha256": "4f92bf4a2db34d7e6f167b6b88969ce9778d0e6ae53d332d5def298c05428273",
+          "rows": 13,
+          "columns": [
+            "gate",
+            "passed",
+            "status"
+          ],
+          "null_cells": 0,
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_SEED_EFFECTS",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/aggregate_seed_effects.csv",
+          "sha256": "515beb4ccd4881e9cabe0edb6fb1abcefbbc82450f20e39ce07841a2313af3d2",
+          "rows": 40,
+          "columns": [
+            "contrast",
+            "partition",
+            "geometry",
+            "metric",
+            "mean_seed_effect",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count",
+            "favorable_seed_fraction"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean_seed_effect": 0.0007557343642560683,
+            "seed_ci_low": -0.0485106268506559,
+            "seed_ci_high": 0.05002209557916802,
+            "seed_sd": 0.03967769161881342,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.6449999999999999
+          },
+          "numeric_min": {
+            "mean_seed_effect": -0.039398101019117,
+            "seed_ci_low": -0.1074126542276578,
+            "seed_ci_high": -0.019630939613387,
+            "seed_sd": 0.0124124874136174,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 0.2
+          },
+          "numeric_max": {
+            "mean_seed_effect": 0.0495736104946474,
+            "seed_ci_low": 0.0243188439287032,
+            "seed_ci_high": 0.0936672877432587,
+            "seed_sd": 0.068720746617197,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "AGGREGATE_METHOD_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/aggregate_method_summary.csv",
+          "sha256": "ae5fed2823537c475d1f290f529ee8eb09b49fd664ccc1279a7b94df46ade6c4",
+          "rows": 18,
+          "columns": [
+            "method",
+            "metric",
+            "mean",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean": 0.39572569444444444,
+            "seed_ci_low": 0.3884507709907771,
+            "seed_ci_high": 0.40300061789811187,
+            "seed_sd": 0.0058590113462188495,
+            "seed_count": 5.0
+          },
+          "numeric_min": {
+            "mean": 0.0003125,
+            "seed_ci_low": -0.0001627255043098,
+            "seed_ci_high": 0.0007845556381497,
+            "seed_sd": 0.0002795084971874,
+            "seed_count": 5.0
+          },
+          "numeric_max": {
+            "mean": 0.6353125000000001,
+            "seed_ci_low": 0.6224872797071125,
+            "seed_ci_high": 0.6481377202928876,
+            "seed_sd": 0.0141526335980416,
+            "seed_count": 5.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "CAUSAL_SEED_SUMMARY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/causal_seed_summary.csv",
+          "sha256": "059e117de237d8fc608d0ac0462480b37a860e761ff4c68462b1a59b2f14e6ab",
+          "rows": 30,
+          "columns": [
+            "model_seed",
+            "method",
+            "mean_functional_csr",
+            "min_functional_csr_ci_low",
+            "min_prediction_preservation"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "mean_functional_csr": 1.589682842713816,
+            "min_functional_csr_ci_low": 0.6376957295871073,
+            "min_prediction_preservation": 0.9867924528301887
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "mean_functional_csr": 0.0101890491823934,
+            "min_functional_csr_ci_low": 1.600849086000137e-05,
+            "min_prediction_preservation": 0.9433962264150944
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "mean_functional_csr": 19.172341225315023,
+            "min_functional_csr_ci_low": 3.683681540222794,
+            "min_prediction_preservation": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "HOST_OR_ALLOCATION_ABLATION",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/host_ablation.csv",
+          "sha256": "df4e1b391c39aa191c032671c308597887dce44cbb8223d741ad4eeaaeaa9f06",
+          "rows": 1320,
+          "columns": [
+            "model_seed",
+            "method",
+            "angle",
+            "host",
+            "baseline_accuracy",
+            "ablated_accuracy",
+            "accuracy_drop",
+            "is_top_host",
+            "is_random_control"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 2.0,
+            "angle": 0.0,
+            "host": 1.5,
+            "baseline_accuracy": 0.5934248141795312,
+            "ablated_accuracy": 0.5911377930245855,
+            "accuracy_drop": 0.002287021154945678,
+            "is_top_host": 0.25,
+            "is_random_control": 0.25
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "angle": -75.0,
+            "host": 0.0,
+            "baseline_accuracy": 0.1792452830188679,
+            "ablated_accuracy": 0.1698113207547169,
+            "accuracy_drop": -0.0943396226415094,
+            "is_top_host": 0.0,
+            "is_random_control": 0.0
+          },
+          "numeric_max": {
+            "model_seed": 4.0,
+            "angle": 75.0,
+            "host": 3.0,
+            "baseline_accuracy": 0.9339622641509434,
+            "ablated_accuracy": 0.9339622641509434,
+            "accuracy_drop": 0.1132075471698113,
+            "is_top_host": 1.0,
+            "is_random_control": 1.0
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "RUN_MANIFEST_METRIC",
+        "status": "PASS",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+          "sha256": "1d267a7c155e71c437ff4c736f5dfe63e076a5c8a70a663a13097c93a225a35f",
+          "missing_keys": [],
+          "top_level_keys": [
+            "build_revision",
+            "common_bank_hashes",
+            "common_functional_metric",
+            "completed_model_seeds",
+            "context_checkpoint_hashes",
+            "continuity_uses_external_factor_labels",
+            "diagnostic_decision",
+            "execution_status",
+            "git_sha",
+            "hosts_frozen_across_router_treatments",
+            "manifest_correction",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "package_version",
+            "primary_contrasts",
+            "primary_decision",
+            "run_profile",
+            "sensory_accuracy",
+            "source_v111_results",
+            "spd_axis",
+            "split_manifest",
+            "timestamp",
+            "verification_profile",
+            "warning"
+          ]
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_METRIC",
+        "status": "FAIL",
+        "message": "JSON structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/claim_manifest.json",
+          "sha256": "b7d350f0eb9d075b52348db3b41d180da91d300fc6798545db42f69556162d3b",
+          "missing_keys": [
+            "status"
+          ],
+          "top_level_keys": [
+            "build_revision",
+            "completed_model_seeds",
+            "diagnostic_decision",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "non_claims",
+            "not_tested_or_not_claimed",
+            "numerical_results_changed",
+            "partial_findings",
+            "primary_decision",
+            "primary_operational_reference",
+            "primary_structural_reference",
+            "primary_treatment",
+            "schema_version",
+            "supported_claims",
+            "version"
+          ]
+        }
+      },
+      {
+        "id": "SPD_CONTEXT_GEOMETRY",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/seed_0/spd_context_geometry.csv",
+          "sha256": "624b51841d98ce36191201640afbd895657f232b24116c464b831547803a7df1",
+          "rows": 5,
+          "columns": [
+            "model_seed",
+            "metric",
+            "rho",
+            "stress",
+            "near_far_auc"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "model_seed": 0.0,
+            "rho": 0.5091770925532502,
+            "stress": 0.4728568361676273,
+            "near_far_auc": 0.8652631578947367
+          },
+          "numeric_min": {
+            "model_seed": 0.0,
+            "rho": 0.4710355865567893,
+            "stress": 0.4529453907682531,
+            "near_far_auc": 0.8385964912280701
+          },
+          "numeric_max": {
+            "model_seed": 0.0,
+            "rho": 0.5305156598515183,
+            "stress": 0.5127506114345431,
+            "near_far_auc": 0.8842105263157896
+          },
+          "missing_columns": []
+        }
+      },
+      {
+        "id": "SPD_AGGREGATE_EFFECTS",
+        "status": "PASS",
+        "message": "CSV structure checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/spd_aggregate_effects.csv",
+          "sha256": "bc3e5f2d1d52b12afa49d35c96d245fab217cca04b894597cf72cf527a144254",
+          "rows": 1,
+          "columns": [
+            "contrast",
+            "metric",
+            "mean_seed_effect",
+            "seed_ci_low",
+            "seed_ci_high",
+            "seed_sd",
+            "seed_count",
+            "favorable_seed_fraction"
+          ],
+          "null_cells": 0,
+          "numeric_mean": {
+            "mean_seed_effect": -0.0442038836563663,
+            "seed_ci_low": -0.0638009143703626,
+            "seed_ci_high": -0.0246068529423699,
+            "seed_sd": 0.0157828774469953,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "numeric_min": {
+            "mean_seed_effect": -0.0442038836563663,
+            "seed_ci_low": -0.0638009143703626,
+            "seed_ci_high": -0.0246068529423699,
+            "seed_sd": 0.0157828774469953,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "numeric_max": {
+            "mean_seed_effect": -0.0442038836563663,
+            "seed_ci_low": -0.0638009143703626,
+            "seed_ci_high": -0.0246068529423699,
+            "seed_sd": 0.0157828774469953,
+            "seed_count": 5.0,
+            "favorable_seed_fraction": 1.0
+          },
+          "missing_columns": []
+        }
+      }
+    ]
+  },
+  "protocol_report": {
+    "schema_version": "0.2.1",
+    "rules": [
+      {
+        "id": "ZIP_SAFE_PATHS",
+        "status": "PASS",
+        "message": "ZIP extraction completed without unsafe paths.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RESULTS_PRESENT",
+        "status": "PASS",
+        "message": "A results manifest or gate summary is present.",
+        "evidence": {
+          "run_manifest": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+          "gate_summary": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "RUN_MANIFEST",
+        "status": "PASS",
+        "message": "Run manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+          "keys": [
+            "build_revision",
+            "common_bank_hashes",
+            "common_functional_metric",
+            "completed_model_seeds",
+            "context_checkpoint_hashes",
+            "continuity_uses_external_factor_labels",
+            "diagnostic_decision",
+            "execution_status",
+            "git_sha",
+            "hosts_frozen_across_router_treatments",
+            "manifest_correction",
+            "methods",
+            "model_seeds",
+            "notebook_version",
+            "package_version",
+            "primary_contrasts",
+            "primary_decision",
+            "run_profile",
+            "sensory_accuracy",
+            "source_v111_results",
+            "spd_axis",
+            "split_manifest",
+            "timestamp",
+            "verification_profile",
+            "warning"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST",
+        "status": "PASS",
+        "message": "Claim manifest parsed.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/claim_manifest.json",
+          "keys": [
+            "build_revision",
+            "completed_model_seeds",
+            "diagnostic_decision",
+            "execution_status",
+            "failed_or_unqualified_claims",
+            "non_claims",
+            "not_tested_or_not_claimed",
+            "numerical_results_changed",
+            "partial_findings",
+            "primary_decision",
+            "primary_operational_reference",
+            "primary_structural_reference",
+            "primary_treatment",
+            "schema_version",
+            "supported_claims",
+            "version"
+          ],
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SEED_COUNT",
+        "status": "PASS",
+        "message": "Detected 5 model seeds; minimum is 5.",
+        "evidence": {
+          "seed_count": 5,
+          "minimum": 5,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_PARSE",
+        "status": "PASS",
+        "message": "Execution PDF has 47 pages.",
+        "evidence": {
+          "path": "/mnt/data/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf",
+          "sha256": "0ac551f887fed3555ad5739e0321b55ab64f6e48a472d17b9219942fd317c2ff",
+          "page_count": 47,
+          "metadata": {
+            "/Producer": "pypdf"
+          },
+          "text_length": 91168,
+          "contains_traceback": false,
+          "contains_completed_seeds": true,
+          "contains_export_marker": true,
+          "completed_seed_line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_NO_TRACEBACK",
+        "status": "PASS",
+        "message": "No Python traceback detected.",
+        "evidence": {
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "PDF_EXECUTION_MARKERS",
+        "status": "PASS",
+        "message": "Completed-seed and export markers checked.",
+        "evidence": {
+          "completed_seeds": true,
+          "export_marker": true,
+          "line": "Completed seeds: [0, 1, 2, 3, 4]",
+          "severity": "major"
+        }
+      },
+      {
+        "id": "MATCHED_COMPUTE",
+        "status": "PASS",
+        "message": "Matched compute checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/compute_summary.csv",
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "FROZEN_CONTEXT",
+        "status": "PASS",
+        "message": "Frozen-context audit checked.",
+        "evidence": {
+          "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/preservation.csv",
+          "max_abs_context_delta": 0.0,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "SOURCE_PARTITION_SEPARATION",
+        "status": "PASS",
+        "message": "Partition hashes checked for accidental identity.",
+        "evidence": {
+          "hash_count": 8,
+          "unique_count": 8,
+          "severity": "critical"
+        }
+      },
+      {
+        "id": "CLAIM_MANIFEST_FRESHNESS",
+        "status": "PASS",
+        "message": "Claim state compared with execution evidence.",
+        "evidence": {
+          "claim_status": null,
+          "severity": "major"
+        }
+      },
+      {
+        "id": "ARCHIVE_HYGIENE",
+        "status": "PASS",
+        "message": "Archive hygiene checked.",
+        "evidence": {
+          "dirty_count": 0,
+          "examples": [],
+          "severity": "minor"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_context_and_common_bank_frozen",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_context_and_common_bank_frozen.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C0_equal_router_compute",
+        "status": "PASS",
+        "message": "Imported experiment gate C0_equal_router_compute.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "protocol_integrity"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_heldout_functional_stress_reduction",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_heldout_functional_stress_reduction.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_heldout_functional_order",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_heldout_functional_order.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_local_continuity_non_degradation",
+        "status": "FAIL",
+        "message": "Imported experiment gate C1_local_continuity_non_degradation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C2_route_swap_order",
+        "status": "PASS",
+        "message": "Imported experiment gate C2_route_swap_order.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_functional_causal_specificity",
+        "status": "FAIL",
+        "message": "Imported experiment gate C4_functional_causal_specificity.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C4_identity_preservation",
+        "status": "PASS",
+        "message": "Imported experiment gate C4_identity_preservation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C6_operational_non_degradation",
+        "status": "FAIL",
+        "message": "Imported experiment gate C6_operational_non_degradation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "equivalence_not_superiority"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::GEO_SPD_covariance_adds_value",
+        "status": "PASS",
+        "message": "Imported experiment gate GEO_SPD_covariance_adds_value.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "diagnostic_candidate_only"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C3_mature_host_specialization",
+        "status": "NOT_TESTED",
+        "message": "Imported experiment gate C3_mature_host_specialization.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "not_tested_hosts_frozen"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C5_memory_transport",
+        "status": "NOT_TESTED",
+        "message": "Imported experiment gate C5_memory_transport.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "not_implemented"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::operational_superiority",
+        "status": "NOT_TESTED",
+        "message": "Imported experiment gate operational_superiority.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "not_preregistered_as_primary"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_heldout_functional_mediation_common_cost",
+        "status": "FAIL",
+        "message": "Canonical gate C1_heldout_functional_mediation_common_cost mapped from C1_heldout_functional_order.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only",
+          "mapped_from": "C1_heldout_functional_order"
+        }
+      },
+      {
+        "id": "EXPERIMENT_GATE::C1_local_continuity_tail",
+        "status": "FAIL",
+        "message": "Canonical gate C1_local_continuity_tail mapped from C1_local_continuity_non_degradation.",
+        "evidence": {
+          "source": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+          "status": "candidate_only",
+          "mapped_from": "C1_local_continuity_non_degradation"
+        }
+      }
+    ]
+  },
+  "claim_report": {
+    "schema_version": "0.2.1",
+    "claims": [
+      {
+        "id": "CONTEXT_GEOMETRY",
+        "statement": "The inferred context has replicated representational geometry.",
+        "status": "PASS",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "RUN_MANIFEST_METRIC"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST",
+          "SEED_COUNT",
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      },
+      {
+        "id": "HELDOUT_NOMINAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out nominal route order.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_nominal_mediation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "HELDOUT_FUNCTIONAL_ROUTE_MEDIATION",
+        "statement": "The tested router improves held-out functional route order under a common cost matrix.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_functional_mediation_common_cost"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "LOCAL_STABILITY",
+        "statement": "The router reduces high-tail local sensitivity without route collapse.",
+        "status": "FAIL",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C1_local_continuity_tail"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "CAUSAL_SPECIFICITY",
+        "statement": "Factor-tangent interventions are functionally more specific than orthogonal controls.",
+        "status": "FAIL",
+        "required_metrics": [
+          "CAUSAL_SEED_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SOURCE_PARTITION_SEPARATION"
+        ],
+        "required_experiment_gates": [
+          "C4_functional_causal_specificity",
+          "C4_identity_preservation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL",
+          "PASS"
+        ]
+      },
+      {
+        "id": "HOST_SPECIALIZATION",
+        "statement": "Stable functional host specialization is established.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "HOST_OR_ALLOCATION_ABLATION",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SEED_COUNT"
+        ],
+        "required_experiment_gates": [
+          "C3_mature_host_specialization"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_NON_DEGRADATION",
+        "statement": "The routing intervention stays within the preregistered non-degradation margin.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "C6_operational_non_degradation"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "OPERATIONAL_SUPERIORITY",
+        "statement": "The routing intervention improves operational performance.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "AGGREGATE_METHOD_SUMMARY",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE"
+        ],
+        "required_experiment_gates": [
+          "operational_superiority"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "MEMORY_TRANSPORT",
+        "statement": "Route-function memory transport is demonstrated.",
+        "status": "NOT_TESTED",
+        "required_metrics": [
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "RUN_MANIFEST"
+        ],
+        "required_experiment_gates": [
+          "C5_memory_transport"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "NOT_TESTED"
+        ]
+      },
+      {
+        "id": "HELDOUT_FUNCTIONAL_STRESS_REDUCTION",
+        "statement": "The primary smooth residual treatment reduces held-out common-cost functional stress.",
+        "status": "FAIL",
+        "required_metrics": [
+          "AGGREGATE_SEED_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "MATCHED_COMPUTE",
+          "FROZEN_CONTEXT"
+        ],
+        "required_experiment_gates": [
+          "C1_heldout_functional_stress_reduction"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "FAIL"
+        ]
+      },
+      {
+        "id": "SPD_COVARIANCE_VALUE",
+        "statement": "Regularized covariance geometry adds factor-discrimination value beyond centroid-only context geometry.",
+        "status": "PASS",
+        "required_metrics": [
+          "SPD_CONTEXT_GEOMETRY",
+          "SPD_AGGREGATE_EFFECTS",
+          "GATE_SUMMARY"
+        ],
+        "required_protocol_rules": [
+          "SOURCE_PARTITION_SEPARATION",
+          "SEED_COUNT"
+        ],
+        "required_experiment_gates": [
+          "GEO_SPD_covariance_adds_value"
+        ],
+        "resolved_statuses": [
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS",
+          "PASS"
+        ]
+      }
+    ]
+  }
+}

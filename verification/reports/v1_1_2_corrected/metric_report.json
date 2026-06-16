@@ -1,0 +1,389 @@
+{
+  "schema_version": "0.2.1",
+  "metrics": [
+    {
+      "id": "COMPUTE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/compute_summary.csv",
+        "sha256": "4efa2abc800b077f35b8c2f4aa46587f437195f6021cadee5e829cc13f46eeb8",
+        "rows": 30,
+        "columns": [
+          "model_seed",
+          "method",
+          "total_forward_images",
+          "total_optimizer_steps",
+          "total_wall_seconds"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 11.940902230399661
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 9.95354891399893
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "total_forward_images": 15360.0,
+          "total_optimizer_steps": 80.0,
+          "total_wall_seconds": 13.930207735000296
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "GATE_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/gate_summary.csv",
+        "sha256": "4f92bf4a2db34d7e6f167b6b88969ce9778d0e6ae53d332d5def298c05428273",
+        "rows": 13,
+        "columns": [
+          "gate",
+          "passed",
+          "status"
+        ],
+        "null_cells": 0,
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_SEED_EFFECTS",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/aggregate_seed_effects.csv",
+        "sha256": "515beb4ccd4881e9cabe0edb6fb1abcefbbc82450f20e39ce07841a2313af3d2",
+        "rows": 40,
+        "columns": [
+          "contrast",
+          "partition",
+          "geometry",
+          "metric",
+          "mean_seed_effect",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count",
+          "favorable_seed_fraction"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean_seed_effect": 0.0007557343642560683,
+          "seed_ci_low": -0.0485106268506559,
+          "seed_ci_high": 0.05002209557916802,
+          "seed_sd": 0.03967769161881342,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.6449999999999999
+        },
+        "numeric_min": {
+          "mean_seed_effect": -0.039398101019117,
+          "seed_ci_low": -0.1074126542276578,
+          "seed_ci_high": -0.019630939613387,
+          "seed_sd": 0.0124124874136174,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 0.2
+        },
+        "numeric_max": {
+          "mean_seed_effect": 0.0495736104946474,
+          "seed_ci_low": 0.0243188439287032,
+          "seed_ci_high": 0.0936672877432587,
+          "seed_sd": 0.068720746617197,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "AGGREGATE_METHOD_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/aggregate_method_summary.csv",
+        "sha256": "ae5fed2823537c475d1f290f529ee8eb09b49fd664ccc1279a7b94df46ade6c4",
+        "rows": 18,
+        "columns": [
+          "method",
+          "metric",
+          "mean",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean": 0.39572569444444444,
+          "seed_ci_low": 0.3884507709907771,
+          "seed_ci_high": 0.40300061789811187,
+          "seed_sd": 0.0058590113462188495,
+          "seed_count": 5.0
+        },
+        "numeric_min": {
+          "mean": 0.0003125,
+          "seed_ci_low": -0.0001627255043098,
+          "seed_ci_high": 0.0007845556381497,
+          "seed_sd": 0.0002795084971874,
+          "seed_count": 5.0
+        },
+        "numeric_max": {
+          "mean": 0.6353125000000001,
+          "seed_ci_low": 0.6224872797071125,
+          "seed_ci_high": 0.6481377202928876,
+          "seed_sd": 0.0141526335980416,
+          "seed_count": 5.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "CAUSAL_SEED_SUMMARY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/causal_seed_summary.csv",
+        "sha256": "059e117de237d8fc608d0ac0462480b37a860e761ff4c68462b1a59b2f14e6ab",
+        "rows": 30,
+        "columns": [
+          "model_seed",
+          "method",
+          "mean_functional_csr",
+          "min_functional_csr_ci_low",
+          "min_prediction_preservation"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "mean_functional_csr": 1.589682842713816,
+          "min_functional_csr_ci_low": 0.6376957295871073,
+          "min_prediction_preservation": 0.9867924528301887
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "mean_functional_csr": 0.0101890491823934,
+          "min_functional_csr_ci_low": 1.600849086000137e-05,
+          "min_prediction_preservation": 0.9433962264150944
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "mean_functional_csr": 19.172341225315023,
+          "min_functional_csr_ci_low": 3.683681540222794,
+          "min_prediction_preservation": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "HOST_OR_ALLOCATION_ABLATION",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/host_ablation.csv",
+        "sha256": "df4e1b391c39aa191c032671c308597887dce44cbb8223d741ad4eeaaeaa9f06",
+        "rows": 1320,
+        "columns": [
+          "model_seed",
+          "method",
+          "angle",
+          "host",
+          "baseline_accuracy",
+          "ablated_accuracy",
+          "accuracy_drop",
+          "is_top_host",
+          "is_random_control"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 2.0,
+          "angle": 0.0,
+          "host": 1.5,
+          "baseline_accuracy": 0.5934248141795312,
+          "ablated_accuracy": 0.5911377930245855,
+          "accuracy_drop": 0.002287021154945678,
+          "is_top_host": 0.25,
+          "is_random_control": 0.25
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "angle": -75.0,
+          "host": 0.0,
+          "baseline_accuracy": 0.1792452830188679,
+          "ablated_accuracy": 0.1698113207547169,
+          "accuracy_drop": -0.0943396226415094,
+          "is_top_host": 0.0,
+          "is_random_control": 0.0
+        },
+        "numeric_max": {
+          "model_seed": 4.0,
+          "angle": 75.0,
+          "host": 3.0,
+          "baseline_accuracy": 0.9339622641509434,
+          "ablated_accuracy": 0.9339622641509434,
+          "accuracy_drop": 0.1132075471698113,
+          "is_top_host": 1.0,
+          "is_random_control": 1.0
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "RUN_MANIFEST_METRIC",
+      "status": "PASS",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/run_manifest.json",
+        "sha256": "1d267a7c155e71c437ff4c736f5dfe63e076a5c8a70a663a13097c93a225a35f",
+        "missing_keys": [],
+        "top_level_keys": [
+          "build_revision",
+          "common_bank_hashes",
+          "common_functional_metric",
+          "completed_model_seeds",
+          "context_checkpoint_hashes",
+          "continuity_uses_external_factor_labels",
+          "diagnostic_decision",
+          "execution_status",
+          "git_sha",
+          "hosts_frozen_across_router_treatments",
+          "manifest_correction",
+          "methods",
+          "model_seeds",
+          "notebook_version",
+          "package_version",
+          "primary_contrasts",
+          "primary_decision",
+          "run_profile",
+          "sensory_accuracy",
+          "source_v111_results",
+          "spd_axis",
+          "split_manifest",
+          "timestamp",
+          "verification_profile",
+          "warning"
+        ]
+      }
+    },
+    {
+      "id": "CLAIM_MANIFEST_METRIC",
+      "status": "FAIL",
+      "message": "JSON structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/claim_manifest.json",
+        "sha256": "b7d350f0eb9d075b52348db3b41d180da91d300fc6798545db42f69556162d3b",
+        "missing_keys": [
+          "status"
+        ],
+        "top_level_keys": [
+          "build_revision",
+          "completed_model_seeds",
+          "diagnostic_decision",
+          "execution_status",
+          "failed_or_unqualified_claims",
+          "non_claims",
+          "not_tested_or_not_claimed",
+          "numerical_results_changed",
+          "partial_findings",
+          "primary_decision",
+          "primary_operational_reference",
+          "primary_structural_reference",
+          "primary_treatment",
+          "schema_version",
+          "supported_claims",
+          "version"
+        ]
+      }
+    },
+    {
+      "id": "SPD_CONTEXT_GEOMETRY",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/seed_0/spd_context_geometry.csv",
+        "sha256": "624b51841d98ce36191201640afbd895657f232b24116c464b831547803a7df1",
+        "rows": 5,
+        "columns": [
+          "model_seed",
+          "metric",
+          "rho",
+          "stress",
+          "near_far_auc"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "model_seed": 0.0,
+          "rho": 0.5091770925532502,
+          "stress": 0.4728568361676273,
+          "near_far_auc": 0.8652631578947367
+        },
+        "numeric_min": {
+          "model_seed": 0.0,
+          "rho": 0.4710355865567893,
+          "stress": 0.4529453907682531,
+          "near_far_auc": 0.8385964912280701
+        },
+        "numeric_max": {
+          "model_seed": 0.0,
+          "rho": 0.5305156598515183,
+          "stress": 0.5127506114345431,
+          "near_far_auc": 0.8842105263157896
+        },
+        "missing_columns": []
+      }
+    },
+    {
+      "id": "SPD_AGGREGATE_EFFECTS",
+      "status": "PASS",
+      "message": "CSV structure checked.",
+      "evidence": {
+        "path": "/tmp/mmals_verify_1rp2xpfk/v1_1_2/spd_aggregate_effects.csv",
+        "sha256": "bc3e5f2d1d52b12afa49d35c96d245fab217cca04b894597cf72cf527a144254",
+        "rows": 1,
+        "columns": [
+          "contrast",
+          "metric",
+          "mean_seed_effect",
+          "seed_ci_low",
+          "seed_ci_high",
+          "seed_sd",
+          "seed_count",
+          "favorable_seed_fraction"
+        ],
+        "null_cells": 0,
+        "numeric_mean": {
+          "mean_seed_effect": -0.0442038836563663,
+          "seed_ci_low": -0.0638009143703626,
+          "seed_ci_high": -0.0246068529423699,
+          "seed_sd": 0.0157828774469953,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "numeric_min": {
+          "mean_seed_effect": -0.0442038836563663,
+          "seed_ci_low": -0.0638009143703626,
+          "seed_ci_high": -0.0246068529423699,
+          "seed_sd": 0.0157828774469953,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "numeric_max": {
+          "mean_seed_effect": -0.0442038836563663,
+          "seed_ci_low": -0.0638009143703626,
+          "seed_ci_high": -0.0246068529423699,
+          "seed_sd": 0.0157828774469953,
+          "seed_count": 5.0,
+          "favorable_seed_fraction": 1.0
+        },
+        "missing_columns": []
+      }
+    }
+  ]
+}

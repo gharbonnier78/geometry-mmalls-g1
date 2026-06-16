@@ -1,0 +1,17 @@
+{
+  "package": "Geometry-MMALS G1 v1.1.2 executed-results GitHub delta",
+  "base": "Geometry-MMALS G1 v1.1.2 C0 package before execution results",
+  "target": "Geometry-MMALS G1 v1.1.2 completed five-seed results release",
+  "scientific_version": "1.1.2",
+  "executed_build_revision": "smooth-residual-spd-diagnostics-c0-r1",
+  "primary_decision": "r5_smooth_residual_router_not_qualified",
+  "diagnostic_decision": "spd_covariance_adds_value_candidate_supported",
+  "new_files": 191,
+  "changed_files": 9,
+  "deleted_files": [],
+  "included_files": 199,
+  "excluded_redundant_files": [
+    "releases/v1.1.2/Geometry_MMALS_G1_v1_1_2_Corrected_Results.zip"
+  ],
+  "apply": "Extract over the existing geometry-mmalls-g1 repository and allow overwrite."
+}

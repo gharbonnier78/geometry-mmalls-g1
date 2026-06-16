@@ -1,0 +1,2 @@
+contrast,metric,mean_seed_effect,seed_ci_low,seed_ci_high,seed_sd,seed_count,favorable_seed_fraction
+centroid_plus_log_euclidean_vs_centroid,stress,-0.04420388365636631,-0.06380091437036266,-0.024606852942369955,0.015782877446995393,5,1.0
