@@ -1,3 +1,19 @@
+# Changelog
+
+## v1.1.2 results release - five-seed smooth residual and SPD pilot
+
+- Archive the completed five-seed v1.1.2 evidence for seeds 0--4.
+- Correct the stale `pilot_pending` claim manifest without changing numerical evidence.
+- Record `r5_smooth_residual_router_not_qualified` as the primary decision.
+- Preserve failed primary gates for held-out functional order, stress, continuity, causal specificity, and operational non-degradation.
+- Record significant secondary R5-versus-R0 functional geometry improvements.
+- Record successful R3 sharpness repair, route-swap ordering, and prediction-identity preservation.
+- Record `spd_covariance_adds_value_candidate_supported` as a diagnostic-only result.
+- Add the 15-page reviewer article, corrected LaTeX package, clean 47-page execution archive, and corrected results ZIP.
+- Correct the canonical v1.1.2 notebook status, manifest export, archive identity, continuity formula, and WebPDF export path.
+- Update Verification Stack gate aliases and map non-tested experiment gates to `NOT_TESTED` rather than `FAIL`.
+- Re-run the independent verification stack and retain 55 passing package tests.
+
 
 ## v1.1.0 - Functional geometry-mediated routing implementation
 
@@ -172,3 +188,8 @@
 - Add regularized covariance, log-Euclidean, AIRM, and Bures-Wasserstein diagnostics.
 - Add v1.1.2 Colab, specification, tests, verification profile, and release assets.
 - Move `pypdf` to the optional verification dependency.
+
+
+## v1.1.3 C0
+
+Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.

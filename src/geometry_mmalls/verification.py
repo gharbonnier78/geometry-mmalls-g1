@@ -260,9 +260,21 @@ def protocol_report(extracted_root: Path, pdf: dict[str, Any], rules: dict[str, 
             raw = row["passed"]
             passed = raw.strip().lower() in {"true", "1", "yes"} if isinstance(raw, str) else bool(raw)
             gate_name = str(row["gate"])
+            experiment_status = str(row.get("status", "")).strip().lower()
+            if passed:
+                imported_status = "PASS"
+            elif experiment_status in {
+                "not_tested_hosts_frozen",
+                "not_implemented",
+                "not_preregistered_as_primary",
+                "not_tested",
+            }:
+                imported_status = "NOT_TESTED"
+            else:
+                imported_status = "FAIL"
             result = GateResult(
                 f"EXPERIMENT_GATE::{gate_name}",
-                "PASS" if passed else "FAIL",
+                imported_status,
                 f"Imported experiment gate {gate_name}.",
                 {"source": str(gate_path), "status": row.get("status")},
             )

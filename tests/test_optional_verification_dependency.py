@@ -19,7 +19,7 @@ def test_core_import_does_not_require_pypdf(monkeypatch):
             del sys.modules[name]
 
     module = importlib.import_module("geometry_mmalls")
-    assert module.__version__ == "1.1.2"
+    assert module.__version__ == "1.1.3"
 
 
 def test_verification_module_import_is_lazy(monkeypatch):

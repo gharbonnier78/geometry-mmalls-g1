@@ -1,68 +1,72 @@
 # Geometry-MMALS G1 Status
 
-## Current executed evidence: v1.0.9
+## Latest executed evidence: v1.1.2
 
-The completed five-seed matched-compute pilot provides candidate replicated evidence for an ordered and held-out-decodable four-dimensional context representation.
+The five-seed smooth-residual/SPD pilot completed for model seeds
+`[0, 1, 2, 3, 4]` under a common frozen sensory encoder, context encoder, host
+bank, synthesis layer, classifier, and host-functional cost matrix.
 
-Primary stationary-full versus no-geometry effects:
+### Protocol integrity
 
-- trained context distance-order correlation: `+0.107`, 95% seed CI `[+0.029,+0.185]`;
-- context stress: `-0.042`, CI `[-0.084,-0.001]`;
-- held-out-source context factor decoding: approximately `+0.132 R²`;
-- held-out angle MAE: approximately `-4.99°`.
+- frozen context and common host bank: **PASS**;
+- matched router compute: **PASS**;
+- route-swap ordering: **PASS**;
+- prediction-identity preservation: **PASS**.
 
-Not replicated or not improved:
+### Primary router decision
 
-- route geometry;
-- synthesis geometry;
-- predictive accuracy;
-- forgetting;
-- causal specificity;
-- superiority of the stationary route target over the legacy target.
+The R5 smooth-residual plus continuity router is **not qualified** against the
+R1 linear structural reference.
 
-## Current claim
+- held-out functional rho effect: `+0.010886`, 95% seed interval
+  `[-0.048685, +0.070456]`;
+- held-out functional stress effect: `-0.017859`, interval
+  `[-0.067115, +0.031396]`;
+- continuity non-degradation: **FAIL**;
+- functional causal specificity: **FAIL**;
+- operational non-degradation versus R0: **FAIL**.
 
-Geometry-MMALS has candidate replicated evidence for grounded representational context geometry. Functional routing and operational benefit are not established.
+### Secondary router findings
 
-## Current executable protocol: v1.1.0
+R5 is significantly more ordered and lower-stress than R0 on held-out
+common-cost functional geometry:
 
-v1.1.0 freezes the successful context representation and compares MLP, linear, and prototype-energy routers. It adds a functional optimal-transport route metric, causal mediation tests, and host-ecology measurements.
+- rho effect: `+0.049574`, interval `[+0.024319, +0.074828]`;
+- stress effect: `-0.039398`, interval `[-0.059165, -0.019631]`.
 
-v1.1.0 is now fully implemented in the canonical Colab notebook and Python package, but it has not yet been executed. No v1.1.0 empirical gate is passed by implementation alone.
+R5 also removes the severe local-continuity tail of R3, but does not robustly
+improve beyond R1.
+
+### SPD diagnostic
+
+Covariance-aware context geometry adds measurable factor information beyond
+centroid-only geometry:
+
+- combined stress effect: `-0.044204`;
+- 95% seed interval: `[-0.063801, -0.024607]`;
+- favorable seeds: `5/5`.
+
+This is diagnostic evidence only. It does not establish a learned Riemannian
+manifold or an SPD-aware routing advantage.
+
+## Current scientific claim
+
+Geometry-MMALS has replicated evidence for grounded context geometry and
+non-arbitrary route-function structure. Structured low-capacity routing is more
+geometrically ordered than a flexible MLP, but the current smooth-residual
+router does not improve robustly beyond a linear router and is not operationally
+qualified.
+
+## Next executable targets
+
+- **v1.1.3:** route-function memory trajectories and transport;
+- **v1.1.4:** selective causal host adaptation, recovery, and host-bank alignment;
+- **G2.1:** explicit bottom-up host feedback after host usefulness is causally
+  established;
+- **TPUT:** goal-conditioned forward-backward control, outside the current G1
+  claim scope.
 
 
-## Executed v1.1.0 functional-routing pilot
+## v1.1.3 C0
 
-The five-seed pilot is complete. The prototype-energy router improves nominal route order over the MLP on trained factors (`+0.088`, 95% seed CI `[+0.035,+0.142]`) and held-out factors (`+0.038`, `[+0.013,+0.064]`). Functional route order improves on trained factors (`+0.046`, `[+0.004,+0.089]`) but not on held-out factors (`+0.007`, `[-0.035,+0.049]`).
-
-The low-capacity linear router is at least as competitive and produces the strongest causal and ablation signals. Causal specificity, prediction-identity preservation for the prototype, stable host ecology, memory transport, and operational superiority remain unqualified.
-
-## Next executable target: v1.1.1
-
-Freeze a common host bank and common functional cost matrix, compare MLP/linear/prototype/hybrid routers, and make held-out functional mediation plus local stability distributions the primary gates.
-
-## v1.1.1
-
-- Implementation: complete C0
-- Pilot: not executed
-- Primary question: does a common frozen host bank reveal held-out functional
-  route mediation?
-- New router: hybrid directional-prototype energy
-- Verification Stack: v0.2 integrated
-
-## v1.1.1 completed pilot
-
-- Protocol integrity: PASS
-- Route-swap order: PASS
-- Prediction identity preservation: PASS
-- R3 held-out mediation: NOT QUALIFIED
-- R3 local continuity: NOT QUALIFIED
-- R3 functional causal specificity: NOT QUALIFIED
-- Operational non-degradation: NOT QUALIFIED
-
-## v1.1.2
-
-- C0 specification and executable notebook: COMPLETE
-- Five-seed pilot: NOT EXECUTED
-- Primary treatment: R5 smooth residual plus context-only continuity
-- Secondary axis: covariance/SPD diagnostics
+Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.

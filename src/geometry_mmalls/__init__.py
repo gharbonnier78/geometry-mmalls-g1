@@ -125,4 +125,19 @@ from .spd_geometry import (
 # It is an optional layer and may require pypdf. Import it explicitly with:
 #     from geometry_mmalls.verification import verify_evidence_bundle
 
-__version__ = "1.1.2"
+__version__ = "1.1.3"
+
+from .memory_transport import (
+    PathStatistics,
+    RootGaussianMemory,
+    compile_root_gaussian,
+    cross_functional_route_costs,
+    distributional_functional_transport,
+    distillation_kl,
+    functional_path_statistics,
+    functional_transport_anchor_loss,
+    latent_anchor_loss,
+    root_gaussian_nll,
+    root_route_anchor_loss,
+    uniform_empirical_transport,
+)

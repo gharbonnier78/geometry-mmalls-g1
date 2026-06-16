@@ -56,3 +56,74 @@ def test_verifier_generates_standard_outputs(tmp_path):
     outputs = write_verification_outputs(bundle, tmp_path / "reports")
     for value in outputs.values():
         assert Path(value).exists()
+
+
+def test_non_tested_experiment_gate_maps_to_not_tested(tmp_path):
+    result_root = tmp_path / "fixture"
+    result_dir = result_root / "results" / "v_test"
+    result_dir.mkdir(parents=True)
+    pd.DataFrame([
+        {
+            "gate": "C3_mature_host_specialization",
+            "passed": False,
+            "status": "not_tested_hosts_frozen",
+        }
+    ]).to_csv(result_dir / "gate_summary.csv", index=False)
+    (result_dir / "run_manifest.json").write_text(
+        json.dumps({
+            "notebook_version": "test",
+            "build_revision": "test",
+            "model_seeds": [0],
+            "split_manifest": {"a_sha256": "a", "b_sha256": "b"},
+        }),
+        encoding="utf-8",
+    )
+    (result_dir / "claim_manifest.json").write_text(
+        json.dumps({"version": "test", "status": "executed", "non_claims": []}),
+        encoding="utf-8",
+    )
+    archive = tmp_path / "results.zip"
+    with zipfile.ZipFile(archive, "w") as handle:
+        for path in result_root.rglob("*"):
+            if path.is_file():
+                handle.write(path, path.relative_to(result_root))
+
+    from pypdf import PdfWriter
+    pdf = tmp_path / "run.pdf"
+    writer = PdfWriter()
+    writer.add_blank_page(width=200, height=200)
+    with pdf.open("wb") as stream:
+        writer.write(stream)
+
+    metric = tmp_path / "metrics.yaml"
+    protocol = tmp_path / "protocol.yaml"
+    claims = tmp_path / "claims.yaml"
+    metric.write_text(yaml.safe_dump({"metrics": []}), encoding="utf-8")
+    protocol.write_text(
+        yaml.safe_dump({
+            "minimum_model_seeds": 1,
+            "rules": [],
+        }),
+        encoding="utf-8",
+    )
+    claims.write_text(
+        yaml.safe_dump({
+            "claims": [{
+                "id": "HOST_SPECIALIZATION",
+                "statement": "fixture",
+                "required_experiment_gates": ["C3_mature_host_specialization"],
+            }]
+        }),
+        encoding="utf-8",
+    )
+
+    bundle = verify_evidence_bundle(
+        experiment_id="fixture",
+        execution_pdf=pdf,
+        results_zip=archive,
+        metric_definitions=metric,
+        protocol_rules=protocol,
+        claim_rules=claims,
+    )
+    claim = bundle["claim_report"]["claims"][0]
+    assert claim["status"] == "NOT_TESTED"

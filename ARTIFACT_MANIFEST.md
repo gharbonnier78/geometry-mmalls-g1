@@ -152,3 +152,40 @@ Scientific status: C0 implementation. v1.1.1 empirical claims remain pending.
 - SPD geometry module and tests
 - v1.1.2 specification PDF, Markdown, and LaTeX source
 - Verification Stack v1.1.2 profile and SPD metrics/claims
+
+## v1.1.2 executed-results release
+
+- Corrected evidence: `results/v1_1_2/`
+- Corrected results ZIP:
+  `releases/v1.1.2/Geometry_MMALS_G1_v1_1_2_Corrected_Results.zip`
+- Corrected canonical notebook:
+  `notebooks/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2.ipynb`
+- Results-preserving notebook copy:
+  `notebooks/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_RESULTS_CORRECTED.ipynb`
+- Clean execution archive:
+  `docs/execution_archives/Geometry_MMALS_G1_SmoothResidual_SPD_v1_1_2_EXECUTION_CLEAN.pdf`
+- Reviewer results report:
+  `docs/reports/Geometry_MMALS_G1_v1_1_2_Smooth_Residual_SPD_Reviewer_Results.pdf`
+- Reviewer source:
+  `paper/reviewer_v1_1_2_results/`
+- Reviewer LaTeX release:
+  `releases/v1.1.2/Geometry_MMALS_G1_v1_1_2_Reviewer_Article_LaTeX.zip`
+- Release notes:
+  `docs/changes/Geometry_MMALS_G1_v1_1_2_Results_Release_Notes.md`
+- Independent verification:
+  `verification/reports/v1_1_2_corrected/`
+
+Scientific status:
+
+- R5 primary qualification versus R1: **FAIL**;
+- route-swap order: **PASS**;
+- prediction identity: **PASS**;
+- SPD covariance diagnostic value: **PASS, diagnostic only**;
+- mature host specialization: **NOT TESTED**;
+- memory transport: **NOT TESTED**;
+- operational superiority: **NOT CLAIMED**.
+
+
+## v1.1.3 C0
+
+Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.

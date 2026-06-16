@@ -1,0 +1,158 @@
+version: 1.1.3
+build_revision: functional-memory-transport-c0-r1
+status: C0 specification and executable notebook; empirical pilot pending
+experiment:
+  name: Geometry-MMALS G1 v1.1.3 Functional Memory Transport
+  fixed_split_seed: 0
+  fixed_sensory_seed: 0
+  pilot_model_seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  qualification_model_seeds:
+  - 0
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  curriculum:
+  - -60.0
+  - -30.0
+  - 0.0
+  - 60.0
+  - 30.0
+  dense_eval_angles:
+  - -75.0
+  - -60.0
+  - -45.0
+  - -30.0
+  - -15.0
+  - 0.0
+  - 15.0
+  - 30.0
+  - 45.0
+  - 60.0
+  - 75.0
+  host_count: 4
+  memory_sources_per_angle: 64
+  memory_eval_sources: 106
+  distributional_transport_sources: 24
+frozen_components:
+  sensory_encoder: true
+  context_encoder: true
+  common_hosts: true
+  synthesis_norm: true
+  classifier: true
+  common_functional_cost_matrix: true
+router:
+  architecture: linear_context_router
+  initialization_seed_offset: 1300
+  temperature: 1.0
+  trainable_parameters: router_only
+memory_treatments:
+  m0_current_only:
+    replay_ce: 0.0
+    route_anchor: 0.0
+    functional_transport: 0.0
+    latent_anchor: 0.0
+    output_distillation: 0.0
+  m1_replay_ce:
+    replay_ce: 0.5
+    route_anchor: 0.0
+    functional_transport: 0.0
+    latent_anchor: 0.0
+    output_distillation: 0.0
+  m2_route_anchor:
+    replay_ce: 0.5
+    route_anchor: 0.5
+    functional_transport: 0.0
+    latent_anchor: 0.0
+    output_distillation: 0.0
+  m3_functional_transport:
+    replay_ce: 0.5
+    route_anchor: 0.0
+    functional_transport: 0.5
+    latent_anchor: 0.0
+    output_distillation: 0.0
+  m4_joint_functional_memory:
+    replay_ce: 0.5
+    route_anchor: 0.0
+    functional_transport: 0.5
+    latent_anchor: 0.25
+    output_distillation: 0.25
+training:
+  current_ce: 1.0
+  usage_balance: 0.02
+  distillation_temperature: 2.0
+  matched_memory_forward_passes: true
+  original_stage_snapshot_targets: true
+  full_old_dataset_access: false
+functional_transport:
+  route_sinkhorn_epsilon: 0.05
+  route_sinkhorn_iterations: 100
+  cloud_sinkhorn_epsilon: 0.05
+  cloud_sinkhorn_iterations: 100
+compiled_memory_diagnostic:
+  enabled: true
+  root_gaussian_shrinkage: 0.05
+  root_gaussian_epsilon: 0.0001
+  claim_level: diagnostic_candidate_only
+primary_contrasts:
+- treatment: m3_functional_transport
+  control: m2_route_anchor
+- treatment: m4_joint_functional_memory
+  control: m1_replay_ce
+- treatment: m4_joint_functional_memory
+  control: m0_current_only
+statistics:
+  source_bootstrap_samples: 2000
+  seed_confidence_level: 0.95
+  minimum_positive_seed_fraction: 0.8
+candidate_gates:
+  protocol_frozen_ecosystem: all frozen-component deltas <= 1e-6
+  matched_compute: equal current and memory forward counts across treatments
+  memory_budget: exact memory source count and no full old-dataset access
+  functional_transport_vs_route_anchor: M3-M2 endpoint functional drift seed CI high
+    < 0 and >=4/5 favorable seeds
+  joint_retention_vs_replay: M4-M1 old-angle forgetting seed CI high < 0 and >=4/5
+    favorable seeds
+  path_efficiency: M4-M1 functional path-excess seed CI high < 0
+  identity_preservation: final-vs-original prediction preservation lower bound >=
+    0.95
+  operational_non_degradation: new-angle accuracy within 0.01 of M1 in >=4/5 seeds
+  compiled_memory_value: covariance-aware heldout root NLL improves over isotropic
+    summary in >=4/5 seeds
+required_exports:
+- checkpoint_hashes
+- common_bank_hash
+- common_cost_matrix
+- memory_split_manifest
+- memory_budget_summary
+- staged_accuracy_and_forgetting
+- paired_route_drift
+- paired_functional_drift
+- latent_drift
+- output_kl_and_identity
+- distributional_transport
+- path_length_endpoint_and_excess
+- compiled_memory_summary
+- aggregate_seed_effects
+- gate_summary
+- run_manifest
+- claim_manifest
+- environment_capture
+non_claims:
+- mature_host_specialization
+- positive_backward_transfer
+- operational_superiority
+- optimal_transport_optimality
+- learned_riemannian_manifold
+- reinforcement_learning_control
+- quantum_advantage

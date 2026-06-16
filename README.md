@@ -4,9 +4,10 @@
 
 Geometry-MMALS G1 is a falsifiable research program for testing whether MMALS learns meaningful internal geometry across inferred contexts, routes, host transformations, synthesized states, and continual-memory transport.
 
-> **Latest executed evidence:** v1.1.0 five-seed functional-routing pilot.  
-> **Latest planned protocol:** v1.1.1 local-stability and bridge-isolation experiment.  
-> **Current scientific status:** replicated context geometry and partial structural route mediation; held-out functional mediation, causal host ecology, memory transport, and operational superiority remain unqualified.
+> **Latest executed evidence:** v1.1.2 five-seed smooth-residual/SPD pilot.  
+> **Primary router decision:** R5 smooth residual plus continuity did not qualify against R1.  
+> **Positive diagnostic:** covariance-aware context geometry improved stress in all five seeds.  
+> **Current scientific status:** context geometry and non-arbitrary route-function structure are supported; mature host specialization, memory transport, and operational superiority remain unqualified.
 
 ## What the system builds
 
@@ -201,3 +202,8 @@ simplex-continuity hinge, and covariance/SPD context diagnostics.
 - Specification: `docs/reports/Geometry_MMALS_G1_v1_1_2_Smooth_Residual_SPD_Specification.pdf`
 
 Empirical status: not executed.
+
+
+## v1.1.3 C0
+
+Functional memory transport specification and executable limited-replay Colab added. Empirical pilot pending.

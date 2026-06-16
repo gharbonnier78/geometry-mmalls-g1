@@ -10,3 +10,9 @@ primary_claims:
 - HELDOUT_FUNCTIONAL_ROUTE_MEDIATION
 - LOCAL_STABILITY
 - SPD_COVARIANCE_VALUE
+
+gate_aliases:
+  C1_heldout_functional_mediation_common_cost:
+    - C1_heldout_functional_order
+  C1_local_continuity_tail:
+    - C1_local_continuity_non_degradation
