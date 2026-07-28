@@ -1,0 +1,133 @@
+\section{Hypotheses and falsification criteria}
+
+\begin{hypothesis}[H1: intrinsic route drift]
+Fisher-Rao route drift predicts functional forgetting or route-function reassignment more strongly than Euclidean route MSE after controlling for output and latent drift.
+\end{hypothesis}
+\textbf{Falsified if:} the predictive gain disappears across seeds, contexts, or matched route distributions; or if a simpler Jensen-Shannon/Hellinger diagnostic performs equally well at lower cost.
+
+\begin{hypothesis}[H2: SPD functional descriptors]
+Drift in an SPD or correlation functional descriptor predicts forgetting and intransigence more reliably than pointwise latent MSE.
+\end{hypothesis}
+\textbf{Falsified if:} covariance/correlation drift adds no out-of-sample explanatory value after latent and output drift are included, or is dominated by batch-size noise.
+
+\begin{hypothesis}[H3: learned metric value]
+A constrained learnable pullback metric improves the stability-plasticity frontier relative to fixed Log-Euclidean and Cholesky metrics at matched active cost.
+\end{hypothesis}
+\textbf{Falsified if:} gains vanish after nested validation, require materially more memory/compute, overfit metric parameters, or reduce new-context learning.
+
+\begin{hypothesis}[H4: intrinsic context classification]
+RMLR improves inferred-context calibration, held-out interpolation, or routing stability when context features are manifold-valued.
+\end{hypothesis}
+\textbf{Falsified if:} a linear/MLP classifier on the same features matches or beats it, or the presumed manifold does not pass structure tests.
+
+\begin{hypothesis}[H5: normalization stability]
+LieBN or GyroBN reduces training variance and context-dependent covariate shift at a valid manifold interface without suppressing useful specialization.
+\end{hypothesis}
+\textbf{Falsified if:} the effect is only an optimization-speed change, does not replicate, or increases route collapse.
+
+\begin{warningbox}
+A lower geometric drift score is not itself a positive result. The v0.13.1 smoke evidence already showed that stronger geometry preservation can coexist with worse accuracy and forgetting. Every hypothesis requires an operational endpoint and a plasticity control.
+\end{warningbox}
+
+
+\section{Experimental program}
+
+\subsection{Stage 0: source and pipeline integrity}
+Before model comparison, the package must establish:
+\begin{enumerate}[leftmargin=1.7em]
+  \item all source artifacts have stable identifiers and SHA-256 hashes;
+  \item every claim maps to a source tier and evidence state;
+  \item numerical operators preserve symmetry and positive definiteness;
+  \item manifold logarithm/exponential round trips satisfy declared tolerances;
+  \item gradients are finite near repeated eigenvalues and near simplex boundaries;
+  \item metric parameters remain in their admissible domain;
+  \item fixed seeds reproduce the same development outputs within tolerance.
+\end{enumerate}
+
+\subsection{Stage 1: diagnostic-only study on frozen models}
+Use completed G1 checkpoints and do not retrain the model. Compute alternative diagnostics on the same memory samples:
+\begin{itemize}[leftmargin=1.5em]
+  \item route: Euclidean, Jensen-Shannon, Hellinger, Fisher-Rao;
+  \item function: latent MSE, CKA, SPD Log-Euclidean, correlation distance;
+  \item transformation: Frobenius, spectral, Jacobian, transported tangent residual;
+  \item outcomes: per-context forgetting, calibration drift, contribution-gain change.
+\end{itemize}
+Fit nested out-of-sample explanatory models. The primary endpoint is incremental predictive value, not raw correlation:
+\begin{equation}
+  \Delta R^2_{\mathrm{geo}}
+  = R^2(\text{base drifts}+\text{geometric drift})
+    - R^2(\text{base drifts}).
+\end{equation}
+A diagnostic that does not add out-of-sample value is not promoted into training.
+
+\subsection{Stage 2: one-term training ablations}
+The ablation sequence is fixed:
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lXll@{}}
+\toprule
+Code & Variant & New geometric component & Purpose \\
+\midrule
+B0 & Output distillation & none & Strong simple reference \\
+B1 & Full functional memory & latent MSE & Existing \MMALS{} reference \\
+R1 & Intrinsic route memory & Fisher-Rao route loss & Test H1 operationally \\
+F1 & Fixed SPD memory & Log-Euclidean functional loss & Test H2 \\
+F2 & Stable SPD memory & Cholesky product metric & Cost/stability control \\
+M1 & Learnable SPD memory & constrained pullback metric & Test H3 \\
+C1 & Intrinsic context classifier & RMLR & Test H4 \\
+N1 & Intrinsic normalization & LieBN/GyroBN at one valid interface & Test H5 \\
+P1 & Product geometry & best single components only & Interaction test \\
+\bottomrule
+\end{tabularx}
+\end{center}
+No combined P1 run is allowed until at least two single components individually qualify.
+
+\subsection{Stage 3: benchmarks}
+The benchmark ladder separates grounded geometry from real-world complexity.
+
+\paragraph{Controlled factor.}
+Continuous RotatedMNIST and Rotated FashionMNIST provide an observable circular factor. Use held-out angles, held-out source identities, sequential exposures, and context inference without task ID. This stage tests route and functional geometry but does not justify hyperbolic structure.
+
+\paragraph{Natural continual learning.}
+SplitCIFAR-10/100, CORe50, and DomainNet-style streams test class and domain evolution with a mature sensory encoder. Report standard continual-learning metrics and geometry diagnostics.
+
+\paragraph{Relational/hierarchical track.}
+A graph benchmark of requirements, evidence, risks, and decisions can test correlation, SPD, and later hyperbolic context structures. A hierarchy must be externally grounded, not inferred only from the model's own embedding.
+
+\paragraph{EO/IR domain-shift track.}
+Sensor-condition covariance, Fisher information, and sample-level MMD may provide complementary domain-shift descriptors. This is a later application after the core \RGM{} operators qualify on controlled benchmarks.
+
+\subsection{Baselines and budget matching}
+Mandatory baselines include:
+\begin{itemize}[leftmargin=1.5em]
+  \item fine-tuning and joint-training upper bound;
+  \item output distillation / LwF-style reference;
+  \item experience replay at matched memory;
+  \item EWC or SI regularization;
+  \item sparse mixture-of-experts and low-capacity linear routing;
+  \item fixed Euclidean, fixed Log-Euclidean, and fixed Cholesky geometry;
+  \item shuffled metric parameters and frozen random geometry;
+  \item parameter-matched extra MLP capacity.
+\end{itemize}
+For every geometric variant, record trainable parameters, active FLOPs, wall-clock time, peak memory, replay bytes, and eigendecomposition/Cholesky failures.
+
+\subsection{Primary metrics}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+Family & Required metrics \\
+\midrule
+Performance & final average accuracy, NLL, ECE, per-context accuracy \\
+Continual learning & average forgetting, backward transfer, forward transfer, intransigence \\
+Routing & entropy, load balance, Fisher-Rao drift, route-function alignment \\
+Functional state & latent MSE, CKA, SPD/correlation drift, transported tangent residual \\
+Specialization & contribution gain, ablation loss, host diversity, cross-seed role stability \\
+Efficiency & train time, inference latency, active FLOPs, parameter count, memory bytes \\
+Numerical & SPD repair count, condition number, NaN/Inf count, gradient norm, failed decompositions \\
+Evidence & seeds completed, missing artifacts, threshold freeze, claim-gate status \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Statistical protocol}
+Development and qualification are separate. Hyperparameters and metric families are selected on development seeds; qualification seeds are untouched until the protocol and thresholds are committed. Report bootstrap confidence intervals over seeds and, where appropriate, paired permutation or hierarchical models over contexts and seeds. Correct for the number of promoted geometry families. A result is not qualified from a one-seed smoke run.
+
