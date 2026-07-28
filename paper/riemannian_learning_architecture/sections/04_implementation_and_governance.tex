@@ -1,0 +1,96 @@
+\section{Implementation specification}
+
+\subsection{Minimal software interfaces}
+The first implementation can remain framework-agnostic. The essential interfaces are:
+\begin{lstlisting}[language=Python,basicstyle=\ttfamily\small,frame=single,breaklines=true]
+class RouteMetric:
+    def distance(self, r: Tensor, s: Tensor) -> Tensor: ...
+
+class FunctionalDescriptor:
+    def fit_batch(self, host_states: Tensor, synth: Tensor) -> Tensor: ...
+
+class SPDGeometry:
+    def distance(self, c1: Tensor, c2: Tensor) -> Tensor: ...
+    def log_map(self, base: Tensor, target: Tensor) -> Tensor: ...
+    def exp_map(self, base: Tensor, tangent: Tensor) -> Tensor: ...
+    def parallel_transport(self, source: Tensor, target: Tensor,
+                           tangent: Tensor) -> Tensor: ...
+
+class MetricController:
+    def parameters_regularizer(self) -> Tensor: ...
+    def diagnostics(self) -> dict[str, float]: ...
+\end{lstlisting}
+Every implementation must expose conditioning and repair diagnostics; silent projection to SPD is prohibited in qualification runs.
+
+\subsection{Numerical safeguards}
+\begin{enumerate}[leftmargin=1.7em]
+  \item symmetrize $C\leftarrow(C+C^\top)/2$ before decomposition;
+  \item use a declared eigenvalue floor and report how often it is active;
+  \item compare eigenvalue and Cholesky implementations on the same inputs;
+  \item use double precision for operator verification, then benchmark mixed precision separately;
+  \item check $\Exp_C(\Log_C(D))\approx D$ and transport norm behavior;
+  \item monitor learned-map monotonicity and inverse round-trip error;
+  \item reject batches with undefined route probabilities rather than masking them.
+\end{enumerate}
+
+\subsection{Proposed repository placement}
+This article is integrated into the existing \texttt{geometry-mmalls-g1} repository under:
+\begin{verbatim}
+paper/riemannian_learning_architecture/
+  main.tex
+  references.bib
+  README.md
+  Makefile
+  figures/
+docs/reports/
+  MMALS_Riemannian_Learning_Architecture_v1_0.pdf
+docs/specs/
+  MMALS_Riemannian_Experimental_Protocol_v1_0.md
+governance/
+  source_tiers.yaml
+  claim_manifest.yaml
+  uploaded_source_hashes.txt
+scripts/
+  validate_riemannian_article.py
+releases/
+  MMALS_Riemannian_Learning_Architecture_v1_0_full_package.zip
+.github/workflows/
+  riemannian-article.yml
+\end{verbatim}
+
+
+\section{Source tiers and claim governance}
+
+\subsection{Tier definitions}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+Tier & Label & Meaning \\
+\midrule
+T1 & Established primary research & Peer-reviewed papers, standard mathematical monographs, or independently established results directly supporting a component. \\
+T2 & Integrated primary synthesis & The uploaded 2026 doctoral thesis synthesizing and extending the underlying Riemannian deep-learning papers. \\
+T3 & Executed MMALS evidence & Versioned notebooks, result bundles, reports, and repository evidence produced by the project. Valid only for their declared benchmark and protocol. \\
+T4 & Proposed MMALS mechanism & Architecture, loss, hypothesis, or roadmap introduced here and not yet empirically qualified. \\
+T5 & Speculative future branch & Hyperbolic hierarchy, density-state memory, or cross-domain extension lacking prerequisite evidence. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\subsection{Claim ladder}
+\begin{center}
+\begin{tabularx}{\textwidth}{@{}llX@{}}
+\toprule
+Code & Status & Minimum evidence \\
+\midrule
+C0 & Build validity & PDF compiles, schemas validate, numerical operator tests pass. \\
+C1 & Diagnostic validity & Intrinsic metric adds out-of-sample explanatory value over Euclidean diagnostics. \\
+C2 & Controlled utility & One geometry-aware component improves a declared endpoint on controlled factors at matched budget. \\
+C3 & Continual utility & Improvement replicates with retention and plasticity jointly reported. \\
+C4 & Cross-benchmark robustness & Effect repeats on natural-image or domain streams. \\
+C5 & Operational geometry & Geometry changes routing/control decisions for the better under cost and calibration constraints. \\
+C6 & General architectural claim & Multiple independent replications support a reusable \MMALS{} geometric mechanism. \\
+\bottomrule
+\end{tabularx}
+\end{center}
+The current article is C0 as a package and T4 as a mechanism proposal. It imports T1/T2 components and T3 evidence but creates no new executed model result.
+
