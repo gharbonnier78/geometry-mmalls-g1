@@ -1,0 +1,98 @@
+name: Riemannian MMALS article
+
+on:
+  push:
+    paths:
+      - "paper/riemannian_learning_architecture/**"
+      - "docs/specs/MMALS_Riemannian_Experimental_Protocol_v1_0.md"
+      - "governance/riemannian_learning_architecture/**"
+      - "scripts/validate_riemannian_article.py"
+      - ".github/workflows/riemannian-article.yml"
+  pull_request:
+    paths:
+      - "paper/riemannian_learning_architecture/**"
+      - "docs/specs/MMALS_Riemannian_Experimental_Protocol_v1_0.md"
+      - "governance/riemannian_learning_architecture/**"
+      - "scripts/validate_riemannian_article.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended
+
+      - name: Compile article
+        working-directory: paper/riemannian_learning_architecture
+        run: latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+
+      - name: Stage compiled report
+        run: |
+          mkdir -p docs/reports releases
+          cp paper/riemannian_learning_architecture/main.pdf \
+             docs/reports/MMALS_Riemannian_Learning_Architecture_v1_0.pdf
+
+      - name: Build full release package
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import zipfile
+
+          root = Path('.')
+          target = root / 'releases' / 'MMALS_Riemannian_Learning_Architecture_v1_0_full_package.zip'
+          files = [
+              root / 'paper' / 'riemannian_learning_architecture',
+              root / 'docs' / 'reports' / 'MMALS_Riemannian_Learning_Architecture_v1_0.pdf',
+              root / 'docs' / 'specs' / 'MMALS_Riemannian_Experimental_Protocol_v1_0.md',
+              root / 'governance' / 'riemannian_learning_architecture',
+              root / 'scripts' / 'validate_riemannian_article.py',
+              root / '.github' / 'workflows' / 'riemannian-article.yml',
+              root / 'LICENSE',
+              root / 'CITATION.cff',
+          ]
+          selected = []
+          for item in files:
+              if item.is_dir():
+                  selected.extend(p for p in item.rglob('*') if p.is_file() and p.suffix not in {'.aux', '.log', '.out', '.toc', '.fls', '.fdb_latexmk'})
+              elif item.is_file():
+                  selected.append(item)
+          with zipfile.ZipFile(target, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as archive:
+              for path in sorted(set(selected)):
+                  archive.write(path, path.as_posix())
+          print(target, target.stat().st_size)
+          PY
+
+      - name: Validate package
+        run: python scripts/validate_riemannian_article.py
+
+      - name: Upload compiled artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: MMALS-Riemannian-Learning-Architecture-v1.0
+          path: |
+            docs/reports/MMALS_Riemannian_Learning_Architecture_v1_0.pdf
+            releases/MMALS_Riemannian_Learning_Architecture_v1_0_full_package.zip
+
+      - name: Commit compiled PDF and release ZIP
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/reports/MMALS_Riemannian_Learning_Architecture_v1_0.pdf
+          git add releases/MMALS_Riemannian_Learning_Architecture_v1_0_full_package.zip
+          if git diff --cached --quiet; then
+            echo "Generated artifacts already current."
+          else
+            git commit -m "docs: compile MMALS Riemannian learning article v1.0"
+            git push
+          fi
