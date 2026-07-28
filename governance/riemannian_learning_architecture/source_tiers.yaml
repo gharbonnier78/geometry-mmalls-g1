@@ -1,0 +1,100 @@
+version: "1.0.0"
+date: "2026-07-28"
+policy: >-
+  Source tier denotes the epistemic role a source may play in this package. A
+  higher tier does not transfer claims across domains automatically. Riemannian
+  deep-learning results support component feasibility; they are not evidence
+  that MMALS gains continual-learning performance.
+
+tiers:
+  T1:
+    name: established_primary_foundations
+    admissible_use: definitions, proved operators, established metrics, and original peer-reviewed component results
+    transfer_limit: application-specific performance must be revalidated inside MMALS
+  T2:
+    name: reviewed_synthesis_or_doctoral_integration
+    admissible_use: structured synthesis, theorem map, implementation design space, and references to underlying publications
+    transfer_limit: thesis-level synthesis is not direct evidence for a new continual-learning architecture
+  T3:
+    name: executed_internal_mmals_evidence
+    admissible_use: statements about the exact executed MMALS prototype, dataset, seed profile, and diagnostic result
+    transfer_limit: no generalization beyond the recorded protocol; smoke evidence remains exploratory
+  T4:
+    name: versioned_mmals_specification
+    admissible_use: proposed architecture, protocol, claim gates, and falsification criteria
+    transfer_limit: no empirical claim until the named experiment is executed
+  T5:
+    name: speculative_future_branch
+    admissible_use: motivation and deferred hypotheses only
+    transfer_limit: cannot justify architecture promotion or performance claims
+
+sources:
+  chen_thesis_2026:
+    tier: T2
+    title: "Riemannian Deep Learning: Modules, Networks, and Geometries"
+    author: "Ziheng Chen"
+    year: 2026
+    locator: "arXiv:2607.19305v2"
+    uploaded_filename: "2607.19305v2.pdf"
+    sha256: "fd9e2b18e5347d20d7ddc1da0bde090a0ab5e361c5029031585099a79dd2d5f2"
+    used_for:
+      - Lie-group and gyrogroup batch normalization
+      - intrinsic Riemannian multinomial logistic regression
+      - Proper Velocity and Busemann hyperbolic modules
+      - correlation-manifold networks
+      - adaptive Log-Euclidean metrics
+      - Cholesky product geometries
+    excluded_inference: "Does not validate MMALS continual learning or functional-memory transport."
+
+  chen_component_papers:
+    tier: T1
+    title: "Underlying ICLR/CVPR/NeurIPS/ICML/TIP papers enumerated in the Chen thesis"
+    used_for: "Original component-level theoretical and empirical claims cited through the bibliography."
+    excluded_inference: "No automatic transfer to MMALS datasets, objectives, or stability-plasticity trade-offs."
+
+  mmals_v08:
+    tier: T3
+    title: "MMALS Prototype 0.8 — Final Evidence Harness"
+    uploaded_filename: "MMALS_Prototype_0_8_Final_Evidence_Colab_FIXED (2).pdf"
+    sha256: "4255c13a8b10abd82e5baf4474dc77065820a02b52b84fb4598b54f665b495c5"
+    evidence_scope: "Controlled task-incremental FashionMNIST evidence for functional route memory."
+    limitation: "Toy/task-id setting; not proof of general continual-learning superiority."
+
+  mmals_v09:
+    tier: T3
+    title: "MMALS Prototype 0.9 — Route–Function Disentanglement"
+    uploaded_filename: "MMALS_Prototype_0_9_Route_Function_Disentanglement_Colab.pdf"
+    sha256: "d4a18736cc6bd70c0b90c9ab6481f2d4899036ac7603aa6c650580eeb153a3ab"
+    evidence_scope: "Route preservation is diagnostically separable from mediated latent-function preservation."
+    limitation: "Does not establish that a Riemannian metric improves memory."
+
+  mmals_v12:
+    tier: T3
+    title: "MMALS Prototype 0.12 — Hopfield / Co-Evolution Branch"
+    uploaded_filename: "MMALS_Prototype_0_12_Hopfield_CoEvolution_Colab_evidence.pdf"
+    sha256: "03e7d3b7f3925e091fb7acc1619d1de5d723c3ae7686718a80de198348724100"
+    evidence_scope: "Diagnostic decomposition of route, latent, output, transformation, and Jacobian drift."
+    limitation: "Co-evolution regularization remains an experimental branch."
+
+  mmals_v0131:
+    tier: T3
+    title: "MMALS Prototype 0.13.1 — Warm Weak Adaptive CE Ablation"
+    uploaded_filename: "MMALS_Prototype_0_13_1_Warm_Weak_CE_Ablation_Colab.pdf"
+    sha256: "2f53056ca42e80249e2c1352f7a1018dab6ffc2dbe1e78a32651c4c78f791cc7"
+    evidence_scope: "Negative smoke evidence showing geometric/co-evolution penalties can over-constrain plasticity."
+    limitation: "Single-seed smoke evidence; used as a risk signal, not a final comparison."
+
+  geometry_mmalls_g1:
+    tier: T4
+    title: "Geometry-MMALS G1"
+    locator: "https://github.com/gharbonnier78/geometry-mmalls-g1"
+    evidence_scope: "Versioned architecture, current context-geometry evidence, protocols, and claim discipline."
+    limitation: "Route geometry, mature host specialization, and functional-memory transport remain unqualified."
+
+  mmals_qi:
+    tier: T5
+    title: "MMALS-QI: Quantum-Inspired Functional Memory"
+    uploaded_filename: "mmals_qi_research_note.pdf"
+    sha256: "4ea060a5e036fb0a92636b5e3acfdb779585679650e492bb9d18b3e13b509fc2"
+    evidence_scope: "Deferred density-state formulation and diagnostics."
+    limitation: "No quantum advantage claim and no promotion before task-free geometry qualifies."
