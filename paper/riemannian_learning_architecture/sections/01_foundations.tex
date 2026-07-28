@@ -1,0 +1,196 @@
+\section{Motivation and research question}
+
+\subsection{The problem after functional route memory}
+The minimal \MMALS{} computation has specialist hosts $g_i$, host-specific fungal transformations $T_i$, an input- and context-conditioned route $r$, and a synthesized latent state
+\begin{align}
+  z_i(x) &= g_i(x), \\
+  \tilde z_i(x) &= T_i(z_i(x)), \\
+  r_i(x,c) &= \frac{\exp(a_i(x,c)/\tau)}{\sum_j \exp(a_j(x,c)/\tau)}, \\
+  z_f(x,c) &= \sum_{i=1}^{H} r_i(x,c)\tilde z_i(x), \\
+  \hat y &= h(z_f).
+  \label{eq:mmals-basic}
+\end{align}
+The v0.7--v0.9 line showed why route memory alone is insufficient: $r$ may remain stable while the host representation, the transformation $T_i$, or the synthesized function changes. In the reported v0.9 diagnostic, route-memory-only controlled route drift but allowed substantial latent drift, whereas latent-preserving variants strongly reduced the functional drift. The appropriate memory object is therefore not merely a path identifier, but the mediated function computed through the path \citep{harbonnier2026v09,harbonnier2026v08}.
+
+The next problem is more subtle. Even after accepting functional memory, the project still uses fixed distances for heterogeneous objects:
+\begin{itemize}[leftmargin=1.5em]
+  \item Euclidean mean-square error for route vectors constrained to a simplex;
+  \item Euclidean error for latent states whose covariance and local sensitivity may matter more than coordinates;
+  \item Frobenius norms for transformations with non-trivial spectral structure;
+  \item independent scalar penalties for co-evolving route, latent, output, and Jacobian states.
+\end{itemize}
+A lower Euclidean distance does not automatically mean a smaller functional change. Conversely, a coordinate change may be harmless if it follows an invariant direction of the model. The research question is therefore:
+
+\begin{quote}
+Can \MMALS{} learn or select a geometry in which route and functional-memory distances are better aligned with forgetting, transfer, uncertainty, and computational cost than fixed Euclidean diagnostics, without creating geometric rigidity?
+\end{quote}
+
+\subsection{Why the 2026 Riemannian deep-learning thesis is relevant}
+Chen's thesis develops Riemannian deep learning at three levels: reusable modules across manifolds, manifold-specific neural networks, and the design of the underlying geometry itself \citep{chen2026thesis}. Its most relevant contributions for \MMALS{} are:
+\begin{enumerate}[leftmargin=1.7em]
+  \item \textbf{Intrinsic normalization.} Lie Group Batch Normalization controls Riemannian sample mean and variance using group translations and tangent-space scaling. Gyrogroup Batch Normalization extends the principle beyond Lie groups to a wider class of manifolds.
+  \item \textbf{Intrinsic classification.} Riemannian multinomial logistic regression replaces Euclidean tangent-space classification with a formulation that uses the manifold logarithm and Riemannian trigonometry.
+  \item \textbf{Structured networks.} Hyperbolic Proper Velocity networks offer an unconstrained representation intended to reduce boundary instability; full-rank correlation networks operate directly on normalized dependence structure.
+  \item \textbf{Learnable metrics.} Adaptive Log-Euclidean Metrics construct a family of pullback geometries through parameterized matrix logarithms, retaining closed-form Riemannian operators and modest extra computation.
+  \item \textbf{Fast stable controls.} Product Cholesky geometries yield closed-form operators while avoiding repeated scalar logarithm and exponential operations that can become unstable.
+\end{enumerate}
+
+The thesis does not study continual learning, \MMALS{}, task-free context inference, or mycelium-inspired mutualism. Its role is therefore not empirical validation of \MMALS{}, but a mature mathematical and software design library from which testable components can be selected.
+
+\begin{sourcebox}
+The source hierarchy is explicit. Peer-reviewed component papers underlying the thesis are Tier 1. The doctoral thesis is Tier 2 as an integrated primary synthesis. Executed \MMALS{} runs are Tier 3 project evidence. The architecture and hypotheses proposed in this article are Tier 4 until independently tested. The complete machine-readable mapping is supplied in \texttt{governance/source\_tiers.yaml} and \texttt{governance/claim\_manifest.yaml}.
+\end{sourcebox}
+
+
+\section{Current MMALS evidence and constraints}
+
+\subsection{What the existing prototypes support}
+The existing evidence should be carried forward rather than reset by a new geometric vocabulary.
+
+\paragraph{Functional memory is more meaningful than route identity.}
+The v0.8 evidence harness reported a full-functional-memory variant with final average accuracy approximately $0.9914$ and average forgetting approximately $4.4\times 10^{-4}$ in its controlled task-incremental FashionMNIST setting, while the v0.9 diagnostic showed that route drift and functional latent drift explain different failure modes \citep{harbonnier2026v08,harbonnier2026v09}. These are internal controlled results, not general continual-learning claims.
+
+\paragraph{Geometry regularization can harm plasticity.}
+The v0.12--v0.13.1 co-evolution branch investigated transformation, spectral, and Jacobian preservation. In the v0.13.1 smoke run, output distillation remained the best method: final average accuracy was $0.904$ with forgetting $0.0263$, while warm weak adaptive co-evolution reached $0.872$ with forgetting $0.0825$. Hard frozen transformations were worse still \citep{harbonnier2026v12,harbonnier2026v131}. This negative result is central: lower geometric drift is not a success when the model learns new contexts less effectively.
+
+\paragraph{Grounded context geometry is currently stronger than route geometry.}
+The Geometry-\MMALS{} G1 repository reports replicated evidence that covariance-aware context geometry improves stress and held-out context decoding on a controlled rotation factor, while route geometry, host specialization, memory transport, and operational superiority remain unqualified \citep{geometrymmalsg1}. This suggests that the first Riemannian intervention should target diagnostics and context/functional descriptors, not an immediate replacement of the whole router.
+
+\subsection{Design constraints inherited by the new article}
+The proposed architecture adopts the existing G1 simplicity axiom: exotic geometry is introduced only after a simpler Euclidean, simplex, or fixed-metric null model fails. The following constraints are mandatory:
+\begin{enumerate}[leftmargin=1.7em]
+  \item no explicit task identifier at inference in the mature protocol;
+  \item matched trainable parameters, active compute, replay memory, and optimization budget;
+  \item joint reporting of retention and intransigence/plasticity;
+  \item raw per-seed metrics and failed runs preserved;
+  \item metric selection frozen before qualification data are evaluated;
+  \item no claim based only on a two-dimensional visualization;
+  \item no use of geometry as a synonym for any latent representation.
+\end{enumerate}
+
+
+\section{Riemannian design principles for MMALS}
+
+\subsection{Geometry must match the object}
+A Riemannian metric assigns an inner product to each tangent space. It determines distances, geodesics, logarithmic and exponential maps, parallel transport, means, variances, and optimization updates. Changing the metric can therefore alter not only interpretation but parameterization, numerical stability, and computation \citep{absil2008,amari2016,chen2026thesis}.
+
+For \MMALS{}, no single manifold should be imposed on all layers. The proposed state is a product of objects with distinct geometries:
+\begin{equation}
+  \cM_{\MMALS}
+  = \cM_c \times \cM_r \times \cM_f \times \cM_T \times \cM_m \times \cM_y,
+  \label{eq:product-manifold}
+\end{equation}
+where $\cM_c$ is inferred context, $\cM_r$ routing, $\cM_f$ functional state, $\cM_T$ transformation geometry, $\cM_m$ memory, and $\cM_y$ output distributions. A product metric may be written
+\begin{equation}
+  g_{\bm{\lambda}}
+  = \lambda_c g_c \oplus \lambda_r g_r \oplus \lambda_f g_f
+    \oplus \lambda_T g_T \oplus \lambda_m g_m \oplus \lambda_y g_y,
+  \label{eq:product-metric}
+\end{equation}
+with coefficients selected on development data and frozen for qualification. The product is a bookkeeping discipline, not evidence that every component is curved.
+
+\subsection{Route geometry on the probability simplex}
+The router output lies in the open simplex
+\begin{equation}
+  \simplex^{H-1}_{\circ}
+  = \left\{r\in\R^H: r_i>0,\ \sum_i r_i=1\right\}.
+\end{equation}
+A raw Euclidean route penalty
+\begin{equation}
+  \cL_{r,2}=\|r-r^\star\|_2^2
+\end{equation}
+ignores the statistical meaning of $r$. Under Fisher-Rao geometry, the square-root map embeds the simplex into the positive orthant of a sphere. A closed-form distance is
+\begin{equation}
+  d_{\mathrm{FR}}(r,s)
+  = 2\arccos\!\left(\sum_{i=1}^{H}\sqrt{r_i s_i}\right).
+  \label{eq:fisher-rao}
+\end{equation}
+The intrinsic route-memory loss becomes
+\begin{equation}
+  \cL_{r,\mathrm{FR}}
+  = \E_{x\sim\cD_{\mathrm{mem}}}
+    \left[d_{\mathrm{FR}}\big(r_{\theta}(x),r_{\theta^\star}(x)\big)^2\right].
+  \label{eq:route-loss}
+\end{equation}
+This loss is not assumed superior. It is tested against Euclidean, Jensen-Shannon, Hellinger, and no-route-memory controls.
+
+\begin{engineeringbox}
+Two routes can have the same Euclidean gap yet different statistical meaning near the boundary. Moving probability mass away from a nearly impossible host may be more consequential than the same coordinate shift in the interior. Fisher-Rao geometry supplies a principled null hypothesis for that distinction.
+\end{engineeringbox}
+
+\subsection{Functional memory as an SPD descriptor}
+The synthesized vector $z_f$ is only one sample-level view of a route-function. A memory descriptor can preserve local second-order structure. For a context or memory cell $k$, define
+\begin{equation}
+  C_k
+  = \frac{1}{B-1}\sum_{b=1}^{B}
+    (u_b-\bar u)(u_b-\bar u)^\top + \epsilon I,
+  \qquad C_k\in\SPD^{d},
+  \label{eq:spd-memory}
+\end{equation}
+where $u_b$ may concatenate selected host outputs, the synthesized latent state, and low-rank Jacobian probes. The regularization $\epsilon I$ ensures positive definiteness.
+
+A fixed Log-Euclidean distance is
+\begin{equation}
+  d_{\mathrm{LE}}(C_1,C_2)
+  = \|\log C_1-\log C_2\|_F.
+  \label{eq:le-distance}
+\end{equation}
+This supplies a stronger descriptor than pointwise MSE when forgetting is associated with changes in covariance, anisotropy, or cross-host dependence.
+
+An alternative full-rank correlation descriptor removes marginal scale:
+\begin{equation}
+  R_k = D_k^{-1/2} C_k D_k^{-1/2},
+  \qquad D_k=\diag(C_k),
+  \label{eq:corr-memory}
+\end{equation}
+allowing the experiment to separate ``the function changed scale'' from ``the dependence structure changed.'' Chen's correlation networks are relevant because they construct layers and backpropagation directly on this manifold rather than treating correlation matrices as unconstrained Euclidean arrays \citep{chen2026cornet,chen2026thesis}.
+
+\subsection{Learnable pullback geometry}
+A pullback metric transfers Euclidean geometry through a diffeomorphism $\phi_\eta:\SPD^d\rightarrow\mathbb{S}^d$. Define
+\begin{equation}
+  g^{\eta}=\phi_\eta^* g_E,
+  \qquad
+  d_{\eta}(C_1,C_2)
+  = \|\phi_\eta(C_1)-\phi_\eta(C_2)\|_F.
+  \label{eq:pullback}
+\end{equation}
+The associated operators inherit closed forms:
+\begin{align}
+  \Exp^{\eta}_{C}(V)
+  &= \phi_\eta^{-1}\big(\phi_\eta(C)+(\phi_\eta)_{*,C}V\big),\\
+  \Log^{\eta}_{C_1}(C_2)
+  &= (\phi_\eta^{-1})_{*,\phi_\eta(C_1)}
+     \big(\phi_\eta(C_2)-\phi_\eta(C_1)\big),\\
+  \PT^{\eta}_{C_1\to C_2}(V)
+  &= (\phi_\eta^{-1})_{*,\phi_\eta(C_2)}
+     \circ (\phi_\eta)_{*,C_1}(V).
+  \label{eq:pullback-ops}
+\end{align}
+Adaptive Log-Euclidean Metrics instantiate this idea with parameterized matrix logarithms and retain an abelian Lie-group structure \citep{chen2024alem,chen2026thesis}. For \MMALS{}, a conservative implementation uses a monotone spectral map
+\begin{equation}
+  \phi_\eta(C)
+  = U\diag\big(f_{\eta,1}(\lambda_1),\ldots,f_{\eta,d}(\lambda_d)\big)U^\top,
+  \label{eq:spectral-map}
+\end{equation}
+where $C=U\diag(\lambda)U^\top$ and each $f_{\eta,j}$ is constrained to remain smooth and strictly monotone. The metric parameters are regularized toward the natural logarithm:
+\begin{equation}
+  \cL_{\mathrm{metric}}
+  = \|\eta-\eta_{\log}\|_2^2
+  + \gamma_{\mathrm{cond}}\,\Psi_{\mathrm{condition}}(\phi_\eta).
+  \label{eq:metric-reg}
+\end{equation}
+The purpose is not unrestricted metric fitting. It is to learn which spectral directions of functional change matter while retaining invertibility, numerical stability, and a fixed low-dimensional parameter budget.
+
+\subsection{Fast Cholesky geometry as the stability control}
+Learnable spectral maps require eigendecomposition and may become sensitive near repeated eigenvalues. Chen's product Cholesky geometries expose the lower-triangular product structure $C=LL^\top$ and construct fast, stable closed-form operators, including Power-Cholesky and Bures-Wasserstein-Cholesky metrics \citep{chen2026cholesky,chen2026thesis}. In the \MMALS{} protocol, a Cholesky metric is not merely another candidate. It is the mandatory efficiency and stability control against which a learnable spectral metric must justify its extra cost.
+
+The comparison records:
+\begin{equation}
+  \text{utility per active cost}
+  = \frac{\Delta\text{retention} - \alpha\Delta\text{intransigence}
+  + \beta\Delta\text{calibration}}{
+  1+\rho_{\mathrm{time}}+\rho_{\mathrm{memory}}+\rho_{\mathrm{instability}}}.
+  \label{eq:utility-cost}
+\end{equation}
+No single scalar replaces the underlying metrics; it is a secondary summary after all components are reported.
+
