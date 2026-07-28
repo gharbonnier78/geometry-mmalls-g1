@@ -1,3 +1,4 @@
+# Reproducible build and publication workflow for the MMALS Riemannian article.
 name: Riemannian MMALS article
 
 on:
