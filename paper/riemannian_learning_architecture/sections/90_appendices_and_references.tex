@@ -1,0 +1,132 @@
+\appendix
+\section{Decision matrix for selecting a geometry}
+\begin{center}
+\begin{longtable}{@{}p{0.19\textwidth}p{0.19\textwidth}p{0.25\textwidth}p{0.27\textwidth}@{}}
+\toprule
+Object & Candidate geometry & Use when & Reject or defer when \\
+\midrule
+\endfirsthead
+\toprule
+Object & Candidate geometry & Use when & Reject or defer when \\
+\midrule
+\endhead
+Route distribution & Fisher-Rao simplex & probabilities are strictly positive and statistical displacement matters & Euclidean/Hellinger performs equally at lower cost; many exact zeros require a declared boundary treatment \\
+Functional covariance & Log-Euclidean SPD & second-order structure is stable and batch support is sufficient & covariance noise dominates or descriptor adds no predictive value \\
+Functional covariance & Cholesky product & speed and numerical stability are primary & Cholesky failures or ordering artifacts dominate \\
+Functional covariance & Learnable pullback & fixed metrics fail and development evidence supports adaptive spectral weighting & metric overfits, becomes ill-conditioned, or adds material cost without utility \\
+Dependence structure & Correlation manifold & marginal scale should be factored out & scale itself is functionally important \\
+Context prototypes & RMLR on declared manifold & context is genuinely manifold-valued with valid log maps & context is an unconstrained Euclidean vector or linear classifier is sufficient \\
+Structured activation & LieBN/GyroBN & interface satisfies required algebraic structure and normalization drift is observed & geometry is assumed only by analogy \\
+Hierarchy & Hyperbolic/PV & grounded branching hierarchy exists and distortion gains transfer to behavior & benchmark factor is circular, flat, or non-hierarchical \\
+\bottomrule
+\end{longtable}
+\end{center}
+
+
+\section{Artifact and source audit}
+The uploaded thesis used for this article has SHA-256
+\begin{verbatim}
+fd9e2b18e5347d20d7ddc1da0bde090a0ab5e361c5029031585099a79dd2d5f2
+\end{verbatim}
+The package records additional hashes for the MMALS v0.8, v0.9, v0.12, v0.13.1, and MMALS-QI project artifacts. The files are not redistributed in this package. Their identifiers, roles, and evidence limits are listed in the governance manifests.
+
+
+\begin{thebibliography}{99}
+
+\bibitem[Absil et al.(2008)]{absil2008}
+P.-A. Absil, R. Mahony, and R. Sepulchre.
+\newblock \emph{Optimization Algorithms on Matrix Manifolds}.
+\newblock Princeton University Press, 2008.
+
+\bibitem[Amari(2016)]{amari2016}
+S. Amari.
+\newblock \emph{Information Geometry and Its Applications}.
+\newblock Springer, 2016.
+
+\bibitem[Arsigny et al.(2007)]{arsigny2007}
+V. Arsigny, P. Fillard, X. Pennec, and N. Ayache.
+\newblock Geometric means in a novel vector space structure on symmetric positive-definite matrices.
+\newblock \emph{SIAM Journal on Matrix Analysis and Applications}, 29(1):328--347, 2007.
+
+\bibitem[Chen(2026)]{chen2026thesis}
+Z. Chen.
+\newblock \emph{Riemannian Deep Learning: Modules, Networks, and Geometries}.
+\newblock Doctoral thesis, Universit\`a di Trento, arXiv:2607.19305v2, 2026.
+
+\bibitem[Chen et al.(2024a)]{chen2024liebn}
+Z. Chen, Y. Song, Y. Liu, and N. Sebe.
+\newblock A Lie group approach to Riemannian batch normalization.
+\newblock In \emph{ICLR}, 2024.
+
+\bibitem[Chen et al.(2025)]{chen2025gyrobn}
+Z. Chen, Y. Song, X.-J. Wu, and N. Sebe.
+\newblock Gyrogroup batch normalization.
+\newblock In \emph{ICLR}, 2025.
+
+\bibitem[Chen et al.(2024b)]{chen2024spdmlr}
+Z. Chen, Y. Song, G. Liu, R. R. Kompella, X.-J. Wu, and N. Sebe.
+\newblock Riemannian multinomial logistic regression for SPD neural networks.
+\newblock In \emph{CVPR}, 2024.
+
+\bibitem[Chen et al.(2024c)]{chen2024rmlr}
+Z. Chen, Y. Song, R. Wang, X.-J. Wu, and N. Sebe.
+\newblock RMLR: Extending multinomial logistic regression into general geometries.
+\newblock In \emph{NeurIPS}, 2024.
+
+\bibitem[Chen et al.(2026a)]{chen2026pvnn}
+Z. Chen, Z. Su, B. Sch\"olkopf, and N. Sebe.
+\newblock Proper velocity neural networks.
+\newblock In \emph{ICLR}, 2026.
+
+\bibitem[Chen et al.(2026b)]{chen2026busemann}
+Z. Chen, B. Sch\"olkopf, and N. Sebe.
+\newblock Hyperbolic Busemann neural networks.
+\newblock In \emph{CVPR}, 2026.
+
+\bibitem[Chen et al.(2026c)]{chen2026cornet}
+Z. Chen, X.-J. Wu, B. Sch\"olkopf, and N. Sebe.
+\newblock Riemannian networks over full-rank correlation matrices.
+\newblock In \emph{ICML}, 2026.
+
+\bibitem[Chen et al.(2024d)]{chen2024alem}
+Z. Chen, Y. Song, T. Xu, Z. Huang, X.-J. Wu, and N. Sebe.
+\newblock Adaptive Log-Euclidean metrics for SPD matrix learning.
+\newblock \emph{IEEE Transactions on Image Processing}, 2024.
+
+\bibitem[Chen et al.(2026d)]{chen2026cholesky}
+Z. Chen, Y. Song, X.-J. Wu, and N. Sebe.
+\newblock Fast and stable Riemannian metrics on SPD manifolds via Cholesky product geometry.
+\newblock In \emph{ICLR}, 2026.
+
+\bibitem[Harbonnier(2026a)]{harbonnier2026v08}
+G. Harbonnier.
+\newblock MMALS Prototype 0.8: Final evidence harness for functional route memory.
+\newblock Internal executed project artifact, 2026.
+
+\bibitem[Harbonnier(2026b)]{harbonnier2026v09}
+G. Harbonnier.
+\newblock MMALS Prototype 0.9: Route-function disentanglement and functional memory validation.
+\newblock Internal executed project artifact, 2026.
+
+\bibitem[Harbonnier(2026c)]{harbonnier2026v12}
+G. Harbonnier.
+\newblock MMALS Prototype 0.12: Hopfield / co-evolution branch.
+\newblock Internal executed project artifact, 2026.
+
+\bibitem[Harbonnier(2026d)]{harbonnier2026v131}
+G. Harbonnier.
+\newblock MMALS Prototype 0.13.1: Warm weak adaptive co-evolution ablation.
+\newblock Internal smoke evidence, 2026.
+
+\bibitem[Harbonnier(2026e)]{geometrymmalsg1}
+G. Harbonnier.
+\newblock Geometry-MMALS G1: From grounded context geometry to functional routing in continual learning.
+\newblock Versioned repository, \url{https://github.com/gharbonnier78/geometry-mmalls-g1}, 2026.
+
+\bibitem[Harbonnier(2026f)]{mmalsqi2026}
+G. Harbonnier.
+\newblock MMALS-QI: A quantum-inspired extension of mycelium-inspired mutualistic adaptive learning systems.
+\newblock Internal design note, 2026.
+
+\end{thebibliography}
+
