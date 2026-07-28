@@ -1,0 +1,93 @@
+version: "1.0.0"
+date: "2026-07-28"
+article: "From Functional Route Memory to Learnable Geometry"
+status_vocabulary:
+  established: "Supported by cited primary mathematical or peer-reviewed work."
+  internal_supported: "Supported only within the named executed MMALS artifact."
+  proposed: "Architectural or experimental hypothesis; not yet validated."
+  rejected_or_deferred: "Not admissible under current evidence."
+
+claims:
+  C01_route_not_function:
+    statement: "Preserving a route coefficient vector does not imply preserving the mediated latent function."
+    status: internal_supported
+    sources: [mmals_v09]
+    scope: "Exact controlled prototype and mathematical counterexample."
+    falsification: "A universal equivalence theorem under explicit fixed-host/fixed-transform assumptions would narrow the claim, but not invalidate the observed unconstrained case."
+
+  C02_intrinsic_components_exist:
+    statement: "Intrinsic normalization, classification, correlation-network, adaptive SPD-metric, and Cholesky-geometry components are available for structured neural representations."
+    status: established
+    sources: [chen_component_papers, chen_thesis_2026]
+    scope: "Component families and their stated manifold assumptions."
+    excluded_extension: "No claim that these components improve MMALS."
+
+  C03_route_fisher_rao:
+    statement: "Fisher–Rao geometry is a mathematically natural candidate for strictly positive MMALS route distributions."
+    status: proposed
+    sources: [chen_thesis_2026, geometry_mmalls_g1]
+    gate: "Must add held-out explanatory or operational value over Euclidean, Hellinger, and Jensen–Shannon controls."
+    reject_when: "Boundary handling dominates, or simpler metrics perform equally at lower cost."
+
+  C04_spd_functional_memory:
+    statement: "Covariance or correlation descriptors may represent second-order functional memory more faithfully than a single latent vector."
+    status: proposed
+    sources: [chen_thesis_2026, mmals_v09, mmals_v12]
+    gate: "Descriptor reliability, held-out forgetting prediction, and behavioural ablation at matched remembered-source budget."
+    reject_when: "Covariance estimation noise dominates or no incremental value appears."
+
+  C05_learnable_metric:
+    statement: "A constrained learnable pullback metric may identify functionally important directions of MMALS memory drift."
+    status: proposed
+    sources: [chen_thesis_2026]
+    gate: "Fixed intrinsic metric qualifies first; learnable version beats parameter-matched non-geometric and random-map controls."
+    reject_when: "Metric overfits, becomes ill-conditioned, or adds no behavioural utility."
+
+  C06_cholesky_control:
+    statement: "Cholesky product geometry is the mandatory speed and numerical-stability control for any adaptive SPD-metric experiment."
+    status: proposed
+    sources: [chen_thesis_2026]
+    gate: "Record runtime, memory, failures, conditioning, and downstream behaviour."
+
+  C07_intrinsic_context_classifier:
+    statement: "Riemannian multinomial logistic regression is admissible for MMALS context inference only when context states live on a declared manifold with a valid logarithmic map."
+    status: proposed
+    sources: [chen_thesis_2026, geometry_mmalls_g1]
+    gate: "Intrinsic classifier must beat Euclidean and tangent-space controls under matched capacity."
+
+  C08_intrinsic_normalization:
+    statement: "LieBN or GyroBN can be inserted only at MMALS interfaces satisfying the corresponding algebraic assumptions."
+    status: established
+    sources: [chen_component_papers, chen_thesis_2026]
+    scope: "Validity condition on component use."
+    excluded_extension: "The route simplex is not normalized by these methods merely by analogy."
+
+  C09_hyperbolic_branch:
+    statement: "Hyperbolic or Proper Velocity MMALS hosts should be deferred until a grounded hierarchical factor is demonstrated."
+    status: proposed
+    sources: [chen_thesis_2026, geometry_mmalls_g1]
+    reject_when: "The benchmark is circular/flat or behavioural gain does not accompany lower distortion."
+
+  C10_parallel_transport_memory:
+    statement: "Parallel transport may improve comparison of functional-memory states across learning stages."
+    status: proposed
+    sources: [chen_thesis_2026, mmals_v12]
+    gate: "Transport must improve old-context functional prediction over fixed-map and direct-comparison controls."
+
+  C11_geometry_is_not_yet_performance_evidence:
+    statement: "Current evidence does not establish that a Riemannian MMALS architecture improves continual-learning performance."
+    status: internal_supported
+    sources: [geometry_mmalls_g1, mmals_v0131]
+    scope: "Current research state and recorded negative smoke evidence."
+
+  C12_overconstraint_risk:
+    statement: "Geometry-aware or co-evolution regularization can preserve internal structure while worsening plasticity."
+    status: internal_supported
+    sources: [mmals_v0131]
+    scope: "Single-seed smoke risk signal; requires replication for quantitative comparison."
+
+  C13_quantum_inspired_deferred:
+    statement: "Density-state or phase-aware MMALS remains a deferred branch and is not evidence of physical quantum computation or quantum advantage."
+    status: rejected_or_deferred
+    sources: [mmals_qi, geometry_mmalls_g1]
+    promotion_gate: "Task-free geometry and real-valued alternatives must qualify first."
