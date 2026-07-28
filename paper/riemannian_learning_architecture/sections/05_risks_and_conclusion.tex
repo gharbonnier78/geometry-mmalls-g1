@@ -1,0 +1,49 @@
+\section{Risks and failure modes}
+
+\subsection{Metric overfitting}
+A learnable metric can optimize the loss it defines without improving behavior. Nested selection, shuffled-metric controls, limited parameter count, and held-out explanatory tests are mandatory.
+
+\subsection{Geometric rigidity}
+The most serious known risk is preserving old structure so strongly that new contexts cannot be learned. The v0.13.1 negative result makes intransigence a co-primary endpoint, not an appendix metric.
+
+\subsection{Descriptor noise}
+SPD estimates from small batches may be dominated by covariance estimation error. Shrinkage, low-rank plus diagonal structure, memory-cell pooling, and confidence intervals must be tested. A noisy covariance matrix is not a meaningful memory state merely because it is SPD.
+
+\subsection{Eigenvalue identity and degeneracy}
+Adaptive spectral maps that attach separate parameters to ordered eigenvalues can become ambiguous near repeated eigenvalues. Permutation-invariant parameterizations, isotropic groups, or Cholesky controls are required. This is a direct reason not to copy an ALEM parameterization blindly into \MMALS{}.
+
+\subsection{Invalid manifold assumptions}
+RMLR, LieBN, and GyroBN require explicit geometric and algebraic assumptions. If a representation is merely constrained numerically but lacks the required structure, the corresponding layer is invalid.
+
+\subsection{Complexity without causal value}
+A richer geometry may behave like extra capacity. Parameter-matched MLPs, random pullback maps, and frozen metrics must rule this out.
+
+\subsection{Source inflation}
+The thesis contains many strong results across vision, signal, graph, and genomics tasks. None transfers automatically to continual learning. The article cites those results as component evidence, not as evidence for \MMALS{}.
+
+
+\section{Recommended first experiment}
+The immediate experiment should be diagnostic and low-risk:
+\begin{enumerate}[leftmargin=1.7em]
+  \item freeze the completed Geometry-\MMALS{} G1 v1.1.x checkpoints;
+  \item reuse exactly the same remembered-source samples and outcome traces;
+  \item compute route distances under Euclidean, Hellinger, Jensen-Shannon, and Fisher-Rao metrics;
+  \item construct low-dimensional SPD and correlation descriptors from host outputs and synthesized states;
+  \item compare latent MSE, fixed Log-Euclidean distance, and Cholesky distance as predictors of context-level forgetting;
+  \item use nested seed-held-out regression to estimate incremental predictive value;
+  \item promote at most one route metric and one functional descriptor to a training ablation.
+\end{enumerate}
+This experiment cannot improve model performance because it does not retrain the system. Its purpose is to determine whether the geometric measurements deserve to enter the training objective. If they do not, the project avoids an expensive architectural detour.
+
+
+\section{Conclusion}
+The move from structural routes to functional route memory was the decisive conceptual advance of early \MMALS{}. The next advance should not be a generic statement that ``learning happens on a manifold.'' It should be a controlled test of whether the correct geometry of each object improves explanation and engineering decisions.
+
+Chen's Riemannian deep-learning thesis provides unusually relevant components: intrinsic normalization, intrinsic classification, stable hyperbolic representations, correlation-manifold networks, learnable pullback metrics, and fast Cholesky geometries. Their value to \MMALS{} lies in disciplined reuse. Route distributions can be measured on the simplex; functional memory can be represented by SPD or correlation structure; transport can compare directions across learning stages; and the metric itself can be adapted only within a constrained, testable family.
+
+The resulting research program is deliberately asymmetric. It is easy to justify adding a diagnostic; it is harder to justify adding a training penalty; harder still to justify a new architectural layer; and hardest to claim a general continual-learning mechanism. The first gate is therefore whether intrinsic route and functional-state distances explain forgetting better than the current Euclidean measures. Only then should a geometry-aware loss be allowed to compete against output distillation, replay, and simple fixed-metric controls.
+
+\begin{warningbox}
+The strongest acceptable near-term conclusion is conditional: Riemannian geometry may provide a better coordinate system and diagnostic language for \MMALS{} functional memory, but it becomes an architectural contribution only after matched-budget experiments show a reproducible improvement in the stability-plasticity frontier.
+\end{warningbox}
+
