@@ -1,0 +1,158 @@
+\section{Proposed Riemannian MMALS architecture}
+
+\subsection{Architecture overview}
+The proposed Riemannian Geometry for MMALS track, abbreviated \RGM{}, adds intrinsic operators at selected interfaces rather than rebuilding every host.
+
+\begin{figure}[H]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tikzpicture}[
+  node distance=8mm and 10mm,
+  block/.style={draw,rounded corners,minimum width=26mm,minimum height=9mm,align=center,fill=white},
+  geom/.style={draw,rounded corners,minimum width=29mm,minimum height=10mm,align=center,fill=lightblue,draw=mmalsblue},
+  host/.style={draw,rounded corners,minimum width=21mm,minimum height=9mm,align=center,fill=lightgreen,draw=mmalsgreen},
+  memory/.style={draw,rounded corners,minimum width=30mm,minimum height=10mm,align=center,fill=lightgold,draw=mmalsgold},
+  arrow/.style={-{Latex[length=2mm]},thick},
+  dashedarrow/.style={-{Latex[length=2mm]},thick,dashed}
+]
+  \node[block] (x) {Input $x$};
+  \node[block,right=of x] (enc) {Controlled sensory\\encoder $z_0$};
+  \node[geom,right=of enc] (context) {Context manifold\\$c=q_\eta(z_0,m)$\\RMLR optional};
+  \node[geom,right=of context] (route) {Route simplex\\$r\in\Delta^{H-1}$\\Fisher-Rao};
+
+  \node[host,below=12mm of route,xshift=-30mm] (h1) {Host $g_1$};
+  \node[host,right=4mm of h1] (h2) {Host $g_2$};
+  \node[host,right=4mm of h2] (h3) {Host $g_H$};
+  \node[block,below=12mm of h2] (synth) {Fungal transforms $T_i$\\and synthesis $z_f$};
+  \node[geom,right=of synth] (spd) {Functional descriptor\\$C$ or $R$\\SPD/correlation};
+  \node[block,right=of spd] (head) {Prediction / control\\$\hat y$};
+
+  \node[memory,below=14mm of spd] (mem) {Dual memory\\samples + geometric state\\$C^\star,r^\star$};
+  \node[geom,left=of mem] (metric) {Metric controller\\fixed LE / Cholesky /\\learnable pullback};
+
+  \draw[arrow] (x)--(enc);
+  \draw[arrow] (enc)--(context);
+  \draw[arrow] (context)--(route);
+  \draw[arrow] (route.south) -- ++(0,-4mm) -| (h1.north);
+  \draw[arrow] (route.south) -- ++(0,-4mm) -| (h2.north);
+  \draw[arrow] (route.south) -- ++(0,-4mm) -| (h3.north);
+  \draw[arrow] (h1)--(synth);
+  \draw[arrow] (h2)--(synth);
+  \draw[arrow] (h3)--(synth);
+  \draw[arrow] (synth)--(spd);
+  \draw[arrow] (spd)--(head);
+  \draw[dashedarrow] (mem)--(spd);
+  \draw[dashedarrow] (mem.west)--(metric.east);
+  \draw[dashedarrow] (metric.north)--(synth.south);
+  \draw[dashedarrow] (mem.north) to[bend left=15] (route.south east);
+
+  \node[draw=mmalsred,dashed,rounded corners,fit=(context)(route)(h1)(h3)(synth)(spd)(metric)(mem),inner sep=5mm,label={[text=mmalsred]below:Geometry is admitted component by component, not assumed globally}] {};
+\end{tikzpicture}%
+}
+\caption{Proposed selective Riemannian extension of \MMALS{}. The sensory encoder and hosts may remain ordinary neural networks. Intrinsic geometry is introduced at the context, route, functional-descriptor, and memory-transport interfaces only when ablations justify it.}
+\label{fig:architecture}
+\end{figure}
+
+\subsection{Context inference with intrinsic classification}
+The mature model infers context without a task identifier. Let $c\in\cM_c$ be a structured context representation and $\mu_k\in\cM_c$ context prototypes. A Euclidean classifier applies a linear map to coordinates. Riemannian MLR instead constructs logits from intrinsic geometry, requiring a logarithmic map and a tangent normal $A_k\in T_{\mu_k}\cM_c$ \citep{chen2024rmlr,chen2026thesis}. A generic score can be written schematically as
+\begin{equation}
+  \ell_k(c)
+  = b_k + \langle A_k,\Log_{\mu_k}(c)\rangle_{\mu_k}
+  \cdot \omega_k(c),
+  \label{eq:rmlr-context}
+\end{equation}
+where $\omega_k$ encodes the Riemannian-trigonometric normalization required by the selected formulation. The operational rule is strict: RMLR is tested only after the context representation has a declared manifold and valid logarithmic map. It is not used as decorative terminology for an unconstrained vector.
+
+\subsection{Intrinsic normalization at stable interfaces}
+Sequential training can shift the mean and variance of structured states. LieBN and GyroBN offer principled normalization when the state manifold admits the corresponding algebraic structure \citep{chen2024liebn,chen2025gyrobn}. In \RGM{}, candidate insertion points are:
+\begin{enumerate}[leftmargin=1.7em]
+  \item after an SPD/correlation pooling layer used to build $C_k$ or $R_k$;
+  \item before intrinsic classification of context or functional state;
+  \item inside a host only when that host natively produces manifold-valued features.
+\end{enumerate}
+Normalization is not placed on the route simplex by analogy alone. The route has its own statistical geometry and conservation constraints.
+
+\subsection{Hyperbolic geometry only for demonstrated hierarchy}
+Hyperbolic spaces are useful for hierarchical or tree-like relations because negative curvature provides rapidly growing volume. Chen's Proper Velocity model offers an unconstrained hyperbolic representation and complete neural layers intended to mitigate instability near constrained-model boundaries \citep{chen2026pvnn}. For \MMALS{}, a hyperbolic context or host space is admitted only if:
+\begin{enumerate}[leftmargin=1.7em]
+  \item the benchmark contains a grounded hierarchy or branching regime structure;
+  \item hyperbolic distortion beats Euclidean and spherical controls;
+  \item the hierarchy improves routing, transfer, or sample efficiency rather than only visualization;
+  \item numerical stability and compute are recorded.
+\end{enumerate}
+RotatedMNIST has a circular factor and is therefore a poor justification for hyperbolic geometry. A hierarchical engineering-evidence graph, taxonomy, or compositional task family is a better later benchmark.
+
+
+\section{Memory transport and objective}
+
+\subsection{Transporting functional memory}
+A stored tangent direction $V_t\in T_{C_t}\cM_f$ cannot be directly compared with a direction at $C_{t+1}$ because the tangent spaces differ. Parallel transport provides a principled alignment:
+\begin{equation}
+  \tilde V_{t\to t+1}
+  = \PT_{C_t\to C_{t+1}}(V_t).
+  \label{eq:parallel-transport}
+\end{equation}
+A transport consistency loss is
+\begin{equation}
+  \cL_{\mathrm{transport}}
+  = \E_k\left[
+    \left\|V_{k,t+1}-\PT_{C_{k,t}\to C_{k,t+1}}(V_{k,t})\right\|_{C_{k,t+1}}^2
+  \right].
+  \label{eq:transport-loss}
+\end{equation}
+This must be distinguished from merely penalizing movement. Healthy adaptation can move along the manifold while preserving functional relations. The test is whether transported directions remain predictive of behavior.
+
+\subsection{Complete training objective}
+A selective geometry-aware objective is
+\begin{align}
+  \cL_{\RGM}
+  =&\ \cL_{\mathrm{task}}
+  + \lambda_y \cL_{\mathrm{distill}}
+  + \lambda_r \cL_{r,\mathrm{FR}}
+  + \lambda_f d_\eta(C,C^\star)^2 \\
+  &+ \lambda_T \cL_{\mathrm{transport}}
+  + \lambda_n \cL_{\mathrm{norm}}
+  + \lambda_m \cL_{\mathrm{metric}}
+  + \lambda_c \cC_{\mathrm{carbon}}
+  + \lambda_g \cL_{\mathrm{gain}}.
+  \label{eq:full-objective}
+\end{align}
+The terms mean:
+\begin{itemize}[leftmargin=1.5em]
+  \item $\cL_{\mathrm{task}}$: current supervised, self-supervised, or control objective;
+  \item $\cL_{\mathrm{distill}}$: output behavior preservation;
+  \item $\cL_{r,\mathrm{FR}}$: intrinsic route memory;
+  \item $d_\eta(C,C^\star)^2$: functional-state preservation under fixed or learned geometry;
+  \item $\cL_{\mathrm{transport}}$: consistency of functional directions through time;
+  \item $\cL_{\mathrm{norm}}$: optional intrinsic normalization statistics;
+  \item $\cL_{\mathrm{metric}}$: complexity, conditioning, and deviation control for the learned metric;
+  \item $\cC_{\mathrm{carbon}}$: active-route and computation cost;
+  \item $\cL_{\mathrm{gain}}$: mutualistic contribution constraint estimated with held-out or rolling evidence.
+\end{itemize}
+
+Not all terms are activated simultaneously. The ablation ladder starts from output distillation and introduces exactly one geometric mechanism at a time.
+
+\subsection{Two basic propositions}
+
+\begin{proposition}[Route preservation does not imply functional preservation]
+There exist teacher and current models with identical route distributions and different synthesized functions.
+\end{proposition}
+\begin{proof}
+Take $r^\star=r=(1,0,\ldots,0)$ and choose $T_1^\star(g_1^\star(x))\neq T_1(g_1(x))$. Then the route distance is zero under any valid metric on the simplex, while $z_f^\star\neq z_f$. Therefore route memory is not sufficient for functional memory.
+\end{proof}
+
+\begin{proposition}[Pullback distance is Euclidean after a valid chart]
+Let $\phi:\cM\rightarrow\R^d$ be a diffeomorphism and $g=\phi^*g_E$. Then
+\begin{equation}
+  d_g(p,q)=\|\phi(p)-\phi(q)\|_2
+\end{equation}
+for the pullback Euclidean geometry.
+\end{proposition}
+\begin{proof}
+The diffeomorphism is an isometry by construction of the pullback metric. Curve lengths and the minimizing geodesic distance are therefore preserved under $\phi$.
+\end{proof}
+
+\begin{remark}
+The proposition does not mean that any learned embedding is a valid Riemannian chart. Smoothness, invertibility, numerical conditioning, and domain coverage are implementation obligations. A black-box encoder with no inverse does not automatically define the tractable pullback geometry used here.
+\end{remark}
+
