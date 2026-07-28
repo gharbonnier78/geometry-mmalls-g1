@@ -1,0 +1,115 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=2.0cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,tabularx,array,multirow,longtable}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc,shapes.geometric,backgrounds}
+\usepackage[most]{tcolorbox}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[nameinlink,capitalise]{cleveref}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{float}
+\usepackage{listings}
+
+\definecolor{mmalsgreen}{HTML}{315D47}
+\definecolor{mmalsgold}{HTML}{A17C28}
+\definecolor{mmalsblue}{HTML}{2E5C88}
+\definecolor{mmalsred}{HTML}{8A3A32}
+\definecolor{lightgreen}{HTML}{EFF6F1}
+\definecolor{lightblue}{HTML}{EEF4F9}
+\definecolor{lightgold}{HTML}{FBF7EC}
+\definecolor{lightred}{HTML}{FAF0EF}
+
+\hypersetup{
+  colorlinks=true,
+  linkcolor=mmalsblue,
+  citecolor=mmalsgreen,
+  urlcolor=mmalsred,
+  pdftitle={From Functional Route Memory to Learnable Geometry},
+  pdfauthor={Guillaume Harbonnier},
+  pdfsubject={Riemannian architecture and experimental roadmap for MMALS}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{MMALS Riemannian Learning Architecture}
+\rhead{Research article v1.0}
+\cfoot{\thepage/\pageref{LastPage}}
+\setlength{\headheight}{14pt}
+
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{hypothesis}{Hypothesis}
+\newtheorem{remark}{Remark}
+\newtheorem{gate}{Evidence gate}
+
+\newcommand{\MMALS}{\textsc{MMALS}}
+\newcommand{\RGM}{\textsc{RGM}}
+\newcommand{\SPD}{\mathbb{S}_{++}}
+\newcommand{\simplex}{\Delta}
+\newcommand{\cM}{\mathcal{M}}
+\newcommand{\cL}{\mathcal{L}}
+\newcommand{\cD}{\mathcal{D}}
+\newcommand{\cT}{\mathcal{T}}
+\newcommand{\cC}{\mathcal{C}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\Exp}{\operatorname{Exp}}
+\newcommand{\Log}{\operatorname{Log}}
+\newcommand{\PT}{\operatorname{PT}}
+\newcommand{\softmax}{\operatorname{softmax}}
+\newcommand{\KL}{\operatorname{KL}}
+
+\newtcolorbox{statusbox}{colback=lightgold,colframe=mmalsgold,title=Scientific status,fonttitle=\bfseries}
+\newtcolorbox{engineeringbox}{colback=lightgreen,colframe=mmalsgreen,title=Engineering interpretation,fonttitle=\bfseries}
+\newtcolorbox{warningbox}{colback=lightred,colframe=mmalsred,title=Non-claim and falsification boundary,fonttitle=\bfseries}
+\newtcolorbox{sourcebox}{colback=lightblue,colframe=mmalsblue,title=Source tier note,fonttitle=\bfseries}
+
+\title{\textbf{From Functional Route Memory to Learnable Geometry}\\[0.4em]
+\large A Riemannian Architecture, Evidence Discipline, and Experimental Roadmap for Mycelium-Inspired Mutualistic Adaptive Learning Systems}
+\author{Guillaume Harbonnier\\MMALS Research Program\\\small \url{https://github.com/gharbonnier78/geometry-mmalls-g1}}
+\date{28 July 2026 -- Research article and implementation specification v1.0}
+
+\begin{document}
+\maketitle
+
+\begin{statusbox}
+This article is a research integration and experimental specification. It does not claim that \MMALS{} has already demonstrated a general continual-learning advantage, that a learned Riemannian metric is necessarily superior to a fixed metric, or that biological mycelium and mathematical manifolds are equivalent mechanisms. It translates established Riemannian deep-learning components into falsifiable \MMALS{} hypotheses and preserves negative internal evidence that geometric regularization can over-constrain plasticity.
+\end{statusbox}
+
+\begin{abstract}
+Mycelium-Inspired Mutualistic Adaptive Learning Systems (\MMALS{}) treat continual learning as adaptive cooperation among specialist hosts mediated by a routing and transformation substrate. Early prototypes established a crucial distinction: preserving a routing vector is not equivalent to preserving the function computed through that route. Later experiments therefore introduced functional route memory, latent distillation, and diagnostics for route, output, transformation, and Jacobian drift. Yet most of these quantities remain measured with fixed Euclidean norms, even when the objects being compared are probability distributions, covariance-like descriptors, correlation matrices, or structured transformation states.
+
+This article develops a conservative Riemannian extension of the \MMALS{} program using the reusable modules, manifold-specific networks, and learnable geometries synthesized in Ziheng Chen's 2026 doctoral thesis on Riemannian deep learning. The proposal has five parts. First, route distributions are treated intrinsically on the probability simplex using Fisher-Rao geometry rather than raw coefficient error. Second, functional memory is represented by symmetric positive-definite or full-rank correlation descriptors whose drift is measured by fixed or learnable pullback metrics. Third, intrinsic normalization and classification are introduced only where their manifold assumptions are satisfied, using Lie-group or gyrogroup normalization and Riemannian multinomial logistic regression. Fourth, the geometry is allowed to adapt through a constrained family of pullback maps, with Cholesky product geometries retained as a fast and numerically stable control. Fifth, context, route, host function, memory, and output are modeled as a coupled product geometry, but every added component must beat simpler null models under matched compute and memory budgets.
+
+The article contributes a complete mathematical specification, an architecture diagram, hypotheses, ablations, source tiers, claim gates, failure criteria, and a staged experiment protocol aligned with the existing Geometry-\MMALS{} G1 repository. The central research claim is deliberately narrow: a geometry is useful only if its intrinsic distances and transport operators predict functional forgetting better than Euclidean diagnostics, and if geometry-aware learning improves retention, plasticity, calibration, or cost without hiding degradation elsewhere.
+\end{abstract}
+
+\noindent\textbf{Keywords:} continual learning; geometric deep learning; Riemannian manifolds; functional memory; adaptive routing; SPD matrices; information geometry; metric learning; mixture of experts; evidence governance.
+
+\tableofcontents
+\newpage
+
+
+\input{sections/01_foundations.tex}
+\input{sections/02_architecture_and_transport.tex}
+\input{sections/03_hypotheses_and_experiments.tex}
+\input{sections/04_implementation_and_governance.tex}
+\input{sections/05_risks_and_conclusion.tex}
+\input{sections/90_appendices_and_references.tex}
+
+\end{document}
